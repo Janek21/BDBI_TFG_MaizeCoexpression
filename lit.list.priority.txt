@@ -22,7 +22,7 @@ wgcna tutorial+extra packs
 bioconductor
 
 
-5 separate coexpression networks for the 5 genotypes (1 for each genotype)
+5 separate coexpression networks for the 5 genotypes (1 for each genotype) (separate mtd as well)
 
 wight differences in having 2 or 5 samples
 
