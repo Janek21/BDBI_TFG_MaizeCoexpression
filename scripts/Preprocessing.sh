@@ -35,10 +35,10 @@ python3 ../scripts/tissue_abv.py $m2 $m3 #create m3
 
 echo ""
 
-#4 join by tissue replicate? (1 for cob, 1 for etc)
-
 #Last: Split table by species(follow metadata species guideline)
 
 Rscript ../scripts/speciator.R $dataNL_new $m3 ./ ./ #destinations of data and metadata tables are in /home/janek/Desktop/Intership/work/data/
 
 #mclapply USE ^^
+
+#POst processing (in R result): join by tissue replicate? (1 for cob, 1 for etc)

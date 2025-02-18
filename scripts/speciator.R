@@ -28,7 +28,7 @@ listSplitter<-function(specieName, ALLspecieList){ #takes specie name and list o
   specieData<-ALLspecieList[[specieName]][[1]] #Takes B73 list(produced by specieCreator) from MainList, then takes first item in B73 list (belongs to data)
   specieMetadata<-ALLspecieList[[specieName]][[2]] #same but 2nd slot in inner list, so metadata
   
-  assign(paste0(dataName), specieData, envir = .GlobalEnv) #assigns 1rst inner list to B73_data name created
+  assign(paste0(dataName), t(specieData), envir = .GlobalEnv) #assigns 1rst inner list to the B73_data name, also transposes this dataframe for rows to be genes and samples columns
   assign(paste0(mdataName), specieMetadata, envir = .GlobalEnv) #same but 2nd and metadata
   
   cat("Data and metadata dataframes for", specieName, "are done")
@@ -37,7 +37,7 @@ listSplitter<-function(specieName, ALLspecieList){ #takes specie name and list o
 
 
 tableWriter<-function(specieName,
-                      data=get(paste0(specieName, "_data")),
+                      data=get(paste0(specieName, "_data")), #path, not file name (ex: Wrong: ./data/f.csv; correct: ./data/)
                       metadata=get(paste0(specieName, "_metadata")),
                       resultDataPath, 
                       resultMetaPath){ #write the data and metadata tables
@@ -89,7 +89,7 @@ cat("The species are:\n", specieList)
 specieResults <- lapply(specieList, function(specieName) specieCreator(datALL, specieName)) #creates a Main list containing each specie list produced by specieCreator
 names(specieResults) <- specieList #names the lists according to specie (if not it would be 1,2,3,etc)
 
-tmp<-lapply(specieList, function(specieName) listSplitter(specieName, specieResults)) #takes dataframes out of nested list and assigns specie name as variable
+tmp<-lapply(specieList, function(specieName) listSplitter(specieName, specieResults)) #takes dataframes out of nested list and assigns specie name as variable, samples as columns
 
 listRows<-sapply(specieResults, function(specieSublist) nrow(specieSublist[[1]])) #get number of rows of each specie, and put them on a vector
 

@@ -26,8 +26,11 @@ library(CorLevelPlot)
 
 Import the csv and metadata files
 ```{r dtLoad}
-dataNL<-read.delim("../data/all5gt.nolen.csv", row.names=1, stringsAsFactors=TRUE)
-metadata<-read.delim("../data/sample.tissue.correct.cluadj.txt", header=FALSE, row.names=1, stringsAsFactors=TRUE)
+#dataNL<-read.delim("../data/data_nolen.csv", row.names=1, stringsAsFactors=TRUE)
+#metadata<-read.delim("../data/metadata_3.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+dataNL<-read.delim("../data/B73.csv", row.names=1, stringsAsFactors=TRUE)
+metadata<-read.delim("../data/B73_m.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+
 colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
 ```
 
@@ -42,6 +45,8 @@ Fix the disparity in samples
 ```{r dtFix}
 
 mdataMatcher<-function(data, metadata){
+  options(warn=-1)
+  
   cat("Metadata begins with:" , dim(metadata))
   cat("\nWhile data has:", dim(data))
   #Match data to metadata
@@ -53,6 +58,8 @@ mdataMatcher<-function(data, metadata){
   
   metadata<-metadata[rownames(metadata) %in% colnames(data),]
   cat("\nMetadata end with:" , dim(metadata), "\n")
+  
+  options(warn=0)
   return(metadata)
 }
 
@@ -202,17 +209,18 @@ p2<-ggplot(sft, aes(Power, mean.k., label = Power)) +
 
 grid.arrange(p1, p2, nrow=2)
 #Power large, but not superlarge(closest to 0.8) but with minimal mean connectivity
-#10 is among the best values
+#10 or 12 are among the best values
 ```
 ### Memory estimation
 
 ```{r nwDataprep}
 N_dataNL[]<-sapply(N_dataNL, as.numeric)
-softpower<-10
+#softpower<-12
+softpower<-16
 ```
 
 
-```{r nwMemory, eval=FALSE}
+```{r nwMemory}
 #Force wgcna to use wgcna::cor
 allowWGCNAThreads(32)
 temp_cor <- cor
@@ -233,12 +241,13 @@ bwnet <- blockwiseModules(N_dataNL,
                  verbose = 4)
 
 cor<-temp_cor
+saveRDS(bwnet, file = "./bwnet_B73.RDS")
 ```
 
 
 ```{r nwLoad}
 #saveRDS(bwnet, file = "./bwnet_signed.RDS")
-bwnet<-readRDS("./bwnet_signed.RDS")
+bwnet<-readRDS("./bwnet_B73.RDS")
 ```
 
 ## Eigengenes
@@ -279,7 +288,7 @@ nGenes <- ncol(N_dataNL)
 ### Binarize the metadata columns
 
 Binarize the species
-```{r BinCol1}
+```{r BinCol1, eval=F}
 levels(metadata$specie)
 
 species_bin<-data.frame(
@@ -347,7 +356,8 @@ loc_bin <- data.frame(
 
 Join binarized metadata
 ```{r BinCol_join}
-bin_metadata<-cbind(species_bin, rep_bin, loc_bin)
+#bin_metadata<-cbind(species_bin, rep_bin, loc_bin)
+bin_metadata<-cbind(rep_bin, loc_bin)
 #@@? VV
 #This is for sample, we need to get each gene with its own realtion as well
 
@@ -365,6 +375,7 @@ var(bin_metadata) #Look at variance of the data
 #rep_P is all 0, remove it
 
 bin_metadata$rep_P<-NULL
+cat("\nP removed\n")
 
 module_train<-cor(module_eigengenes, bin_metadata, use="p")
 #No more error: solved
@@ -388,17 +399,11 @@ columns_number<-round(ncol(heatmap.data))
 colNhalf<-as.integer(columns_number/2)
 
 CorLevelPlot(heatmap.data,
-             x = names(heatmap.data)[columns_number/2:columns_number],
+             x = names(heatmap.data)[(columns_number/2):columns_number],
              y = names(heatmap.data)[1:(columns_number/2)-1],
              rotLabX = 45,
              cexCorval = 0.4, cexLabY = 0.5, cexLabX = 0.7
             )
-
-#@@ export with genes? or with samples -> genes is better
-exportNetworkToCytoscape(bwnet,
-                         edgeFile = "CytoscapeInput-edges.txt",
-                         nodeFile = "CytoscapeInput-nodes.txt",
-                         weighted = TRUE, threshold = 0.02)
 
 ```
 
