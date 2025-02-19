@@ -26,8 +26,11 @@ library(CorLevelPlot)
 
 Import the csv and metadata files
 ```{r dtLoad}
-dataNL<-read.delim("../data/data_nolen.csv", row.names=1, stringsAsFactors=TRUE)
-metadata<-read.delim("../data/metadata_3.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+#dataNL<-read.delim("../data/data_nolen.csv", row.names=1, stringsAsFactors=TRUE)
+#metadata<-read.delim("../data/metadata_3.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+dataNL<-read.delim("../data/B73.csv", row.names=1, stringsAsFactors=TRUE)
+metadata<-read.delim("../data/B73_m.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+
 colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
 ```
 
@@ -38,9 +41,10 @@ Search for dimensional disparities
 dim(dataNL)
 dim(metadata)
 ```
-#@@ useless, keep as precaution?
+
 Fix the disparity in samples
 ```{r dtFix}
+#@@ useless, keep as precaution?
 
 mdataMatcher<-function(data, metadata){
   options(warn=-1)
@@ -127,7 +131,8 @@ ggplot(pca$x, aes(PC1, PC2, color=metadata$rep))+
 
 Outlier removal
 ```{r outRM2}
-f_dataNL<-dataNL[,!(colnames(dataNL) %in% "EP1_23_4")]
+#f_dataNL<-dataNL[,!(colnames(dataNL) %in% "EP1_23_4")]
+f_dataNL<-dataNL[,!(colnames(dataNL) %in% "B73_23_2")]
 dim(f_dataNL)
 ```
 Rematching metadata and data
@@ -212,7 +217,8 @@ grid.arrange(p1, p2, nrow=2)
 
 ```{r nwDataprep}
 N_dataNL[]<-sapply(N_dataNL, as.numeric)
-softpower<-12
+#softpower<-12
+softpower<-14
 ```
 
 
@@ -414,12 +420,12 @@ datExpr<-N_dataNL
 # Load TOM similarity matrix (Topological Overlap Matrix)
 TOM <- TOMsimilarityFromExpr(datExpr, power = 2)  # Adjust power if needed
 gc()
-saveRDS(TOM, file="./TOMmatrix.RDS")
+saveRDS(TOM, file="./TOMmatrix_B73.RDS")
 ```
 
 
 ```{r}
-TOM<-readRDS("./TOMmatrix.RDS")
+TOM<-readRDS("./TOMmatrix_B73.RDS")
 gc()
 
 # Convert TOM to adjacency matrix
@@ -433,16 +439,16 @@ genes <- colnames(datExpr)
 
 # Create edge list from adjacency matrix
 edges <- which(adjacency > threshold, arr.ind = TRUE)
-saveRDS(edges, file="./edges.RDS")
-saveRDS(genes, file="./colnameGENES.RDS")
+saveRDS(edges, file="./edges_B73.RDS")
+saveRDS(genes, file="./colnameGENES_B73.RDS")
 gc()
 ```
 
 
 ```{r}
-edges<-readRDS("./edges.RDS")
-genes<-readRDS("./colnameGENES.RDS")
-adjacency<-readRDS("./TOMmatrix.RDS")
+edges<-readRDS("./edges_B73.RDS")
+genes<-readRDS("./colnameGENES_B73.RDS")
+adjacency<-readRDS("./TOMmatrix_B73.RDS")
 gc()
 edge_list <- data.frame(
   Source = genes[edges[, 1]],
@@ -451,29 +457,29 @@ edge_list <- data.frame(
 )
 gc()
 
-saveRDS(edge_list, file="./edge_list.RDS")
+saveRDS(edge_list, file="./edge_list_B73.RDS")
 ```
 
 
 ```{r}
-edge_list<-readRDS("./edge_list.RDS")
+edge_list<-readRDS("./edge_list_B73.RDS")
 gc()
 # Remove duplicate edges (since TOM is symmetric)
 edge_list <- edge_list[edge_list$Source != edge_list$Target, ]  # Remove self-loops
-saveRDS(edge_list, file="./edge_list2.RDS")
+saveRDS(edge_list, file="./edge_list2_B73.RDS")
 ```
 
 
 ```{r}
-edge_list<-readRDS("./edge_list2.RDS")
+edge_list<-readRDS("./edge_list2_B73.RDS")
 gc()
 edge_list <- edge_list[!duplicated(t(apply(edge_list, 1, sort))), ]
-saveRDS(edge_list, file="./edge_list3.RDS")
+saveRDS(edge_list, file="./edge_list3_B73.RDS")
 ```
 
 
 ```{r}
-edge_list<-readRDS("./edge_list3.RDS")
+edge_list<-readRDS("./edge_list3_B73.RDS")
 gc()
 
 # Convert to graph object
