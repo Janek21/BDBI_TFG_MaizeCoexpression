@@ -30,8 +30,12 @@ if (is.na(softPower)) softPower <- 6  # Default to 6 if no estimate
 # 3. Construct Adjacency & TOM --------------------------------------
 adjacency <- adjacency(datExpr, power = softPower)  # Build adjacency matrix
 gc()
+saveRDS(adjacency, "./NWgen/adjacency_NWgen.RDS")
 TOM <- TOMsimilarity(adjacency)  # Transform into Topological Overlap Matrix
+dimnames(TOM) <- list(colnames(datExpr), colnames(datExpr))
+saveRDS(TOM, "./NWgen/TOM_NWgen.RDS")
 dissTOM <- 1 - TOM  # Convert to dissimilarity
+saveRDS(dissTOM, "./NWgen/dissTOM_NWgen.RDS")
 
 # 4. Identify Modules using Hierarchical Clustering -----------------
 geneTree <- hclust(as.dist(dissTOM), method = "average")  # Cluster genes
@@ -65,7 +69,8 @@ cyt <- exportNetworkToCytoscape(TOM,
                                 edgeFile = "Cytoscape_edges.txt", 
                                 nodeFile = "Cytoscape_nodes.txt",
                                 weighted = TRUE, 
-                                threshold = 0.1, 
+                                threshold = 0.1,
+                                nodeNames = colnames(datExpr),
                                 nodeAttr = moduleColors)
 
 # 8. Save Results ---------------------------------------------------

@@ -1,0 +1,167 @@
+---
+title: "Gene Network"
+author: "Jan Izquierdo i Ramos"
+date: "2025-02-03"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Loading
+
+## Load libraries
+
+```{r loadLib}
+library(WGCNA)
+allowWGCNAThreads()
+#library(DESeq2)
+library(edgeR)
+library(tidyverse)
+library(dplyr)
+library(gridExtra)
+```
+
+## Load the data
+
+Import the csv and metadata files
+
+```{r dtLoad}
+dataNL<-read.delim("../data/B73.csv", row.names=1, stringsAsFactors=TRUE)
+metadata<-read.delim("../data/B73_m.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+#dataNL<-read.delim("../data/data_nolen.csv", row.names=1, stringsAsFactors=TRUE)
+#metadata<-read.delim("../data/metadata_3.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+
+colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
+```
+
+# Data preparation
+
+## Fix the data
+
+Search for dimensional disparities
+
+```{r dataSearch}
+dim(dataNL)
+dim(metadata)
+```
+
+### Match metadata rows to data columns
+
+Just in case lets match the samples
+
+```{r dataMatch}
+dataMatcher<-function(data, metadata){
+  options(warn=-1)
+  
+  cat("Data begins with:" , dim(data))
+  cat("\nMetadata begins with:", dim(metadata))
+  #Match data to metadata
+  data <- data[, order(colnames(data))]
+  metadata <- metadata[order(rownames(metadata)), ]
+  
+  cat("\nColumns data = Rows of metatdata?", all(rownames(metadata) == colnames(data)))
+  #If TRUE, columns of data and rows of metadata are matched
+  
+  cat("\nRemove the excess from data")
+  data<-data[,colnames(data) %in% rownames(metadata)] #remove data not present in metadata
+  cat("\nData end with:" , dim(data))
+  
+  cat("\nRemove the excess from metadata")
+  metadata<-metadata[rownames(metadata) %in% colnames(data),] #remove metadata not present in data
+  cat("\nMetadata end with:" , dim(metadata), "\n")
+  
+  options(warn=0)
+  return(list(data, metadata))
+}
+
+jointData<-dataMatcher(dataNL, metadata)
+
+dataNL<-jointData[[1]]
+metadata<-jointData[[2]]
+```
+
+### Metadata levels
+
+```{r metadtaCheck}
+#Should be all 0 due to preprocessing filtering
+levels(as.factor(metadata$quality))
+
+#Mapped abreviations
+levels(metadata$tissue_abv)
+
+#reps 1,2,3 and 4, is there an imbalance?
+table(metadata$rep)
+
+levels(metadata$location)
+#Different rep aoumts indicate different amount of each replicate
+table(metadata$location) 
+#there are different total numbers of tissue replicates
+#Solve it by using 1 replicate per tissue (mean of exisitng replicates)
+
+```
+### Outlier check (??)
+
+```{r Outlier}
+#@@ may not be a good idea to remove genes
+outDetect<-goodSamplesGenes(t(dataNL))
+
+table(outDetect$goodGenes) #False genes are outliers
+table(outDetect$goodSamples) #All samples are True = no outliers
+```
+
+
+```{r OutlierRemove}
+dataNL<-dataNL[outDetect$goodGenes==TRUE,] #remove ouliers
+```
+
+## Replicate joining
+
+```{r replJoin}
+rsumer<-function(data, metadata, tissue_name){ #calculates the mean of all columns that belong to a location (mean of all COB columns)
+  
+  loc_mdata<-metadata[metadata$location == tissue_name, ] #filter metadata tissue (get metadata of location only)
+  
+  data<-data[,colnames(data) %in% rownames(loc_mdata)] #get data of lcoation only, based on metadata
+  
+  data<-rowMeans(data) #calculate mean for each gene out of the locations(replicates)
+  
+  return(as.data.frame(data))
+}
+
+tissue_data<-levels(metadata$location) #get list of tissue names
+
+d_joint<-sapply(tissue_data, function(tissue_name) rsumer(dataNL, metadata, tissue_name)) #returns an array where each entry is a column with the mean data of the replicates (rows are genes)
+
+repl_data<-as.data.frame(d_joint) #data joint by replicate
+
+colnames(repl_data) = gsub(pattern = "*.data", replacement = "", x = colnames(repl_data)) #get column names to be only location
+
+rownames(repl_data)<-rownames(dataNL) #rename rows to be genes again
+```
+
+## Normalization
+
+We can't use VST methods as we have 1 replicate of each type, it would be unreliable, we can use CPM or TMM
+
+```{r CPMnorm}
+#@@ dcide norm method
+#uses edgeR
+dge <- DGEList(repl_data)
+
+# Calculate normalization factors
+dge <- calcNormFactors(dge, method = "TMM")
+
+# Get normalized counts
+Nrepl_data <- cpm(dge)
+```
+
+```{r TMMnorm}
+lib_sizes <- colSums(repl_data)
+
+# Calculate CPM
+Nrepl_data <- t(t(repl_data) / lib_sizes) * 1e6 #1e6 converts to a per million units, its more readable
+```
+
+# Network construction

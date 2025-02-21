@@ -15,19 +15,9 @@ library(WGCNA)
 library(parallel)
 
 # Read the gene expression data
-data <- read.csv("../data/B73.csv", row.names = 1)
+data <- read.delim("../data/B73.csv", row.names = 1)
 ```
 
-
-```{r}
-set.seed(42)
-
-# Transpose the data if genes are in columns
-data <- t(data)
-
-##log reduce the data
-logDT<-log2(data)
-```
 
 
 ```{r}
@@ -75,7 +65,7 @@ grid.arrange(
 set.seed(42)
 
 # Set a threshold to filter weak connections
-threshold <- 0.7
+threshold <- 0.6
 adjacency_matrix <- abs(cor_matrix) > threshold
 
 # Convert to graph
@@ -87,8 +77,6 @@ plot(graph, vertex.size = 5, vertex.label = NA, edge.width = 0.5)
 
 # Save network
 #write_graph(graph, file = "gene_network.graphml", format = "graphml")
-
-#install.packages("~/Downloads/Hmisc_4.7-2.tar.gz", type="source", repos=NULL)
 
 
 

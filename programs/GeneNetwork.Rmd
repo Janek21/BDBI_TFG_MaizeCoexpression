@@ -105,7 +105,7 @@ outDetect$allOK
 table(outDetect$goodGenes)
 table(outDetect$goodSamples)
 ```
-Outlier removal
+Gene outlier removal
 ```{r outRM}
 dataNL<-dataNL[outDetect$goodGenes==TRUE,]
 dim(dataNL)
@@ -125,19 +125,18 @@ ggplot(pca$x, aes(PC1, PC2, color=metadata$rep))+
   labs(x=paste0("PC1:", round(pca_var/sum(pca_var)*100, digits=2)[1], "%"),
        x=paste0("PC2:", round(pca_var/sum(pca_var)*100, digits=2)[2], "%"))
 
-#EP1_23_4 is a clear outlier
+#EP1_23_4 is a clear outlier, we dont care about outilers
 ```
-
-Outlier removal
+Sample outlier removal
 ```{r outRM2}
-f_dataNL<-dataNL[,!(colnames(dataNL) %in% "EP1_23_4")]
+#f_dataNL<-dataNL[,!(colnames(dataNL) %in% "EP1_23_4")]
+f_dataNL<-dataNL[,!(colnames(dataNL) %in% "B73_23_2")]
 dim(f_dataNL)
 ```
 Rematching metadata and data
 ```{r outRM_metadata}
 metadata<-mdataMatcher(f_dataNL, metadata)
 ```
-
 
 ### Batch effect correction
 
@@ -174,7 +173,6 @@ N_dataNL<-assay(vst(dds75))
 N_dataNL<-t(N_dataNL)
 
 ```
-
 
 ## Network construction
 

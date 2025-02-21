@@ -1,8 +1,6 @@
 #!/usr/bin/env Rscript
 
 #data matcher function
-
-#@@ now it has to go both ways, data also has excess
 dataMatcher<-function(data, metadata){
   options(warn=-1)
   
@@ -16,11 +14,11 @@ dataMatcher<-function(data, metadata){
   #If TRUE, columns of data and rows of metadata are matched
   
   cat("\nRemove the excess from data")
-  data<-data[,colnames(data) %in% rownames(metadata)]
+  data<-data[,colnames(data) %in% rownames(metadata)] #remove data not present in metadata
   cat("\nData end with:" , dim(data))
   
   cat("\nRemove the excess from metadata")
-  metadata<-metadata[rownames(metadata) %in% colnames(data),]
+  metadata<-metadata[rownames(metadata) %in% colnames(data),] #remove metadata not present in data
   cat("\nMetadata end with:" , dim(metadata), "\n")
   
   options(warn=0)

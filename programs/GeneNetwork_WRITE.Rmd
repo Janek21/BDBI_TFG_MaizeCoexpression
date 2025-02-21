@@ -26,10 +26,10 @@ library(CorLevelPlot)
 
 Import the csv and metadata files
 ```{r dtLoad}
-#dataNL<-read.delim("../data/data_nolen.csv", row.names=1, stringsAsFactors=TRUE)
-#metadata<-read.delim("../data/metadata_3.txt", header=T, row.names=1, stringsAsFactors=TRUE)
-dataNL<-read.delim("../data/B73.csv", row.names=1, stringsAsFactors=TRUE)
-metadata<-read.delim("../data/B73_m.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+dataNL<-read.delim("../data/data_nolen.csv", row.names=1, stringsAsFactors=TRUE)
+metadata<-read.delim("../data/metadata_3.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+#dataNL<-read.delim("../data/B73.csv", row.names=1, stringsAsFactors=TRUE)
+#metadata<-read.delim("../data/B73_m.txt", header=T, row.names=1, stringsAsFactors=TRUE)
 
 colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
 ```
@@ -82,7 +82,7 @@ levels(metadata$rep)
 table(metadata$rep)
 #P is non existent
 
-levels(metadata$location) 
+levels(metadata$location)
 table(metadata$location) #Some names are repeated, but have different case
 
 metadata$location <- as.factor(tolower(metadata$location))
@@ -106,7 +106,7 @@ outDetect$allOK
 table(outDetect$goodGenes)
 table(outDetect$goodSamples)
 ```
-Outlier removal
+gene outlier removal
 ```{r outRM}
 dataNL<-dataNL[outDetect$goodGenes==TRUE,]
 dim(dataNL)
@@ -129,7 +129,7 @@ ggplot(pca$x, aes(PC1, PC2, color=metadata$rep))+
 #EP1_23_4 is a clear outlier
 ```
 
-Outlier removal
+Sample outlier removal
 ```{r outRM2}
 #f_dataNL<-dataNL[,!(colnames(dataNL) %in% "EP1_23_4")]
 f_dataNL<-dataNL[,!(colnames(dataNL) %in% "B73_23_2")]
