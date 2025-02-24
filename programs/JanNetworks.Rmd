@@ -161,7 +161,61 @@ Nrepl_data <- cpm(dge)
 lib_sizes <- colSums(repl_data)
 
 # Calculate CPM
-Nrepl_data <- t(t(repl_data) / lib_sizes) * 1e6 #1e6 converts to a per million units, its more readable
+Nrepl_data <- (t(repl_data) / lib_sizes) * 1e6 #1e6 converts to a per million units, its more readable
 ```
 
 # Network construction
+
+
+## Power choosing
+
+Get list of powers and do the calculations
+```{r nwPowerList}
+power<-c(c(1:15), seq(17, 50, by=2))
+
+#Network topology anaisis
+sft <- pickSoftThreshold(Nrepl_data,
+                  powerVector = power,
+                  networkType = "signed",
+                  verbose = 5)
+
+```
+Plot and choose the best possible outcome
+```{r nwPowerPLot}
+sftIn<-sft$fitIndices
+
+p1<-ggplot(sftIn, aes(Power, SFT.R.sq, label = Power)) +
+  geom_point() +
+  geom_text(nudge_y = 0.1) +
+  geom_hline(yintercept = 0.8, color = 'red') +
+  labs(x = 'Power', y = 'Scale free topology model fit\nsigned R^2') +
+  theme_classic()
+
+p2<-ggplot(sftIn, aes(Power, mean.k., label = Power)) +
+  geom_point() +
+  geom_text(nudge_y = 1500) +
+  labs(x = 'Power', y = 'Mean Connectivity') +
+  theme_classic()
+
+grid.arrange(p1, p2, nrow=2)
+
+#Use automatic calculation
+softPower <- sft$powerEstimate
+```
+
+## Blcok building
+
+```{r}
+bwnet <- blockwiseModules(Nrepl_data,
+                 nThreads = 32,
+                 maxBlockSize = 64000, #Memory dedicated to process (blocksize is 14000 with 16GB ram) (if Ngenes>maxBlocksize then Ngenes will be split into blocks to fit mBs)
+                 deepSplit = 2,
+                 TOMType = "signed", #unsigned?
+                 power = softPower,
+                 mergeCutHeight = 0.25,
+                 numericLabels = FALSE,
+                 randomSeed = 42,
+                 #minModuleSize=30, #given by helpers
+                 verbose = 4)
+```
+

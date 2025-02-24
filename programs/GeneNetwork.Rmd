@@ -208,6 +208,7 @@ p2<-ggplot(sft, aes(Power, mean.k., label = Power)) +
 grid.arrange(p1, p2, nrow=2)
 #Power large, but not superlarge(closest to 0.8) but with minimal mean connectivity
 #10 or 12 are among the best values
+
 ```
 ### Memory estimation
 
