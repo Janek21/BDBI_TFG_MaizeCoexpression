@@ -110,7 +110,7 @@ Gene outlier removal
 dataNL<-dataNL[outDetect$goodGenes==TRUE,]
 dim(dataNL)
 ```
-Recheck
+For samples as well
 ```{r outCheck}
 set.seed(42)
 htree<-hclust(dist(t(dataNL)), method = "average")
@@ -398,8 +398,8 @@ columns_number<-round(ncol(heatmap.data))
 colNhalf<-as.integer(columns_number/2)
 
 CorLevelPlot(heatmap.data,
-             x = names(heatmap.data)[(columns_number/2):columns_number],
-             y = names(heatmap.data)[1:(columns_number/2)-1],
+             x = names(bin_metadata),
+             y = names(module_eigengenes),
              rotLabX = 45,
              cexCorval = 0.4, cexLabY = 0.5, cexLabX = 0.7
             )
