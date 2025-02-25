@@ -36,6 +36,15 @@ resultMetaPath<- args[4]
 data<-read.delim(dataPath, row.names=1, stringsAsFactors=TRUE)
 metadata<-read.delim(metadataPath, header=FALSE, row.names=1, stringsAsFactors=TRUE)
 
+
+#If dataNL is data with Length: create a row in metadata named Length as well, so that the 2 datasets can be joined, later we will remove it
+if ("Length" %in% colnames(data)){
+  metadata<-as.data.frame(t(metadata))
+  metadata$Length<-rep(0, nrow(metadata))
+  metadata<-as.data.frame(t(metadata))
+  
+}
+
 jointData<-dataMatcher(data, metadata)
 
 data_fixed<-jointData[[1]]

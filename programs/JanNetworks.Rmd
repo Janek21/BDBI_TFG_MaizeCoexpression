@@ -16,12 +16,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r loadLib}
 library(WGCNA)
 allowWGCNAThreads()
-#library(DESeq2)
+library(randomcoloR)
 library(edgeR)
 library(tidyverse)
 library(dplyr)
 library(gridExtra)
 library(CorLevelPlot)
+library(ggpubr)
 ```
 
 ## Load the data
@@ -29,10 +30,10 @@ library(CorLevelPlot)
 Import the csv and metadata files
 
 ```{r dtLoad}
-dataNL<-read.delim("../data/B73.csv", row.names=1, stringsAsFactors=TRUE)
-metadata<-read.delim("../data/B73_m.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+dataNL<-read.delim("../data/nolen/B73.csv", row.names=1, stringsAsFactors=TRUE)
+metadata<-read.delim("../data/nolen/B73_m.txt", header=T, row.names=1, stringsAsFactors=TRUE)
 #dataNL<-read.delim("../data/data_nolen.csv", row.names=1, stringsAsFactors=TRUE)
-#metadata<-read.delim("../data/metadata_3.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+#metadata<-read.delim("../data/metadata.txt", header=T, row.names=1, stringsAsFactors=TRUE)
 
 colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
 ```
@@ -154,18 +155,49 @@ colnames(repl_meta)<-c("location")
 
 ## Plot the raw data
 
-```{r rawPlot}
-
-multiColPlot<-function(data, location){
-  ggplot(data, aes(x=location))+geom_histogram()
+Create the plot functions and plot information
+```{r rawPlotPrep}
+multiColHist<-function(data, location, color_var){ #gets the data table, the concrete column(tissue) and the color for the tissue
+  loc_var<-data[[location]] #get the tissue data
+  p<-ggplot(data, aes(x=loc_var))+geom_histogram(bins = 30, fill=color_var, color="black")+
+    xlab("")+ylab("")+theme_minimal() #plot a colored histogram for all genes of X tissue
+  return(p)
 }
 
-ggplot(repl_data, aes(x=cob))+geom_histogram()
+colorList<-distinctColorPalette(nrow(repl_meta)) #make a list with a color for each tissue
 
+#Create a legend that realates each color to a tissue
 
-ggplot(t(repl_data), aes(x=Zm00001eb000010))+geom_histogram()+
-  facet_wrap(~repl_meta$location)
+#use the repl_meta dataframe for creating the plot, as it contains all tissue(location) names
+legend_plot<-ggplot(repl_meta, aes(x=1, y=location, color=location))+
+  geom_point()+
+  scale_color_manual(values=colorList)+
+  guides(color=guide_legend(ncol=1))+
+  theme_void()+labs(color="Tissue")+
+  theme(legend.title=element_text(size=15),
+        legend.text=element_text(size=12)) #plot used only to get the legend that associates colors with localizations(tissues)
 
+legend_var<-get_legend(legend_plot) #place the legend into a variable
+```
+
+Create the plot list
+```{r rawPlot}
+RawHistList<-list() #to store the plots
+
+for (i in 1:nrow(repl_meta)){
+  color_var<-colorList[i]
+  loc<-colnames(repl_data)[i]
+  
+  temp_plot<-multiColHist(repl_data, loc, color_var)
+  RawHistList[[i]]<-temp_plot
+} #iterates over each tissue, creates a plot with a distinct color for it and stores it in a list
+```
+
+Joins the plot and legend to create a plot of the total raw data distribution
+```{r rawPlot}
+raw_Ptab<-arrangeGrob(grobs=RawHistList, ncol=nrow(repl_meta)/6) #creates a table that organizes the plots
+
+grid.arrange(raw_Ptab, legend_var, widths = c(10, 2.3), ncol=2) #plots the plot list and legend together
 ```
 
 
@@ -178,7 +210,7 @@ hist(a$cob)
 
 ## Normalization
 
-We can't use VST methods as we have 1 replicate of each type, it would be unreliable, we can use CPM or TMM
+We can't use VST methods as we have 1 replicate of each type, it would be unreliable, we will use cpm
 
 ```{r CPMnorm}
 #uses edgeR
@@ -188,20 +220,44 @@ dge <- DGEList(repl_data)
 dge <- calcNormFactors(dge)
 
 #Get normalized counts
-Nrepl_data <- cpm(dge, log=TRUE)
+Nrepl_data <- cpm(dge, log=TRUE) #rpkm with lengths, testo other normalizations too
 
 #Nrepl to data frame
 Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
 
 ```
 
-## PLotting the nodrmalized data counts
+## Plotting the normalized data counts
 
-```{r}
-hist(Nrepl_data$cob)
-ggplot(Nrepl_data, aes(x=cob))+geom_density()
+Create a function to plot the data
+```{r normPLotFunc}
+multiColLine<-function(data, location, color_var){ #gets the data table, the concrete column(tissue) and the color for the tissue
+  loc_var<-data[[location]] #get the tissue data
+  p<-ggplot(data, aes(x=loc_var))+geom_density(fill=color_var, color="black")+
+    xlab("")+ylab("")+theme_minimal() #plot a colored line graph for all genes of X tissue
+  return(p)
+}
 ```
 
+Create the plot list
+```{r normPlot}
+NormHistList<-list() #to store the plots
+
+for (i in 1:nrow(repl_meta)){
+  color_var<-colorList[i]
+  loc<-colnames(repl_data)[i]
+  
+  temp_plot<-multiColLine(Nrepl_data, loc, color_var)
+  NormHistList[[i]]<-temp_plot
+} #iterates over each tissue, creates a plot with a distinct color for it and stores it in a list
+```
+
+Joins the plot and legend to create a plot of the total normalized data distribution
+```{r normPlot}
+norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=nrow(repl_meta)/6) #creates a table that organizes the plots
+
+grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2) #plots the plot list and legend together
+```
 
 # Network construction
 

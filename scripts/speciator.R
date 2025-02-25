@@ -6,7 +6,7 @@ specieCreator<-function(data_joint, spName){ #selects rows of a dataset based on
   
   cat("\nSeparating by", spName)
   data_specie<-data_joint[data_joint$specie == spName, ] #select rows according to metadata$specie column (now in joint),
-  #data_specie is now a single specie dataset  
+  #data_specie is now a single specie dataset
   
   #Separate back to data and metadata
   cat("\nSplitting data and metadata")
@@ -14,6 +14,14 @@ specieCreator<-function(data_joint, spName){ #selects rows of a dataset based on
   
   data<-data_specie[, geneCols] #data will be gene columns
   metadata<-data_specie[, !geneCols] #metadata will be all that is not gene columns
+  
+  cat("\nIs Length in rownames:","Length" %in% rownames(data_joint))
+  #Add length to the data if it exists
+  if ("Length" %in% rownames(data_joint)){
+    lengthTotal<-data_joint["Length",] #take the full length row
+    lengthData<-lengthTotal[, geneCols] #Take only the columns that are genes from the row
+    data<-rbind(data, lengthData) #Join the full data only dataframe with the row containing the length
+  }
   
   cat("\n",spName, "specie table created\n")
   return(list(data, metadata))
@@ -69,6 +77,7 @@ resultMetaPath<- args[4]
 
 dataNL<-read.delim(dataPath, row.names=1, stringsAsFactors=TRUE)
 metadata<-read.delim(metadataPath, header=T, row.names=1, stringsAsFactors=TRUE)
+
 colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
 
 dataNL<-as.data.frame(t(dataNL))
@@ -84,6 +93,10 @@ datALL$Row.names<-NULL
 
 specieList<-levels(metadata$specie) #get all specie names
 #result is B73, a2, etc...
+
+#In the case that its a with length dataset, remove the 0
+specieList<-specieList[specieList!=0]
+
 cat("The species are:\n", specieList)
 
 specieResults <- lapply(specieList, function(specieName) specieCreator(datALL, specieName)) #creates a Main list containing each specie list produced by specieCreator
@@ -94,10 +107,12 @@ tmp<-lapply(specieList, function(specieName) listSplitter(specieName, specieResu
 listRows<-sapply(specieResults, function(specieSublist) nrow(specieSublist[[1]])) #get number of rows of each specie, and put them on a vector
 
 cat("\n\nNumber of rows of original dataframe:", nrow(datALL))
-cat("\nTotal rows of all resulting databases combined:", sum(listRows), "\n")
+cat("\nTotal rows of all resulting databases combined:", sum(listRows))
+cat("\nThey should only be equal if the dataset doesen't account for the length.\n")
 
 ################################################################################
 
 #### Writing the datasets
 
 tmp<-lapply(specieList, function(specieName) tableWriter(specieName, resultDataPath=resultDataPath, resultMetaPath=resultMetaPath))
+
