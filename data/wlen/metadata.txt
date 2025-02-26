@@ -464,7 +464,6 @@ F7_SR_1	F7	0	RoSe	1	seminal root
 F7_SR_2	F7	0	RoSe	2	seminal root
 F7_SR_3	F7	0	RoSe	3	seminal root
 F7_SR_4	F7	0	RoSe	4	seminal root
-Length	0	0	0	0	0
 PE_19_1	PE75	0	Se10	1	Seed 10 dap
 PE_20_1	PE75	0	Se15	1	Seed 15 dap
 PE_21_1	PE75	0	Se20	1	Seed 20 dap
