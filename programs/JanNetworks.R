@@ -396,5 +396,5 @@ CorLevelPlot(heatmap.data,
             )
 dev.off()
 
-
+gc()
 }

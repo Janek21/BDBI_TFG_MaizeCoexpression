@@ -15,7 +15,7 @@ library(WGCNA)
 library(parallel)
 
 # Read the gene expression data
-data <- read.delim("../data/B73.csv", row.names = 1)
+data <- read.delim("../data/nolen/B73.csv", row.names = 1)
 ```
 
 
