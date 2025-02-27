@@ -1,0 +1,494 @@
+---
+title: "Gene Network"
+author: "Jan Izquierdo i Ramos"
+date: "2025-02-03"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Loading
+
+## Load libraries
+```{r loadLib}
+library(WGCNA)
+allowWGCNAThreads()
+library(DESeq2)
+#library(GEOquery)
+library(tidyverse)
+library(dplyr)
+library(gridExtra)
+library(CorLevelPlot)
+```
+
+## Load the data
+
+Import the csv and metadata files
+```{r dtLoad}
+dataNL<-read.delim("../data/data_nolen.csv", row.names=1, stringsAsFactors=TRUE)
+metadata<-read.delim("../data/metadata_3.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+#dataNL<-read.delim("../data/B73.csv", row.names=1, stringsAsFactors=TRUE)
+#metadata<-read.delim("../data/B73_m.txt", header=T, row.names=1, stringsAsFactors=TRUE)
+
+colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
+```
+
+## Fix the data
+
+Search for dimensional disparities
+```{r dataSearch}
+dim(dataNL)
+dim(metadata)
+```
+
+Fix the disparity in samples
+```{r dtFix}
+#@@ useless, keep as precaution?
+
+mdataMatcher<-function(data, metadata){
+  options(warn=-1)
+  cat("Metadata begins with:" , dim(metadata))
+  cat("\nWhile data has:", dim(data))
+  #Match data to metadata
+  data <- data[, order(colnames(data))]
+  metadata <- metadata[order(rownames(metadata)), ]
+  
+  cat("\nColumns data = Rows of metatdata?", all(rownames(metadata) == colnames(data)))
+  #If TRUE, columns of data and rows of metadata are matched
+  
+  metadata<-metadata[rownames(metadata) %in% colnames(data),]
+  cat("\nMetadata end with:" , dim(metadata), "\n")
+  
+  options(warn=0)
+  return(metadata)
+}
+
+metadata<-mdataMatcher(dataNL, metadata)
+
+dim(dataNL)
+```
+
+### Metadata check
+
+```{r mdtCheck}
+levels(metadata$specie)
+
+levels(as.factor(metadata$flag))
+
+levels(metadata$tissue)
+
+levels(metadata$rep)
+table(metadata$rep)
+#P is non existent
+
+levels(metadata$location)
+table(metadata$location) #Some names are repeated, but have different case
+
+metadata$location <- as.factor(tolower(metadata$location))
+table(metadata$location)
+#Still numerical imbalance
+
+#@@ maybe random sample for 14 (lowest value) and reduce all to lowest?
+
+# may imbalance other parts of the dataset
+```
+
+
+### QC check
+
+```{r QC}
+outDetect<-goodSamplesGenes(t(dataNL))
+summary(outDetect)
+outDetect$allOK
+#As = FALSE, it means we have some outliers
+
+table(outDetect$goodGenes)
+table(outDetect$goodSamples)
+```
+gene outlier removal
+```{r outRM}
+dataNL<-dataNL[outDetect$goodGenes==TRUE,]
+dim(dataNL)
+```
+Recheck
+```{r outCheck}
+set.seed(42)
+htree<-hclust(dist(t(dataNL)), method = "average")
+plot(htree)
+
+pca<-prcomp(t(dataNL))
+pca_var<-pca$sdev^2
+round(pca_var/sum(pca_var)*100, digits=2)
+
+ggplot(pca$x, aes(PC1, PC2, color=metadata$rep))+
+  geom_point()+geom_text(label=rownames(pca$x))+
+  labs(x=paste0("PC1:", round(pca_var/sum(pca_var)*100, digits=2)[1], "%"),
+       x=paste0("PC2:", round(pca_var/sum(pca_var)*100, digits=2)[2], "%"))
+
+#EP1_23_4 is a clear outlier
+```
+
+Sample outlier removal
+```{r outRM2}
+#f_dataNL<-dataNL[,!(colnames(dataNL) %in% "EP1_23_4")]
+f_dataNL<-dataNL[,!(colnames(dataNL) %in% "B73_23_2")]
+dim(f_dataNL)
+```
+Rematching metadata and data
+```{r outRM_metadata}
+metadata<-mdataMatcher(f_dataNL, metadata)
+```
+
+
+### Batch effect correction
+
+```{r batchEffect}
+set.seed(42)
+pca<-prcomp(t(f_dataNL))
+ggplot(pca$x, aes(PC1, PC2, color=metadata$rep))+geom_point()+
+  labs(x=paste0("PC1:", round(pca_var/sum(pca_var)*100, digits=2)[1], "%"),
+       x=paste0("PC2:", round(pca_var/sum(pca_var)*100, digits=2)[2], "%"))
+#There seems to be no batch effect
+```
+
+There seems to be no bacth effect
+
+## Normalization
+
+```{r norm}
+all(rownames(metadata) %in% colnames(f_dataNL))
+#Reorder the names
+f_dataNL <- f_dataNL[, order(colnames(f_dataNL))]
+metadata <- metadata[order(rownames(metadata)), ]
+
+dds <- DESeqDataSetFromMatrix(countData = f_dataNL,
+                              colData = metadata,
+                              design = ~ 1)
+
+#optional(recommended): remove <15 counts
+dds75 <- dds[rowSums(counts(dds) >= 15) >= 24,]
+nrow(dds75) # 35794 genes
+
+# perform variance stabilization
+N_dataNL<-assay(vst(dds75))
+
+N_dataNL<-t(N_dataNL)
+
+```
+
+
+## Network construction
+
+### Power choosing
+
+```{r nwPower}
+power <- c(c(1:10), seq(from = 12, to = 50, by = 2))
+
+#Network topology anaisis
+sft <- pickSoftThreshold(N_dataNL,
+                  powerVector = power,
+                  networkType = "signed",
+                  verbose = 5)
+
+sft<-sft$fitIndices
+```
+
+
+```{r nwPowerPLot}
+p1<-ggplot(sft, aes(Power, SFT.R.sq, label = Power)) +
+  geom_point() +
+  geom_text(nudge_y = 0.1) +
+  geom_hline(yintercept = 0.8, color = 'red') +
+  labs(x = 'Power', y = 'Scale free topology model fit, signed R^2') +
+  theme_classic()
+
+p2<-ggplot(sft, aes(Power, mean.k., label = Power)) +
+  geom_point() +
+  geom_text(nudge_y = 1500) +
+  labs(x = 'Power', y = 'Mean Connectivity') +
+  theme_classic()
+
+grid.arrange(p1, p2, nrow=2)
+#Power large, but not superlarge(closest to 0.8) but with minimal mean connectivity
+#10 or 12 are among the best values
+```
+### Memory estimation
+
+```{r nwDataprep}
+N_dataNL[]<-sapply(N_dataNL, as.numeric)
+#softpower<-12
+softpower<-14
+```
+
+
+```{r nwMemory, eval=FALSE}
+#Force wgcna to use wgcna::cor
+allowWGCNAThreads(32)
+temp_cor <- cor
+cor <- WGCNA::cor
+
+
+#memory estimate w.r.t blocksize
+bwnet <- blockwiseModules(N_dataNL,
+                 nThreads = 32,
+                 maxBlockSize = 64000, #Memory dedicated to process (blocksize is 14000 with 16GB ram) (if Ngenes>maxBlocksize then Ngenes will be split into blocks to fit mBs)
+                 deepSplit = 2,
+                 TOMType = "signed", #unsigned?
+                 power = softpower,
+                 mergeCutHeight = 0.25,
+                 numericLabels = FALSE,
+                 randomSeed = 42,
+                 #minModuleSize=30, #given by helpers
+                 verbose = 4)
+
+cor<-temp_cor
+```
+
+
+```{r nwLoad}
+#saveRDS(bwnet, file = "./bwnet_signed.RDS")
+bwnet<-readRDS("./bwnet_signed.RDS")
+```
+
+## Eigengenes
+
+```{r }
+module_eigengenes <- bwnet$MEs
+
+#Print out a preview
+head(module_eigengenes)
+
+#get number of genes for each module
+table(bwnet$colors)
+
+#Plot the dendrogram and the module colors before and after merging underneath
+plotDendroAndColors(bwnet$dendrograms[[1]], cbind(bwnet$unmergedColors, bwnet$colors),
+                    c("unmerged", "merged"),
+                    dendroLabels = FALSE,
+                    addGuide = TRUE,
+                    hang= 0.03,
+                    guideHang = 0.05)
+```
+
+## Relate modules to traits
+
+```{r next_processes}
+# Define numbers of genes and samples
+nSamples <- nrow(N_dataNL)
+nGenes <- ncol(N_dataNL)
+
+#severe.out is binary correlation matrix
+#traits is sample, severity, data vs all
+#col for 1 if b73, col for 1 if dk, etc
+#col for 1 for rep1, etc
+#col for 1 for location
+
+```
+
+### Binarize the metadata columns
+
+Binarize the species
+```{r BinCol1}
+levels(metadata$specie)
+
+species_bin<-data.frame(
+  sp_B73= as.integer(metadata$specie=="B73"),
+  sp_DK105= as.integer(metadata$specie=="DK105"),
+  sp_EP1= as.integer(metadata$specie=="EP1"),
+  sp_F7= as.integer(metadata$specie=="F7"),
+  sp_PE75= as.integer(metadata$specie=="PE75"))
+
+```
+
+Binarize the Repetitions
+```{r BinCol2}
+levels(metadata$rep)
+
+rep_bin<-data.frame(
+  rep_1=as.integer(metadata$rep==1),
+  rep_2=as.integer(metadata$rep==2),
+  rep_3=as.integer(metadata$rep==3),
+  rep_4=as.integer(metadata$rep==4),
+  rep_P=as.integer(metadata$rep=="P")
+)
+
+```
+
+Binarize the location
+```{r BinCol3}
+levels(metadata$location)
+
+loc_bin <- data.frame(
+  loc_cob=as.integer(metadata$location=="cob"),
+  loc_coleoptile=as.integer(metadata$location=="coleoptile"),
+  loc_crown_root=as.integer(metadata$location=="crown root"),
+  loc_first_elongated_internode=as.integer(metadata$location=="first elongated internode"),
+  loc_flag_leaf=as.integer(metadata$location=="flag leaf"),
+  loc_immature_cob=as.integer(metadata$location=="immature cob"),
+  loc_immature_tassel=as.integer(metadata$location=="immature tassel"),
+  loc_leaf_1=as.integer(metadata$location=="leaf 1"),
+  loc_leaf_3_blade=as.integer(metadata$location=="leaf 3 blade"),
+  loc_leaf_3_sheath=as.integer(metadata$location=="leaf 3 sheath"),
+  loc_leaf_5=as.integer(metadata$location=="leaf 5"),
+  loc_leaf_5_elongation_zone=as.integer(metadata$location=="leaf 5 elongation zone"),
+  loc_leaf_5_mature=as.integer(metadata$location=="leaf 5 mature"),
+  loc_leaf_5_meristem=as.integer(metadata$location=="leaf 5 meristem"),
+  loc_leaf_8=as.integer(metadata$location=="leaf 8"),
+  loc_mature_seed_40_dap=as.integer(metadata$location=="mature seed 40 dap"),
+  loc_meotic_tassel=as.integer(metadata$location=="meotic tassel"),
+  loc_mesophyll=as.integer(metadata$location=="mesophyll"),
+  loc_prepollinated_cob=as.integer(metadata$location=="prepollinated cob"),
+  loc_primary_root=as.integer(metadata$location=="primary root"),
+  loc_primary_root_elongation_zone=as.integer(metadata$location=="primary root elongation zone"),
+  loc_primary_root_meristematic_zone=as.integer(metadata$location=="primary root meristematic zone"),
+  loc_root_hair_zone=as.integer(metadata$location=="root hair zone"),
+  loc_seed_10_dap=as.integer(metadata$location=="seed 10 dap"),
+  loc_seed_15_dap=as.integer(metadata$location=="seed 15 dap"),
+  loc_seed_20_dap=as.integer(metadata$location=="seed 20 dap"),
+  loc_seed_25_dap=as.integer(metadata$location=="seed 25 dap"),
+  loc_seed_30_dap=as.integer(metadata$location=="seed 30 dap"),
+  loc_seminal_root=as.integer(metadata$location=="seminal root"),
+  loc_silk=as.integer(metadata$location=="silk")
+)
+
+
+```
+
+Join binarized metadata
+```{r BinCol_join}
+bin_metadata<-cbind(species_bin, rep_bin, loc_bin)
+#@@? VV
+#This is for sample, we need to get each gene with its own realtion as well
+
+rownames(bin_metadata)<-rownames(metadata)
+
+```
+
+### Correlation
+
+```{r dataCor}
+module_train<-cor(module_eigengenes, bin_metadata, use="p")
+#Warning: standard deviation is 0 -> solve it
+
+var(bin_metadata) #Look at variance of the data
+#rep_P is all 0, remove it
+
+bin_metadata$rep_P<-NULL
+
+module_train<-cor(module_eigengenes, bin_metadata, use="p")
+#No more error: solved
+
+module.trait.corr.pvals <- corPvalueStudent(module_train, nSamples)
+```
+
+### Visualize relations
+
+```{r visCor}
+heatmap.data <- merge(module_eigengenes, bin_metadata, by = 'row.names')
+
+head(heatmap.data)
+
+rownames(heatmap.data)<-heatmap.data$Row.names
+heatmap.data$Row.names<-NULL
+
+head(heatmap.data)
+
+columns_number<-round(ncol(heatmap.data))
+colNhalf<-as.integer(columns_number/2)
+
+CorLevelPlot(heatmap.data,
+             x = names(heatmap.data)[columns_number/2:columns_number-1], #bin column was apperaing, so -1
+             y = names(heatmap.data)[1:(columns_number/2)-1],
+             rotLabX = 45,
+             cexCorval = 0.4, cexLabY = 0.5, cexLabX = 0.7
+            )
+
+gc()
+
+#@@ export with genes?
+```
+
+```{r}
+# Load necessary libraries
+library(WGCNA)
+library(igraph)
+
+datExpr<-N_dataNL
+
+# Assume blockwiseModules has already been run
+# Load TOM similarity matrix (Topological Overlap Matrix)
+TOM <- TOMsimilarityFromExpr(datExpr, power = 2)  # Adjust power if needed
+gc()
+saveRDS(TOM, file="./TOMmatrix_B73.RDS")
+```
+
+
+```{r}
+TOM<-readRDS("./TOMmatrix_B73.RDS")
+gc()
+
+# Convert TOM to adjacency matrix
+adjacency <- TOM
+
+# Set a threshold to filter weak connections (adjust as needed)
+threshold <- 0.1  # Keep edges with TOM similarity > 0.1
+
+# Extract the gene names
+genes <- colnames(datExpr)
+
+# Create edge list from adjacency matrix
+edges <- which(adjacency > threshold, arr.ind = TRUE)
+saveRDS(edges, file="./edges_B73.RDS")
+saveRDS(genes, file="./colnameGENES_B73.RDS")
+gc()
+```
+
+
+```{r}
+edges<-readRDS("./edges_B73.RDS")
+genes<-readRDS("./colnameGENES_B73.RDS")
+adjacency<-readRDS("./TOMmatrix_B73.RDS")
+gc()
+edge_list <- data.frame(
+  Source = genes[edges[, 1]],
+  Target = genes[edges[, 2]],
+  Weight = adjacency[edges]
+)
+gc()
+
+saveRDS(edge_list, file="./edge_list_B73.RDS")
+```
+
+
+```{r}
+edge_list<-readRDS("./edge_list_B73.RDS")
+gc()
+# Remove duplicate edges (since TOM is symmetric)
+edge_list <- edge_list[edge_list$Source != edge_list$Target, ]  # Remove self-loops
+saveRDS(edge_list, file="./edge_list2_B73.RDS")
+```
+
+
+```{r}
+edge_list<-readRDS("./edge_list2_B73.RDS")
+gc()
+edge_list <- edge_list[!duplicated(t(apply(edge_list, 1, sort))), ]
+saveRDS(edge_list, file="./edge_list3_B73.RDS")
+```
+
+
+```{r}
+edge_list<-readRDS("./edge_list3_B73.RDS")
+gc()
+
+# Convert to graph object
+g <- graph_from_data_frame(edge_list, directed = FALSE)
+
+# Save in GraphML format for Cytoscape
+write_graph(g, file = "WGCNA_Network.graphml", format = "graphml")
+
+cat("GraphML file saved as WGCNA_Network.graphml. You can now import it into Cytoscape!\n")
+
+```
+
