@@ -20,8 +20,11 @@ library(ggpubr)
 
 d<-read.delim("../data/metadata.txt", row.names=1, stringsAsFactors=TRUE)
 spls<-levels(d$V2)
+specie<-"DK105"
+pwList<-c()
 
 for(specie in spls){
+  print(specie)
 dataPath<-paste0("../data/wlen/", specie, ".csv")
 metadataPath<-paste0("../data/wlen/", specie, "_m.txt")
 
@@ -117,7 +120,9 @@ rsumer<-function(data, metadata, tissue_name){ #calculates the mean of all colum
   
   data<-data[,colnames(data) %in% rownames(loc_mdata)] #get data of lcoation only, based on metadata
   
-  data<-rowMeans(data) #calculate mean for each gene out of the locations(replicates)
+  if (1<ncol(data.frame(data))){ #If theres only 1 replicate, dont try to do the mean (it gives error)
+    data<-rowMeans(data) #calculate mean for each gene out of the locations(replicates)
+  }
   
   return(as.data.frame(data))
 }
@@ -180,7 +185,7 @@ for (i in 1:nrow(repl_meta)){
 raw_Ptab<-arrangeGrob(grobs=RawHistList, ncol=nrow(repl_meta)/6) #creates a table that organizes the plots
 
 png(paste0("./DistrPlots/", specie, "_raw_distPlot.png"), width=1600, height=800) #B73_CPM_raw_distPlot
-grid.arrange(raw_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top="Raw data distribution") #plots the plot list and legend together
+grid.arrange(raw_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=paste0(specie, " raw data distribution")) #plots the plot list and legend together
 dev.off()
 
 
@@ -225,7 +230,7 @@ for (i in 1:nrow(repl_meta)){
 
 
 ## ----CPMnormPlot-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-plotTitle<-paste0("Normalized data distribution using ", NormType)
+plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
 
 norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=nrow(repl_meta)/6) #creates a table that organizes the plots
 
@@ -264,7 +269,7 @@ for (i in 1:nrow(repl_meta)){
 
 
 ## ----RPKMnormPlot----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-plotTitle<-paste0("Normalized data distribution using ", NormType)
+plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
 
 norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=nrow(repl_meta)/6) #creates a table that organizes the plots
 
@@ -290,7 +295,8 @@ sft <- pickSoftThreshold(Nrepl_data,
 
 ## ----nwPowerChoose---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Use automatic calculation
-softPw <- sft$powerEstimate
+softPw <- min(sft$powerEstimate, 30)
+pwList<-c(pwList, sft$powerEstimate)
 
 
 ## ----nwConstr--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -298,7 +304,7 @@ temp_cor <- cor
 cor <- WGCNA::cor
 
 ModNetwork <- blockwiseModules(Nrepl_data,
-                 nThreads = 16, #32
+                 nThreads = 32, #16
                  maxBlockSize = 64000, #Memory dedicated to process (blocksize is 14000 with 16GB ram) (if Ngenes>maxBlocksize then Ngenes will be split into blocks to fit mBs)
                  deepSplit = 2,
                  TOMType = "signed", #unsigned?

@@ -32,7 +32,8 @@ library(ggpubr)
 Import the csv and metadata files
 
 ```{r dtLoad}
-specie<-"B73"
+#"B73"   "DK105" "EP1"   "F7"    "PE75" 
+specie<-"DK105"
 dataPath<-paste0("../data/wlen/", specie, ".csv")
 metadataPath<-paste0("../data/wlen/", specie, "_m.txt")
 
@@ -149,7 +150,9 @@ rsumer<-function(data, metadata, tissue_name){ #calculates the mean of all colum
   
   data<-data[,colnames(data) %in% rownames(loc_mdata)] #get data of lcoation only, based on metadata
   
-  data<-rowMeans(data) #calculate mean for each gene out of the locations(replicates)
+  if (1<ncol(data.frame(data))){ #If theres only 1 replicate, dont try to do the mean (it gives error)
+    data<-rowMeans(data) #calculate mean for each gene out of the locations(replicates)
+  }
   
   return(as.data.frame(data))
 }
@@ -231,6 +234,7 @@ We can't use VST methods as we have 1 replicate of each type, it would be unreli
 ### CPM
 
 ```{r CPMnorm}
+#@@ remove lowly expressed genes
 #uses edgeR
 dge <- DGEList(repl_data)
 
@@ -343,7 +347,7 @@ Get list of powers and do the calculations
 ```{r nwPowerList}
 Nrepl_data<-t(Nrepl_data)
 
-power<-c(c(1:15), seq(17, 50, by=2))
+power <- c(c(1:15), seq(from = 17, to = 50, by = 2))
 
 #Network topology analysis
 sft <- pickSoftThreshold(Nrepl_data,
@@ -375,7 +379,8 @@ grid.arrange(p1, p2, nrow=2)
 
 ```{r nwPowerChoose}
 #Use automatic calculation
-softPw <- sft$powerEstimate
+softPw <- min(sft$powerEstimate, 30)
+#softPw<-sft$powerEstimate
 ```
 
 ## Block building
@@ -385,7 +390,7 @@ temp_cor <- cor
 cor <- WGCNA::cor
 
 ModNetwork <- blockwiseModules(Nrepl_data,
-                 nThreads = 16, #32
+                 nThreads = 32, #16
                  maxBlockSize = 64000, #Memory dedicated to process (blocksize is 14000 with 16GB ram) (if Ngenes>maxBlocksize then Ngenes will be split into blocks to fit mBs)
                  deepSplit = 2,
                  TOMType = "signed", #unsigned?
