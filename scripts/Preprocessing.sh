@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/janek/Desktop/Intership/work/data
+cd /home/jj/Desktop/Bioinformatics/3rd_year/Internship/HelmholtzZentrum_Munchen/Network_WGCNA/gitSent/data
 
 option="${1:-nolen}" #unless input is given, default option will be nolen
 
