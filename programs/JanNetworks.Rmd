@@ -256,13 +256,16 @@ boxplot(Nrepl_data, las=2)
 
 ```{r CPMlExpRm}
 #Filter low expression genes
-keep<-rowSums(Nrepl_data>1)>=12 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 10 total in samples
+#keep<-rowSums(Nrepl_data>1)>=12 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 10 total in samples
+keep<-rowSums(Nrepl_data>1)>=12
 Nrepl_data<-Nrepl_data[keep,]
 
 boxplot(Nrepl_data, las=2)
 
 #Nrepl to data frame
 Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
+
+#@@ Less genes kept for similar normality plots in rpkm (b73 tested)
 ```
 
 #### Plot CPM normalized data
@@ -280,7 +283,6 @@ multiColLine<-function(data, location, color_var){ #gets the data table, the con
 
 Create the plot list
 ```{r CPMnormPlotListing}
-
 NormHistList<-list() #to store the plots
 
 for (i in 1:nrow(repl_meta)){
@@ -330,10 +332,9 @@ boxplot(Nrepl_data, las=2)
 #Same problem as with cpm
 ```
 
-
 ```{r RPKMlExpRm}
 #Filter low expression genes
-keep<-rowSums(Nrepl_data>1)>=6 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 5 total in samples
+keep<-rowSums(Nrepl_data>0)>=10 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 5 total in samples
 Nrepl_data<-Nrepl_data[keep,]
 
 #@@ Difference between 12 and 6 is important? -> it is we only do rpkm
@@ -342,6 +343,8 @@ boxplot(Nrepl_data, las=2)
 
 #Nrepl to data frame
 Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
+
+#@@ More genes kept for similar normality plots than cpm (b73 tested)
 ```
 
 
