@@ -33,7 +33,7 @@ Import the csv and metadata files
 
 ```{r dtLoad}
 #"B73"   "DK105" "EP1"   "F7"    "PE75" 
-specie<-"DK105"
+specie<-"B73"
 dataPath<-paste0("../data/wlen/", specie, ".csv")
 metadataPath<-paste0("../data/wlen/", specie, "_m.txt")
 
@@ -220,7 +220,7 @@ for (i in 1:nrow(repl_meta)){
 
 Joins the plot and legend to create a plot of the total raw data distribution
 ```{r rawPlot}
-raw_Ptab<-arrangeGrob(grobs=RawHistList, ncol=nrow(repl_meta)/6) #creates a table that organizes the plots
+raw_Ptab<-arrangeGrob(grobs=RawHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
 png(paste0("./DistrPlots/", specie, "_raw_distPlot.png"), width=1600, height=800) #B73_CPM_raw_distPlot
 grid.arrange(raw_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top="Raw data distribution") #plots the plot list and legend together
@@ -244,11 +244,25 @@ dge <- calcNormFactors(dge)
 #Get normalized counts
 Nrepl_data <- cpm(dge, log=TRUE) #rpkm with lengths, testo other normalizations too
 
+NormType<-"CPM"
+```
+
+#### Low expression removal
+
+```{r CPMqc}
+boxplot(Nrepl_data, las=2)
+#We can see that most repetitions are from low-expressed counts, we should remove some
+```
+
+```{r CPMlExpRm}
+#Filter low expression genes
+keep<-rowSums(Nrepl_data>1)>=12 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 10 total in samples
+Nrepl_data<-Nrepl_data[keep,]
+
+boxplot(Nrepl_data, las=2)
+
 #Nrepl to data frame
 Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
-
-NormType<-"CPM"
-
 ```
 
 #### Plot CPM normalized data
@@ -282,7 +296,7 @@ Joins the plot and legend to create a plot of the total normalized data distribu
 ```{r CPMnormPlot}
 plotTitle<-paste0("Normalized data distribution using ", NormType)
 
-norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=nrow(repl_meta)/6) #creates a table that organizes the plots
+norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
 png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
 grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=plotTitle) #plots the plot list and legend together
@@ -309,6 +323,27 @@ if (exists("length_vec")){ #if we have lengths
 }
 ```
 
+#### Low expression removal
+
+```{r RPKMqc}
+boxplot(Nrepl_data, las=2)
+#Same problem as with cpm
+```
+
+
+```{r RPKMlExpRm}
+#Filter low expression genes
+keep<-rowSums(Nrepl_data>1)>=6 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 5 total in samples
+Nrepl_data<-Nrepl_data[keep,]
+
+#@@ Difference between 12 and 6 is important? -> it is we only do rpkm
+
+boxplot(Nrepl_data, las=2)
+
+#Nrepl to data frame
+Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
+```
+
 
 #### Plot RPKM normalized data
 
@@ -330,7 +365,7 @@ Joins the plot and legend to create a plot of the total normalized data distribu
 ```{r RPKMnormPlot}
 plotTitle<-paste0("Normalized data distribution using ", NormType)
 
-norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=nrow(repl_meta)/6) #creates a table that organizes the plots
+norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
 png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
 grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=plotTitle) #plots the plot list and legend together
@@ -466,6 +501,7 @@ bin_metadata <- data.frame(
 
 rownames(bin_metadata)<-rownames(Nrepl_data)
 
+bin_metadata<-bin_metadata[,colSums(bin_metadata)==1]#if any rtissue is not present in sample, it will be introduced in binarization, as a full 0 column, remove it again
 ```
 
 ### Correlation
