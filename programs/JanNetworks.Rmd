@@ -33,7 +33,7 @@ Import the csv and metadata files
 
 ```{r dtLoad}
 #"B73"   "DK105" "EP1"   "F7"    "PE75" 
-specie<-"B73"
+specie<-"DK105"
 dataPath<-paste0("../data/wlen/", specie, ".csv")
 metadataPath<-paste0("../data/wlen/", specie, "_m.txt")
 
@@ -223,7 +223,7 @@ Joins the plot and legend to create a plot of the total raw data distribution
 raw_Ptab<-arrangeGrob(grobs=RawHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
 png(paste0("./DistrPlots/", specie, "_raw_distPlot.png"), width=1600, height=800) #B73_CPM_raw_distPlot
-grid.arrange(raw_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top="Raw data distribution") #plots the plot list and legend together
+grid.arrange(raw_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=paste0(specie, " raw data distribution")) #plots the plot list and legend together
 dev.off()
 ```
 
@@ -296,7 +296,7 @@ for (i in 1:nrow(repl_meta)){
 
 Joins the plot and legend to create a plot of the total normalized data distribution
 ```{r CPMnormPlot}
-plotTitle<-paste0("Normalized data distribution using ", NormType)
+plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
 
 norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
@@ -366,7 +366,7 @@ for (i in 1:nrow(repl_meta)){
 
 Joins the plot and legend to create a plot of the total normalized data distribution
 ```{r RPKMnormPlot}
-plotTitle<-paste0("Normalized data distribution using ", NormType)
+plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
 
 norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
@@ -385,7 +385,7 @@ Get list of powers and do the calculations
 ```{r nwPowerList}
 Nrepl_data<-t(Nrepl_data)
 
-power <- c(c(1:15), seq(from = 17, to = 50, by = 2))
+power <- c(c(1:15), seq(from = 16, to = 50, by = 2))
 
 #Network topology analysis
 sft <- pickSoftThreshold(Nrepl_data,
@@ -417,7 +417,12 @@ grid.arrange(p1, p2, nrow=2)
 
 ```{r nwPowerChoose}
 #Use automatic calculation
-softPw <- min(sft$powerEstimate, 30)
+if (is.na(sft$powerEstimate)){
+  softPw<-30 #if the soft power is NA, set to 30, else take smallest possible
+}else{
+  softPw <- min(sft$powerEstimate, 30)
+  }
+
 #softPw<-sft$powerEstimate
 ```
 
@@ -446,6 +451,7 @@ cor<-temp_cor
 Eigengenes sumarize gene expression for a module(cluster of highly co-expressed genes(detected by similar gene expression patterns)) using PC1.
 Group up genes into 1 value
 ```{r EigenColors}
+#@@remove gray
 module_eigengenes <- ModNetwork$MEs
 
 #get number of genes for each module
@@ -458,6 +464,7 @@ plotDendroAndColors(ModNetwork$dendrograms[[1]], cbind(ModNetwork$unmergedColors
                     addGuide = TRUE,
                     hang= 0.03,
                     guideHang = 0.05)
+#https://www.nature.com/articles/s41588-024-02069-y
 ```
 
 ## Relate modules to traits
