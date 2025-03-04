@@ -542,7 +542,7 @@ png(paste0("./CorPlots/", specie, "_", NormType, "_corplot.png"), width=1600, he
 CorLevelPlot(heatmap.data,
              x = names(bin_metadata),
              y = names(module_eigengenes),
-             titleX="Modules", titleY="Traits", main=plotTitle,
+             titleX="Traits", titleY="Modules", main=plotTitle,
              rotLabX = 45, rotTitleY = 90,
              cexCorval = 0.7, cexLabY = 0.7, cexLabX = 0.7
             )
