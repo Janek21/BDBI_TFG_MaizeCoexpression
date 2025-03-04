@@ -33,7 +33,7 @@ Import the csv and metadata files
 
 ```{r dtLoad}
 #"B73"   "DK105" "EP1"   "F7"    "PE75" 
-specie<-"DK105"
+specie<-"B73"
 dataPath<-paste0("../data/wlen/", specie, ".csv")
 metadataPath<-paste0("../data/wlen/", specie, "_m.txt")
 
@@ -370,9 +370,51 @@ plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
 
 norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
-png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
+#png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
 grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=plotTitle) #plots the plot list and legend together
-dev.off()
+#dev.off()
+```
+
+### BetterFilter RPKM
+
+Only if we have the gene lengths
+```{r RPKMnorm}
+if (exists("length_vec")){ #if we have lengths
+ length_vec<-data.frame(Length=length_vec) #convert to dataframe
+
+  dge <- DGEList(repl_data,genes=length_vec) #use edgeR for normalization
+
+  dge <- calcNormFactors(dge)
+
+  Nrepl_data <- rpkm(dge, log=TRUE)
+
+  Nrepl_data<-as.data.frame(Nrepl_data)
+  
+  NormType<-"RPKM_filter"
+  
+  Nrepl_data<-as.data.frame(Nrepl_data)
+}
+```
+
+#### Low expression removal
+
+```{r RPKMqc}
+boxplot(Nrepl_data, las=2)
+#Same problem as with cpm
+```
+
+```{r RPKMlExpRm}
+#Filter low expression genes
+keep<-(rowSums(Nrepl_data>0)>=10)|(apply(Nrepl_data, 1, max)>6) #total larger than 10 or 1 value larger than 5
+#(apply(Nrepl_data, 1, max)>4) increases gray
+Nrepl_data<-Nrepl_data[keep,]
+
+#@@ Difference between 12 and 6 is important? -> it is we only do rpkm
+
+boxplot(Nrepl_data, las=2)
+
+#Nrepl to data frame
+Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
 ```
 
 
@@ -435,10 +477,11 @@ cor <- WGCNA::cor
 ModNetwork <- blockwiseModules(Nrepl_data,
                  nThreads = 32, #16
                  maxBlockSize = 64000, #Memory dedicated to process (blocksize is 14000 with 16GB ram) (if Ngenes>maxBlocksize then Ngenes will be split into blocks to fit mBs)
-                 deepSplit = 2,
+                 deepSplit = 4,
                  TOMType = "signed", #unsigned?
                  power = softPw,
-                 mergeCutHeight = 0.25,
+                 mergeCutHeight = 0.3,
+                 minModuleSize = 20,
                  numericLabels = FALSE,
                  randomSeed = 42,
                  verbose = 4)
@@ -456,7 +499,10 @@ module_eigengenes <- ModNetwork$MEs
 
 #get number of genes for each module
 table(ModNetwork$colors)
+```
 
+
+```{r EigenColorsPlot}
 #Plot the dendrogram and the module colors before and after merging underneath
 plotDendroAndColors(ModNetwork$dendrograms[[1]], cbind(ModNetwork$unmergedColors, ModNetwork$colors),
                     c("unmerged", "merged"),
@@ -538,7 +584,7 @@ heatmap.data$Row.names<-NULL
 head(heatmap.data)
 
 plotTitle<-paste0("Correlation plot of ", specie, " using ", NormType)
-png(paste0("./CorPlots/", specie, "_", NormType, "_corplot.png"), width=1600, height=800) #B73_CPM_corplot
+#png(paste0("./CorPlots/", specie, "_", NormType, "_corplot.png"), width=1600, height=800) #B73_CPM_corplot
 CorLevelPlot(heatmap.data,
              x = names(bin_metadata),
              y = names(module_eigengenes),
@@ -546,7 +592,7 @@ CorLevelPlot(heatmap.data,
              rotLabX = 45, rotTitleY = 90,
              cexCorval = 0.7, cexLabY = 0.7, cexLabX = 0.7
             )
-dev.off()
+#dev.off()
 
 ```
 
