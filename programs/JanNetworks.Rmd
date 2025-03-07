@@ -531,7 +531,9 @@ table(ModNetwork$colors)
 #rpkm_filtered 3770/25786 pw:23
 
 #PE75
-#cpm
+#cpm / pw:
+#rpkm
+#rpkm_filtered
 
 
 
