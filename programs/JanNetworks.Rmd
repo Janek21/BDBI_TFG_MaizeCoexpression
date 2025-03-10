@@ -125,7 +125,6 @@ table(metadata$location)
 Check for outlier genes
 
 ```{r OutlierGenes}
-#@@ may not be a good idea to remove genes
 outDetect<-goodSamplesGenes(t(dataNL))
 
 table(outDetect$goodGenes) #False genes are outliers
