@@ -33,7 +33,7 @@ Import the csv and metadata files
 
 ```{r dtLoad}
 #"B73"   "DK105" "EP1"   "F7"    "PE75" 
-specie<-"PE75"
+specie<-"B73"
 dataPath<-paste0("../data/wlen/", specie, ".csv")
 metadataPath<-paste0("../data/wlen/", specie, "_m.txt")
 
@@ -198,8 +198,8 @@ legend_plot<-ggplot(repl_meta, aes(x=1, y=location, color=location))+
   scale_color_manual(values=colorList)+
   guides(color=guide_legend(ncol=1))+
   theme_void()+labs(color="Tissue")+
-  theme(legend.title=element_text(size=15),
-        legend.text=element_text(size=12)) #plot used only to get the legend that associates colors with localizations(tissues)
+  theme(legend.title=element_text(size=18),
+        legend.text=element_text(size=15)) #plot used only to get the legend that associates colors with localizations(tissues)
 
 legend_var<-get_legend(legend_plot) #place the legend into a variable
 ```
@@ -219,10 +219,12 @@ for (i in 1:nrow(repl_meta)){
 
 Joins the plot and legend to create a plot of the total raw data distribution
 ```{r rawPlot}
+plotTitle<-paste0(specie, " raw data distribution")
+
 raw_Ptab<-arrangeGrob(grobs=RawHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
 png(paste0("./DistrPlots/", specie, "_raw_distPlot.png"), width=1600, height=800) #B73_CPM_raw_distPlot
-grid.arrange(raw_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=paste0(specie, " raw data distribution")) #plots the plot list and legend together
+grid.arrange(raw_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
 dev.off()
 ```
 
@@ -300,7 +302,7 @@ plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
 norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
 png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
-grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=plotTitle) #plots the plot list and legend together
+grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
 dev.off()
 ```
 
@@ -370,7 +372,68 @@ plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
 norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
 png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
-grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=plotTitle) #plots the plot list and legend together
+grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2,  top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
+dev.off()
+```
+### BetterFilter CPM
+
+```{r CPMnorm}
+#@@ remove lowly expressed genes
+#uses edgeR
+dge <- DGEList(repl_data)
+
+#Calculate normalization factors
+dge <- calcNormFactors(dge)
+
+#Get normalized counts
+Nrepl_data <- cpm(dge, log=TRUE) #rpkm with lengths, testo other normalizations too
+
+NormType<-"CPM.filter"
+```
+
+#### Low expression removal
+
+```{r CPMqc}
+boxplot(Nrepl_data, las=2)
+#We can see that most repetitions are from low-expressed counts, we should remove some
+```
+
+```{r CPMlExpRm}
+#Filter low expression genes
+#keep<-rowSums(Nrepl_data>1)>=12 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 10 total in samples
+keep<-(rowSums(Nrepl_data>1)>=12)|(apply(Nrepl_data, 1, max)>8) #total larger than 10 or 1 value larger than 5
+Nrepl_data<-Nrepl_data[keep,]
+
+boxplot(Nrepl_data, las=2)
+
+#Nrepl to data frame
+Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
+
+```
+
+#### Plot CPMbetterfilter normalized data
+
+Create the plot list
+```{r CPMnormPlotListing}
+NormHistList<-list() #to store the plots
+
+for (i in 1:nrow(repl_meta)){
+  color_var<-colorList[i]
+  loc<-colnames(repl_data)[i]
+  
+  temp_plot<-multiColHist(Nrepl_data, loc, color_var)
+  NormHistList[[i]]<-temp_plot
+} #iterates over each tissue, creates a plot with a distinct color for it and stores it in a list
+```
+
+Joins the plot and legend to create a plot of the total normalized data distribution
+```{r CPMnormPlot}
+plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
+
+norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
+
+png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
+grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
 dev.off()
 ```
 
@@ -389,7 +452,7 @@ if (exists("length_vec")){ #if we have lengths
 
   Nrepl_data<-as.data.frame(Nrepl_data)
   
-  NormType<-"RPKM_filter"
+  NormType<-"RPKM.filter"
   
   Nrepl_data<-as.data.frame(Nrepl_data)
 }
@@ -416,6 +479,32 @@ boxplot(Nrepl_data, las=2)
 Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
 ```
 
+#### Plot RPKM.filtered normalized data
+
+Create the plot list
+```{r RPKMnormPlotListing}
+## Plotting the normalized data counts
+NormHistList<-list() #to store the plots
+
+for (i in 1:nrow(repl_meta)){
+  color_var<-colorList[i]
+  loc<-colnames(repl_data)[i]
+  
+  temp_plot<-multiColHist(Nrepl_data, loc, color_var)
+  NormHistList[[i]]<-temp_plot
+} #iterates over each tissue, creates a plot with a distinct color for it and stores it in a list
+```
+
+Joins the plot and legend to create a plot of the total normalized data distribution
+```{r RPKMnormPlot}
+plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
+
+norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
+
+png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
+grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2,  top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
+dev.off()
+```
 
 # Network construction
 
