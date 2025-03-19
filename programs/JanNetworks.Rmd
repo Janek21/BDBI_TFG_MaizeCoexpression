@@ -21,6 +21,7 @@ library(randomcoloR)
 library(edgeR)
 library(tidyverse)
 library(dplyr)
+library(grid)
 library(gridExtra)
 #devtools::install_github("kevinblighe/CorLevelPlot")
 library(CorLevelPlot)
@@ -570,7 +571,7 @@ temp_cor <- cor
 cor <- WGCNA::cor
 
 ModNetwork <- blockwiseModules(Nrepl_data,
-                 nThreads = 32, #16
+                 nThreads = 16, #16
                  maxBlockSize = 64000, #directly related to memory, if maxBlockSize<total genes, multiple blocks will have to be used -> worse clustering
                  deepSplit = 4,
                  TOMType = "signed", #unsigned?
@@ -589,7 +590,7 @@ cor<-temp_cor
 
 # Modules and eigengenes
 
-Eigengenes sumarize gene expression for a module(cluster of highly co-expressed genes(detected by similar gene expression patterns)) using PC1.
+Eigengenes summarize gene expression for a module(cluster of highly co-expressed genes(detected by similar gene expression patterns)) using PC1.
 Group up genes into 1 value
 ```{r EigenColors}
 #@@remove gray
