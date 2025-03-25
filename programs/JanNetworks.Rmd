@@ -34,7 +34,7 @@ Import the csv and metadata files
 
 ```{r dtLoad}
 #"B73"   "DK105" "EP1"   "F7"    "PE75" 
-specie<-"B73"
+specie<-"PE75"
 dataPath<-paste0("../data/wlen/", specie, ".csv")
 metadataPath<-paste0("../data/wlen/", specie, "_m.txt")
 
@@ -571,7 +571,7 @@ temp_cor <- cor
 cor <- WGCNA::cor
 
 ModNetwork <- blockwiseModules(Nrepl_data,
-                 nThreads = 16, #16
+                 nThreads = 32, #16
                  maxBlockSize = 64000, #directly related to memory, if maxBlockSize<total genes, multiple blocks will have to be used -> worse clustering
                  deepSplit = 4,
                  TOMType = "signed", #unsigned?
@@ -620,13 +620,45 @@ table(ModNetwork$colors)
 #rpkm_filtered 3770/25786 pw:23
 
 #PE75
-#cpm / pw:
-#rpkm
-#rpkm_filtered
+#cpm 2577/22127 pw:19
+#rpkm 2758/24694 pw:19
+#rpkm_filtered 2711/25531 pw:19
 
-
+print(softPw)
+dim(Nrepl_data)
 
 ```
+
+```{r}
+gene_modules <- ModNetwork$colors
+blue_genes <- names(gene_modules)[gene_modules == "lightcyan"]
+Nrepl_data<-as.data.frame(Nrepl_data)
+blue_gene_expression <- Nrepl_data[, colnames(Nrepl_data) %in% blue_genes]
+
+ggplot(blue_gene_expression, aes())
+plot(blue_gene_expression[,1], type="l")+lines(blue_gene_expression[,2])
+
+# Load required library
+library(ggplot2)
+library(reshape2)  # For data transformation
+
+# Convert data to long format for ggplot
+blue_gene_expression$sample<-rownames(blue_gene_expression)
+blue_gene_expression_long <- melt(blue_gene_expression)
+colnames(blue_gene_expression_long) <- c("Sample", "Gene", "Expression")
+
+# Create the line plot
+ggplot(blue_gene_expression_long, aes(x = Sample, y = Expression, group = Gene, color = Gene)) +
+  geom_line(alpha = 0.7) +  # Plot lines for each gene
+  theme_minimal() +
+  labs(title = "Gene Expression in Blue Module",
+       x = "Sample",
+       y = "Expression Level",
+       color = "Gene") +
+  theme(legend.position = "none")  # Hide legend if too many genes
+
+```
+
 
 
 ```{r EigenColorsPlot}
