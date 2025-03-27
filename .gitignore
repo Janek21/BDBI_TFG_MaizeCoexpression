@@ -4,6 +4,5 @@
 .RDataTmp
 *.RDS
 WGCNA_Network.graphml
-literature
 programs/.Rhistory
 programs/.Rhistory
