@@ -633,15 +633,30 @@ dim(Nrepl_data)
 gene_modules <- ModNetwork$colors
 blue_genes <- names(gene_modules)[gene_modules == "darkgreen"]
 Nrepl_data<-as.data.frame(Nrepl_data)
-blue_gene_expression <- Nrepl_data[, colnames(Nrepl_data) %in% blue_genes]
+blue_gene_expression <- as.data.frame(Nrepl_data[, colnames(Nrepl_data) %in% blue_genes])
 
-#ggplot(blue_gene_expression, aes())
-#plot(blue_gene_expression[,1], type="l")+lines(blue_gene_expression[,2])
 
-# Load required library
-library(ggplot2)
+tgene<-data.frame(blue_gene_expression[,1:7])
+
+#Manual exploration to find genes
+Sim_genes<-data.frame(G1=blue_gene_expression$Zm00001eb085150, G2=blue_gene_expression$Zm00001eb085160, G3=blue_gene_expression$Zm00001eb104140, G4=blue_gene_expression$Zm00001eb104170)
+
+png(paste0("./CorPlots/2gene_",specie, ".png"), width=1600, height=800)
+par(mar=c(8, 4, 4, 2))
+plot(Sim_genes$G4, type="l", col="darkblue", xlab="", ylab="Gene Expression", main=paste0("Co-expression comparison in ", specie), lwd=2, xaxt="n")
+lines(Sim_genes$G3, col="darkred", lwd=2)
+lines(Sim_genes$G1, col="darkgreen", lty=2, lwd=2)
+lines(Sim_genes$G2, col="purple", lty=2, lwd=2)
+legend(x="bottomright", legend=c("Zm00001eb104170", "Zm00001eb104140", "Zm00001eb085150", "Zm00001eb085160"), lty=c(1,1,2,2), col=c("darkblue", "darkred", "darkgreen", "purple"), y.intersp=1, cex=1.3, lwd=c(2,2,2,2))
+axis(1, at=1:nrow(blue_gene_expression), labels=FALSE)  #No label ticks
+text(x=1:nrow(blue_gene_expression), y=par("usr")[3] - 0.2,  #45 degree ticks
+     labels=rownames(blue_gene_expression), srt=45, adj=1, xpd=TRUE, cex=0.85)
+mtext("Replicates", side=1, line=6) #Name doesent fit
+dev.off()
+
 library(reshape2)  # For data transformation
 
+blue_gene_expression<-tgene
 # Convert data to long format for ggplot
 blue_gene_expression$sample<-rownames(blue_gene_expression)
 blue_gene_expression_long <- melt(blue_gene_expression)
@@ -659,7 +674,7 @@ ggGene<-ggplot(blue_gene_expression_long, aes(x = Sample, y = Expression, group 
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1))
 
 show(ggGene)
-ggsave(filename="./ModuleExp.png" ,ggGene)
+#ggsave(filename="./ModuleExp.png" ,ggGene)
 
 ```
 
