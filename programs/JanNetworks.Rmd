@@ -34,7 +34,7 @@ Import the csv and metadata files
 
 ```{r dtLoad}
 #"B73"   "DK105" "EP1"   "F7"    "PE75" 
-specie<-"B73"
+specie<-"PE75"
 dataPath<-paste0("../data/wlen/", specie, ".csv")
 metadataPath<-paste0("../data/wlen/", specie, "_m.txt")
 
@@ -629,7 +629,7 @@ dim(Nrepl_data)
 
 ```
 
-```{r}
+```{r, eval=FALSE, purl=FALSE}
 gene_modules <- ModNetwork$colors
 blue_genes <- names(gene_modules)[gene_modules == "darkgreen"]
 Nrepl_data<-as.data.frame(Nrepl_data)
@@ -762,7 +762,7 @@ heatmap.data$Row.names<-NULL
 head(heatmap.data)
 
 plotTitle<-paste0("Correlation plot of ", specie, " using ", NormType)
-#png(paste0("./CorPlots/", specie, "_", NormType, "_corplot.png"), width=1600, height=800) #B73_CPM_corplot
+png(paste0("./CorPlots/", specie, "_", NormType, "_corplot.png"), width=1600, height=800) #B73_CPM_corplot
 CorLevelPlot(heatmap.data,
              x = names(bin_metadata),
              y = names(module_eigengenes),
@@ -770,7 +770,7 @@ CorLevelPlot(heatmap.data,
              rotLabX = 45, rotTitleY = 90,
              cexCorval = 0.7, cexLabY = 0.7, cexLabX = 0.7
             )
-#dev.off()
+dev.off()
 
 ```
 
