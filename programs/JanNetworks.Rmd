@@ -34,7 +34,7 @@ Import the csv and metadata files
 
 ```{r dtLoad}
 #"B73"   "DK105" "EP1"   "F7"    "PE75" 
-specie<-"PE75"
+specie<-"DK105"
 dataPath<-paste0("../data/wlen/", specie, ".csv")
 metadataPath<-paste0("../data/wlen/", specie, "_m.txt")
 
@@ -517,12 +517,12 @@ Get list of powers and do the calculations
 Nrepl_data<-t(Nrepl_data)
 
 power <- c(c(1:15), seq(from = 17, to = 50, by = 2))
-#power<-c(1:40)
+power<-c(1:30)
 
 #Network topology analysis
 sft <- pickSoftThreshold(Nrepl_data,
                   powerVector = power,
-                  networkType = "signed",
+                  networkType = "signed hybrid",
                   verbose = 5)
 
 ```
@@ -561,7 +561,7 @@ if (specie=="DK105"){
   #softPw<-26 #6000
   #softPw<-30 #8000
 }
-
+#softPw<-19
 ```
 
 ## Block building

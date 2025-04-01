@@ -266,23 +266,17 @@ NormType<-"CPM"
 
 #### Low expression removal
 
-```{r CPMqc}
-boxplot(Nrepl_data, las=2)
-#We can see that most repetitions are from low-expressed counts, we should remove some
-```
-
 ```{r CPMlExpRm}
 #Filter low expression genes
 #keep<-rowSums(Nrepl_data>1)>=12 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 10 total in samples
-keep<-rowSums(Nrepl_data>1)>=12
+keep<-rowSums(Nrepl_data>=0)
 Nrepl_data<-Nrepl_data[keep,]
-
-boxplot(Nrepl_data, las=2)
 
 #Nrepl to data frame
 Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
 
 #@@ Less genes kept for similar normality plots in rpkm (b73 tested)
+hist(Nrepl_data[,seq(1,149, by=15)], breaks=100)
 ```
 
 #### Plot CPM normalized data
@@ -344,24 +338,18 @@ if (exists("length_vec")){ #if we have lengths
 
 #### Low expression removal
 
-```{r RPKMqc}
-boxplot(Nrepl_data, las=2)
-#Same problem as with cpm
-```
-
 ```{r RPKMlExpRm}
 #Filter low expression genes
-keep<-rowSums(Nrepl_data>0)>=10 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 5 total in samples
+keep<-rowSums(Nrepl_data>=0) #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 5 total in samples
 Nrepl_data<-Nrepl_data[keep,]
 
 #@@ Difference between 12 and 6 is important? -> it is we only do rpkm
-
-boxplot(Nrepl_data, las=2)
 
 #Nrepl to data frame
 Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
 
 #@@ More genes kept for similar normality plots than cpm (b73 tested)
+hist(Nrepl_data[,seq(1,149, by=15)], breaks=100)
 ```
 
 
@@ -391,142 +379,93 @@ norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #cre
 grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2,  top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
 #dev.off()
 ```
-### BetterFilter CPM
 
-```{r CPMnorm}
-#@@ remove lowly expressed genes
-#uses edgeR
-dge <- DGEList(repl_data)
+# Umap
 
-#Calculate normalization factors
-dge <- calcNormFactors(dge)
+```{r}
+library(umap)
 
-#Get normalized counts
-Nrepl_data <- cpm(dge, log=TRUE) #rpkm with lengths, testo other normalizations too
+Nrepl_UMAP<-as.data.frame(t(Nrepl_data))
 
-NormType<-"CPM.filter"
+umap_data<-umap(Nrepl_UMAP)
+
+ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], shape=repl_meta$species ,color=repl_meta$org_location))+
+  geom_point(size=6)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  theme_minimal()
 ```
 
-#### Low expression removal
 
-```{r CPMqc}
-boxplot(Nrepl_data, las=2)
-#We can see that most repetitions are from low-expressed counts, we should remove some
+```{r}
+install.packages("Polychrome")
+library(Polychrome)
+
+# build-in color palette
+Glasbey = glasbey.colors(30)
+
+umap_data<-umap(scale(Nrepl_UMAP))
+
+ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], color=repl_meta$org_location))+
+  geom_point(size=6)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  scale_color_manual(values = Glasbey)+
+  theme_minimal()+ggtitle("Tissue-based")
+
+ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], color=repl_meta$species))+
+  geom_point(size=6)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  theme_minimal()+ggtitle("Species-based")
+
+ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], shape=repl_meta$species, color=repl_meta$org_location))+
+  geom_point(size=6)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  theme_minimal()+ggtitle("Species+tissue based")
+
 ```
 
-```{r CPMlExpRm}
-#Filter low expression genes
-#keep<-rowSums(Nrepl_data>1)>=12 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 10 total in samples
-keep<-(rowSums(Nrepl_data>1)>=14)|(apply(Nrepl_data, 1, max)>10) #total larger than 10 or 1 value larger than 5
-Nrepl_data<-Nrepl_data[keep,]
 
-boxplot(Nrepl_data, las=2)
 
-#Nrepl to data frame
-Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
-hist(Nrepl_data[,c(seq(1,149, by=15))])
-```
 
-#### Plot CPMbetterfilter normalized data
 
-Create the plot list
-```{r CPMnormPlotListing}
-NormHistList<-list() #to store the plots
 
-for (i in 1:nrow(repl_meta)){
-  color_var<-colorList[i]
-  loc<-colnames(repl_data)[i]
-  
-  temp_plot<-multiColHist(Nrepl_data, loc, color_var)
-  NormHistList[[i]]<-temp_plot
-} #iterates over each tissue, creates a plot with a distinct color for it and stores it in a list
-```
 
-Joins the plot and legend to create a plot of the total normalized data distribution
-```{r CPMnormPlot}
-plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
 
-norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
-#png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
-grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
-#dev.off()
-```
 
-### BetterFilter RPKM
 
-Only if we have the gene lengths
-```{r RPKMnorm}
-if (exists("length_vec")){ #if we have lengths
- length_vec<-data.frame(Length=length_vec) #convert to dataframe
 
-  dge <- DGEList(repl_data,genes=length_vec) #use edgeR for normalization
 
-  dge <- calcNormFactors(dge)
 
-  Nrepl_data <- rpkm(dge, log=TRUE)
 
-  Nrepl_data<-as.data.frame(Nrepl_data)
-  
-  NormType<-"RPKM.filter"
-  
-  Nrepl_data<-as.data.frame(Nrepl_data)
-}
 
-keep<-filterByExpr(Nrepl_data, min.total.count=10, min.count=5)
-Nrepl_data<-Nrepl_data[keep,]
 
-hist(Nrepl_data[,c(seq(1,149, by=15))])
-```
 
-#### Low expression removal
 
-```{r RPKMqc}
-boxplot(Nrepl_data, las=2)
-#Same problem as with cpm
-```
 
-```{r RPKMlExpRm}
-#Filter low expression genes
-keep<-(rowSums(Nrepl_data>0)>=13)|(apply(Nrepl_data, 1, max)>11) #total larger than 10 or 1 value larger than 5
-#(apply(Nrepl_data, 1, max)>4) increases gray
-Nrepl_data<-Nrepl_data[keep,]
 
-#@@ Difference between 12 and 6 is important? -> it is we only do rpkm
 
-boxplot(Nrepl_data, las=2)
 
-#Nrepl to data frame
-Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
-hist(Nrepl_data[,c(seq(1,149, by=15))])
-```
 
-#### Plot RPKM.filtered normalized data
 
-Create the plot list
-```{r RPKMnormPlotListing}
-## Plotting the normalized data counts
-NormHistList<-list() #to store the plots
 
-for (i in 1:nrow(repl_meta)){
-  color_var<-colorList[i]
-  loc<-colnames(repl_data)[i]
-  
-  temp_plot<-multiColHist(Nrepl_data, loc, color_var)
-  NormHistList[[i]]<-temp_plot
-} #iterates over each tissue, creates a plot with a distinct color for it and stores it in a list
-```
 
-Joins the plot and legend to create a plot of the total normalized data distribution
-```{r RPKMnormPlot}
-plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
 
-norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
 
-#png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
-grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2,  top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
-#dev.off()
-```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Network construction
 
