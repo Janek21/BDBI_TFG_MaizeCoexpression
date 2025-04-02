@@ -1,0 +1,919 @@
+---
+title: "Exploratory Analysis and Visualization of Yeast Strains for Sherry Wine"
+author: "Bruno Álvarez, Jan Izquierdo & Eloi Vilella"
+date: "2024-11-08"
+output:
+  rmdformats::robobook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load libraries
+```{r libLoad, message=FALSE, results='hide'}
+#install.packages("rmdformats")
+library(ggplot2)
+library(ggfortify)
+library(factoextra)
+library(stats)
+library(Rtsne)
+library(dplyr)
+library(tidyr)
+library(patchwork)
+library(gridExtra)
+library(umap)
+library(ggpubr)
+```
+
+# Introduction
+
+In this analysis, we will examine gene expression data from two strains of Saccharomyces cerevisiae used in sherry wine production. Our primary goal is to explore genetic differences in these yeast strains that could explain differences in wine characteristics. We'll perform dimensionality reduction using PCA and tSNE and investigate possible batch effects across replicates.
+
+# Load the data and create the metadata
+
+Reading the data
+```{r reading}
+rep1 <- read.csv("./data/rep1.csv")
+rep2 <- read.csv("./data/rep2.csv")
+rep3 <- read.csv("./data/rep3.csv")
+rep4 <- read.csv("./data/rep4.csv")
+```
+
+To confirm data integrity, we'll use a function to display the dimensions of each dataset:
+```{r Dims}
+dimensions <- function(x) {
+  var_name <- deparse(substitute(x))
+  rows <- nrow(x)
+  columns <- ncol(x)
+
+  message <- paste("The data set",  var_name, "has", rows, "rows and", columns, "columns.")
+  print(message)
+}
+
+dimensions(rep1)
+dimensions(rep2)
+dimensions(rep3)
+dimensions(rep4)
+```
+
+Fixing rows in the data
+```{r fixData}
+rownames(rep1) <- rep1$X
+rep1$X <- NULL
+
+rownames(rep2) <- rep2$X
+rep2$X <- NULL
+
+rownames(rep3) <- rep3$X
+rep3$X <- NULL
+
+rownames(rep4) <- rep4$X
+rep4$X <- NULL
+```
+
+Transpose the data to ensure genes are columns and samples are rows.
+```{r tData}
+rep1 <- t(rep1)
+rep2 <- t(rep2)
+rep3 <- t(rep3)
+rep4 <- t(rep4)
+```
+
+## Creating the metadata
+
+To obtain the metadata we create a data frame indicating the replicate (`origin`) and strain label (`exp_label`).
+```{r metadata}
+#each rep is a number from 1 to 4
+origin<-rep(c("1", "2", "3", "4"), each = nrow(rep1)) 
+#1rst half of each rep is A, the 2nd half is B
+exp_label<-rep(c("A", "B"), each = nrow(rep1)/2) 
+#time goes 1->6 twice per repetition (1 of each)
+timeMark<-rep(c("T1", "T2", "T3", "T4", "T5", "T6"), each=1) 
+
+metadata <-data.frame(origin, exp_label, timeMark)
+```
+
+Combining the data for the analysis
+```{r joining}
+data<-rbind(rep1, rep2, rep3, rep4)
+```
+
+```{r}
+data<-as.data.frame(t(repl_data))
+metadata<-repl_meta
+```
+
+
+# PCA Representation
+
+Determine PCAs to identify underlying patterns in gene expression across yeast strains and examine potential batch effects between the four replicates.
+
+We calculate the PCAs in 3 different ways:
+- **Unscaled PCA:** uses raw gene expression data without adjustments. May emphasize genes with higher overall expression but can lead to an uneven representation
+- **Scaled PCA:** centers and scales the data. Highlights relative changes across conditions.
+- **Normalized PCA:** adjusts for total expression, so each sample has a similar total expression level. Used when comparing samples where the total expression might vary greatly
+
+```{r PCA}
+set.seed(42)
+
+#Unscaled
+
+unscaled_pca <- prcomp(data, scale=F)
+names(unscaled_pca)
+
+#Scaled
+
+scaled_pca <- prcomp(data, scale=T)
+names(scaled_pca)
+
+#Normalized
+
+total_data <- rowSums(data)
+#Normalize each cell's expression by its total expression
+Ndata<-sweep(data, 1, total_data, "/") #converts sample counts into relative frequencies for genes
+
+Ndata<-scale(Ndata)
+
+N_pca<-prcomp(Ndata, scale=T)
+
+```
+
+## Plotting PCAs
+
+Plot the first two principal components, PC1 and PC2 since they capture the most amount of variance, to visualize clusters and assess possible batch effects.
+
+### Plot Unscaled PCAs
+
+```{r UnscaledPlotPca, fig.align = 'center'}
+#Plot unscaled PCAs
+
+Sp_fviz1<-fviz_pca_ind(unscaled_pca, geom.ind = "point", 
+                       habillage = metadata$species, addEllipses = TRUE, 
+                       title="Sherry Wine label-classified")
+
+Sp_fviz2<-fviz_pca_ind(unscaled_pca, geom.ind = "point", 
+                       habillage = metadata$org_location, addEllipses = TRUE, 
+                       title="Origin-classified")
+
+Sp_fviz1+Sp_fviz2+plot_annotation('Unscaled Plots', 
+                                  theme=theme(plot.title=element_text(hjust=0.5, size=18)))&
+  theme(aspect.ratio = 1)
+
+ggplot(unscaled_pca$x, aes(x=PC1, y=PC2, color=metadata$org_location, shape=metadata$species))+ 
+  geom_point(size=4)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual( values = c(2, 6))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="Unscaled PCA")+
+  theme_minimal()
+```
+
+- Each point represents a sample, colored by origin (replicate) and shaped by type of wine.
+- Adding ellipses for each group can help us see whether samples cluster based on their type, potentially revealing batch effects.
+
+
+### Plot Scaled PCAs
+
+```{r ScaledPlotPca, fig.align = 'center'}
+#Plot scaled PCA
+
+Up_fviz1<-fviz_pca_ind(scaled_pca, geom.ind = "point", 
+                       habillage = metadata$species, addEllipses = TRUE,
+                       title="Sherry Wine label-classified")
+
+Up_fviz2<-fviz_pca_ind(scaled_pca, geom.ind = "point", 
+                       habillage = metadata$org_location, addEllipses = TRUE,
+                       title="Origin-classified")
+
+Up_fviz1+Up_fviz2+plot_annotation('Scaled Plots', 
+                                  theme=theme(plot.title=element_text(hjust=0.5, size=18)))&
+  theme(aspect.ratio = 1)
+
+ggplot(scaled_pca$x, aes(x=PC1, y=PC2, color=metadata$org_location, shape=metadata$species))+ 
+  geom_point(size=4)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual( values = c(2, 6))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="Scaled PCA")+
+  theme_minimal()
+```
+
+Using scaled data reduces the influence of genes with inherently high variance, allowing us to focus on proportional differences. Differences between samples due to batch effects may become more or less pronounced with scaling.
+
+
+### Plot Normalized PCAs
+
+```{r NormPlotPca, fig.align = 'center'}
+#Plot normalized PCA
+
+
+Np_fviz1<-fviz_pca_ind(N_pca, geom.ind = "point", 
+                       habillage = metadata$species, addEllipses = TRUE, 
+                       title="Sherry Wine label-classified")
+
+Np_fviz2<-fviz_pca_ind(N_pca, geom.ind = "point", 
+                       habillage = metadata$org_location, addEllipses = TRUE, 
+                       title="Origin-classified")
+#@@
+
+Np_fviz1+Np_fviz2+plot_annotation('Normalized Plots', 
+                                  theme=theme(plot.title=element_text(hjust=0.5, size=18)))&
+  theme(aspect.ratio = 1)
+
+ggplot(N_pca$x, aes(x=PC1, y=PC2, color=metadata$org_location, shape=metadata$species))+ 
+  geom_point(size=4)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual(values = c(2, 6))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="Normalized PCA")+
+  theme_minimal()
+
+```
+
+Normalizing by row sums removes variability due to differences in total gene expression across samples, which is useful for focusing on expression patterns specific to strains or conditions, independent of sample-specific technical variations.
+
+### Outliers
+
+Outliers can skew PCA results, so identifying them is crucial. 
+
+Here, we find the maximum absolute value among all principal components to locate any extreme outliers.
+```{r OutlierRemoval.1}
+datapoints <- data.frame(N_pca$x)
+
+abs_datapoints <- abs(datapoints)
+
+max_abs_value <- max(abs_datapoints, na.rm = TRUE)
+
+max_position <- which(abs_datapoints == max_abs_value, arr.ind = TRUE)
+
+row_name <- rownames(datapoints)[max_position[1]]
+col_name <- colnames(datapoints)[max_position[2]]
+```
+
+Max absolute value is `r max_abs_value`, and it can be found in row: `r row_name` and column: `r col_name`. 
+
+We remove the identified outlier from the dataset and update the metadata:
+```{r OutlierRemoval.2}
+#Make a copy of the data with outliers for later use
+OTL_data<-data
+OTL_Ndata<-Ndata
+OTL_metadata<-metadata
+
+#Remove outliers
+data <- data[-max_position[1],]
+metadata <- metadata[-max_position[1],]
+```
+
+After removing the outlier, we re-calculate the normalized PCA to confirm that it doesn’t disproportionately affect our interpretation.
+```{r OutlierPCA}
+set.seed(42)
+
+#redo normalization without the outlier
+total_data <- rowSums(data)
+Ndata<-sweep(data, 1, total_data, "/")
+
+
+Ndata<-Ndata[, sapply(Ndata, var) != 0]
+N_pca<- prcomp(Ndata, scale=T)
+```
+
+### Plot outlier-less Normalized PCAs
+
+Plot Normalized PCAs without the outlier
+```{r OutNormPlotPca}
+ggplot(N_pca$x, aes(x=PC1, y=PC2, color=metadata$org_location, shape=metadata$species))+ 
+  geom_point(size=5)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual(values = c(2, 4))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="Scaled PCA with normalized data and with no outliers")+
+  theme_minimal()
+```
+
+By scaling and normalizing, we minimize noise due to absolute gene expression differences and instead focus on relative patterns across samples. Removing outliers ensures that our PCA captures the underlying trends in yeast strain differences without being skewed by extreme values. This refined analysis should better reveal any genetic distinctions relevant to sherry wine production.
+
+
+# tSNE Representation
+
+Creating tSNE objects
+```{r tSNE, results='hide', eval=FALSE}
+set.seed(42)
+maxPer<-(nrow(data)-1)/3 #maximum perplexity according to formula
+
+#Unscaled
+tsne_unscaled <- Rtsne(data, dims = 2, perplexity = maxPer/2 ,
+                       verbose = TRUE, max_iter = 1000) #Perplexity is half of total
+
+tsne_unscaled_data <- data.frame(tsne_unscaled$Y, 
+                                 color=metadata$org_location, shape=metadata$species)
+
+colnames(tsne_unscaled_data) <- c("Dim1", "Dim2", "Tissue", "Species")
+
+
+#Scaled
+scaled_data <- scale(data)
+
+tsne_scaled <- Rtsne(scaled_data, dims = 2, perplexity = maxPer/2,
+                     verbose = TRUE, max_iter = 1000)
+
+tsne_scaled_data <- data.frame(tsne_scaled$Y, 
+                               color=metadata$org_location, shape=metadata$species)
+colnames(tsne_scaled_data) <- c("Dim1", "Dim2", "Tissue", "Species")
+
+
+#Normalized
+normalized_data<-scale(Ndata)
+normalized_data<-Ndata
+
+tsne_normalized <- Rtsne(normalized_data, dims = 2, 
+                         perplexity = maxPer/2, verbose = TRUE, max_iter = 1000)
+
+tsne_normalized_data <- data.frame(tsne_normalized$Y, 
+                                   color=metadata$org_location, shape=metadata$species)
+
+colnames(tsne_normalized_data) <- c("Dim1", "Dim2", "Tissue", "Species")
+
+```
+
+## Plotting tSNEs
+
+### Plot Unscaled tSNEs
+
+```{r UnscaledPlotTSNE, fig.align = 'center', eval=FALSE}
+#Plot unscaled tSNE
+ggplot(tsne_unscaled_data, aes(x=Dim1, y=Dim2, color=Tissue, shape=Species)) +
+  geom_point(size=5)+#geom_jitter(width = 1)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual(values = c(2, 5))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="t-SNE Plot of Unscaled Data", color="Tissue", shape="Species") +
+  theme_minimal()
+```
+
+### Plot Scaled tSNEs
+
+```{r ScaledPlotTSNE, fig.align = 'center', eval=FALSE}
+#Plot scaled tSNE
+ggplot(tsne_scaled_data, aes(x=Dim1, y=Dim2, color=Tissue, shape=Species))+
+  geom_point(size=5)+#geom_jitter(width = 1)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual(values = c(2, 5))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="t-SNE Plot of Scaled Data", color="Tissue", shape="Species")+
+  theme_minimal()
+```
+
+### Plot Normalized tSNEs
+
+```{r NormPlotTSNE, fig.align = 'center', eval=FALSE}
+#Plot normalized tSNE
+ggplot(tsne_normalized_data, aes(x=Dim1, y=Dim2, color=Tissue, shape=Species))+
+  geom_point(size=5)+#geom_jitter(width = 1)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual(values = c(2, 4))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="t-SNE Plot of Normalized Data", color="Tissue", shape="Species")+
+  theme_minimal()
+```
+
+# tSNE parameters
+
+Using normalized dataset only.
+
+## Perplexity
+
+```{r tSNEperplexity, fig.align = 'center', eval=FALSE}
+
+Perplexity_Data<-function(normalized_data, metadata, perp){
+  set.seed(42)
+  
+  #Round to a natural number
+  perp<-round(perp)
+  
+  perplexity_model<-Rtsne(normalized_data, perplexity=perp)
+  
+  plt<-ggplot(perplexity_model$Y, 
+              aes(x=perplexity_model$Y[,1], y=perplexity_model$Y[,2],
+                  color=metadata$org_location, shape=metadata$species))+
+    geom_point(size=5)+
+    labs(x="tSNE 1", y="tSNE 2",  color="Tissue", shape="Species",
+         title=paste0("tSNE plot for perplexity=", perp))+
+    scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+    #scale_size_manual(values = c(1, 2))+
+    #scale_color_brewer(palette="Dark2")+
+    theme_minimal()+
+    theme(plot.title=element_text(size=8), 
+          axis.title=element_text(size=8),
+          axis.text=element_text(size=7),
+          legend.key.size=unit(0.4, "cm"),
+          legend.title=element_text(size=6),
+          legend.text=element_text(size=6))
+  return(plt)
+}
+
+
+#maximum perplexity according to formula
+maxPer<-(nrow(normalized_data)-1)/3
+
+perplexity_list<-c(1, maxPer/3,(maxPer/3)*2, maxPer)
+
+PePlots<-list()
+
+for (i in seq_along(perplexity_list)){
+  p<-perplexity_list[i]
+  Pplot<-Perplexity_Data(normalized_data, metadata, p)
+  PePlots[[i]]<-Pplot
+}
+
+
+#Extract legend
+Pe_legend<-get_legend(PePlots[[1]])
+
+#Remove legend from all plots (add legend="none")
+PePlots_NL<-lapply(PePlots, "+", theme(legend.position = "none"))
+
+#Plot in a 2x2 with shared legend
+grid.arrange(
+  arrangeGrob(grobs = PePlots_NL, ncol = 2),
+  Pe_legend,
+  ncol=2,
+  widths = c(10, 1),
+  top="tSNE Perplexity"
+)
+
+#The ideal perplexity is half of the maximum
+```
+
+Low perplexity values cause clusters to be too defined, they are too tight, as we raise the value they loosen up, but soon the clusters become too disperse, as we can see in the last case. Thus the ideal perplexity value will be half the maximum perplexity, in this case: `r ((nrow(normalized_data)-1)/3)/2`.
+
+## Iterations
+
+```{r tSNEiterations, eval=FALSE}
+
+IterPlotter<-function(normalized_data, metadata, iterNum){
+  set.seed(42)
+  
+  maxPer<-(nrow(normalized_data)-1)/3
+  data<-Rtsne(normalized_data, perplexity=round(maxPer/2), max_iter=iterNum)
+
+  plt<-ggplot(data$Y, 
+              aes(x=data$Y[,1], y=data$Y[,2], 
+                  color=metadata$org_location, shape=metadata$species))+
+    geom_point(size=5)+
+    labs(x="tSNE 1", y="tSNE 2", color="Tissue", shape="Species",
+         title=paste0("tSNE with ", iterNum, " iterations"))+
+    scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+    #scale_size_manual(values = c(1, 2))+
+    #scale_color_brewer(palette="Dark2")+
+    theme_minimal()+
+    theme(plot.title=element_text(size=8), 
+          axis.title=element_text(size=8),
+          axis.text=element_text(size=7),
+          legend.key.size=unit(0.4, "cm"),
+          legend.title=element_text(size=6),
+          legend.text=element_text(size=6))
+  
+  return(plt)
+}
+
+iterations<-c(2, 200, 2000, 20000)
+
+
+ItPlots<-list()
+
+for (n in seq_along(iterations)){
+  i<-iterations[n]
+  Iplot<-IterPlotter(normalized_data, metadata, i)
+  ItPlots[[n]]<-Iplot
+}
+
+#Extract legend
+It_legend<-get_legend(ItPlots[[1]])
+
+#Remove legend from all plots (add legend="none")
+ItPlots_NL<-lapply(ItPlots, "+", theme(legend.position = "none"))
+
+#Plot in a 2x2 with shared legend
+grid.arrange(
+  arrangeGrob(grobs = ItPlots_NL, ncol = 2),
+  It_legend,
+  ncol=2,
+  widths = c(10, 1),
+  top="tSNE Iterations"
+)
+```
+
+As iterations determine for how long the algorithm runs for the embedding, fewer iterations can lead to it being incomplete, so more iterations allow for more refinement in point placement.
+
+Here we can see it clearly, as in point 2 there is practically no clustering and in point 20000 the clusters are very well defined, maybe too much refined, with the range of points in between presents well-defined clusters.
+
+## Reproducibility
+
+```{r tSNEreproducibility, eval=FALSE}
+#A seed ensures reproducibility
+set.seed(42)
+
+ReprPlotter<-function(normalized_data, metadata){
+  set.seed(42)
+  
+  maxPer<-(nrow(normalized_data)-1)/3
+  data<-Rtsne(normalized_data, perplexity=round(maxPer/2))
+
+  plt<-ggplot(data$Y, 
+              aes(x=data$Y[,1], y=data$Y[,2],
+                  color=metadata$org_location, shape=metadata$species))+
+    geom_point()+
+    labs(x="tSNE 1", y="tSNE 2", color="Tissue", shape="Species")+
+    scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+    #scale_size_manual(values = c(1, 2))+
+    #scale_color_brewer(palette="Dark2")+
+    theme_minimal()+
+    theme(plot.title=element_text(size=8), 
+          axis.title=element_text(size=8),
+          axis.text=element_text(size=7),
+          legend.key.size=unit(0.4, "cm"),
+          legend.title=element_text(size=6),
+          legend.text=element_text(size=6))
+  
+  return(plt)
+}
+
+RepPlots<-list()
+
+for (i in 1:4){
+  Rplot<-ReprPlotter(normalized_data, metadata)+ggtitle(paste0("tSNE repetition ", i))
+  RepPlots[[i]]<-Rplot
+}
+
+#Extract legend
+Rp_legend<-get_legend(RepPlots[[1]])
+
+#Remove legend from all plots (add legend="none")
+RepPlots_NL<-lapply(RepPlots, "+", theme(legend.position = "none"))
+
+#Plot in a 2x2 with shared legend
+grid.arrange(
+  arrangeGrob(grobs = RepPlots_NL, ncol = 2),
+  Rp_legend,
+  ncol=2,
+  widths = c(10, 1),
+  top="tSNE Repetitions"
+)
+```
+
+We can see that to make reproducibility viable we must use the set.seed() command.
+
+# UMAP representation
+
+## Plotting UMAPs
+
+Define a function to plot UMAP
+```{r FuncUMAP}
+dataPlotter<-function(umap_data, metadata){
+  plt<-ggplot(umap_data$layout, aes(x=umap_data$layout[,1], y=umap_data$layout[,2], shape=metadata$origin, size=metadata$exp_label, color=metadata$timeMark))+
+    geom_point()+
+    scale_shape_manual(values = c(19, 1, 2, 15))+
+    scale_size_manual( values = c(2, 6))+
+    scale_color_brewer(palette="Dark2")+
+    labs(x="x", y="y", size="Type", shape="Origin", color="Time")+
+    theme_minimal()
+  return(plt)
+}
+
+dataPlotter<-function(umap_data, metadata){
+  plt<-ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], shape=metadata$species, color=metadata$org_location))+
+    geom_point(size=6)+
+    scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+    labs(x="x", y="y", shape="Species", color="Tissue")+
+    theme_minimal()
+  return(plt)
+}
+```
+
+
+### Plot Raw Data UMAP
+```{r UMAP}
+raw_umap<-umap(OTL_data)
+
+dataPlotter(raw_umap, OTL_metadata)+ggtitle("Raw data UMAP")
+```
+
+### Plot Normalized Data UMAP {.tabset}
+
+#### Outliers present
+
+```{r OTL_Numap}
+OTL_N_umap<-umap(OTL_Ndata)
+
+dataPlotter(OTL_N_umap, OTL_metadata)+ggtitle("Normalized Data UMAP (Outlier)")
+```
+
+#### Outliers Cleaned
+
+```{r Numap}
+Ndata_sc<-scale(Ndata)
+N_umap<-umap(Ndata)
+
+dataPlotter(N_umap, metadata)+ggtitle("Normalized Data UMAP (No Outlier)")
+```
+
+### {-}
+
+## UMAP Prediction
+
+Predicting Rep4:
+
+Create training data
+```{r train, eval=FALSE}
+#Select rows that belong to rep1, 2 and 3
+train_idx<-grep("rep1|rep2|rep3", rownames(Ndata))
+
+#Select data using the indexes
+train_data <- Ndata[train_idx, ]
+
+#Select metadata using the indexes
+train_metadata<-metadata[train_idx,]
+
+#Create the umap that will be used for the prediction
+train_umap<-umap(train_data)
+
+#Plot the training UMAP
+dataPlotter(train_umap, train_metadata)+ggtitle("Reps 1 to 3 Data UMAP")
+```
+
+Predict rep4 using the training umap
+```{r, eval=FALSE}
+P_rep4_umap <- predict(train_umap, rep4)
+
+P_metadata <- metadata[-train_idx,]
+
+P_rep4_data <- data.frame(
+  Dim1 = P_rep4_umap[, 1],
+  Dim2 = P_rep4_umap[, 2],
+  Experiment = P_metadata$exp_label,
+  TimeMark = P_metadata$timeMark
+)
+
+ggplot(P_rep4_data, aes(x = Dim1, y = Dim2, shape = Experiment, color = TimeMark)) +
+  geom_point(size = 3, alpha = 0.8) + 
+  scale_shape_manual(values = c(19, 1, 2, 15)) + 
+  scale_color_brewer(palette = "Dark2") +  
+  labs(
+    x = "UMAP Dimension 1",
+    y = "UMAP Dimension 2",
+    shape = "Experiment",
+    color = "Time Mark",
+    title = "UMAP Prediction for Replicate 4"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "right",  
+    legend.key = element_blank(), 
+    panel.grid.minor = element_blank() 
+  )
+
+```
+
+## UMAP parameters
+
+### Number of neighbors
+
+```{r Nneighbors, warning=FALSE, message=FALSE}
+neighborUMAP<-function(data, metadata, Nneighbors){
+  Dumap<-umap(data, n_neighbors=Nneighbors)
+  plt<-dataPlotter(Dumap, metadata)
+  plt<-plt+
+    #Resize sizes for 2x2 plots
+    scale_size_manual(values = c(1, 2))+
+    labs(title=paste0("Neighbors: ", Nneighbors))+
+    theme(plot.title=element_text(size=8),
+          axis.title=element_text(size=8),
+          axis.text=element_text(size=7),
+          legend.key.size=unit(0.4, "cm"),
+          legend.title=element_text(size=6),
+          legend.text=element_text(size=6))
+  
+  return(plt)
+}
+
+#Empty list to store the plots
+NPlot_list<-list()
+#Number of neighbors (max is nrow of data)
+neighbors<-seq(2, nrow(Ndata), by=15)
+#neighbors<-c(20, 23, 27, 30)
+
+for (i in seq_along(neighbors)){
+  N<-neighbors[i]
+  Nplot<-neighborUMAP(Ndata, metadata, N)
+  NPlot_list[[i]]<-Nplot
+}
+
+#Extract legend
+Nneigh_legend<-get_legend(NPlot_list[[1]])
+
+#Remove legend from all plots (add legend="none")
+NPlot_list_NL<-lapply(NPlot_list, "+", theme(legend.position = "none"))
+
+#Plot in a 2x2 with shared legend
+grid.arrange(
+  arrangeGrob(grobs = NPlot_list_NL, ncol = 2),
+  Nneigh_legend,
+  ncol=2,
+  widths = c(10, 1),
+  top="UMAP Neighbors"
+)
+```
+
+Best n_neighbors would be between 17 and 32, so we'll take 24
+```{r Nneighbors2, warning=FALSE, message=FALSE, echo=F}
+plotly::ggplotly(neighborUMAP(Ndata, metadata, 24)+scale_size_manual(values=c(2,3)))
+#@@
+```
+
+
+### Minimum distance
+
+```{r minDist, warning=FALSE, message=FALSE}
+minDistUMAP<-function(data, metadata, minDist){
+  Dumap<-umap(data, min_dist=minDist)
+  plt<-dataPlotter(Dumap, metadata)
+  plt<-plt+
+    #Resize sizes for 2x2 plots
+    scale_size_manual(values = c(1, 2))+
+    labs(title=paste0("Minimum distance: ", minDist))+
+    theme(plot.title=element_text(size=8),
+          axis.title=element_text(size=8),
+          axis.text=element_text(size=7),
+          legend.key.size=unit(0.4, "cm"),
+          legend.title=element_text(size=6),
+          legend.text=element_text(size=6))
+  
+  return(plt)
+}
+
+#Store all md plots
+mdPlot_list<-list()
+#List of minium distances
+minDistances<-c(0.1, 0.3, 0.7, 0.9)
+
+for (i in seq_along(minDistances)){
+  md<-minDistances[i]
+  MDplot<-minDistUMAP(Ndata, metadata, md)
+  mdPlot_list[[i]]<-MDplot
+}
+
+#Extract legend
+MD_legend<-get_legend(mdPlot_list[[1]])
+
+#Remove legend from all plots (add legend="none")
+mdPlot_list_NL<-lapply(mdPlot_list, "+", theme(legend.position = "none"))
+
+#Plot in a 2x2 with shared legend
+grid.arrange(
+  arrangeGrob(grobs = mdPlot_list_NL, ncol = 2),
+  MD_legend,
+  ncol=2,
+  widths = c(10, 1),
+  top="UMAP Minimum Distance"
+)
+
+#Best results are produced between around 0.3, so we'll take min_dist as 0.3
+```
+
+### Number of iterations
+
+```{r IterationsUMAP, warning=F, message=FALSE}
+#n_epochs: integer; number of iterations performed during layout optimization
+
+epochUMAP<-function(data, metadata, epoch){
+  Dumap<-umap(data, n_epochs=epoch)
+  plt<-dataPlotter(Dumap, metadata)
+  plt<-plt+
+    #Resize sizes for 2x2 plots
+    scale_size_manual(values = c(1, 2))+
+    labs(title=paste0("Number of Iterations: ", epoch))+
+    theme(plot.title=element_text(size=8),
+          axis.title=element_text(size=8),
+          axis.text=element_text(size=7),
+          legend.key.size=unit(0.4, "cm"),
+          legend.title=element_text(size=6),
+          legend.text=element_text(size=6))
+  
+  return(plt)
+}
+
+#Empty list to store the plots
+EpPlot_list<-list()
+#Number of iterations
+epochs<-c(70, 500, 1000, 2000)
+
+for (i in seq_along(epochs)){
+  N<-epochs[i]
+  Epochplot<-epochUMAP(Ndata, metadata, N)
+  EpPlot_list[[i]]<-Epochplot
+}
+
+#Extract legend
+Ep_legend<-get_legend(EpPlot_list[[1]])
+
+#Remove legend from all plots (add legend="none")
+EpPlot_list_NL<-lapply(EpPlot_list, "+", theme(legend.position = "none"))
+
+#Plot in a 2x2 with shared legend
+grid.arrange(
+  arrangeGrob(grobs = EpPlot_list_NL, ncol = 2),
+  Ep_legend,
+  ncol=2,
+  widths = c(10, 1),
+  top="UMAP Number of iterations"
+)
+```
+
+Around 500 is the best n_epochs, better if its higher, we'll use 650
+```{r IterationsUMAP2, warning=F, message=FALSE, echo=F}
+epochUMAP(Ndata, metadata, 650)+scale_size_manual(values = c(2, 3.5))
+```
+
+# Final interpretation
+
+Using only the normalized data stored in "normalized_data", which is the dataset with the normalized data and with the outliers removed.
+
+
+## Final PCA representation
+
+```{r finalPCA}
+p1<-ggplot(N_pca$x, aes(x=PC1, y=PC2, 
+                    color=metadata$org_location, shape=metadata$species))+ 
+  geom_point(size=3)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual(values = c(1, 2.5))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="PCA with cleaned data")+
+  theme_minimal()
+
+p2 <- fviz_pca_ind(N_pca, 
+             geom.ind = "point", 
+             habillage = metadata$org_location, #color by type
+             addEllipses = TRUE, 
+             title = "PCA grouped by Experiment type") +
+  labs(x = "PC1", y = "PC2")
+
+
+p2 + p1 + plot_annotation(title = "Final PCA", 
+                          theme=theme(plot.title= element_text(hjust=0.5, size=16))) & 
+  theme(aspect.ratio = 1)
+
+```
+
+
+Finally, we can see that the data is grouped into 2 clusters explained by the variation in PC1. This two clusters are classified by the type of sherry wine. In the other hand we can see that there are more or less 6 other cluster explained by the variance in PC2 that are clustered by the time group they are related to.
+We can say that the origin (replicate) does not affect any clusters, to further prove that we can see that in each cluster the 4 shapes(one for each replicate) are always together meaning that the values for each combination of time and type do not change significantly within different replicates. 
+
+## Final t-SNE representation
+
+```{r finaltsne}
+set.seed(42)
+
+maxPer<-(nrow(normalized_data)-1)/3
+data<-Rtsne(normalized_data, perplexity=maxPer/2)
+
+
+ggplot(tsne_normalized_data, aes(x=Dim1, y=Dim2, shape=Origin, size=Type, color=Time))+
+  geom_point()+
+  scale_shape_manual(values = c(19, 1, 2, 15))+
+  scale_size_manual(values = c(2, 3.5))+
+  scale_color_brewer(palette="Dark2")+
+  labs(title="Final t-SNE with cleaned data", size="Type", shape="Origin", color="Time")+
+  theme_minimal()
+
+```
+
+The t-SNE shows how samples group by local similarity, and its used to complement the findings from the PCA. We can observe in our plot that data is clustered into two sections by type and time rather than by data origin. This result supports the biological relevance of the factors and helps discard technical batch effects.
+
+## Final UMAP representation
+
+```{r final UMAP, warning=FALSE, message=FALSE}
+FinalUmap<-umap(Ndata, n_epochs=650, min_dist=0.1, n_neighbors=24)
+#Modify min_dist as 0.1 fits better the data in this case
+
+plotly::ggplotly(dataPlotter(FinalUmap, metadata)+
+  ggtitle("Final UMAP with cleaned data"))
+#@@
+```
+
+
+## Final conclusion
+
+After seeing PCA, t-SNE, and UMAP final representations
+
+### PCA
+The data was grouped very good into distinct clusters, driven by sherry wine type and fermentation time, as evident from the variation along PC1 and PC2. To create this final representation we had to mitigate an initial batch effect, and remove an identified outlier.
+
+### t-SNE
+t-SNE offered a complementary view, but i think it did not perform as good as PCA and UMAP, you can still see the clusters but it is not as clear as you would see its counterparts. 
+
+### UMAP
+UMAP captured clear patterns distinguishing both time and type while like PCA. To look for the better data representation we played a little with UMAP parameters .
+
+Overall, we can conclude that this study highlights the effectiveness of combining dimensionality reduction techniques to uncover biologically meaningful patterns. The findings suggest that differences in gene expression between these yeast strains are primarily influenced by wine type and fermentation time.

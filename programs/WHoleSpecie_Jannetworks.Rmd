@@ -382,47 +382,97 @@ grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2,  top=textGrob(p
 
 # Umap
 
-```{r}
+## Raw UMAP
+```{r funcDef}
 library(umap)
 
-Nrepl_UMAP<-as.data.frame(t(Nrepl_data))
-
-umap_data<-umap(Nrepl_UMAP)
-
-ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], shape=repl_meta$species ,color=repl_meta$org_location))+
-  geom_point(size=6)+
-  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
-  theme_minimal()
+dataPlotter<-function(umap_data, metadata){
+  plt<-ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], shape=metadata$species, color=metadata$org_location))+
+    geom_point(size=6)+
+    scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+    labs(x="x", y="y", shape="Species", color="Tissue")+
+    theme_minimal()
+  return(plt)
+}
 ```
 
 
-```{r}
-install.packages("Polychrome")
-library(Polychrome)
+```{r rawUMAP}
+repl_UMAP<-as.data.frame(t(repl_data))
 
-# build-in color palette
-Glasbey = glasbey.colors(30)
+raw_umap_data<-umap(repl_UMAP)
 
-umap_data<-umap(scale(Nrepl_UMAP))
+plotly::ggplotly(dataPlotter(raw_umap_data, repl_meta)+ggtitle("Raw data Umap"))
+```
 
-ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], color=repl_meta$org_location))+
-  geom_point(size=6)+
+##Normalized Umap
+```{r nUMAP}
+#Nrepl_data<-sweep(repl_data, 1, rowSums(repl_data), "/") #converts sample counts into relative frequencies for genes
+Nrepl_UMAP<-as.data.frame(t(Nrepl_data))
+
+Numap_data<-umap(Nrepl_UMAP)
+
+dataPlotter(Numap_data, repl_meta)+ggtitle("Normalized data Umap")
+```
+
+```{r sc_nUMAP}
+sc_Nrepl_UMAP<-scale(Nrepl_UMAP)
+
+sc_Numap_data<-umap(sc_Nrepl_UMAP)
+
+plotly::ggplotly(dataPlotter(sc_Numap_data, repl_meta)+ggtitle("Scaled data Umap"))
+```
+
+```{r scUMAP_alt}
+umap_data<-sc_Numap_data
+
+plotly::ggplotly(ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], color=repl_meta$org_location))+
+  geom_point(size=5)+
   scale_shape_manual(values = c(19, 1, 2, 15, 8))+
-  scale_color_manual(values = Glasbey)+
-  theme_minimal()+ggtitle("Tissue-based")
+  #scale_color_manual(colorList)+
+  theme_minimal()+ggtitle("Tissue-based"))
 
 ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], color=repl_meta$species))+
-  geom_point(size=6)+
+  geom_point(size=5)+
   scale_shape_manual(values = c(19, 1, 2, 15, 8))+
   theme_minimal()+ggtitle("Species-based")
 
-ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], shape=repl_meta$species, color=repl_meta$org_location))+
-  geom_point(size=6)+
-  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
-  theme_minimal()+ggtitle("Species+tissue based")
+```
+```{r}
+FinalUmap<-umap(sc_Nrepl_UMAP, n_epochs=650, n_neighbors=20)
+#Modify min_dist as 0.1 fits better the data in this case
 
+plotly::ggplotly(dataPlotter(FinalUmap, repl_meta)+
+  ggtitle("Final UMAP with cleaned data"))
 ```
 
+
+# Heatmap
+
+```{r heatmap}
+htm_Ndata<-as.data.frame(t(Nrepl_data))
+ggplot(htm_Ndata, aes())
+```
+
+```{r}
+# Install package if needed
+library(pheatmap)
+
+# Convert dataframe to matrix (genes as rows, samples as columns)
+expression_matrix <- as.matrix(Nrepl_data)
+
+sample_correlations <- cor(expression_matrix)
+
+pheatmap(sample_correlations,
+                   clustering_method = "complete")
+
+library(heatmaply)
+library(RColorBrewer)
+
+heatmaply(sample_correlations, clustering_method = "complete",
+          colors = viridis(n = 256, option = "inferno", direction=-1)) 
+
+```
 
 
 
