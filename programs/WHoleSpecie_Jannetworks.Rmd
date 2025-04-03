@@ -204,12 +204,14 @@ multiColHist<-function(data, location, color_var){ #gets the data table, the con
   return(p)
 }
 
-colorList<-distinctColorPalette(nrow(repl_meta)) #make a list with a color for each tissue
+nn<-seq(1,149, by=15)
+
+colorList<-distinctColorPalette(length(nn)) #make a list with a color for each tissue
 
 #Create a legend that realates each color to a tissue
 
 #use the repl_meta dataframe for creating the plot, as it contains all tissue(location) names
-legend_plot<-ggplot(repl_meta, aes(x=1, y=location, color=location))+
+legend_plot<-ggplot(repl_meta[nn,], aes(x=1, y=location, color=location))+
   geom_point()+
   scale_color_manual(values=colorList)+
   guides(color=guide_legend(ncol=1))+
@@ -224,7 +226,7 @@ Create the plot list
 ```{r rawPlotListing}
 RawHistList<-list() #to store the plots
 
-for (i in 1:nrow(repl_meta)){
+for (i in 1:nrow(repl_meta[nn,])){
   color_var<-colorList[i]
   loc<-colnames(repl_data)[i]
   
@@ -237,7 +239,7 @@ Joins the plot and legend to create a plot of the total raw data distribution
 ```{r rawPlot}
 plotTitle<-paste0(specie, " raw data distribution")
 
-raw_Ptab<-arrangeGrob(grobs=RawHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
+raw_Ptab<-arrangeGrob(grobs=RawHistList, ncol=ceiling(nrow(repl_meta[nn,])/6)) #creates a table that organizes the plots
 
 #png(paste0("./DistrPlots/", specie, "_raw_distPlot.png"), width=1600, height=800) #B73_CPM_raw_distPlot
 grid.arrange(raw_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
@@ -269,14 +271,13 @@ NormType<-"CPM"
 ```{r CPMlExpRm}
 #Filter low expression genes
 #keep<-rowSums(Nrepl_data>1)>=12 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 10 total in samples
-keep<-rowSums(Nrepl_data>=0)
+keep<-rowSums(Nrepl_data>=0)>=0 #@@ only >=0 erases bell curve
 Nrepl_data<-Nrepl_data[keep,]
 
 #Nrepl to data frame
 Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
 
 #@@ Less genes kept for similar normality plots in rpkm (b73 tested)
-hist(Nrepl_data[,seq(1,149, by=15)], breaks=100)
 ```
 
 #### Plot CPM normalized data
@@ -296,7 +297,7 @@ Create the plot list
 ```{r CPMnormPlotListing}
 NormHistList<-list() #to store the plots
 
-for (i in 1:nrow(repl_meta)){
+for (i in 1:nrow(repl_meta[nn,])){
   color_var<-colorList[i]
   loc<-colnames(repl_data)[i]
   
@@ -309,7 +310,7 @@ Joins the plot and legend to create a plot of the total normalized data distribu
 ```{r CPMnormPlot}
 plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
 
-norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
+norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta[nn,])/6)) #creates a table that organizes the plots
 
 #png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
 grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
@@ -340,7 +341,7 @@ if (exists("length_vec")){ #if we have lengths
 
 ```{r RPKMlExpRm}
 #Filter low expression genes
-keep<-rowSums(Nrepl_data>=0) #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 5 total in samples
+keep<-rowSums(Nrepl_data>=0)>=0 #as most lowly expressed genes are slightly above 0(=1), so we filter starting at 1 rep and more than 5 total in samples
 Nrepl_data<-Nrepl_data[keep,]
 
 #@@ Difference between 12 and 6 is important? -> it is we only do rpkm
@@ -349,7 +350,6 @@ Nrepl_data<-Nrepl_data[keep,]
 Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
 
 #@@ More genes kept for similar normality plots than cpm (b73 tested)
-hist(Nrepl_data[,seq(1,149, by=15)], breaks=100)
 ```
 
 
@@ -360,7 +360,7 @@ Create the plot list
 ## Plotting the normalized data counts <-allPLot Title
 NormHistList<-list() #to store the plots
 
-for (i in 1:nrow(repl_meta)){
+for (i in 1:nrow(repl_meta[nn,])){
   color_var<-colorList[i]
   loc<-colnames(repl_data)[i]
   
@@ -373,7 +373,7 @@ Joins the plot and legend to create a plot of the total normalized data distribu
 ```{r RPKMnormPlot}
 plotTitle<-paste0(specie, " normalized data distribution using ", NormType)
 
-norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta)/6)) #creates a table that organizes the plots
+norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta[nn,])/6)) #creates a table that organizes the plots
 
 #png(paste0("./DistrPlots/", specie, "_norm", NormType, "_distPlot.png"), width=1600, height=800) #B73_normCPM_distPlot
 grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2,  top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
@@ -439,7 +439,7 @@ ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$
 
 ```
 ```{r}
-FinalUmap<-umap(sc_Nrepl_UMAP, n_epochs=650, n_neighbors=20)
+FinalUmap<-umap(sc_Nrepl_UMAP, n_neighbors=29, n_epochs=450, min_dist=0.1) #nneighbor: 22 ##rework depending on normalization
 #Modify min_dist as 0.1 fits better the data in this case
 
 plotly::ggplotly(dataPlotter(FinalUmap, repl_meta)+
@@ -450,11 +450,6 @@ plotly::ggplotly(dataPlotter(FinalUmap, repl_meta)+
 # Heatmap
 
 ```{r heatmap}
-htm_Ndata<-as.data.frame(t(Nrepl_data))
-ggplot(htm_Ndata, aes())
-```
-
-```{r}
 # Install package if needed
 library(pheatmap)
 
@@ -467,12 +462,17 @@ pheatmap(sample_correlations,
                    clustering_method = "complete")
 
 library(heatmaply)
-library(RColorBrewer)
 
 heatmaply(sample_correlations, clustering_method = "complete",
-          colors = viridis(n = 256, option = "inferno", direction=-1)) 
+          colors = viridis(n = 256, option = "inferno", direction=-1))
+
+heatmaply(sample_correlations, clustering_method = "complete",
+          colors = blueWhiteRed(256),
+          #grid_color = "black",
+          grid_gap = 0.001)
 
 ```
+
 
 
 

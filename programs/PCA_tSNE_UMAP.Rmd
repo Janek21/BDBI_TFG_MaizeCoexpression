@@ -133,6 +133,9 @@ total_data <- rowSums(data)
 #Normalize each cell's expression by its total expression
 Ndata<-sweep(data, 1, total_data, "/") #converts sample counts into relative frequencies for genes
 
+##
+Ndata<-as.data.frame(t(Nrepl_data))
+
 Ndata<-scale(Ndata)
 
 N_pca<-prcomp(Ndata, scale=T)
@@ -191,7 +194,7 @@ Up_fviz1+Up_fviz2+plot_annotation('Scaled Plots',
   theme(aspect.ratio = 1)
 
 ggplot(scaled_pca$x, aes(x=PC1, y=PC2, color=metadata$org_location, shape=metadata$species))+ 
-  geom_point(size=4)+
+  geom_point(size=6)+
   scale_shape_manual(values = c(19, 1, 2, 15, 8))+
   #scale_size_manual( values = c(2, 6))+
   #scale_color_brewer(palette="Dark2")+
@@ -222,7 +225,7 @@ Np_fviz1+Np_fviz2+plot_annotation('Normalized Plots',
   theme(aspect.ratio = 1)
 
 ggplot(N_pca$x, aes(x=PC1, y=PC2, color=metadata$org_location, shape=metadata$species))+ 
-  geom_point(size=4)+
+  geom_point(size=6)+
   scale_shape_manual(values = c(19, 1, 2, 15, 8))+
   #scale_size_manual(values = c(2, 6))+
   #scale_color_brewer(palette="Dark2")+
@@ -275,6 +278,10 @@ Ndata<-sweep(data, 1, total_data, "/")
 
 
 Ndata<-Ndata[, sapply(Ndata, var) != 0]
+
+Ndata<-OTL_Ndata
+data<-OTL_data
+metadata<-OTL_metadata
 N_pca<- prcomp(Ndata, scale=T)
 ```
 
@@ -615,7 +622,7 @@ dataPlotter(OTL_N_umap, OTL_metadata)+ggtitle("Normalized Data UMAP (Outlier)")
 Ndata_sc<-scale(Ndata)
 N_umap<-umap(Ndata)
 
-dataPlotter(N_umap, metadata)+ggtitle("Normalized Data UMAP (No Outlier)")
+plotly::ggplotly(dataPlotter(N_umap, metadata)+ggtitle("Normalized Data UMAP (No Outlier)"))
 ```
 
 ### {-}
@@ -697,15 +704,17 @@ neighborUMAP<-function(data, metadata, Nneighbors){
   return(plt)
 }
 
+Ndata<-sc_Nrepl_UMAP
+
 #Empty list to store the plots
 NPlot_list<-list()
 #Number of neighbors (max is nrow of data)
-neighbors<-seq(2, nrow(Ndata), by=15)
+neighbors<-seq(15, 40, by=7) #15
 #neighbors<-c(20, 23, 27, 30)
 
 for (i in seq_along(neighbors)){
   N<-neighbors[i]
-  Nplot<-neighborUMAP(Ndata, metadata, N)
+  Nplot<-neighborUMAP(Ndata, repl_meta, N)
   NPlot_list[[i]]<-Nplot
 }
 
@@ -727,7 +736,8 @@ grid.arrange(
 
 Best n_neighbors would be between 17 and 32, so we'll take 24
 ```{r Nneighbors2, warning=FALSE, message=FALSE, echo=F}
-plotly::ggplotly(neighborUMAP(Ndata, metadata, 24)+scale_size_manual(values=c(2,3)))
+plotly::ggplotly(neighborUMAP(Ndata, metadata, 17))
+plotly::ggplotly(neighborUMAP(Ndata, metadata, 24))
 #@@
 ```
 
@@ -781,6 +791,7 @@ grid.arrange(
 #Best results are produced between around 0.3, so we'll take min_dist as 0.3
 ```
 
+
 ### Number of iterations
 
 ```{r IterationsUMAP, warning=F, message=FALSE}
@@ -832,7 +843,8 @@ grid.arrange(
 
 Around 500 is the best n_epochs, better if its higher, we'll use 650
 ```{r IterationsUMAP2, warning=F, message=FALSE, echo=F}
-epochUMAP(Ndata, metadata, 650)+scale_size_manual(values = c(2, 3.5))
+plotly::ggplotly(epochUMAP(Ndata, metadata, 500)) 
+#@@70
 ```
 
 # Final interpretation
@@ -845,7 +857,7 @@ Using only the normalized data stored in "normalized_data", which is the dataset
 ```{r finalPCA}
 p1<-ggplot(N_pca$x, aes(x=PC1, y=PC2, 
                     color=metadata$org_location, shape=metadata$species))+ 
-  geom_point(size=3)+
+  geom_point(size=5)+
   scale_shape_manual(values = c(19, 1, 2, 15, 8))+
   #scale_size_manual(values = c(1, 2.5))+
   #scale_color_brewer(palette="Dark2")+
@@ -894,7 +906,7 @@ The t-SNE shows how samples group by local similarity, and its used to complemen
 ## Final UMAP representation
 
 ```{r final UMAP, warning=FALSE, message=FALSE}
-FinalUmap<-umap(Ndata, n_epochs=650, min_dist=0.1, n_neighbors=24)
+FinalUmap<-umap(Ndata, n_epochs=500, min_dist=0.1, n_neighbors=24)
 #Modify min_dist as 0.1 fits better the data in this case
 
 plotly::ggplotly(dataPlotter(FinalUmap, metadata)+
