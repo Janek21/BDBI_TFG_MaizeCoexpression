@@ -381,6 +381,68 @@ norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta[nn,])/6))
 grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2,  top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
 #dev.off()
 ```
+# PCA
+
+```{r dtPrep}
+repl_dvData<-as.data.frame(t(repl_data))
+Nrepl_dvData<-as.data.frame(t(Nrepl_data)) #Nrepl_data<-sweep(repl_data, 1, rowSums(repl_data), "/") #converts sample counts into relative frequencies for genes
+```
+
+
+```{r PCA}
+set.seed(42)
+
+#Unscaled
+
+unscaled_pca <- prcomp(repl_dvData, scale=F)
+names(unscaled_pca)
+
+#Scaled
+
+scaled_pca <- prcomp(repl_dvData, scale=T)
+names(scaled_pca)
+
+#Normalized
+
+Nrepl_dvData<-scale(Nrepl_dvData)
+
+N_pca<-prcomp(Nrepl_dvData, scale=T)
+```
+
+```{r}
+library(factoextra)
+
+#Raw
+ggplot(unscaled_pca$x, aes(x=PC1, y=PC2, color=repl_meta$org_location, shape=repl_meta$species))+ 
+  geom_point(size=6)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual( values = c(2, 6))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="Unscaled PCA")+
+  theme_minimal()
+
+#Scaled
+ggplot(scaled_pca$x, aes(x=PC1, y=PC2, color=repl_meta$org_location, shape=repl_meta$species))+ 
+  geom_point(size=6)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual( values = c(2, 6))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="Scaled PCA")+
+  theme_minimal()
+
+#Normalized
+ggplot(N_pca$x, aes(x=PC1, y=PC2, color=repl_meta$org_location, shape=repl_meta$species))+ 
+  geom_point(size=6)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual(values = c(2, 6))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="Normalized PCA")+
+  theme_minimal()
+
+fviz_pca_ind(N_pca, geom.ind = "point", 
+                       habillage = repl_meta$org_location, addEllipses = TRUE, pointshape = 19,
+                       title="Tissue-based classification")
+```
 
 # Umap
 
@@ -400,9 +462,7 @@ dataPlotter<-function(umap_data, metadata){
 
 
 ```{r rawUMAP}
-repl_UMAP<-as.data.frame(t(repl_data))
-
-raw_umap_data<-umap(repl_UMAP)
+raw_umap_data<-umap(repl_dvData)
 
 plotly::ggplotly(dataPlotter(raw_umap_data, repl_meta)+ggtitle("Raw data Umap"))
 ```
@@ -410,7 +470,8 @@ plotly::ggplotly(dataPlotter(raw_umap_data, repl_meta)+ggtitle("Raw data Umap"))
 ##Normalized Umap
 ```{r nUMAP}
 #Nrepl_data<-sweep(repl_data, 1, rowSums(repl_data), "/") #converts sample counts into relative frequencies for genes
-Nrepl_UMAP<-as.data.frame(t(Nrepl_data))
+#Nrepl_UMAP<-as.data.frame(t(Nrepl_data))
+Nrepl_UMAP<-Nrepl_dvData
 
 Numap_data<-umap(Nrepl_UMAP)
 
@@ -441,7 +502,7 @@ ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$
 
 ```
 ```{r}
-FinalUmap<-umap(sc_Nrepl_UMAP, n_neighbors=35, n_epochs=450, min_dist=0.1) #nneighbor: 22, [29] ##rework depending on normalization
+FinalUmap<-umap(sc_Nrepl_UMAP, n_neighbors=22, n_epochs=450, min_dist=0.1) #nneighbor: 29, 35 ##rework depending on normalization
 #Modify min_dist as 0.1 fits better the data in this case
 
 plotly::ggplotly(dataPlotter(FinalUmap, repl_meta)+
@@ -870,11 +931,6 @@ rownames(bin_metadata)<-rownames(Nrepl_data)
 bin_metadata<-bin_metadata[,colSums(bin_metadata)>=1]#if any rtissue is not present in sample, it will be introduced in binarization, as a full 0 column, remove it again
 ```
 
-```{r binSort}
-bin_metadata <- bin_metadata[, sort(names(bin_metadata))]
-bin_metadata <- bin_metadata[order(rownames(bin_metadata)), ]
-```
-
 
 ### Correlation
 
@@ -899,35 +955,46 @@ heatmap.data$Row.names<-NULL
 
 head(heatmap.data)
 
-plotTitle<-paste0("Correlation plot of ", specie, " using ", NormType)
+plotTitle<-paste0("Correlation plot by species using ", NormType)
 #png(paste0("./CorPlots/", specie, "_", NormType, "_corplot.png"), width=1600, height=800) #B73_CPM_corplot
 CorLevelPlot(heatmap.data,
              x = names(bin_metadata),
              y = names(module_eigengenes),
              titleX="Traits", titleY="Modules", main=plotTitle,
              rotLabX = 45, rotTitleY = 90,
-             cexCorval = 0.7, cexLabY = 0.7, cexLabX = 0.7
+             cexCorval = 0.4, cexLabY = 0.7, cexLabX = 0.7
+            )
+
+#dev.off()
+```
+
+# Resorted Coexpression Visualization
+
+```{r reVisCoexp}
+s_bin_metadata<-bin_metadata
+s_bin_metadata <- s_bin_metadata[, sort(names(s_bin_metadata))]
+s_bin_metadata <- s_bin_metadata[order(rownames(s_bin_metadata)), ]
+
+heatmap.data <- merge(module_eigengenes, s_bin_metadata, by = 'row.names')
+
+head(heatmap.data)
+
+rownames(heatmap.data)<-heatmap.data$Row.names
+heatmap.data$Row.names<-NULL
+
+head(heatmap.data)
+
+plotTitle<-paste0("Correlation plot by tissue using ", NormType)
+#png(paste0("./CorPlots/", specie, "_", NormType, "_corplot.png"), width=1600, height=800) #B73_CPM_corplot
+CorLevelPlot(heatmap.data,
+             x = names(s_bin_metadata),
+             y = names(module_eigengenes),
+             titleX="Traits", titleY="Modules", main=plotTitle,
+             rotLabX = 45, rotTitleY = 90,
+             cexCorval = 0.4, cexLabY = 0.7, cexLabX = 0.7
             )
 #dev.off()
-
 ```
 
-```{r corTable, eval=FALSE, purl=FALSE}
-textMatrix = paste(signif(MT_cor, 2), "\n(",
-signif(module.trait.corr.pvals, 1), ")", sep = "");
-dim(textMatrix) = dim(MT_cor)
-par(mar = c(6, 8.5, 3, 3));
 
-labeledHeatmap(Matrix = MT_cor,
-xLabels = names(bin_metadata),
-yLabels = names(module_eigengenes),
-ySymbols = names(module_eigengenes),
-colorLabels = FALSE,
-colors = greenWhiteRed(50),
-textMatrix = textMatrix,
-setStdMargins = FALSE,
-cex.text = 0.5,
-zlim = c(-1,1),
-main = paste("Module-trait relationships"))
-```
 
