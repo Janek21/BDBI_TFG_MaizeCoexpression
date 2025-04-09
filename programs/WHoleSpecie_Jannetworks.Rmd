@@ -2,11 +2,15 @@
 title: "Gene Network"
 author: "Jan Izquierdo i Ramos"
 date: "2025-02-03"
-output: pdf_document
+always_allow_html: true
+output: 
+  tint::tintHtml:
+    toc: true
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.width=16, fig.height=8)
 knitr::opts_chunk$set(purl = TRUE)
 ```
 
@@ -14,7 +18,7 @@ knitr::opts_chunk$set(purl = TRUE)
 
 ## Load libraries
 
-```{r loadLib}
+```{r loadLib, results='hide', message=FALSE}
 library(WGCNA)
 allowWGCNAThreads()
 library(randomcoloR)
@@ -27,6 +31,9 @@ library(gridExtra)
 library(CorLevelPlot)
 library(ggpubr)
 library(plotly)
+library(factoextra)
+library(umap)
+library(heatmaply)
 ```
 
 ## Load the data
@@ -272,7 +279,7 @@ keep<-apply(Nrepl_data, 1, max)>=0 #keep genes where the counts for at least one
 Nrepl_data<-Nrepl_data[keep,]
 
 #Nrepl to data frame
-Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
+Nrepl_data<-as.data.frame(Nrepl_data) #eventually transpose
 ```
 
 #### Plot CPM normalized data
@@ -359,25 +366,19 @@ norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta[repl_sele
 grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2,  top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
 #dev.off()
 ```
-# PCA
+# Expression data analysis {.tabset}
 
-Run expression analysis for the data
+## PCA
 
 ```{r dtPrep}
-#@@
+#set genes as columns and replicates by species as rows
 repl_dvData<-as.data.frame(t(repl_data))
-Nrepl_dvData<-as.data.frame(t(Nrepl_data)) #Nrepl_data<-sweep(repl_data, 1, rowSums(repl_data), "/") #converts sample counts into relative frequencies for genes
+Nrepl_dvData<-as.data.frame(t(Nrepl_data))
 ```
 
-
+Run a PCA
 ```{r PCA}
 set.seed(42)
-
-#Unscaled
-unscaled_pca <- prcomp(repl_dvData, scale=F)
-
-#Scaled
-scaled_pca <- prcomp(repl_dvData, scale=T)
 
 #Normalized
 Nrepl_dvData_sc<-scale(Nrepl_dvData)
@@ -385,27 +386,7 @@ Nrepl_dvData_sc<-scale(Nrepl_dvData)
 N_pca<-prcomp(Nrepl_dvData_sc, scale=T)
 ```
 
-```{r pca}
-library(factoextra)
-
-#Raw
-ggplot(unscaled_pca$x, aes(x=PC1, y=PC2, color=repl_meta$org_location, shape=repl_meta$species))+ 
-  geom_point(size=6)+
-  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
-  #scale_size_manual( values = c(2, 6))+
-  #scale_color_brewer(palette="Dark2")+
-  labs(title="Unscaled PCA")+
-  theme_minimal()
-
-#Scaled
-ggplot(scaled_pca$x, aes(x=PC1, y=PC2, color=repl_meta$org_location, shape=repl_meta$species))+ 
-  geom_point(size=6)+
-  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
-  #scale_size_manual( values = c(2, 6))+
-  #scale_color_brewer(palette="Dark2")+
-  labs(title="Scaled PCA")+
-  theme_minimal()
-
+```{r pca_plots}
 #Normalized
 ggplot(N_pca$x, aes(x=PC1, y=PC2, color=repl_meta$org_location, shape=repl_meta$species))+ 
   geom_point(size=6)+
@@ -415,17 +396,16 @@ ggplot(N_pca$x, aes(x=PC1, y=PC2, color=repl_meta$org_location, shape=repl_meta$
   labs(title="Normalized PCA")+
   theme_minimal()
 
+#Tissue clusters
 fviz_pca_ind(N_pca, geom.ind = "point", 
                        habillage = repl_meta$org_location, addEllipses = TRUE, pointshape = 19,
                        title="Tissue-based classification")
 ```
 
-# Umap
+## Umap {.tabset}
 
-## Raw UMAP
+Create a function to streamline the plotting of UMAP
 ```{r funcDef}
-library(umap)
-
 dataPlotter<-function(umap_data, metadata){
   plt<-ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], shape=metadata$species, color=metadata$org_location))+
     geom_point(size=6)+
@@ -436,96 +416,45 @@ dataPlotter<-function(umap_data, metadata){
 }
 ```
 
-
-```{r rawUMAP}
-raw_umap_data<-umap(repl_dvData)
-
-ggplotly(dataPlotter(raw_umap_data, repl_meta)+ggtitle("Raw data Umap"))
-```
-
-##Normalized Umap
-```{r nUMAP}
-#Nrepl_data<-sweep(repl_data, 1, rowSums(repl_data), "/") #converts sample counts into relative frequencies for genes
-#Nrepl_UMAP<-as.data.frame(t(Nrepl_data))
-
-Numap_data<-umap(Nrepl_dvData)
-
-dataPlotter(Numap_data, repl_meta)+ggtitle("Normalized data Umap")
-```
-
+### Normalized UMAP
 ```{r sc_nUMAP}
-
 sc_Numap_data<-umap(Nrepl_dvData_sc)
 
-ggplotly(dataPlotter(sc_Numap_data, repl_meta)+ggtitle("Scaled data Umap"))
+ggplotly(dataPlotter(sc_Numap_data, repl_meta)+ggtitle("Normalized-scaled data Umap"))
 ```
 
+Alternatives for visualizing only 1 characteristic at a time
 ```{r scUMAP_alt}
-umap_data<-sc_Numap_data
-
-ggplotly(ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], color=repl_meta$org_location))+
+ggplotly(ggplot(as.data.frame(sc_Numap_data$layout), aes(x=sc_Numap_data$layout[,1], y=sc_Numap_data$layout[,2], color=repl_meta$org_location))+
   geom_point(size=5)+
   scale_shape_manual(values = c(19, 1, 2, 15, 8))+
-  #scale_color_manual(colorList)+
   theme_minimal()+ggtitle("Tissue-based"))
 
-ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], color=repl_meta$species))+
+ggplot(as.data.frame(sc_Numap_data$layout), aes(x=sc_Numap_data$layout[,1], y=sc_Numap_data$layout[,2], color=repl_meta$species))+
   geom_point(size=5)+
   scale_shape_manual(values = c(19, 1, 2, 15, 8))+
   theme_minimal()+ggtitle("Species-based")
 
 ```
+
+### Final UMAP
 ```{r}
-FinalUmap<-umap(Nrepl_dvData_sc, n_neighbors=29, n_epochs=450, min_dist=0.1) #nneighbor:22, 29, 35 ##rework depending on normalization
-#Modify min_dist as 0.1 fits better the data in this case
+FinalUmap<-umap(Nrepl_dvData_sc, n_neighbors=29, n_epochs=450, min_dist=0.1) #nneighbor:22, 29, 35
 
-ggplotly(dataPlotter(FinalUmap, repl_meta)+
-  ggtitle("Final UMAP with cleaned data"))
-
-
+ggplotly(dataPlotter(FinalUmap, repl_meta)+ggtitle("Final UMAP with cleaned data"))
 ```
 
+## {-}
 
-# Heatmap
-
+## Heatmap
 ```{r heatmapPrep}
-# Install package if needed
-library(pheatmap)
+#Convert to matrix
+expression_matrix<-as.matrix(Nrepl_data)
 
-# Convert dataframe to matrix (genes as rows, samples as columns)
-expression_matrix <- as.matrix(Nrepl_data)
-
-sample_correlations <- cor(expression_matrix)
-```
-
-```{r heatmapColSort}
-#@@ USELESS
-extract_parts <- function(name) {
-  strsplit(name, "_")[[1]]  # Get the part after the underscore
-}
-
-parted_names<-as.data.frame(t(data.frame(sapply(colnames(sample_correlations), extract_parts))))
-
-NameList<-paste0(parted_names$V2,"_", parted_names$V1)
-
-colnames(sample_correlations)<-NameList
-rownames(sample_correlations)<-NameList
-
-
-sample_correlations <- sample_correlations[, sort(colnames(sample_correlations))]
-sample_correlations <- sample_correlations[order(rownames(sample_correlations)), ]
+sample_correlations<-cor(expression_matrix)
 ```
 
 ```{r heatmap}
-
-pheatmap(sample_correlations,
-                   clustering_method = "complete")
-
-library(heatmaply)
-
-heatmaply(sample_correlations, clustering_method = "complete",
-          colors = viridis(n = 256, option = "inferno", direction=-1))
-
 heatmaply(sample_correlations, clustering_method = "complete",
           colors = blueWhiteRed(256),
           #grid_color = "black",
@@ -533,61 +462,24 @@ heatmaply(sample_correlations, clustering_method = "complete",
 
 ```
 
+# {-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```{r}
+knitr::opts_chunk$set(eval = FALSE)
+```
 
 # Network construction
-
 
 ## Power choosing
 
 Get list of powers and do the calculations
 ```{r nwPowerList}
+#@@ modify all powers choose chapter
+#https://github.com/kpatel427/YouTubeTutorials/blob/main/WGCNA.R
+
 Nrepl_data<-t(Nrepl_data)
 
-power <- c(c(1:15), seq(from = 17, to = 50, by = 2))
-#power<-c(1:40)
+power <- c(c(1:15), seq(from = 17, to = 50, by = 2)) #more detailed in lower values
 
 #Network topology analysis
 sft <- pickSoftThreshold(Nrepl_data,
@@ -626,21 +518,15 @@ if (is.na(sft$powerEstimate)){
   softPw <- min(sft$powerEstimate, 30)
   }
 
-if (specie=="DK105"){
-  softPw<-24 #4000
-  #softPw<-26 #6000
-  #softPw<-30 #8000
-}
-
 ```
 
 ## Block building
 
-```{r nwConstr}
-temp_cor <- cor
-cor <- WGCNA::cor
+```{r nwConstr, eval=F}
+temp_cor<-cor
+cor<-WGCNA::cor
 
-ModNetwork <- blockwiseModules(Nrepl_data,
+ModNetwork<-blockwiseModules(Nrepl_data,
                  nThreads = 32, #16
                  maxBlockSize = 64000, #directly related to memory, if maxBlockSize<total genes, multiple blocks will have to be used -> worse clustering
                  deepSplit = 4,
@@ -663,7 +549,7 @@ cor<-temp_cor
 Eigengenes summarize gene expression for a module(cluster of highly co-expressed genes(detected by similar gene expression patterns)) using PC1.
 Group up genes into 1 value
 ```{r EigenColors}
-module_eigengenes <- ModNetwork$MEs
+module_eigengenes<-ModNetwork$MEs
 
 #get number of genes for each module
 table(ModNetwork$colors)
@@ -672,6 +558,7 @@ dim(Nrepl_data) #get total number of genes from the dimensions
 ```
 
 ```{r EigenColorsPlot}
+#@@ rvw and change
 #Plot the module colors before and after merging underneath
 plotDendroAndColors(ModNetwork$dendrograms[[1]], cbind(ModNetwork$unmergedColors, ModNetwork$colors),
                     c("unmerged", "merged"),
@@ -690,6 +577,8 @@ Binarize the location
 ```{r binMeta}
 levels(as.factor(repl_meta$location))
 
+#@@
+#Create a relations matrix for the replicates of each species, where both columns and rows are the replicates, a diagonal matrix is created, with all cells as 0 except the diagonal, that is 1
 bin_metadata <- data.frame(
   cob_b73=as.integer(repl_meta$location=="b73_cob"),
   coleoptile_b73=as.integer(repl_meta$location=="b73_coleoptile"),
@@ -857,18 +746,20 @@ bin_metadata<-bin_metadata[,colSums(bin_metadata)>=1]
 ### Correlation
 
 ```{r corCalc}
+#@@ rvw onwards
 nTissues <- nrow(Nrepl_data)
 nGenes <- ncol(Nrepl_data)
 
-MT_cor<-cor(module_eigengenes, bin_metadata, use="p")
-module.trait.corr.pvals <- corPvalueStudent(MT_cor, nTissues)
-
+ModTrait_cor<-cor(module_eigengenes, bin_metadata, use="p")
+module.trait.corr.pvals <- corPvalueStudent(ModTrait_cor, nTissues)
 ```
 
 # Coexpression visualization
 
+The modules will present a good visualization of the effect by specie.
+
 ```{r visCoexp}
-heatmap.data <- merge(module_eigengenes, bin_metadata, by = 'row.names')
+heatmap.data<-merge(module_eigengenes, bin_metadata, by='row.names')
 
 head(heatmap.data)
 
@@ -876,7 +767,7 @@ rownames(heatmap.data)<-heatmap.data$Row.names
 heatmap.data$Row.names<-NULL
 
 plotTitle<-paste0("Correlation plot by species using ", NormType)
-#png(paste0("./CorPlots/", specie, "_", NormType, "_corplot.png"), width=1600, height=800) #B73_CPM_corplot
+#png(paste0("./CorPlots/sp_", NormType, "_corplot.png"), width=1600, height=800) #sp_CPM_corplot
 CorLevelPlot(heatmap.data,
              x = names(bin_metadata),
              y = names(module_eigengenes),
@@ -889,6 +780,8 @@ CorLevelPlot(heatmap.data,
 ```
 
 # Resorted Coexpression Visualization
+
+Sort the traits by tissue name for a better visualization of modules that affect a group of tissues
 
 ```{r reVisCoexp}
 s_bin_metadata<-bin_metadata
@@ -903,7 +796,7 @@ rownames(heatmap.data)<-heatmap.data$Row.names
 heatmap.data$Row.names<-NULL
 
 plotTitle<-paste0("Correlation plot by tissue using ", NormType)
-#png(paste0("./CorPlots/", specie, "_", NormType, "_corplot.png"), width=1600, height=800) #B73_CPM_corplot
+#png(paste0("./CorPlots/ti_", NormType, "_corplot.png"), width=1600, height=800) #ti_CPM_corplot
 CorLevelPlot(heatmap.data,
              x = names(s_bin_metadata),
              y = names(module_eigengenes),
