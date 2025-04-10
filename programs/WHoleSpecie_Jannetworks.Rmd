@@ -522,7 +522,7 @@ if (is.na(sft$powerEstimate)){
 
 ## Block building
 
-```{r nwConstr, eval=F}
+```{r nwConstr}
 temp_cor<-cor
 cor<-WGCNA::cor
 
@@ -558,13 +558,12 @@ dim(Nrepl_data) #get total number of genes from the dimensions
 ```
 
 ```{r EigenColorsPlot}
-#@@ rvw and change
 #Plot the module colors before and after merging underneath
 plotDendroAndColors(ModNetwork$dendrograms[[1]], cbind(ModNetwork$unmergedColors, ModNetwork$colors),
                     c("unmerged", "merged"),
                     dendroLabels = FALSE,
                     addGuide = TRUE,
-                    hang= 0.03,
+                    hang= 0.03, #@@ review params
                     guideHang = 0.05)
 ```
 
@@ -577,7 +576,6 @@ Binarize the location
 ```{r binMeta}
 levels(as.factor(repl_meta$location))
 
-#@@
 #Create a relations matrix for the replicates of each species, where both columns and rows are the replicates, a diagonal matrix is created, with all cells as 0 except the diagonal, that is 1
 bin_metadata <- data.frame(
   cob_b73=as.integer(repl_meta$location=="b73_cob"),
@@ -743,17 +741,6 @@ bin_metadata<-bin_metadata[,colSums(bin_metadata)>=1]
 ```
 
 
-### Correlation
-
-```{r corCalc}
-#@@ rvw onwards
-nTissues <- nrow(Nrepl_data)
-nGenes <- ncol(Nrepl_data)
-
-ModTrait_cor<-cor(module_eigengenes, bin_metadata, use="p")
-module.trait.corr.pvals <- corPvalueStudent(ModTrait_cor, nTissues)
-```
-
 # Coexpression visualization
 
 The modules will present a good visualization of the effect by specie.
@@ -767,16 +754,15 @@ rownames(heatmap.data)<-heatmap.data$Row.names
 heatmap.data$Row.names<-NULL
 
 plotTitle<-paste0("Correlation plot by species using ", NormType)
-#png(paste0("./CorPlots/sp_", NormType, "_corplot.png"), width=1600, height=800) #sp_CPM_corplot
+svg(paste0("./sp_", NormType, "_corplot.svg"), width=1600/60, height=800/60) #sp_CPM_corplot
 CorLevelPlot(heatmap.data,
-             x = names(bin_metadata),
-             y = names(module_eigengenes),
+             x = colnames(bin_metadata),
+             y = colnames(module_eigengenes),
              titleX="Traits", titleY="Modules", main=plotTitle,
              rotLabX = 45, rotTitleY = 90,
              cexCorval = 0, cexLabY = 0.7, cexLabX = 0.7
             )
-
-#dev.off()
+dev.off()
 ```
 
 # Resorted Coexpression Visualization
@@ -796,16 +782,74 @@ rownames(heatmap.data)<-heatmap.data$Row.names
 heatmap.data$Row.names<-NULL
 
 plotTitle<-paste0("Correlation plot by tissue using ", NormType)
-#png(paste0("./CorPlots/ti_", NormType, "_corplot.png"), width=1600, height=800) #ti_CPM_corplot
+svg(paste0("./ti_", NormType, "_corplot.svg"), width=1600/60, height=800/60) #ti_CPM_corplot
 CorLevelPlot(heatmap.data,
-             x = names(s_bin_metadata),
-             y = names(module_eigengenes),
+             x = colnames(s_bin_metadata),
+             y = colnames(module_eigengenes),
              titleX="Traits", titleY="Modules", main=plotTitle,
              rotLabX = 45, rotTitleY = 90,
              cexCorval = 0, cexLabY = 0.7, cexLabX = 0.7
             )
-#dev.off()
+dev.off()
+```
+
+# Analysis of gene modules
+
+```{r}
+remotes::install_github("YuLab-SMU/yulab.utils")
+tidytree
+treeio
+aplot
+scatterpie
+ggtree
+enrichplot
+clusterProfiler
 ```
 
 
+```{r}
+library(clusterProfiler)
+library(org.Hs.eg.db)  # Assuming human genes
+library(enrichplot)
+library(DOSE)
 
+library(clusterProfiler)
+library(org.Zmays.eg.db)  # Maize annotation package
+library(DOSE)             # Optional, for visualization
+
+
+genes_in_module <- names(ModNetwork$colors)[ModNetwork$colors == "darkturquoise"]
+MEgene_expression <- as.data.frame(Nrepl_data[, colnames(Nrepl_data) %in% genes_in_module])
+```
+
+```{r}
+entrez_genes <- genes_in_module
+
+ego <- enrichGO(
+  gene = entrez_genes,
+  OrgDb = org.Zmays.eg.db,
+  ont = "ALL",        # BP, CC, MF, or ALL
+  pAdjustMethod = "BH",
+  pvalueCutoff = 0.05,
+  readable = TRUE
+)
+
+##
+
+ekegg <- enrichKEGG(
+  gene = entrez_genes,
+  organism = 'zma',  # KEGG code for maize
+  pvalueCutoff = 0.05
+)
+
+# View results
+head(ekegg)
+```
+```{r}
+barplot(ego, showCategory = 10, title = "GO Enrichment")
+dotplot(ekegg, showCategory = 10, title = "KEGG Pathway Enrichment")
+
+
+write.csv(as.data.frame(ego), "GO_enrichment_results.csv")
+write.csv(as.data.frame(ekegg), "KEGG_enrichment_results.csv")
+```
