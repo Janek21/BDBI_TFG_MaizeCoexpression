@@ -796,16 +796,12 @@ dev.off()
 # Analysis of gene modules
 
 ```{r}
-remotes::install_github("YuLab-SMU/yulab.utils")
-tidytree
-treeio
-aplot
-scatterpie
-ggtree
-enrichplot
-clusterProfiler
-```
+geneModule_df<-data.frame(modules=ModNetwork$colors)
+#write.table(geneModule_df, file="geneModule.txt")
 
+ME_gene_ensembl <- names(ModNetwork$colors)[ModNetwork$colors == "darkturquoise"]
+MEgene_expression <- as.data.frame(Nrepl_data[, colnames(Nrepl_data) %in% ME_gene_ensembl])
+```
 
 ```{r}
 library(clusterProfiler)
@@ -814,19 +810,45 @@ library(enrichplot)
 library(DOSE)
 
 library(clusterProfiler)
+#devtools::install_github("FAkohoue/org.Zmays.eg.db")
 library(org.Zmays.eg.db)  # Maize annotation package
 library(DOSE)             # Optional, for visualization
-
-
-genes_in_module <- names(ModNetwork$colors)[ModNetwork$colors == "darkturquoise"]
-MEgene_expression <- as.data.frame(Nrepl_data[, colnames(Nrepl_data) %in% genes_in_module])
 ```
 
 ```{r}
-entrez_genes <- genes_in_module
+library(biomaRt)
+ensembl_plants <- useEnsemblGenomes(biomart = "plants_mart")
+
+datasets <- listDatasets(ensembl_plants)
+zmays_dataset <- grep("zmays", datasets$dataset, value = TRUE, ignore.case = TRUE)
+
+#mart <- useDataset("zmays_eg_gene", useMart("ensembl"))
+
+genes <- getBM(
+    filters="ensembl_gene_id",
+    attributes=c("ensembl_gene_id", "entrezgene_id"),
+    values=ensembl.genes,
+    mart=mart)
+ 
+ 
+ ####
+ensembl_maize <- useDataset(dataset = zmays_dataset, mart = ensembl_plants)
+entrez_mapping <- getBM(
+  attributes = c("ensembl_gene_id", "entrezgene_id"),
+  filters = "ensembl_gene_id",
+  values = ME_gene_ensembl,
+  mart = ensembl_maize
+)
+
+listAttributes(ensembl_maize)[,1:2]
+
+```
+
+
+```{r}
 
 ego <- enrichGO(
-  gene = entrez_genes,
+  gene = as.vector(entrez_genes),
   OrgDb = org.Zmays.eg.db,
   ont = "ALL",        # BP, CC, MF, or ALL
   pAdjustMethod = "BH",
