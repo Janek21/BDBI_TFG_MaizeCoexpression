@@ -801,6 +801,7 @@ geneModule_df<-data.frame(modules=ModNetwork$colors)
 
 ME_gene_ensembl <- names(ModNetwork$colors)[ModNetwork$colors == "darkturquoise"]
 MEgene_expression <- as.data.frame(Nrepl_data[, colnames(Nrepl_data) %in% ME_gene_ensembl])
+#Zm00001eb002770
 ```
 
 ```{r}
