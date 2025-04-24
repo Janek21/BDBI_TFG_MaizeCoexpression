@@ -753,6 +753,8 @@ head(heatmap.data)
 rownames(heatmap.data)<-heatmap.data$Row.names
 heatmap.data$Row.names<-NULL
 
+write.table(heatmap.data, file="./CorPlots/Sp_table.txt")
+
 plotTitle<-paste0("Correlation plot by species using ", NormType)
 svg(paste0("./sp_", NormType, "_corplot.svg"), width=1600/60, height=800/60) #sp_CPM_corplot
 CorLevelPlot(heatmap.data,
@@ -781,6 +783,8 @@ head(heatmap.data)
 rownames(heatmap.data)<-heatmap.data$Row.names
 heatmap.data$Row.names<-NULL
 
+write.table(heatmap.data, file="./CorPlots/Ti_table.txt")
+
 plotTitle<-paste0("Correlation plot by tissue using ", NormType)
 svg(paste0("./ti_", NormType, "_corplot.svg"), width=1600/60, height=800/60) #ti_CPM_corplot
 CorLevelPlot(heatmap.data,
@@ -792,3 +796,5 @@ CorLevelPlot(heatmap.data,
             )
 dev.off()
 ```
+
+
