@@ -738,6 +738,9 @@ rownames(bin_metadata)<-rownames(Nrepl_data)
 
 bin_metadata<-bin_metadata[,colSums(bin_metadata)>=1]
 #if any tissue is not present in sample, it will be introduced in binarization, as a full 0 column, this line removes it
+
+#remove ME from names
+colnames(module_eigengenes)<-gsub("ME", "", colnames(module_eigengenes))
 ```
 
 
@@ -765,6 +768,28 @@ CorLevelPlot(heatmap.data,
              cexCorval = 0, cexLabY = 0.7, cexLabX = 0.7
             )
 dev.off()
+```
+
+```{r, eval=FALSE}
+
+colnames(heatmap.data)<-gsub("ME", "", colnames(heatmap.data))
+
+library(reshape2)
+modules_data<-heatmap.data[colnames(module_eigengenes)]
+long_data <- melt(as.matrix(modules_data))
+
+# Rename columns
+colnames(long_data) <- c("Trait", "Module", "Correlation")
+
+# Create the plot
+ggplot(long_data, aes(x = Trait, y = Module, fill = Correlation)) +
+  geom_tile(aes(fill=long_data$Correlation)) +
+  scale_fill_gradient2(low = "blue", high = "red",
+                       midpoint = 0, limit = c(-1,1), space = "Lab",
+                       name="Correlation") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +
+  coord_fixed()
 ```
 
 # Resorted Coexpression Visualization

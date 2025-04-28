@@ -15,13 +15,13 @@ class Annotater(object):
         print(self.MEg_dic) #blue: genes: g1, g2, g3
         print(self.ann_data)
         
-        self.ann_data.to_csv("./fff.txt", sep='\t')
+        #self.ann_data.to_csv("./fff.txt", sep='\t')
 
 
         self.data_calculation()
         #print(self.MEg_dic)
-
-        self.ratio_calculator("", self.MEg_dic, "plum1",)
+        
+        
     
     def data_prep(self, annFile, MEfile):
         #read file
@@ -62,6 +62,12 @@ class Annotater(object):
         #dic is: plum1: {genes:g1,g2}, {functions: {f1:1}, {f2:2}}
         #print(self.MEg_dic["plum1"]["functions"].values())
         print(any("genes" in d for d in self.MEg_dic.values()))
+        
+        ## How specific do functions have to be (first, 2nd or all orders (.))
+        m=self.ratio_calculator("Cell division.cell cycle organisation.metaphase to anaphase transition.transcription factor", self.MEg_dic, "plum1")
+        print(m)
+        t=self.ratio_calculator("Cell division.cell cycle organisation.metaphase to anaphase transition.transcription factor", total_count)
+        print(t)
         
         return
 
@@ -127,7 +133,7 @@ class Annotater(object):
         #detect if total or module dictionary
         if module!="NULL": #module is no chosen, is it an error?
             if any("genes" in d for d in in_dic.values()): #no module+genes as key -> module dictionary
-                total=sum(in_dic[module]["functions"].values()) #total in function
+                total=sum(in_dic[module]["functions"].values()) #total functions in mocule
                 c_function_reps=in_dic[module]["functions"][c_function] #function reps in current module
                 print("ratCalc is ", c_function_reps, total)
                 r=c_function_reps/total
