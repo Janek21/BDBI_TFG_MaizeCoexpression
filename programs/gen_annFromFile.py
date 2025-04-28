@@ -68,6 +68,9 @@ class Annotater(object):
         print(m)
         t=self.ratio_calculator("Cell division.cell cycle organisation.metaphase to anaphase transition.transcription factor", total_count)
         print(t)
+        print("shorttt")
+        t=self.ratio_calculator("Cell division.cell cycle", total_count)
+        print(t)
         
         return
 
@@ -77,7 +80,7 @@ class Annotater(object):
     def id_rectifier(self, id_col): #set Z and remove suffix to be able to find it in ME comparison
         #set Z
         id_col=id_col.str.replace("z", "Z")
-        #find _ and remove suffix (readd ' beacuse it is erased as well)
+        #find _ and remove suffix
         id_col=id_col.str.split("_").str[0]
         return(id_col)
 
