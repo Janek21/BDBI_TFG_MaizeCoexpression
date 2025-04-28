@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import pandas as pd
+import numpy as np
 
 #read ID column, remove _p..., then make dictionary for modules, comparing functions/module and functions/total
 
@@ -14,8 +15,13 @@ class Annotater(object):
         print(self.MEg_dic) #blue: genes: g1, g2, g3
         print(self.ann_data)
         
+        self.ann_data.to_csv("./fff.txt", sep='\t')
+
+
         self.data_calculation()
         #print(self.MEg_dic)
+
+        self.ratio_calculator("", self.MEg_dic, "plum1",)
     
     def data_prep(self, annFile, MEfile):
         #read file
@@ -54,7 +60,7 @@ class Annotater(object):
         for module in self.MEg_dic.keys(): #add functions reps of all modules to dictionary
             self.MEd_functions(module)
         #dic is: plum1: {genes:g1,g2}, {functions: {f1:1}, {f2:2}}
-        print(self.MEg_dic["plum1"]["functions"].values())
+        #print(self.MEg_dic["plum1"]["functions"].values())
         print(any("genes" in d for d in self.MEg_dic.values()))
         
         return
@@ -121,13 +127,17 @@ class Annotater(object):
         #detect if total or module dictionary
         if module!="NULL": #module is no chosen, is it an error?
             if any("genes" in d for d in in_dic.values()): #no module+genes as key -> module dictionary
-                in_dic[module]["functions"].values() ##calculate ratio
+                total=sum(in_dic[module]["functions"].values()) #total in function
+                c_function_reps=in_dic[module]["functions"][c_function] #function reps in current module
+                print("ratCalc is ", c_function_reps, total)
+                r=c_function_reps/total
                 
             else: #no genes as key but no module chosen means an error
                 raise ValueError("Missing module to calculate ratio")
         
         else: #the total dictionary is chosen
-            r=c_function/sum(in_dic.values())
+            r=in_dic[c_function]/sum(in_dic.values())
+            print("ratCalc total is ", in_dic[c_function], sum(in_dic.values()))
         
         
         return r
