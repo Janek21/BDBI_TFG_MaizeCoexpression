@@ -1,0 +1,7 @@
+Function	MEratio	MEtotal	Tratio	Ttotal	ME_representation
+Secondary metabolism.terpenoid biosynthesis.terpene biosynthesis	0.02127659574468085	1	0.0008205689277899343	69	True
+RNA biosynthesis.DNA-binding transcriptional regulation.zinc-coordinating DNA-binding domain	0.06382978723404255	3	0.0066477975454285985	559	True
+RNA biosynthesis.DNA-binding transcriptional regulation.beta-sheet DNA-binding domain	0.02127659574468085	1	0.0008800304442964514	74	True
+Cell wall organisation.pectin.rhamnogalacturonan I	0.19148936170212766	9	0.001557891732470745	131	True
+not assigned	0.6808510638297872	32	0.3738345542764723	31435	True
+Enzyme classification.EC_5 isomerases.EC_5-4 intramolecular transferase	0.02127659574468085	1	0.0010940919037199124	92	True

@@ -1,0 +1,38 @@
+Function	MEratio	MEtotal	Tratio	Ttotal	ME_representation
+Photosynthesis.photorespiration.glycine decarboxylase complex	0.003663003663003663	1	0.00017838454951955095	15	True
+Cellular respiration.pyruvate oxidation.mitochondrial pyruvate dehydrogenase complex	0.003663003663003663	1	0.0004637998287508325	39	True
+Cellular respiration.tricarboxylic acid cycle.2-oxoglutarate dehydrogenase complex	0.014652014652014652	4	0.00021406145942346114	18	True
+Cellular respiration.tricarboxylic acid cycle.succinate dehydrogenase complex	0.02564102564102564	7	0.0004400152221482257	37	True
+Cellular respiration.oxidative phosphorylation.NADH dehydrogenase complex	0.18315018315018314	50	0.001771953191894206	149	True
+Cellular respiration.oxidative phosphorylation.cytochrome c reductase complex	0.05860805860805861	16	0.0007373228046808106	62	True
+Cellular respiration.oxidative phosphorylation.cytochrome c hemoprotein activity	0.014652014652014652	4	0.0003805537056417087	32	True
+Cellular respiration.oxidative phosphorylation.cytochrome c oxidase complex	0.03663003663003663	10	0.0008800304442964514	74	True
+Cellular respiration.oxidative phosphorylation.ATP synthase complex	0.07326007326007326	20	0.0009632765674055751	81	True
+Amino acid metabolism.amino acid degradation.branched-chain amino acids	0.003663003663003663	1	0.0009989534773094852	84	True
+Lipid metabolism.glycerolipid metabolism.phosphatidylethanolamine metabolism	0.003663003663003663	1	0.0007016458947769003	59	True
+Redox homeostasis.thiol-based redox regulation.peroxiredoxin activities	0.007326007326007326	2	0.00015459994291694415	13	True
+Chromatin organisation.post-translational histone modification.histone methylation	0.007326007326007326	2	0.004019598515840548	338	True
+Cell division.meiotic recombination.meiotic crossover	0.007326007326007326	2	0.0017124916753876891	144	True
+Cell division.plastid division.contractile complex	0.01098901098901099	3	0.0004043383122443155	34	True
+RNA biosynthesis.RNA polymerase III-dependent transcription.TFIIIf transcription factor heterodimer	0.05128205128205128	14	0.00022595376272476454	19	True
+RNA homeostasis.mRNA surveillance pathways.mRNA adenine deamination-dependent decay	0.003663003663003663	1	0.00010703072971173057	9	True
+Protein modification.lipidation.protein S-acylation	0.003663003663003663	1	0.0012724764532394634	107	True
+Protein modification.lipidation.protein de-S-acylation	0.01098901098901099	3	0.0004519075254495291	38	True
+Protein modification.phosphorylation.TKL protein kinase activities	0.03296703296703297	9	0.013664256493197602	1149	True
+Protein modification.dephosphorylation.protein serine/threonine protein phosphatase activities	0.018315018315018316	5	0.005553705641708686	467	True
+Protein homeostasis.ubiquitin-proteasome system.26S proteasome	0.018315018315018316	5	0.0025211682998763202	212	True
+Vesicle trafficking.anterograde trafficking.protein cargo receptor activities	0.003663003663003663	1	0.0002854152792312815	24	True
+Vesicle trafficking.anterograde trafficking.vesicle tethering	0.014652014652014652	4	0.0003091998858338883	26	True
+Vesicle trafficking.clathrin coated vesicle machinery.accessory factor activities	0.007326007326007326	2	0.001082199600418609	91	True
+Vesicle trafficking.vesicle tethering.RAB-GTPase activities	0.003663003663003663	1	0.0012249072400342498	103	True
+Protein translocation.mitochondrion.inner mitochondrion membrane TIM translocation system	0.01098901098901099	3	0.0004756921320521359	40	True
+Solute transport.primary active transport.V-type ATPase complex	0.05128205128205128	14	0.0008562458376938446	72	True
+Solute transport.carrier-mediated transport.MATE-type transporter activities	0.003663003663003663	1	0.0013081533631433737	110	True
+Solute transport.carrier-mediated transport.MTCC-type transporter activities	0.018315018315018316	5	0.0021406145942346115	180	True
+not assigned	0.18681318681318682	51	0.3738345542764723	31435	False
+Enzyme classification.EC_1 oxidoreductases.EC_1-6 oxidoreductase acting on NADH or NADPH	0.007326007326007326	2	0.0004756921320521359	40	True
+Enzyme classification.EC_1 oxidoreductases.EC_1-8 oxidoreductase acting on sulfur group of donor	0.003663003663003663	1	0.0005946151650651698	50	True
+Enzyme classification.EC_1 oxidoreductases.EC_1-10 oxidoreductase acting on diphenol or related substance as donor	0.018315018315018316	5	0.0008800304442964514	74	True
+Enzyme classification.EC_2 transferases.EC_2-3 acyltransferase	0.01098901098901099	3	0.0035320140804871087	297	True
+Enzyme classification.EC_2 transferases.EC_2-7 transferase transferring phosphorus-containing group	0.047619047619047616	13	0.04239606126914661	3565	True
+Enzyme classification.EC_3 hydrolases.EC_3-1 hydrolase acting on ester bond	0.018315018315018316	5	0.007551612596327657	635	True

@@ -1,0 +1,14 @@
+Function	MEratio	MEtotal	Tratio	Ttotal	ME_representation
+Cellular respiration.oxidative phosphorylation.cytochrome c oxidase complex	0.014285714285714285	1	0.0008800304442964514	74	True
+Cellular respiration.oxidative phosphorylation.ATP synthase complex	0.02857142857142857	2	0.0009632765674055751	81	True
+Chromatin organisation.epigenetic state regulation.RNA-directed DNA methylation (RdDM) pathway	0.014285714285714285	1	0.0014032917895538007	118	True
+DNA damage response.DNA damage tolerance (DDT) pathways.DNA polymerase eta *(POLH)	0.014285714285714285	1	0.00022595376272476454	19	True
+RNA biosynthesis.RNA polymerase II-dependent transcription.transcription elongation	0.014285714285714285	1	0.0007967843211873275	67	True
+Protein biosynthesis.ribosome biogenesis.small ribosomal subunit (SSU)	0.02857142857142857	2	0.004947198173342213	416	True
+Protein modification.phosphorylation.TKL protein kinase activities	0.014285714285714285	1	0.013664256493197602	1149	True
+Cell wall organisation.pectin.rhamnogalacturonan I	0.014285714285714285	1	0.001557891732470745	131	True
+Vesicle trafficking.clathrin coated vesicle machinery.accessory factor activities	0.014285714285714285	1	0.001082199600418609	91	True
+External stimuli response.pathogen.defense mechanisms	0.014285714285714285	1	0.0015459994291694415	130	True
+not assigned	0.7857142857142857	55	0.3738345542764723	31435	True
+Enzyme classification.EC_2 transferases.EC_2-7 transferase transferring phosphorus-containing group	0.02857142857142857	2	0.04239606126914661	3565	False
+Enzyme classification.EC_3 hydrolases.EC_3-2 glycosylase	0.014285714285714285	1	0.006469412995909048	544	True

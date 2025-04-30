@@ -1,0 +1,74 @@
+Function	MEratio	MEtotal	Tratio	Ttotal	ME_representation
+Cellular respiration.tricarboxylic acid cycle.succinyl-CoA ligase heterodimer	0.002008032128514056	1	0.00019027685282085435	16	True
+Cellular respiration.oxidative phosphorylation.cytochrome c reductase complex	0.010040160642570281	5	0.0007373228046808106	62	True
+Carbohydrate metabolism.starch metabolism.degradation	0.004016064257028112	2	0.0010108457806107887	85	True
+Carbohydrate metabolism.nucleotide sugar biosynthesis.UDP-N-acetylglucosamine biosynthesis	0.004016064257028112	2	0.00022595376272476454	19	True
+Amino acid metabolism.amino acid degradation.threonine degradation	0.002008032128514056	1	0.0002735229759299781	23	True
+Lipid metabolism.glycerolipid metabolism.triacylglycerol biosynthesis	0.006024096385542169	3	0.0003210921891351917	27	True
+Lipid metabolism.sphingolipid metabolism.sphingolipid phosphorylation	0.002008032128514056	1	0.0003210921891351917	27	True
+Lipid metabolism.lipid-A biosynthesis.lipid-A-disaccharide synthase *(LpxB)	0.002008032128514056	1	1.1892303301303397e-05	1	True
+Nucleotide metabolism.purines.ribonucleotide (RN) anabolism	0.008032128514056224	4	0.0004637998287508325	39	True
+Nucleotide metabolism.purines.catabolism	0.002008032128514056	1	0.0005113690419560461	43	True
+Redox homeostasis.reactive oxygen-induced signalling.NADPH-oxidase activity	0.006024096385542169	3	0.0004519075254495291	38	True
+Chromatin organisation.histone chaperone activities.histone chaperone *(NASP)	0.002008032128514056	1	0.00010703072971173057	9	True
+Chromatin organisation.histone chaperone activities.histone chaperone *(ANP32)	0.002008032128514056	1	0.00011892303301303397	10	True
+Cell division.DNA replication.elongation	0.004016064257028112	2	0.0011059842070212159	93	True
+Cell division.cell cycle organisation.cell cycle control	0.004016064257028112	2	0.0035320140804871087	297	True
+Cell division.cell cycle organisation.chromosome segregation	0.002008032128514056	1	0.0011892303301303396	100	True
+Cell division.cell cycle organisation.sister chromatid separation	0.002008032128514056	1	0.001355722576348587	114	True
+DNA damage response.DNA damage tolerance (DDT) pathways.DNA polymerase eta *(POLH)	0.01606425702811245	8	0.00022595376272476454	19	True
+RNA biosynthesis.RNA polymerase II-dependent transcription.transcription co-activation	0.002008032128514056	1	0.003258491104557131	274	False
+RNA biosynthesis.DNA-binding transcriptional regulation.helix-turn-helix DNA-binding domain	0.030120481927710843	15	0.011392826562648653	958	True
+RNA biosynthesis.DNA-binding transcriptional regulation.alpha-helix exposed by beta-structure	0.01606425702811245	8	0.0021525068975359147	181	True
+RNA biosynthesis.DNA-binding transcriptional regulation.beta-hairpin exposed by alpha/beta-scaffold structure	0.006024096385542169	3	0.010441442298544382	878	False
+RNA biosynthesis.DNA-binding transcriptional regulation.undefined DNA-binding domain	0.008032128514056224	4	0.0031633526781467036	266	True
+RNA biosynthesis.transcriptional co-regulation.JAZ-TPR transcriptional repressor complexes	0.008032128514056224	4	0.0007967843211873275	67	True
+RNA biosynthesis.organellar gene expression machinery.nuclear-encoded organellar RNA polymerase *(NEP)	0.004016064257028112	2	0.00017838454951955095	15	True
+RNA processing.spliceosome-mediated pre-mRNA splicing.U2-type major spliceosome	0.002008032128514056	1	0.0029730758253258493	250	False
+RNA processing.spliceosome-mediated pre-mRNA splicing.MAC/NTC spliceosome-associated complex	0.004016064257028112	2	0.0011892303301303396	100	True
+RNA processing.spliceosome-mediated pre-mRNA splicing.Exon Junction Complex (EJC)	0.004016064257028112	2	0.0008919227475977547	75	True
+RNA processing.pre-RNA group-I/-II intron splicing.other RNA splicing factor activities	0.002008032128514056	1	0.00021406145942346114	18	True
+RNA processing.tRNA modification.tRNA editing	0.002008032128514056	1	0.0003210921891351917	27	True
+RNA homeostasis.mRNA degradation.Exosome RNA surveillance complex	0.002008032128514056	1	0.0013676148796498905	115	True
+RNA homeostasis.mRNA surveillance pathways.No-Go Decay (NGD) pathway	0.004016064257028112	2	0.00016649224621824755	14	True
+Protein biosynthesis.ribosome biogenesis.small ribosomal subunit (SSU)	0.002008032128514056	1	0.004947198173342213	416	False
+Protein biosynthesis.organellar translation machinery.mitochondrial ribosome biogenesis	0.004016064257028112	2	0.002663875939491961	224	True
+Protein biosynthesis.organellar translation machinery.translation initiation	0.004016064257028112	2	0.00022595376272476454	19	True
+Protein modification.glycosylation.N-linked glycosylation	0.004016064257028112	2	0.0017362762819902958	146	True
+Protein modification.glycosylation.O-linked glycosylation	0.002008032128514056	1	0.0005470459518599562	46	True
+Protein modification.phosphorylation.TKL protein kinase activities	0.006024096385542169	3	0.013664256493197602	1149	False
+Protein modification.phosphorylation.CMGC protein kinase activities	0.002008032128514056	1	0.002580629816382837	217	False
+Protein modification.targeting peptide maturation.endomembrane system	0.006024096385542169	3	0.0007254305013795071	61	True
+Protein modification.cysteine disulfide formation.endoplasmic reticulum	0.006024096385542169	3	0.000570830558462563	48	True
+Protein homeostasis.protein quality control.smallHsp holdase chaperone activities	0.002008032128514056	1	0.0003210921891351917	27	True
+Protein homeostasis.ubiquitin-proteasome system.ubiquitin-fold protein conjugation	0.006024096385542169	3	0.020169346399010562	1696	False
+Protein homeostasis.ubiquitin-proteasome system.ubiquitin-fold protein deconjugation	0.008032128514056224	4	0.0035320140804871087	297	True
+Protein homeostasis.proteolysis.serine peptidase activities	0.002008032128514056	1	0.004007706212539245	337	False
+Protein homeostasis.proteolysis.metallopeptidase activities	0.004016064257028112	2	0.00189087622490724	159	True
+Cytoskeleton organisation.actin and tubulin folding.Prefoldin-Like (PFDL) co-chaperone complex	0.010040160642570281	5	0.00019027685282085435	16	True
+Cell wall organisation.hemicellulose.xylan	0.002008032128514056	1	0.0023546760536580723	198	False
+Vesicle trafficking.clathrin coated vesicle machinery.accessory factor activities	0.006024096385542169	3	0.001082199600418609	91	True
+Vesicle trafficking.vesicle tethering.TRAPP-II complex-specific components	0.008032128514056224	4	0.0002497383693273713	21	True
+Vesicle trafficking.vesicle tethering.TRAPP-III-complex-specific components	0.002008032128514056	1	0.00015459994291694415	13	True
+Vesicle trafficking.vesicle target membrane fusion.SNARE membrane fusion complexes	0.002008032128514056	1	0.0017124916753876891	144	True
+Solute transport.primary active transport.V-type ATPase complex	0.002008032128514056	1	0.0008562458376938446	72	True
+Solute transport.primary active transport.ABC-type transporter superfamily	0.006024096385542169	3	0.0024973836932737133	210	True
+Solute transport.carrier-mediated transport.DMT-type transporter superfamily	0.002008032128514056	1	0.004257444581866616	358	False
+Solute transport.carrier-mediated transport.MFS-type transporter superfamily	0.004016064257028112	2	0.007242412710493768	609	False
+Solute transport.channel-mediated transport.metal cation transporter *(MRS/MGT)	0.004016064257028112	2	0.0004162306155456189	35	True
+Nutrient uptake.iron uptake.chelation-based strategy	0.002008032128514056	1	0.000808676624488631	68	True
+External stimuli response.damage.regulatory kinase *(CORK) of DAMP signalling	0.002008032128514056	1	8.324612310912378e-05	7	True
+External stimuli response.pathogen.virus infection	0.002008032128514056	1	0.0011535534202264295	97	True
+Multi-process regulation.phosphoinositide signalling.inositol phosphate homeostasis	0.004016064257028112	2	0.0018670916183046332	157	True
+Multi-process regulation.phosphoinositide signalling.phosphoinositide homeostasis	0.006024096385542169	3	0.003246598801255827	273	True
+Plant reproduction.gametogenesis.female gametophyt	0.008032128514056224	4	0.0005589382551612597	47	True
+not assigned	0.6285140562248996	313	0.3738345542764723	31435	True
+Enzyme classification.EC_2 transferases.EC_2-3 acyltransferase	0.010040160642570281	5	0.0035320140804871087	297	True
+Enzyme classification.EC_2 transferases.EC_2-4 glycosyltransferase	0.002008032128514056	1	0.007729997145847207	650	False
+Enzyme classification.EC_2 transferases.EC_2-7 transferase transferring phosphorus-containing group	0.030120481927710843	15	0.04239606126914661	3565	False
+Enzyme classification.EC_2 transferases.EC_2-8 transferase transferring sulfur-containing group	0.002008032128514056	1	0.0004994767386547426	42	True
+Enzyme classification.EC_3 hydrolases.EC_3-4 hydrolase acting on peptide bond (peptidase)	0.008032128514056224	4	0.0069332128246598805	583	True
+Enzyme classification.EC_3 hydrolases.EC_3-5 hydrolase acting on carbon-nitrogen bond, other than peptide bond	0.002008032128514056	1	0.0011535534202264295	97	True
+Enzyme classification.EC_3 hydrolases.EC_3-6 hydrolase acting on acid anhydride	0.002008032128514056	1	0.0020335838645228806	171	False
+Enzyme classification.EC_4 lyases.EC_4-1 carbon-carbon lyase	0.002008032128514056	1	0.002009799257920274	169	False
+Enzyme classification.EC_6 ligases.EC_6-3 ligase forming carbon-nitrogen bond	0.008032128514056224	4	0.001557891732470745	131	True

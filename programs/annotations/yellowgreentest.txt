@@ -1,0 +1,14 @@
+Function	MEratio	MEtotal	Tratio	Ttotal	ME_representation
+Cellular respiration.oxidative phosphorylation.NADH dehydrogenase complex	0.15555555555555556	7	0.001771953191894206	149	True
+Secondary metabolism.terpenoid biosynthesis.terpene biosynthesis	0.022222222222222223	1	0.0008205689277899343	69	True
+Phytohormone action.signalling peptides.CRP (cysteine-rich-peptide) category	0.022222222222222223	1	0.0012130149367329465	102	True
+Chromatin organisation.nucleosome remodeling.SWI/SNF chromatin remodeling complexes	0.022222222222222223	1	0.0016292455522785654	137	True
+RNA biosynthesis.DNA-binding transcriptional regulation.helix-turn-helix DNA-binding domain	0.022222222222222223	1	0.011392826562648653	958	True
+RNA homeostasis.mRNA silencing.miRNA pathway	0.044444444444444446	2	0.002247645323946342	189	True
+Protein modification.phosphorylation.TKL protein kinase activities	0.022222222222222223	1	0.013664256493197602	1149	True
+Solute transport.carrier-mediated transport.DMT-type transporter superfamily	0.06666666666666667	3	0.004257444581866616	358	True
+Solute transport.channel-mediated transport.cyclic nucleotide-gated cation channel *(CNGC1/2/++)	0.044444444444444446	2	0.000570830558462563	48	True
+not assigned	0.5111111111111111	23	0.3738345542764723	31435	True
+Enzyme classification.EC_1 oxidoreductases.EC_1-14 oxidoreductase acting on paired donor with incorporation or reduction of molecular oxygen	0.022222222222222223	1	0.007753781752449815	652	True
+Enzyme classification.EC_2 transferases.EC_2-7 transferase transferring phosphorus-containing group	0.022222222222222223	1	0.04239606126914661	3565	False
+Enzyme classification.EC_4 lyases.EC_4-2 carbon-oxygen lyase	0.022222222222222223	1	0.002342783750356769	197	True

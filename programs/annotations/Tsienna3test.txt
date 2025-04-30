@@ -1,0 +1,29 @@
+Function	MEratio	MEtotal	Tratio	Ttotal	ME_representation
+gibberellin regulated protein	0.02	1	0.00015459994291694415	13	True
+c2h2 type domain containing protein	0.04	2	0.003234706497954524	272	True
+mads box transcription factor	0.02	1	0.001831414708400723	154	True
+mads box domain containing protein	0.04	2	0.0003329844924364951	28	True
+agamous mads box protein agl	0.02	1	0.0004162306155456189	35	True
+erf and b3 domain containing transcription	0.02	1	1.1892303301303397e-05	1	True
+platz transcription factor family protein isoform	0.02	1	2.3784606602606793e-05	2	True
+platz transcription factor family protein	0.02	1	1.1892303301303397e-05	1	True
+peptidase a1 domain containing protein	0.04	2	0.0025211682998763202	212	True
+pectinesterase protein	0.02	1	0.0005113690419560461	43	True
+pmei domain containing protein	0.02	1	0.0008324612310912378	70	True
+omega hydroxypalmitate o feruloyl transferase	0.08	4	0.00019027685282085435	16	True
+knot domain containing protein	0.04	2	0.00021406145942346114	18	True
+no annotation	0.28	14	0.06807154409666064	5724	True
+sp sbt subtilisin protease	0.02	1	0.0003686614023404053	31	True
+neprosin domain containing protein	0.02	1	0.00011892303301303397	10	True
+expansin b15	0.04	2	0.00017838454951955095	15	True
+acanthoscurrin mrna	0.02	1	4.756921320521359e-05	4	True
+defensin protein	0.02	1	2.3784606602606793e-05	2	True
+cysteine proteinase inhibitor	0.02	1	0.0002735229759299781	23	True
+quality protein subtilisin protease sbt	0.02	1	0.0002735229759299781	23	True
+response regulatory domain containing protein	0.02	1	5.9461516506516985e-05	5	True
+skin secretory protein xp	0.02	1	1.1892303301303397e-05	1	True
+subtilisin protein protease sbt	0.02	1	0.00015459994291694415	13	True
+alanine transaminase	0.04	2	2.3784606602606793e-05	2	True
+trans resveratrol di o methyltransferase	0.02	1	2.3784606602606793e-05	2	True
+gdsl esterase lipase	0.02	1	0.0026519836361906576	223	True
+kdel tailed cysteine endopeptidase cep	0.02	1	0.00010703072971173057	9	True

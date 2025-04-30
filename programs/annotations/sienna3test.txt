@@ -1,0 +1,15 @@
+Function	MEratio	MEtotal	Tratio	Ttotal	ME_representation
+Phytohormone action.signalling peptides.CRP (cysteine-rich-peptide) category	0.02	1	0.0012130149367329465	102	True
+RNA biosynthesis.DNA-binding transcriptional regulation.zinc-coordinating DNA-binding domain	0.04	2	0.0066477975454285985	559	True
+RNA biosynthesis.DNA-binding transcriptional regulation.alpha-helix exposed by beta-structure	0.08	4	0.0021525068975359147	181	True
+RNA biosynthesis.DNA-binding transcriptional regulation.beta-barrel DNA-binding domain	0.02	1	0.002223860717343735	187	True
+RNA biosynthesis.DNA-binding transcriptional regulation.undefined DNA-binding domain	0.04	2	0.0031633526781467036	266	True
+Protein homeostasis.proteolysis.aspartic peptidase activities	0.02	1	0.0019622300447150604	165	True
+Cell wall organisation.pectin.homogalacturonan	0.04	2	0.001165445723527733	98	True
+Cell wall organisation.cutin and suberin.alkyl-hydrocinnamate biosynthesis	0.04	2	7.135381980782038e-05	6	True
+External stimuli response.pathogen.defense mechanisms	0.08	4	0.0015459994291694415	130	True
+not assigned	0.5	25	0.3738345542764723	31435	True
+Enzyme classification.EC_2 transferases.EC_2-1 transferase transferring one-carbon group	0.02	1	0.0037579678432118732	316	True
+Enzyme classification.EC_2 transferases.EC_2-3 acyltransferase	0.04	2	0.0035320140804871087	297	True
+Enzyme classification.EC_3 hydrolases.EC_3-1 hydrolase acting on ester bond	0.02	1	0.007551612596327657	635	True
+Enzyme classification.EC_3 hydrolases.EC_3-4 hydrolase acting on peptide bond (peptidase)	0.04	2	0.0069332128246598805	583	True

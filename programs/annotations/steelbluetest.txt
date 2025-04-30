@@ -1,0 +1,54 @@
+Function	MEratio	MEtotal	Tratio	Ttotal	ME_representation
+Photosynthesis.calvin cycle.ribulose-1,5-bisphosphat carboxylase/oxygenase (RuBisCo) activity	0.004273504273504274	1	0.0007729997145847207	65	True
+Cellular respiration.pyruvate oxidation.mitochondrial pyruvate dehydrogenase complex	0.008547008547008548	2	0.0004637998287508325	39	True
+Cellular respiration.oxidative phosphorylation.NADH dehydrogenase complex	0.004273504273504274	1	0.001771953191894206	149	True
+Cellular respiration.oxidative phosphorylation.cytochrome c reductase complex	0.004273504273504274	1	0.0007373228046808106	62	True
+Carbohydrate metabolism.starch metabolism.degradation	0.004273504273504274	1	0.0010108457806107887	85	True
+Amino acid metabolism.amino acid degradation.branched-chain amino acids	0.02564102564102564	6	0.0009989534773094852	84	True
+Amino acid metabolism.polyamine metabolism.spermidine biosynthesis	0.008547008547008548	2	0.0004162306155456189	35	True
+Lipid metabolism.fatty acid metabolism.acetyl-CoA generation	0.017094017094017096	4	0.0004756921320521359	40	True
+Lipid metabolism.sphingolipid metabolism.ceramide biosynthesis	0.01282051282051282	3	0.0006421843782703834	54	True
+Nucleotide metabolism.purines.phosphotransfers	0.008547008547008548	2	0.0003686614023404053	31	True
+Coenzyme metabolism.heme homeostasis.heme oxygenase activities	0.004273504273504274	1	0.0003091998858338883	26	True
+Secondary metabolism.terpenoid biosynthesis.carotenoid biosynthesis	0.004273504273504274	1	0.000689753591475597	58	True
+Phytohormone action.auxin.transport	0.01282051282051282	3	0.0008205689277899343	69	True
+Chromatin organisation.DNA homeostasis.DNA exonuclease *(NEN)	0.008547008547008548	2	0.00010703072971173057	9	True
+Cell division.meiotic recombination.meiotic crossover	0.021367521367521368	5	0.0017124916753876891	144	True
+RNA biosynthesis.DNA-binding transcriptional regulation.basic DNA-binding domain	0.004273504273504274	1	0.009513842641042717	800	False
+RNA biosynthesis.DNA-binding transcriptional regulation.beta-hairpin exposed by alpha/beta-scaffold structure	0.004273504273504274	1	0.010441442298544382	878	False
+RNA biosynthesis.DNA-binding transcriptional regulation.undefined DNA-binding domain	0.004273504273504274	1	0.0031633526781467036	266	True
+RNA homeostasis.RNA transport.RNA nuclear export	0.004273504273504274	1	0.0014746456093616212	124	True
+Protein biosynthesis.ribosome biogenesis.rRNA maturation	0.004273504273504274	1	0.002307106840452859	194	True
+Protein biosynthesis.ribosome biogenesis.large ribosomal subunit (LSU)	0.004273504273504274	1	0.005506136428503472	463	False
+Protein biosynthesis.translation initiation.Pre-Initiation Complex (PIC) module	0.004273504273504274	1	0.001557891732470745	131	True
+Protein modification.lipidation.glycophosphatidylinositol (GPI) anchor addition	0.004273504273504274	1	0.001320045666444677	111	True
+Protein modification.phosphorylation.TKL protein kinase activities	0.004273504273504274	1	0.013664256493197602	1149	False
+Protein modification.dephosphorylation.protein tyrosine protein phosphatase activities	0.004273504273504274	1	0.00020216915612215775	17	True
+Protein modification.targeting peptide maturation.endomembrane system	0.004273504273504274	1	0.0007254305013795071	61	True
+Protein modification.protein folding.Cyclophilin-type chaperone activities	0.008547008547008548	2	0.0005232613452573494	44	True
+Protein homeostasis.protein quality control.cytosolic  Hsp70 chaperone system	0.004273504273504274	1	0.0024498144800684995	206	True
+Protein homeostasis.protein quality control.Hsp90 chaperone system	0.01282051282051282	3	0.0010227380839120922	86	True
+Protein homeostasis.protein quality control.plastidial chaperonin system	0.004273504273504274	1	0.0003210921891351917	27	True
+Protein homeostasis.ubiquitin-proteasome system.ubiquitin-fold protein conjugation	0.008547008547008548	2	0.020169346399010562	1696	False
+Protein homeostasis.ubiquitin-proteasome system.ubiquitin-fold protein deconjugation	0.01282051282051282	3	0.0035320140804871087	297	True
+Protein homeostasis.proteolysis.metallopeptidase activities	0.021367521367521368	5	0.00189087622490724	159	True
+Vesicle trafficking.exocytic trafficking.Exocyst complex	0.004273504273504274	1	0.0012130149367329465	102	True
+Vesicle trafficking.vesicle tethering.TRAPP-II complex-specific components	0.004273504273504274	1	0.0002497383693273713	21	True
+Solute transport.carrier-mediated transport.MFS-type transporter superfamily	0.01282051282051282	3	0.007242412710493768	609	True
+Solute transport.carrier-mediated transport.APC-type transporter superfamily	0.004273504273504274	1	0.004923413566739606	414	False
+Solute transport.carrier-mediated transport.BART-type transporter superfamily	0.01282051282051282	3	0.0007254305013795071	61	True
+External stimuli response.light.UV-A/blue light	0.008547008547008548	2	0.001831414708400723	154	True
+External stimuli response.symbiont.common symbiotic signalling pathway (CSSP)	0.004273504273504274	1	0.0007016458947769003	59	True
+Multi-process regulation.phosphoinositide signalling.inositol phosphate homeostasis	0.008547008547008548	2	0.0018670916183046332	157	True
+Multi-process regulation.RAM (Regulation of Ace2 and Morphogenesis) signalling.NDR-activator component *(MOB1/2)	0.004273504273504274	1	0.00013081533631433735	11	True
+not assigned	0.5341880341880342	125	0.3738345542764723	31435	True
+Enzyme classification.EC_1 oxidoreductases.EC_1-1 oxidoreductase acting on CH-OH group of donor	0.01282051282051282	3	0.004840167443630482	407	True
+Enzyme classification.EC_1 oxidoreductases.EC_1-14 oxidoreductase acting on paired donor with incorporation or reduction of molecular oxygen	0.004273504273504274	1	0.007753781752449815	652	False
+Enzyme classification.EC_2 transferases.EC_2-3 acyltransferase	0.01282051282051282	3	0.0035320140804871087	297	True
+Enzyme classification.EC_2 transferases.EC_2-7 transferase transferring phosphorus-containing group	0.038461538461538464	9	0.04239606126914661	3565	False
+Enzyme classification.EC_3 hydrolases.EC_3-2 glycosylase	0.004273504273504274	1	0.006469412995909048	544	False
+Enzyme classification.EC_3 hydrolases.EC_3-4 hydrolase acting on peptide bond (peptidase)	0.02564102564102564	6	0.0069332128246598805	583	True
+Enzyme classification.EC_3 hydrolases.EC_3-6 hydrolase acting on acid anhydride	0.004273504273504274	1	0.0020335838645228806	171	True
+Enzyme classification.EC_4 lyases.EC_4-1 carbon-carbon lyase	0.008547008547008548	2	0.002009799257920274	169	True
+Enzyme classification.EC_5 isomerases.EC_5-2 cis-trans-isomerase	0.01282051282051282	3	0.0011178765103225193	94	True
+Enzyme classification.EC_6 ligases.EC_6-1 ligase forming carbon-oxygen bond	0.008547008547008548	2	0.001355722576348587	114	True

@@ -19,8 +19,6 @@ class Gene(object):
         if depth is None: #return the whole annotation unless otherwise specified
             depth=len(g)
         ## only output annotations when a gene exists? (only Photosynthesis entry is not permitted)
-        ## if depth 2 is asked and only depth 1 can be provided, is the return skipped? or function returns depth 1 anyway
-        
         return g[:depth]
     
     def get_id(self): #get id of gene, and clean it up

@@ -1,0 +1,1910 @@
+Function	MEratio	MEtotal	Tratio	Ttotal	ME_representation
+prot-scriber: caad domain containing protein	0.0003589375448671931	3	0.00022595376272476454	19	True
+prot-scriber: ferredoxin chloroplastic	0.0003589375448671931	3	9.513842641042717e-05	8	True
+prot-scriber: triosephosphate isomerase cytosolic	0.0004785833931562575	4	0.0002616306726286747	22	True
+prot-scriber: peroxisomal s 2 hydroxy acid oxidase	0.0016750418760469012	14	0.0002735229759299781	23	True
+prot-scriber: alpha carbonic anhydrase protein	0.0005982292414453219	5	7.135381980782038e-05	6	True
+prot-scriber: alpha carbonic anhydrase domain containing protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: c4 phosphoenolpyruvate carboxylase	0.00023929169657812874	2	0.0002854152792312815	24	False
+prot-scriber: malate dehydrogenase 1	0.0027518545106484803	23	0.0005232613452573494	44	True
+prot-scriber: atp dependent 6 phosphofructokinase 4	0.00011964584828906437	1	0.0003091998858338883	26	False
+prot-scriber: glyceraldehyde phosphate dehydrogenase 1 cytosolic	0.0007178750897343862	6	0.0004281229188469223	36	True
+prot-scriber: dicdi pyruvate dehydrogenase e1 component subunit alpha mitochondrial	0.00023929169657812874	2	0.00021406145942346114	18	True
+prot-scriber: orysj pyruvate dehydrogenase e1 component subunit beta	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: orysj pyruvate dehydrogenase e1 component subunit beta mitochondrial	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: citrate synthase 4	0.0014357501794687725	12	0.0002616306726286747	22	True
+prot-scriber: cytoplasmic aconitate hydratase	0.0003589375448671931	3	7.135381980782038e-05	6	True
+prot-scriber: aconitate hydratase a	0.004307250538406317	36	0.0006183997716677766	52	True
+prot-scriber: isocitrate dehydrogenase [nad] subunit 1 mitochondrial	0.0003589375448671931	3	0.0003210921891351917	27	True
+prot-scriber: 2 oxoglutarate dehydrogenase	0.000957166786312515	8	0.00021406145942346114	18	True
+prot-scriber: succinate dehydrogenase subunit 5 mitochondrial	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: succinate dehydrogenase subunit 8a mitochondrial	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: succinate dehydrogenase assembly factor 4 mitochondrial	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: nadp dependent malic enzyme 4	0.0008375209380234506	7	0.0005589382551612597	47	True
+prot-scriber: nadp dependent malic enzyme	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: nadh quinone oxidoreductase subunit i	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: l51 s25 ci b8 domain containing protein	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: quality protein nadh dehydrogenase [ubiquinone] beta subcomplex subunit 10 b	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: zf chcc domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: gamma carbonic anhydrase 1 mitochondrial	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: complex1 lyr dom domain containing protein	0.0005982292414453219	5	0.00019027685282085435	16	True
+prot-scriber: cia domain containing protein	0.0005982292414453219	5	7.135381980782038e-05	6	True
+prot-scriber: nadh dehydrogenase [ubiquinone] alpha subcomplex assembly factor	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: no annotation	0.0812395309882747	679	0.06807154409666064	5724	True
+prot-scriber: cytochrome b	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: sp ccma cytochrome c biogenesis atp binding export protein ccma	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: cytochrome c type biogenesis protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: cytochrome c oxidase subunit	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: hig domain containing protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: cytochrome c oxidase assembly protein ctag cox	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: cytochrome c oxidase copper chaperone protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: cytochrome c oxidase assembly protein cox	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: chch domain containing protein	0.00011964584828906437	1	0.00014270763961564075	12	False
+prot-scriber: cytochrome c oxidase assembly factor	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: cox assembly mitochondrial protein	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: atp synthase subunit alpha	0.0015553960277578367	13	0.00015459994291694415	13	True
+prot-scriber: atp synthase mitochondrial f1 complex assembly factor	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: beta fructofuranosidase insoluble isoenzyme cwinv	0.0007178750897343862	6	0.00016649224621824755	14	True
+prot-scriber: hexokinase protein	0.00011964584828906437	1	0.0003686614023404053	31	False
+prot-scriber: glucose phosphate adenylyltransferase large subunit 1 chloroplastic	0.0010768126346015793	9	0.0003329844924364951	28	True
+prot-scriber: glucose phosphate adenylyltransferase subunit 1 chloroplastic	0.0010768126346015793	9	0.00017838454951955095	15	True
+prot-scriber: granule bound starch synthase 1 chloroplastic amyloplastic	0.0016750418760469012	14	0.0002735229759299781	23	True
+prot-scriber: ampk1 cbm domain containing protein	0.0003589375448671931	3	0.00015459994291694415	13	True
+prot-scriber: alpha amylase isozyme	0.00023929169657812874	2	0.00019027685282085435	16	True
+prot-scriber: alpha glucan phosphorylase 1	0.0011964584828906438	10	0.00011892303301303397	10	True
+prot-scriber: amylomaltase	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: trehalose 6 phosphate phosphatase	0.0007178750897343862	6	0.0005589382551612597	47	True
+prot-scriber: trehalose phosphate phosphatase protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: galactinol sucrose galactosyltransferase	0.0004785833931562575	4	0.0002973075825325849	25	True
+prot-scriber: aldo ket red domain containing protein	0.0010768126346015793	9	0.0007967843211873275	67	True
+prot-scriber: glucose phosphate 1 dehydrogenase 5	0.000957166786312515	8	9.513842641042717e-05	8	True
+prot-scriber: 6 phosphogluconolactonase 3	0.0014357501794687725	12	0.0002616306726286747	22	True
+prot-scriber: rhopa ribose phosphate isomerase a	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: pyruvate decarboxylase	0.000957166786312515	8	0.0002616306726286747	22	True
+prot-scriber: plastidial pyruvate kinase 1	0.0007178750897343862	6	0.0004637998287508325	39	True
+prot-scriber: mannose phosphate guanyltransferase beta	0.0014357501794687725	12	0.0005351536485586529	45	True
+prot-scriber: amino acid n acetyltransferase	0.0008375209380234506	7	0.00015459994291694415	13	True
+prot-scriber: n acetyl gamma glutamyl phosphate reductase	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: argininosuccinate synthase	0.0014357501794687725	12	0.00014270763961564075	12	True
+prot-scriber: ornithine aminotransferase	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: cn hydrolase domain containing protein	0.0011964584828906438	10	0.00023784606602606794	20	True
+prot-scriber: homocysteine s methyltransferase protein	0.0007178750897343862	6	0.00016649224621824755	14	True
+prot-scriber: reactive intermediate deaminase a chloroplastic	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: acetolactate synthase 1	0.0003589375448671931	3	7.135381980782038e-05	6	True
+prot-scriber: acetohydroxy acid synthase small subunit	0.00023929169657812874	2	0.00023784606602606794	20	True
+prot-scriber: geosw ketol acid reductoisomerase nadp +	0.0010768126346015793	9	0.00014270763961564075	12	True
+prot-scriber: alanine aminotransferase 1	0.0014357501794687725	12	0.0004400152221482257	37	True
+prot-scriber: 2 isopropylmalate synthase 1	0.0003589375448671931	3	0.00010703072971173057	9	True
+prot-scriber: quality protein 3 isopropylmalate dehydratase large subunit	0.0004785833931562575	4	0.00013081533631433735	11	True
+prot-scriber: 3 isopropylmalate dehydratase large subunit	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: 3 isopropylmalate dehydrogenase 1	0.0003589375448671931	3	7.135381980782038e-05	6	True
+prot-scriber: bifunctional l 3 cyanoalanine synthase cysteine 1 mitochondrial	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: chorismate mutase 1	0.0016750418760469012	14	0.00022595376272476454	19	True
+prot-scriber: prephenate arogenate dehydrogenase domain containing protein	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: arogenate dehydratase 1	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: arogenate dehydratase prephenate 1 chloroplastic	0.0005982292414453219	5	9.513842641042717e-05	8	True
+prot-scriber: arogenate dehydratase prephenate 1	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: anthranilate synthase component	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: anthranilate synthase alpha subunit 1 chloroplastic	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: indole glycerol phosphate synthase	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: tryptophan synthase alpha chain	0.0004785833931562575	4	0.00014270763961564075	12	True
+prot-scriber: tryptophan synthase beta chain 1	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: agmatinase mitochondrial	0.0014357501794687725	12	0.00014270763961564075	12	True
+prot-scriber: urease subunit alpha	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: aldehyde dehydrogenase nad +	0.0005982292414453219	5	0.00010703072971173057	9	True
+prot-scriber: duf 1338 domain containing protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: l threonine dehydratase biosynthetic	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: l threonine dehydratase	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: quality protein thiosulfate 3 mercaptopyruvate sulfurtransferase 1	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: thiosulfate 3 sulfurtransferase 1	0.0003589375448671931	3	0.0004994767386547426	42	False
+prot-scriber: aminotran 5 domain containing protein	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: electron transfer flavoprotein ubiquinone oxidoreductase mitochondrial	0.0014357501794687725	12	0.00014270763961564075	12	True
+prot-scriber: amino acid polyamine transporter	0.0004785833931562575	4	0.00015459994291694415	13	True
+prot-scriber: amino oxidase domain containing protein	0.0004785833931562575	4	0.0004994767386547426	42	False
+prot-scriber: sp dtc mitochondrial dicarboxylate tricarboxylate transporter dtc	0.0014357501794687725	12	0.00015459994291694415	13	True
+prot-scriber: acetyl coa carboxylase	0.001316104331179708	11	0.0002854152792312815	24	True
+prot-scriber: acyl carrier protein 1 chloroplastic	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: acyl [ carrier protein] hydrolase chloroplastic	0.0003589375448671931	3	9.513842641042717e-05	8	True
+prot-scriber: acyl carrier protein 1	0.00011964584828906437	1	0.00011892303301303397	10	True
+prot-scriber: 3 oxoacyl [acyl carrier protein] synthase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: very long chain 3 oxoacyl coa reductase protein	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: dicdi very long chain enoyl coa reductase	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: palmitoyl [acyl carrier protein] 4 desaturase 1 chloroplastic	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: protein fatty acid export	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: atp binding cassette sub family d member	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: 4hbt domain containing protein	0.00023929169657812874	2	0.0003567690990391019	30	False
+prot-scriber: cyclopropane mycolic acid synthase mmaa	0.0005982292414453219	5	0.00010703072971173057	9	True
+prot-scriber: glycerol phosphate acyltransferase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: plsc domain containing protein	0.000957166786312515	8	0.0002735229759299781	23	True
+prot-scriber: diacylglycerol kinase	0.000957166786312515	8	0.0004637998287508325	39	True
+prot-scriber: acidppc domain containing protein	0.00023929169657812874	2	0.0007492151079821139	63	False
+prot-scriber: phospholipid diacylglycerol acyltransferase	0.0004785833931562575	4	0.00023784606602606794	20	True
+prot-scriber: ctp phosphoethanolamine cytidylyltransferase	0.0007178750897343862	6	0.00016649224621824755	14	True
+prot-scriber: phosphatidylserine decarboxylase proenzyme	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: lon n terminal domain containing protein	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: phosphoethanolamine n methyltransferase	0.000957166786312515	8	0.00019027685282085435	16	True
+prot-scriber: choline phosphate cytidylyltransferase	0.0007178750897343862	6	0.00021406145942346114	18	True
+prot-scriber: lysophospholipid acyltransferase	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: phosphatidylcholine diacylglycerol cholinephosphotransferase	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: dual specificity protein phosphatase	0.00011964584828906437	1	0.00014270763961564075	12	False
+prot-scriber: glyco trans 4 like n domain containing protein	0.0007178750897343862	6	0.0002497383693273713	21	True
+prot-scriber: glycos transf 1 domain containing protein	0.0005982292414453219	5	0.0002497383693273713	21	True
+prot-scriber: hydrolase 4 domain containing protein	0.00011964584828906437	1	0.0009632765674055751	81	False
+prot-scriber: orysi phospholipase a1 ii	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: patatin protein	0.00011964584828906437	1	0.00016649224621824755	14	False
+prot-scriber: patatin 09	0.0007178750897343862	6	0.00019027685282085435	16	True
+prot-scriber: aerobic glycerol phosphate dehydrogenase	0.000957166786312515	8	9.513842641042717e-05	8	True
+prot-scriber: serine c palmitoyltransferase	0.00023929169657812874	2	0.0003210921891351917	27	False
+prot-scriber: small subunit of serine palmitoyltransferase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: orm protein	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: tlc domain containing protein	0.00023929169657812874	2	0.0004875844353534393	41	False
+prot-scriber: gltp domain containing protein	0.00011964584828906437	1	0.00022595376272476454	19	False
+prot-scriber: dagkc domain containing protein	0.0003589375448671931	3	0.0002616306726286747	22	True
+prot-scriber: sphingosine kinase	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: lanosterol 14 alpha demethylase	0.0004785833931562575	4	0.0003805537056417087	32	True
+prot-scriber: quality protein methylsterol monooxygenase	0.0007178750897343862	6	0.00019027685282085435	16	True
+prot-scriber: 3beta hydroxysteroid dehydrogenase decarboxylase isoform	0.0007178750897343862	6	0.00023784606602606794	20	True
+prot-scriber: ergosterol biosynthetic protein	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: quality protein sterol 3 beta glucosyltransferase	0.0005982292414453219	5	0.00017838454951955095	15	True
+prot-scriber: bruab udp o acyl n acetylglucosamine deacetylase	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: phospholipid transporting atpase	0.0007178750897343862	6	0.0012605841499381601	106	False
+prot-scriber: ala interacting subunit	0.0007178750897343862	6	0.0006659689848729902	56	True
+prot-scriber: phospholipid scramblase	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: long chain fatty acid coa ligase	0.0011964584828906438	10	0.0007729997145847207	65	True
+prot-scriber: protein trigalactosyldiacylglycerol 5 chloroplastic	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: oleosin kda	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: oleosin protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein chup chloroplastic	0.00011964584828906437	1	0.0002854152792312815	24	False
+prot-scriber: peroxygenase	0.000957166786312515	8	0.00016649224621824755	14	True
+prot-scriber: ubc core domain containing protein	0.0004785833931562575	4	0.0006540766815716869	55	False
+prot-scriber: hydroxysteroid 11 beta dehydrogenase protein	0.001316104331179708	11	0.00020216915612215775	17	True
+prot-scriber: 11 beta hydroxysteroid dehydrogenase 1b	0.00023929169657812874	2	0.00023784606602606794	20	True
+prot-scriber: oil body associated protein 1a	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: oil body associated protein 2a	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: oil body associated protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: gdsl esterase lipase	0.00191433357262503	16	0.0026519836361906576	223	False
+prot-scriber: amidophosphoribosyltransferase 1	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: desag phosphoribosylformylglycinamidine cyclo ligase	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: bifunctional purine biosynthesis protein purh	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: adenylosuccinate synthetase 1 chloroplastic	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: amp deaminase	0.000957166786312515	8	0.00014270763961564075	12	True
+prot-scriber: adenine phosphoribosyltransferase 1	0.0007178750897343862	6	0.0004400152221482257	37	True
+prot-scriber: ectonucleoside triphosphate diphosphohydrolase	0.00023929169657812874	2	0.0006421843782703834	54	False
+prot-scriber: ctp synthase 1	0.0031107920555156735	26	0.0006421843782703834	54	True
+prot-scriber: 7 5 nucleotidase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: bifunctional dihydrofolate reductase thymidylate synthase	0.0007178750897343862	6	0.0003091998858338883	26	True
+prot-scriber: hit domain containing protein	0.00023929169657812874	2	0.0002616306726286747	22	False
+prot-scriber: solute carrier mitochondrial thiamine pyrophosphate member	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: mitochondrial thiamine pyrophosphate carrier protein	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: pantothenate kinase 2	0.0011964584828906438	10	0.00011892303301303397	10	True
+prot-scriber: d amino acid transaminase chloroplastic	0.0007178750897343862	6	8.324612310912378e-05	7	True
+prot-scriber: dihydrofolate synthase folylpolyglutamate	0.0004785833931562575	4	0.0003210921891351917	27	True
+prot-scriber: 4 coumarate coa ligase	0.0010768126346015793	9	0.0007611074112834174	64	True
+prot-scriber: quinolinate synthase	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: fusnn quinolinate synthase	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: nad nadh kinase protein	0.0011964584828906438	10	0.00011892303301303397	10	True
+prot-scriber: nad kinase protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: 6 7 dimethyl ribityllumazine synthase	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: nudix hydrolase domain containing protein	0.0007178750897343862	6	0.0007135381980782038	60	True
+prot-scriber: adenylyl sulfate kinase 1	0.0007178750897343862	6	0.00015459994291694415	13	True
+prot-scriber: 3 2 5 bisphosphate nucleotidase	0.0003589375448671931	3	0.00013081533631433735	11	True
+prot-scriber: iron sulfur cluster assembly protein cyay	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: iron sulfur cluster carrier protein	0.0004785833931562575	4	0.00017838454951955095	15	True
+prot-scriber: trna modifying protein ygfz	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: cluster co chaperone protein hscb homolog	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: fes assembly p domain containing protein	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: heme binding protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: geranylgeranyl reductase	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: histone h2a z	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: phytanoyl coa dioxygenase protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: phytanoyl coa dioxygenase domain containing protein	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: lipoyl synthase 1 mitochondrial	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: 3 hydroxy methylglutaryl coenzyme a reductase 2	0.00023929169657812874	2	0.0002854152792312815	24	False
+prot-scriber: isopentenyl diphosphate delta isomerase	0.00023929169657812874	2	0.0002616306726286747	22	False
+prot-scriber: cycloartenol synthase	0.0003589375448671931	3	0.0006302920749690801	53	False
+prot-scriber: beta carotene 3 hydroxylase 1	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: f box domain containing protein	0.00658052165589854	55	0.005958043953953001	501	True
+prot-scriber: f box kelch repeat protein	0.00011964584828906437	1	0.00023784606602606794	20	False
+prot-scriber: polyphenol oxidase chloroplastic	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: hydroperoxide glutathione peroxidase 1	0.0014357501794687725	12	0.0002616306726286747	22	True
+prot-scriber: gamma glutamylcyclotransferase	0.00023929169657812874	2	0.00021406145942346114	18	True
+prot-scriber: thioredoxin reductase 1	0.0003589375448671931	3	0.00013081533631433735	11	True
+prot-scriber: 1 cys peroxiredoxin	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: glutaredoxin dependent peroxiredoxin	0.00011964584828906437	1	0.00014270763961564075	12	False
+prot-scriber: thioredoxin domain containing protein	0.00191433357262503	16	0.0017957377984968129	151	True
+prot-scriber: gst n terminal domain containing protein	0.00011964584828906437	1	0.0006540766815716869	55	False
+prot-scriber: gdp l galactose phosphorylase	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: homogentisate geranylgeranyltransferase chloroplastic	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: phytol kinase 1 chloroplastic	0.0003589375448671931	3	8.324612310912378e-05	7	True
+prot-scriber: respiratory burst oxidase homolog protein b	0.0004785833931562575	4	0.0004162306155456189	35	True
+prot-scriber: protein methylene blue sensitivity	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: xanthine dehydrogenase oxidase	0.0004785833931562575	4	0.0003448767957377985	29	True
+prot-scriber: abscisic acid receptor pyl	0.0008375209380234506	7	0.00013081533631433735	11	True
+prot-scriber: abscisic acid receptor pyl protein	0.00011964584828906437	1	0.00011892303301303397	10	True
+prot-scriber: protein phosphatase	0.0008375209380234506	7	0.00021406145942346114	18	True
+prot-scriber: protein serine threonine phosphatase	0.005144771476429768	43	0.005482351821900866	461	False
+prot-scriber: translation initiation factor if	0.00011964584828906437	1	0.00023784606602606794	20	False
+prot-scriber: tpr malt domain containing protein	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: droer eukaryotic translation initiation factor subunit i	0.0003589375448671931	3	7.135381980782038e-05	6	True
+prot-scriber: abscisic acid 8 hydroxylase	0.0007178750897343862	6	0.0003210921891351917	27	True
+prot-scriber: protein nrt ptr family	0.0021536252692031586	18	0.0016411378555798686	138	True
+prot-scriber: abc transporter g family member	0.0003589375448671931	3	0.0014746456093616212	124	False
+prot-scriber: membrane protein pm19l	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: tryptophan aminotransferase protein	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: alliinase c domain containing protein	0.0003589375448671931	3	0.00011892303301303397	10	True
+prot-scriber: flavin containing monooxygenase	0.0007178750897343862	6	0.0005113690419560461	43	True
+prot-scriber: auxin responsive protein iaa	0.0010768126346015793	9	0.0009632765674055751	81	True
+prot-scriber: auxin response factor	0.000957166786312515	8	0.0010940919037199124	92	False
+prot-scriber: indole acetic acid amido synthetase gh	0.0003589375448671931	3	0.0003567690990391019	30	True
+prot-scriber: iaa amino acid hydrolase ilr	0.0005982292414453219	5	0.0002616306726286747	22	True
+prot-scriber: protein kinase domain containing	0.0208183776022972	174	0.025330606031776233	2130	False
+prot-scriber: arath serine threonine protein kinase	0.0005982292414453219	5	0.0002854152792312815	24	True
+prot-scriber: protein pin likes	0.0014357501794687725	12	0.0003805537056417087	32	True
+prot-scriber: arath serine threonine protein kinase bsk	0.0011964584828906438	10	0.0008919227475977547	75	True
+prot-scriber: non specific serine threonine protein kinase	0.0034697296003828666	29	0.003960136999334031	333	False
+prot-scriber: bes1 n domain containing protein	0.0003589375448671931	3	0.00021406145942346114	18	True
+prot-scriber: geodf trna dimethylallyltransferase	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: signal transduction histidine protein kinase	0.0005982292414453219	5	0.0002616306726286747	22	True
+prot-scriber: two component response regulator orr	0.0005982292414453219	5	0.0005470459518599562	46	True
+prot-scriber: two component response regulator	0.0008375209380234506	7	0.0003210921891351917	27	True
+prot-scriber: response regulatory domain containing protein	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: ethylene responsive transcription factor erf	0.0037090212969609956	31	0.0025092759965750166	211	True
+prot-scriber: bhlh transcription factor	0.0034697296003828666	29	0.0030444296451336695	256	True
+prot-scriber: bhlh domain containing protein	0.004785833931562575	40	0.00318713728474931	268	True
+prot-scriber: cytokinin dehydrogenase	0.0011964584828906438	10	0.0004756921320521359	40	True
+prot-scriber: btb domain containing protein	0.0017946877243359654	15	0.0005351536485586529	45	True
+prot-scriber: ethylene receptor	0.0014357501794687725	12	0.0004400152221482257	37	True
+prot-scriber: protein reversion to ethylene sensitivity	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: leucoanthocyanidin dioxygenase	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: della protein	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: della protein gai	0.0003589375448671931	3	0.00019027685282085435	16	True
+prot-scriber: myb transcription factor	0.0029911462072266092	25	0.0024498144800684995	206	True
+prot-scriber: allene oxide synthase 1 chloroplastic	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: oxidored fmn domain containing protein	0.00023929169657812874	2	0.0002616306726286747	22	False
+prot-scriber: coronatine insensitive protein homolog	0.0003589375448671931	3	0.00014270763961564075	12	True
+prot-scriber: loop bhlh transcription factor	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: fe2og dioxygenase domain containing protein	0.002512562814070352	21	0.002164399200837218	182	True
+prot-scriber: abhydrolase 3 domain containing protein	0.0007178750897343862	6	0.0013438302730472839	113	False
+prot-scriber: phytosulfokine	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: proline rich receptor protein kinase perk	0.002273271117492223	19	0.0035201217771858055	296	False
+prot-scriber: sulfhydryl oxidase	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: leucine rich repeat receptor serine threonine protein kinase	0.0008375209380234506	7	0.0019622300447150604	165	False
+prot-scriber: small polypeptide devil	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: gibberellin regulated protein	0.0004785833931562575	4	0.00015459994291694415	13	True
+prot-scriber: arath epidermal patterning factor protein	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: protein ralf	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: histone h2a	0.00023929169657812874	2	0.0002616306726286747	22	False
+prot-scriber: histone h3 2	0.0014357501794687725	12	0.0005113690419560461	43	True
+prot-scriber: fact complex subunit	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: histone chaperone asf	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: caebr wd repeat containing protein	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: polycomb group protein fie	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: fibronectin type iii domain containing protein	0.0003589375448671931	3	0.00011892303301303397	10	True
+prot-scriber: pwwp domain containing protein	0.0014357501794687725	12	0.0009157073542003615	77	True
+prot-scriber: aldehyde oxygenase deformylating	0.0003589375448671931	3	0.0002854152792312815	24	True
+prot-scriber: bromodomain adjacent to zinc finger domain protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: histone lysine n methyltransferase suvr	0.0004785833931562575	4	0.00017838454951955095	15	True
+prot-scriber: quality protein histone lysine n methyltransferase suvr	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: set domain containing protein	0.00023929169657812874	2	0.0004637998287508325	39	False
+prot-scriber: potential protein lysine methyltransferase set	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: quality protein lysine specific demethylase jmj	0.0003589375448671931	3	0.00017838454951955095	15	True
+prot-scriber: arath lysine specific demethylase jmj	0.00011964584828906437	1	0.0003448767957377985	29	False
+prot-scriber: jmjc domain containing protein	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: chromatin modification protein meaf	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: histone acetyltransferase kat	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: histone acetyltransferase the myst	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: phd finger protein ing	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: chromatin modification protein eaf b	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: chromatin modification protein eaf	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: myb domain containing protein	0.0015553960277578367	13	0.0010465226905146988	88	True
+prot-scriber: bromo domain containing protein	0.0014357501794687725	12	0.0003567690990391019	30	True
+prot-scriber: histone deacetylase complex subunit sap	0.0004785833931562575	4	9.513842641042717e-05	8	True
+prot-scriber: methyl cpg binding domain containing protein	0.0007178750897343862	6	0.0005589382551612597	47	True
+prot-scriber: sant domain protein	0.0003589375448671931	3	0.00010703072971173057	9	True
+prot-scriber: histone deacetylase	0.00023929169657812874	2	0.0004162306155456189	35	False
+prot-scriber: transcription factor gte	0.0004785833931562575	4	0.0004637998287508325	39	True
+prot-scriber: bromodomain containing factor	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: enhancer of polycomb protein	0.00023929169657812874	2	0.00021406145942346114	18	True
+prot-scriber: ring type domain containing protein	0.005862646566164154	49	0.007848920178860241	660	False
+prot-scriber: btb poz and domain containing protein	0.0004785833931562575	4	0.0003567690990391019	30	True
+prot-scriber: arath phd finger protein alfin	0.0011964584828906438	10	0.0005113690419560461	43	True
+prot-scriber: b3 domain containing transcription factor val	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: conserved oligomeric golgi complex subunit isoform x1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: repeat bromo and domain containing protein	0.000957166786312515	8	0.00020216915612215775	17	True
+prot-scriber: gltscr domain containing protein	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: swi snf complex subunit swi3a	0.0004785833931562575	4	8.324612310912378e-05	7	True
+prot-scriber: swi snf complex subunit swi3a protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: homeobox domain containing protein	0.0014357501794687725	12	0.0013319379697459804	112	True
+prot-scriber: fha domain containing protein	0.0011964584828906438	10	0.0004400152221482257	37	True
+prot-scriber: yl1 c domain containing protein	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: papa domain containing protein	0.0003589375448671931	3	0.00011892303301303397	10	True
+prot-scriber: deubad domain containing protein	0.0003589375448671931	3	9.513842641042717e-05	8	True
+prot-scriber: f box protein skip	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: helicase transcription factor chr	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: ribonuclease protein	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: sam dependent mtase drm type domain containing protein	0.0005982292414453219	5	0.00019027685282085435	16	True
+prot-scriber: f box protein	0.0003589375448671931	3	0.0003686614023404053	31	False
+prot-scriber: argonaute protein	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: ring type e3 ubiquitin transferase	0.005623354869586025	47	0.0038768908762249073	326	True
+prot-scriber: rrm domain containing protein	0.006700167504187605	56	0.003650937113500143	307	True
+prot-scriber: protein enhanced downy mildew isoform	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: arath protein enhanced downy mildew	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: histone lysine n methyltransferase h3 specific suvh	0.0007178750897343862	6	0.0004756921320521359	40	True
+prot-scriber: j domain containing protein	0.0020339794209140944	17	0.0013676148796498905	115	True
+prot-scriber: morc6 s5 domain containing protein	0.00011964584828906437	1	0.0002735229759299781	23	False
+prot-scriber: factor of dna methylation	0.00023929169657812874	2	0.00021406145942346114	18	True
+prot-scriber: origin of replication complex subunit	0.00011964584828906437	1	0.00011892303301303397	10	True
+prot-scriber: dna topoisomerase i	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: dna replication complex gins protein psf	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: replication protein a kda subunit b	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: hsf domain domain containing protein	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: lim zinc binding domain containing protein	0.0005982292414453219	5	0.0005470459518599562	46	True
+prot-scriber: cyclin c	0.0011964584828906438	10	0.00011892303301303397	10	True
+prot-scriber: cyclin 2 domain containing protein	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: cyclin dependent kinase 1	0.0016750418760469012	14	0.0021762915041385216	183	False
+prot-scriber: arath cyclin dependent kinase 2	0.0011964584828906438	10	0.0002973075825325849	25	True
+prot-scriber: cyclin dependent kinase f 1	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: pr domain containing protein	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: zinc finger protein	0.0003589375448671931	3	0.0002497383693273713	21	True
+prot-scriber: genome assembly chromosome ii	0.0010768126346015793	9	0.0005232613452573494	44	True
+prot-scriber: threonylcarbamoyladenosine trna methylthiotransferase	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: kinetochore protein spc homolog	0.0005982292414453219	5	7.135381980782038e-05	6	True
+prot-scriber: kinesin protein	0.0003589375448671931	3	0.00011892303301303397	10	True
+prot-scriber: kinesin protein kin	0.0016750418760469012	14	0.0005470459518599562	46	True
+prot-scriber: protein samba isoform	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: e2f transcription factor protein e2fe	0.0004785833931562575	4	9.513842641042717e-05	8	True
+prot-scriber: phd domain containing protein	0.0003589375448671931	3	0.0002616306726286747	22	True
+prot-scriber: meiotic recombination protein dmc homolog	0.0004785833931562575	4	8.324612310912378e-05	7	True
+prot-scriber: sp rada dna repair and recombination protein rada	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: myosin heavy chain non muscle	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: tropomyosin	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: heat shock factor binding protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: dnaj homolog subfamily a member	0.0015553960277578367	13	0.0005946151650651698	50	True
+prot-scriber: p0028e10 10 protein	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: recq mediated genome instability protein	0.0003589375448671931	3	9.513842641042717e-05	8	True
+prot-scriber: major serine threonine protein phosphatase 2 catalytic subunit	0.0003589375448671931	3	0.00010703072971173057	9	True
+prot-scriber: orysi serine threonine protein phosphatase 3 catalytic subunit	0.0003589375448671931	3	0.0003329844924364951	28	True
+prot-scriber: serine threonine protein phosphatase 2a kda regulatory subunit a isoform	0.000957166786312515	8	0.0002854152792312815	24	True
+prot-scriber: serine threonine protein phosphatase regulatory subunit	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: serine threonine protein phosphatase regulatory subunit 3	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: t snare coiled coil homology domain containing protein	0.0004785833931562575	4	0.0009751688707068786	82	False
+prot-scriber: vesicle associated membrane protein	0.001316104331179708	11	0.0009989534773094852	84	True
+prot-scriber: 187 kda microtubule associated protein air	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: zinc finger cchc type and rna binding motif containing protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: mitogen activated protein kinase	0.0003589375448671931	3	0.00189087622490724	159	False
+prot-scriber: katanin p80 wd repeat containing subunit b1 protein	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: katanin p80 wd repeat containing subunit b1 homolog	0.00011964584828906437	1	0.00014270763961564075	12	False
+prot-scriber: reticulon protein	0.0003589375448671931	3	0.0006659689848729902	56	False
+prot-scriber: protein root hair defective homolog	0.0003589375448671931	3	0.00019027685282085435	16	True
+prot-scriber: protein root hair defective homolog sey	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: acetyllactosaminide beta	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: protein fertility restorer rf mitochondrial	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: umuc domain containing protein	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: dna polymerase eta	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: dna repair protein xrcc isoform	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: brct domain containing protein	0.00023929169657812874	2	0.0004756921320521359	40	False
+prot-scriber: general transcription and factor iih subunit	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: general transcription and dna repair factor iih subunit tfb	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: mat domain containing protein	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: dna photolyase	0.0016750418760469012	14	0.00016649224621824755	14	True
+prot-scriber: dna directed rna polymerases i ii and iii subunit rpabc	0.0010768126346015793	9	0.00020216915612215775	17	True
+prot-scriber: dna directed rna polymerase	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: motif domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: dna directed rna polymerase subunit	0.0005982292414453219	5	0.0004519075254495291	38	True
+prot-scriber: dna directed rna polymerase ii subunit	0.0017946877243359654	15	0.0005113690419560461	43	True
+prot-scriber: dna directed rna polymerase ii subunit rpb	0.0003589375448671931	3	0.0004043383122443155	34	False
+prot-scriber: dna directed rna polymerase iii subunit rpc	0.0011964584828906438	10	0.0004637998287508325	39	True
+prot-scriber: dna directed rna polymerases ii and v subunit	0.0008375209380234506	7	8.324612310912378e-05	7	True
+prot-scriber: dna directed rna polymerases ii iv and v subunit 8b	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: dna directed rna polymerases ii and iii subunit	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: rpap3 c domain containing protein	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: gpn loop gtpase	0.00023929169657812874	2	0.00010703072971173057	9	True
+prot-scriber: ctd small phosphatase protein 2	0.0014357501794687725	12	0.00014270763961564075	12	True
+prot-scriber: dicdi transcription initiation factor iia subunit	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: transcription initiation factor iib protein	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: transcription initiation factor iie subunit alpha	0.0005982292414453219	5	0.00023784606602606794	20	True
+prot-scriber: cbfd nfyb hmf domain containing protein	0.000957166786312515	8	0.0003210921891351917	27	True
+prot-scriber: small nuclear rna activating complex snapc subunit protein	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: transcription initiation factor tfiid subunit	0.0005982292414453219	5	0.0004756921320521359	40	True
+prot-scriber: ubiquitin carboxyl terminal hydrolase 22	0.0005982292414453219	5	9.513842641042717e-05	8	True
+prot-scriber: transcriptional	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: xs domain containing protein	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: bromodomain and phd finger containing protein	0.0004785833931562575	4	0.00010703072971173057	9	True
+prot-scriber: phd type domain containing protein	0.0004785833931562575	4	0.0006065074683664733	51	False
+prot-scriber: mediator of rna polymerase ii transcription subunit 19a	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: mediator of rna polymerase ii transcription subunit	0.0011964584828906438	10	0.0007492151079821139	63	True
+prot-scriber: aedae mediator of rna polymerase ii transcription subunit	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: mediator of rna polymerase ii transcription subunit 33a	0.00011964584828906437	1	0.00014270763961564075	12	False
+prot-scriber: tfiis n terminal domain containing protein	0.0008375209380234506	7	0.0004756921320521359	40	True
+prot-scriber: plus domain containing protein	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: elongator complex protein	0.0007178750897343862	6	0.00022595376272476454	19	True
+prot-scriber: protein kti homolog	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: arath transcription elongation factor spt homolog	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: alba domain containing protein	0.0021536252692031586	18	0.0006778612881742935	57	True
+prot-scriber: tfiis central domain containing protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: dna directed rna polymerase iii subunit	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: bzip transcription factor	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: bzip domain containing protein	0.005862646566164154	49	0.0034130910474740746	287	True
+prot-scriber: ninja family protein afp	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: ninja family protein	0.0003589375448671931	3	7.135381980782038e-05	6	True
+prot-scriber: bzip transcription factor tga	0.0027518545106484803	23	0.0012367995433355532	104	True
+prot-scriber: transcription factor bhlh	0.0004785833931562575	4	0.0012724764532394634	107	False
+prot-scriber: transcription factor bhlh protein	0.000957166786312515	8	0.0012724764532394634	107	False
+prot-scriber: bhlh protein	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: c2h2 type domain containing protein	0.0041876046901172526	35	0.003234706497954524	272	True
+prot-scriber: protein dehydration induced homolog	0.0005982292414453219	5	0.0003210921891351917	27	True
+prot-scriber: di19 c domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: arath gata transcription factor	0.0017946877243359654	15	0.0002616306726286747	22	True
+prot-scriber: gata type domain containing protein	0.00023929169657812874	2	0.00019027685282085435	16	True
+prot-scriber: dof zinc finger protein	0.0015553960277578367	13	0.0009751688707068786	82	True
+prot-scriber: quality protein dof zinc finger	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: arath squamosa promoter binding protein	0.0003589375448671931	3	0.0003924460089430121	33	False
+prot-scriber: lob domain containing protein	0.0005982292414453219	5	0.0012130149367329465	102	False
+prot-scriber: protein shi sequence	0.0003589375448671931	3	0.00015459994291694415	13	True
+prot-scriber: zinc finger protein zat	0.00023929169657812874	2	0.0007611074112834174	64	False
+prot-scriber: zinc finger protein azf	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: homeobox leucine zipper protein hox	0.0008375209380234506	7	0.0016292455522785654	137	False
+prot-scriber: homeobox leucine zipper protein roc	0.0004785833931562575	4	0.0007135381980782038	60	False
+prot-scriber: orysj wuschel homeobox	0.0004785833931562575	4	0.00010703072971173057	9	True
+prot-scriber: wuschel homeobox	0.0004785833931562575	4	0.0002854152792312815	24	True
+prot-scriber: homeobox protein hox1a	0.0005982292414453219	5	0.00016649224621824755	14	True
+prot-scriber: arath protein reveille	0.0005982292414453219	5	0.0003329844924364951	28	True
+prot-scriber: protein reveille isoform x1	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: transcription factor	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: transcription factor mybs	0.0008375209380234506	7	0.0003329844924364951	28	True
+prot-scriber: mediator associated protein	0.00023929169657812874	2	0.00015459994291694415	13	True
+prot-scriber: storekeeper protein	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: storekeeper protein regulator	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: binding storekeeper protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: quality protein myb family transcription factor	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: hth myb type domain containing protein	0.0004785833931562575	4	0.0016054609456759585	135	False
+prot-scriber: myb family transcription factor phl	0.0008375209380234506	7	0.0002735229759299781	23	True
+prot-scriber: heat stress transcription factor a 1	0.0003589375448671931	3	0.0004875844353534393	41	False
+prot-scriber: heat stress transcription factor b 1	0.0004785833931562575	4	0.00013081533631433735	11	True
+prot-scriber: myb dna bind 4 domain containing protein	0.0004785833931562575	4	0.0003686614023404053	31	True
+prot-scriber: myb 4 domain containing protein	0.0003589375448671931	3	0.0002854152792312815	24	True
+prot-scriber: transcription factor myb protein	0.0005982292414453219	5	0.0003210921891351917	27	True
+prot-scriber: arath transcription factor myb	0.00011964584828906437	1	0.000808676624488631	68	False
+prot-scriber: quality protein transcription factor myb	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: axial regulator yabby	0.0008375209380234506	7	0.0005351536485586529	45	True
+prot-scriber: ethylene insensitive protein	0.0007178750897343862	6	0.0003567690990391019	30	True
+prot-scriber: nuclear transcription factor y subunit b 1	0.0015553960277578367	13	0.0004637998287508325	39	True
+prot-scriber: nuclear transcription factor y subunit c 1	0.0007178750897343862	6	0.00023784606602606794	20	True
+prot-scriber: zinc finger protein constans	0.00023929169657812874	2	0.0005232613452573494	44	False
+prot-scriber: b box zinc finger protein	0.00023929169657812874	2	0.0002497383693273713	21	False
+prot-scriber: agamous mads box protein	0.0014357501794687725	12	0.00020216915612215775	17	True
+prot-scriber: agamous mads box protein agl	0.0023929169657812875	20	0.0004162306155456189	35	True
+prot-scriber: mads box domain containing protein	0.0003589375448671931	3	0.0003329844924364951	28	True
+prot-scriber: mads box transcription factor	0.008614501076812634	72	0.001831414708400723	154	True
+prot-scriber: k box and mads transcription factor protein	0.004426896386695382	37	0.0004400152221482257	37	True
+prot-scriber: nac domain containing protein 21 22	0.0015553960277578367	13	0.0007016458947769003	59	True
+prot-scriber: nac domain containing protein	0.002871500358937545	24	0.00371039863000666	312	False
+prot-scriber: calmodulin binding transcription activator	0.0005982292414453219	5	0.0004994767386547426	42	True
+prot-scriber: quality protein transcription factor voz	0.0003589375448671931	3	0.00010703072971173057	9	True
+prot-scriber: wrky domain containing protein	0.0004785833931562575	4	0.00185519931500333	156	False
+prot-scriber: vq domain containing protein	0.0005982292414453219	5	0.0007729997145847207	65	False
+prot-scriber: tcp transcription factor protein	0.0003589375448671931	3	0.00014270763961564075	12	True
+prot-scriber: tcp transcription factor	0.0004785833931562575	4	0.00021406145942346114	18	True
+prot-scriber: arath transcription factor tcp	0.0004785833931562575	4	0.00021406145942346114	18	True
+prot-scriber: ap ethylene responsive transcription factor	0.0021536252692031586	18	0.0007729997145847207	65	True
+prot-scriber: ap ethylene responsive transcription factor ail	0.0004785833931562575	4	0.00011892303301303397	10	True
+prot-scriber: dehydration responsive element binding protein	0.0007178750897343862	6	0.0002616306726286747	22	True
+prot-scriber: ethylene responsive transcription factor erf protein	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: arath auxin response factor	0.0010768126346015793	9	0.001201122633431643	101	False
+prot-scriber: tf b3 domain containing protein	0.0008375209380234506	7	0.0007373228046808106	62	True
+prot-scriber: b3 domain containing transcription factor	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: crc domain containing protein tso	0.00023929169657812874	2	0.0003805537056417087	32	False
+prot-scriber: tesmin tso cxc domain containing protein	0.0005982292414453219	5	0.00010703072971173057	9	True
+prot-scriber: protein scarecrow	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: arath scarecrow protein	0.00023929169657812874	2	0.00022595376272476454	19	True
+prot-scriber: scarecrow protein	0.00023929169657812874	2	0.0005113690419560461	43	False
+prot-scriber: della domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: dna binding protein	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: platz transcription factor protein	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: b box type domain containing protein	0.00023929169657812874	2	0.00019027685282085435	16	True
+prot-scriber: orysj protein g1 like	0.0003589375448671931	3	0.0003567690990391019	30	True
+prot-scriber: protein nlp	0.0010768126346015793	9	0.0007016458947769003	59	True
+prot-scriber: bsd domain containing protein	0.0005982292414453219	5	0.0003091998858338883	26	True
+prot-scriber: sand domain containing protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: transcription repressor	0.00023929169657812874	2	0.0005232613452573494	44	False
+prot-scriber: hth cro c1 type domain containing protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: tify domain containing protein	0.0014357501794687725	12	0.0008919227475977547	75	True
+prot-scriber: u1 small nuclear ribonucleoprotein c 1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: polyadenylate binding protein rbp47b	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: of u2 small nuclear ribonucleoprotein b	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: matrin type domain containing protein	0.0005982292414453219	5	9.513842641042717e-05	8	True
+prot-scriber: splicing factor 3a subunit	0.0003589375448671931	3	8.324612310912378e-05	7	True
+prot-scriber: psp domain containing protein	0.0003589375448671931	3	0.00014270763961564075	12	True
+prot-scriber: splicing factor 3b subunit	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: splicing factor 3b subunit protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: dnaj homolog subfamily c member 27	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: u2 snrnp associated surp motif containing protein	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: swap suppressor of white apricot surp binding domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: swap surp domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: nop domain containing protein	0.0003589375448671931	3	0.00011892303301303397	10	True
+prot-scriber: kda ribonucleoprotein associated protein	0.000957166786312515	8	0.00023784606602606794	20	True
+prot-scriber: u1 type domain containing protein	0.0007178750897343862	6	0.00011892303301303397	10	True
+prot-scriber: protein tssc	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: small nuclear ribonucleoprotein sm d1	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: small nuclear ribonucleoprotein sm d3	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: small nuclear ribonucleoprotein e	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: sm protein f	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: u6 snrna associated sm protein lsm	0.0008375209380234506	7	0.0002854152792312815	24	True
+prot-scriber: ubiquitin 4 domain containing protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: u11 u12 small nuclear ribonucleoprotein kda protein	0.0004785833931562575	4	9.513842641042717e-05	8	True
+prot-scriber: ponab rna binding region containing protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: snurportin	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: gem associated protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: gcfc domain containing protein	0.0003589375448671931	3	0.00013081533631433735	11	True
+prot-scriber: g patch domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: quality protein and tuftelin interacting	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein sickle	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: pre mrna splicing factor spf protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: pre mrna splicing factor spf	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: pre mrna splicing factor rbm slt	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: pre mrna splicing factor rbm	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: drome pre mrna splicing factor syf	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: mago7 nuclear distribution protein pac	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: u5 small nuclear ribonucleoprotein kda protein	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: pre mrna splicing factor syf	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: protein bud homolog	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: coiled coil domain containing protein	0.0004785833931562575	4	0.00017838454951955095	15	True
+prot-scriber: cir n domain containing protein	0.00023929169657812874	2	0.00010703072971173057	9	True
+prot-scriber: arginine serine rich splicing factor	0.0021536252692031586	18	0.0005113690419560461	43	True
+prot-scriber: serine arginine rich protein splicing factor	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: serine arginine rich splicing factor rs	0.0004785833931562575	4	0.00014270763961564075	12	True
+prot-scriber: arginine serine rich splicing factor rsz	0.0017946877243359654	15	0.0002735229759299781	23	True
+prot-scriber: rat wd repeat containing protein smu	0.000957166786312515	8	9.513842641042717e-05	8	True
+prot-scriber: glycine rich rna binding protein 2	0.0015553960277578367	13	0.00021406145942346114	18	True
+prot-scriber: peptidyl prolyl cis trans isomerase	0.00023929169657812874	2	0.0006778612881742935	57	False
+prot-scriber: eukaryotic initiation factor 4a iii	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: protein mago nashi homolog	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: rna binding protein with serine rich domain 1	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: organelle rrm domain containing protein 6	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: sap domain containing protein	0.0004785833931562575	4	0.0003805537056417087	32	True
+prot-scriber: ab hydrolase domain containing protein	0.0008375209380234506	7	0.002223860717343735	187	False
+prot-scriber: pentatricopeptide repeat containing protein mitochondrial	0.002512562814070352	21	0.0016887070687850822	142	True
+prot-scriber: pentatricopeptide repeat containing protein	0.005503709021296961	46	0.007289981923698982	613	False
+prot-scriber: transcription termination factor mterf chloroplastic	0.0004785833931562575	4	0.00019027685282085435	16	True
+prot-scriber: apo protein 3 mitochondrial	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: apo protein 4 mitochondrial	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: intron maturas2 domain containing protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: mrna cap guanine n7 methyltransferase	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: mrna guanine n 7 methyltransferase	0.002273271117492223	19	0.0002973075825325849	25	True
+prot-scriber: ribosomal l7ae domain containing protein	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: nuclear poly a polymerase	0.0008375209380234506	7	0.0003448767957377985	29	True
+prot-scriber: polyadenylation factor subunit	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: pre mrna cleavage factor im kda subunit	0.0007178750897343862	6	0.00010703072971173057	9	True
+prot-scriber: n6 adenosine methyltransferase non catalytic subunit	0.0011964584828906438	10	0.00014270763961564075	12	True
+prot-scriber: zinc finger ccch domain containing protein	0.001316104331179708	11	0.0016054609456759585	135	False
+prot-scriber: marms ribosomal rna large subunit methyltransferase f	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: flapj ribosomal rna large subunit methyltransferase f	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: phypa trna guanine 37 n1 methyltransferase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: danre trna guanine 37 n1 methyltransferase	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: ribosomal rna large subunit methyltransferase e	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: adomet dependent rrna methyltransferase spb	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: trna guanine n 7 methyltransferase	0.0007178750897343862	6	0.00011892303301303397	10	True
+prot-scriber: multifunctional methyltransferase subunit trm protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: trna n 3 methylcytidine methyltransferase mettl	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: tsaa domain containing protein	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: cytoplasmic trna 2 thiolation protein	0.0008375209380234506	7	0.00010703072971173057	9	True
+prot-scriber: trna n6 adenosine threonylcarbamoyltransferase	0.0003589375448671931	3	0.00014270763961564075	12	True
+prot-scriber: ribonuclease z 2	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: ribonuclease z 2 mitochondrial	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: ribosomal large subunit pseudouridine synthase d	0.0007178750897343862	6	0.00013081533631433735	11	True
+prot-scriber: multiple organellar rna editing factor 5 chloroplastic mitochondrial	0.00023929169657812874	2	0.00010703072971173057	9	True
+prot-scriber: multiple organellar rna editing factor 1 mitochondrial	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: arath pentatricopeptide repeat containing protein	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: pentatricopeptide repeat containing protein chloroplastic	0.00011964584828906437	1	0.0007254305013795071	61	False
+prot-scriber: ccr not transcription complex subunit	0.0004785833931562575	4	0.000570830558462563	48	False
+prot-scriber: mrna decapping enzyme 1b	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: arath protein pat homolog	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: atp dependent rna helicase dhh	0.0003589375448671931	3	0.00011892303301303397	10	True
+prot-scriber: ribosomal rna processing protein	0.00023929169657812874	2	0.00023784606602606794	20	True
+prot-scriber: exosome complex component rrp	0.000957166786312515	8	0.0002854152792312815	24	True
+prot-scriber: s1 motif domain containing protein	0.00023929169657812874	2	0.00019027685282085435	16	True
+prot-scriber: dexh box atp dependent rna helicase	0.00023929169657812874	2	0.00020216915612215775	17	True
+prot-scriber: elongation factor 1 alpha	0.0005982292414453219	5	0.0007135381980782038	60	False
+prot-scriber: cell wall protein rbr isoform x1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: nuclear nucleic acid binding protein c1d	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: m phase phosphoprotein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: hth ost type domain containing protein	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: double stranded rna binding protein	0.001316104331179708	11	0.0002497383693273713	21	True
+prot-scriber: pre mrna splicing atp dependent rna helicase prp	0.0003589375448671931	3	8.324612310912378e-05	7	True
+prot-scriber: pap associated domain containing protein	0.0003589375448671931	3	0.00015459994291694415	13	True
+prot-scriber: spliceosome associated protein cwc homolog	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: endoribonuclease dicer homolog	0.0005982292414453219	5	0.0002735229759299781	23	True
+prot-scriber: drbm domain containing protein	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: protein argonaute	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: zinc finger ccch type with g patch domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: pum hd domain containing protein	0.000957166786312515	8	0.0004994767386547426	42	True
+prot-scriber: lsmad domain containing protein	0.000957166786312515	8	0.00015459994291694415	13	True
+prot-scriber: smr domain containing protein	0.000957166786312515	8	0.0004875844353534393	41	True
+prot-scriber: phano polyadenylate binding protein cytoplasmic and nuclear	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: arath polyadenylate binding protein interacting	0.0003589375448671931	3	0.0004043383122443155	34	False
+prot-scriber: yth domain containing family protein	0.000957166786312515	8	0.0006540766815716869	55	True
+prot-scriber: protein mei isoform	0.0008375209380234506	7	0.00015459994291694415	13	True
+prot-scriber: meiosis protein mei	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: kh domain containing protein	0.0008375209380234506	7	0.0003805537056417087	32	True
+prot-scriber: kh 1 domain containing protein	0.0003589375448671931	3	8.324612310912378e-05	7	True
+prot-scriber: polyadenylate binding protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: polyadenylate binding protein cytoplasmic and nuclear	0.000957166786312515	8	0.00023784606602606794	20	True
+prot-scriber: nuclear and rna binding protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: embryonic polyadenylate binding protein	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: staphylococcal nuclease domain containing protein	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: nuclear transport factor ntf family protein rna binding rrm domain	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: nuclear transport factor ntf family protein binding domain	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: nuclear transport factor ntf protein binding domain	0.0004785833931562575	4	8.324612310912378e-05	7	True
+prot-scriber: nuclear transport factor ntf family protein rna binding domain	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: ras gtpase activating protein binding	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: ntf domain containing protein rrm 6	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: 26s proteasome complex subunit sem	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: tho complex subunit 5b	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: rat zinc finger ccch domain containing protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: mrna export factor rae	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: repeat and sam domain containing protein	0.000957166786312515	8	0.00016649224621824755	14	True
+prot-scriber: sam domain containing protein	0.0004785833931562575	4	0.0002735229759299781	23	True
+prot-scriber: polynucleotide 5 hydroxyl kinase nol protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: 60s ribosomal protein l10a 1	0.0005982292414453219	5	0.00016649224621824755	14	True
+prot-scriber: 60s ribosomal protein l9 1	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: 60s ribosomal l23 protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: 60s ribosomal protein l19 1	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: 60s ribosomal protein l18a 1	0.0010768126346015793	9	0.00020216915612215775	17	True
+prot-scriber: trash domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: 60s ribosomal protein l7 1	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: ribosome biogenesis regulatory protein	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: anapc4 wd40 domain containing protein	0.00023929169657812874	2	0.0003329844924364951	28	False
+prot-scriber: rrna processing protein ebp	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: wd repeat containing protein isoform	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: nucleolar protein	0.00023929169657812874	2	0.00010703072971173057	9	True
+prot-scriber: ribosome biogenesis protein nop	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: nucleolar gtp binding protein	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: nuclear nucleolar gtpase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: protein mak homolog	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: ribosome biogenesis protein nsa	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: elongation factor domain containing	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: arath g patch domain containing protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: dicdi eukaryotic translation initiation factor	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: 40s ribosomal protein s27 1	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: aatf che domain containing protein	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: neuroguidin	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: rrna processing protein efg	0.0003589375448671931	3	8.324612310912378e-05	7	True
+prot-scriber: cbf domain containing protein	0.00023929169657812874	2	0.00015459994291694415	13	True
+prot-scriber: rna binding protein pno	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: krr small subunit processome component	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: u3 small nucleolar rna associated protein	0.0007178750897343862	6	0.00013081533631433735	11	True
+prot-scriber: pre rrna processing protein tsr	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: pre rrna processing protein tsr homolog	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: protein ltv homolog	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: serine threonine protein kinase rio	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: adenylate kinase isoenzyme homolog	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: arginine trna ligase	0.0021536252692031586	18	0.00021406145942346114	18	True
+prot-scriber: cysteine trna ligase 1	0.0004785833931562575	4	0.0003210921891351917	27	True
+prot-scriber: quality protein glutamine trna ligase	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: glutamine trna ligase	0.000957166786312515	8	9.513842641042717e-05	8	True
+prot-scriber: methionine trna ligase	0.0004785833931562575	4	0.00014270763961564075	12	True
+prot-scriber: methionine trna ligase cytoplasmic	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: leucine trna	0.00023929169657812874	2	0.00014270763961564075	12	True
+prot-scriber: leucyl trna synthetase	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: bifunctional glutamate trna ligase	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: eukaryotic translation initiation factor 1a	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: eif 2b factor subunit alpha	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: translation initiation factor eif 2b subunit beta	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: translation initiation factor eif 2b beta subunit	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: ntp transferase domain containing protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: translation initiation factor eif 2b delta subunit	0.0003589375448671931	3	0.00011892303301303397	10	True
+prot-scriber: aedae eukaryotic translation initiation factor subunit h	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: eukaryotic translation initiation factor subunit h	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: eukaryotic initiation factor 4a 1	0.0004785833931562575	4	0.00016649224621824755	14	True
+prot-scriber: eukaryotic translation initiation factor 4b2	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: eukaryotic translation initiation factor 4e 1	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: polyadenylate binding protein 1	0.0015553960277578367	13	0.00015459994291694415	13	True
+prot-scriber: eukaryotic translation initiation factor 4e 2	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: elongation factor 1 beta	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: elongation factor 1 gamma	0.0003589375448671931	3	0.00011892303301303397	10	True
+prot-scriber: elongation factor 1 gamma protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: diphthamide synthase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: dicdi diphthine methyltransferase homolog	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: chagb deoxyhypusine hydroxylase	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: deoxyhypusine hydroxylase	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: atp binding family e member	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: atp binding cassette family e member	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: atp binding cassette sub family e member	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: leucine zipper ef hand containing transmembrane protein	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: 60s ribosomal protein l5 mitochondrial	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: 50s ribosomal protein l10 chloroplastic	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: 50s ribosomal protein l7 l12	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: 50s ribosomal protein l14	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: 50s ribosomal protein l17	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: 50s ribosomal protein l18	0.0003589375448671931	3	8.324612310912378e-05	7	True
+prot-scriber: 50s ribosomal protein l19 1	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: 50s ribosomal protein l23	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: 50s ribosomal protein l24	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: rrna adenine n 6 methyltransferase	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: hydrolase domain containing protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: small subunit ribosomal protein s6	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: 40s ribosomal protein s15a 1	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: 30s ribosomal protein s10	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: 30s ribosomal protein s16 1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: 30s ribosomal protein s19	0.000957166786312515	8	0.00015459994291694415	13	True
+prot-scriber: bind 3 domain containing protein	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: 30s ribosomal protein s21	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: dolichol phosphate mannosyltransferase subunit	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: glyco tran 28 c domain containing protein	0.000957166786312515	8	0.00014270763961564075	12	True
+prot-scriber: protein rft homolog	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: alpha mannosyl glycoprotein 2 beta n acetylglucosaminyltransferase	0.0007178750897343862	6	9.513842641042717e-05	8	True
+prot-scriber: beta hexosaminidase subunit	0.0007178750897343862	6	0.00023784606602606794	20	True
+prot-scriber: hexosyltransferase	0.0008375209380234506	7	0.0020216915612215774	170	False
+prot-scriber: galectin domain containing protein	0.000957166786312515	8	0.0002854152792312815	24	True
+prot-scriber: n terminal amino acid alpha acetyltransferase nata	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: hypk uba domain containing protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: n acetyltransferase domain containing protein	0.0007178750897343862	6	0.0008681381409951479	73	False
+prot-scriber: n terminal acetyltransferase b complex auxiliary subunit naa	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: sm domain containing protein	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: glcnac pi synthesis protein	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: phosphatidylinositol n acetylglucosaminyltransferase gpi subunit	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: phosphatidylinositol n acetylglucosaminyltransferase subunit c	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: gpi mannosyltransferase	0.0008375209380234506	7	0.00017838454951955095	15	True
+prot-scriber: protein farnesyltransferase subunit beta	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: s acyltransferase	0.0005982292414453219	5	0.0003805537056417087	32	True
+prot-scriber: lrr receptor kinase serk	0.0003589375448671931	3	0.00016649224621824755	14	True
+prot-scriber: lectin domain containing receptor kinase 1	0.0004785833931562575	4	0.0003805537056417087	32	True
+prot-scriber: lectin domain containing receptor kinase 4	0.0004785833931562575	4	0.0003567690990391019	30	True
+prot-scriber: cysteine rich receptor protein kinase	0.00023929169657812874	2	0.00022595376272476454	19	True
+prot-scriber: l type lectin domain containing receptor kinase 1	0.0003589375448671931	3	0.0004162306155456189	35	False
+prot-scriber: arath wall associated receptor kinase	0.0004785833931562575	4	0.0018195224050994196	153	False
+prot-scriber: lysm domain receptor kinase	0.0017946877243359654	15	0.0003924460089430121	33	True
+prot-scriber: casein kinase i isoform delta	0.0007178750897343862	6	0.0002973075825325849	25	True
+prot-scriber: casein kinase i isoform	0.0010768126346015793	9	0.0014270763961564076	120	False
+prot-scriber: dual specificity tyrosine phosphorylation regulated kinase	0.0016750418760469012	14	0.0007967843211873275	67	True
+prot-scriber: casein kinase ii subunit alpha	0.0004785833931562575	4	0.00021406145942346114	18	True
+prot-scriber: casein kinase ii subunit beta	0.0003589375448671931	3	0.00017838454951955095	15	True
+prot-scriber: 5 serine threonine protein kinase catalytic subunit alpha	0.0003589375448671931	3	8.324612310912378e-05	7	True
+prot-scriber: ampkbi domain containing protein	0.0017946877243359654	15	0.0002854152792312815	24	True
+prot-scriber: snf protein kinase regulatory subunit gamma	0.0004785833931562575	4	0.00015459994291694415	13	True
+prot-scriber: cbs domain containing protein	0.0008375209380234506	7	0.0004637998287508325	39	True
+prot-scriber: 5 amp activated protein kinase subunit gamma	0.000957166786312515	8	0.00021406145942346114	18	True
+prot-scriber: sucrose nonfermenting protein	0.0007178750897343862	6	0.00011892303301303397	10	True
+prot-scriber: serine threonine kinase sapk protein	0.0007178750897343862	6	0.0004637998287508325	39	True
+prot-scriber: serine threonine protein kinase sapk	0.0011964584828906438	10	0.0005589382551612597	47	True
+prot-scriber: cbl interacting serine threonine protein kinase	0.004905479779851639	41	0.0025687375130815336	216	True
+prot-scriber: arath calcium dependent protein kinase	0.005144771476429768	43	0.0034368756540766815	289	True
+prot-scriber: calcium dependent protein kinase	0.0003589375448671931	3	0.0004162306155456189	35	False
+prot-scriber: serine threonine protein kinase sgk	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: mouse ribosomal protein s6 kinase beta	0.0007178750897343862	6	0.0002497383693273713	21	True
+prot-scriber: serine threonine protein kinase cbk	0.002512562814070352	21	0.000570830558462563	48	True
+prot-scriber: serine threonine protein phosphatase pp	0.0014357501794687725	12	0.0007135381980782038	60	True
+prot-scriber: serine threonine protein phosphatase 2a kda regulatory subunit b isoform	0.00023929169657812874	2	0.0004400152221482257	37	False
+prot-scriber: receptor type tyrosine protein phosphatase	0.00023929169657812874	2	0.00010703072971173057	9	True
+prot-scriber: tyrosine protein phosphatase receptor type	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: tyrosine protein phosphatase non receptor type	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: tyrosine protein phosphatase domain containing	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: poly adp ribose glycohydrolase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: poly polymerase catalytic domain containing protein	0.000957166786312515	8	0.0003091998858338883	26	True
+prot-scriber: procollagen proline 4 dioxygenase	0.0008375209380234506	7	0.00015459994291694415	13	True
+prot-scriber: signal peptidase complex catalytic subunit sec	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: signal peptidase complex subunit	0.0008375209380234506	7	8.324612310912378e-05	7	True
+prot-scriber: signal peptide peptidase protein	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: mouse signal peptide peptidase	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: presenilin protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: gamma secretase subunit pen	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: arath gamma secretase subunit aph	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: endoplasmic reticulum oxidoreductin	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: protein disulfide isomerase	0.0007178750897343862	6	0.0004994767386547426	42	True
+prot-scriber: of peptidyl prolyl cis trans isomerase cyp	0.001316104331179708	11	0.0002735229759299781	23	True
+prot-scriber: cyclophilin peptidyl prolyl cis trans isomerase domain containing protein	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: kda peptidyl prolyl cis trans isomerase	0.0016750418760469012	14	0.00016649224621824755	14	True
+prot-scriber: quality protein peptidyl prolyl cis trans isomerase fkbp	0.00023929169657812874	2	0.00010703072971173057	9	True
+prot-scriber: glutaminyl peptide cyclotransferase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: mannosyl oligosaccharide 1 2 alpha mannosidase	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: stromal cell derived factor protein	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: dnaj homolog subfamily c member	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: chaperone protein dnak	0.0003589375448671931	3	0.0002497383693273713	21	True
+prot-scriber: chaperone protein dnaj	0.0007178750897343862	6	0.0002497383693273713	21	True
+prot-scriber: dnaj domain containing protein	0.0003589375448671931	3	0.0005232613452573494	44	False
+prot-scriber: sp dnaj chaperone protein dnaj	0.0014357501794687725	12	0.0010940919037199124	92	True
+prot-scriber: heat shock cognate kda protein	0.0003589375448671931	3	0.00023784606602606794	20	True
+prot-scriber: heat shock kda protein	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: dnaj homolog subfamily b member	0.00011964584828906437	1	0.00020216915612215775	17	False
+prot-scriber: duf 3444 domain containing protein	0.0007178750897343862	6	0.00015459994291694415	13	True
+prot-scriber: chaperone dnaj domain protein	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: ubiquitin domain containing protein	0.0017946877243359654	15	0.0004043383122443155	34	True
+prot-scriber: heat shock protein hsp 90 alpha	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: protein sgt homolog	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: cysteine and histidine rich domain containing protein rar	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: cs domain containing protein	0.00011964584828906437	1	0.0003329844924364951	28	False
+prot-scriber: kda class i heat shock protein	0.0003589375448671931	3	0.00023784606602606794	20	True
+prot-scriber: kda class ii heat shock protein	0.0005982292414453219	5	7.135381980782038e-05	6	True
+prot-scriber: shsp domain containing protein	0.00023929169657812874	2	0.0004162306155456189	35	False
+prot-scriber: heat shock kda protein mitochondrial	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: e3 ubiquitin protein ligase marchf	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: methionine aminopeptidase	0.0017946877243359654	15	0.001082199600418609	91	True
+prot-scriber: cysteine dioxygenase	0.000957166786312515	8	0.0004400152221482257	37	True
+prot-scriber: protein n terminal glutamine amidohydrolase	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: tripartite motif containing protein	0.000957166786312515	8	0.00010703072971173057	9	True
+prot-scriber: e3 ubiquitin protein ligase rmd	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: wd repeat containing protein homolog	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: glucose induced degradation protein 8 homolog	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: polyubiquitin b	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: ubiquitin conjugating enzyme e2 17	0.00023929169657812874	2	0.0002735229759299781	23	False
+prot-scriber: ubiquitin conjugating enzyme e2 16	0.000957166786312515	8	0.0005470459518599562	46	True
+prot-scriber: sumo conjugating enzyme ubc	0.0003589375448671931	3	0.00010703072971173057	9	True
+prot-scriber: ubiquitin nedd protein rub	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: nedd activating enzyme e1 catalytic subunit	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: nedd activating enzyme e1 regulatory subunit	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: membrane anchored ubiquitin fold protein	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: bruma ubiquitin fold modifier	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: ubiquitin fold modifier conjugating enzyme	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: ring h2 finger protein atl	0.0003589375448671931	3	0.0007254305013795071	61	False
+prot-scriber: e3 ubiquitin protein ligase ring	0.0010768126346015793	9	0.0006065074683664733	51	True
+prot-scriber: e3 ubiquitin protein ligase miel	0.0007178750897343862	6	0.00010703072971173057	9	True
+prot-scriber: e3 ubiquitin protein ligase rnf	0.0005982292414453219	5	0.0003210921891351917	27	True
+prot-scriber: ring ch type domain containing protein	0.0014357501794687725	12	0.0009632765674055751	81	True
+prot-scriber: ponab ubiquitin conjugation factor e4	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: u box domain containing protein	0.0003589375448671931	3	0.0013438302730472839	113	False
+prot-scriber: arath u box domain containing protein	0.000957166786312515	8	0.0006540766815716869	55	True
+prot-scriber: e3 ubiquitin protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: rbr type e3 ubiquitin transferase	0.0015553960277578367	13	0.0003567690990391019	30	True
+prot-scriber: caeel defective in cullin neddylation protein	0.0010768126346015793	9	0.0002973075825325849	25	True
+prot-scriber: defective in cullin neddylation protein	0.0003589375448671931	3	8.324612310912378e-05	7	True
+prot-scriber: skp protein	0.0005982292414453219	5	0.0002735229759299781	23	True
+prot-scriber: eid f box protein	0.00023929169657812874	2	0.00010703072971173057	9	True
+prot-scriber: f box 5 domain containing protein	0.0005982292414453219	5	0.0002854152792312815	24	True
+prot-scriber: apag domain containing protein	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: sp apag protein apag	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: f box protein at b	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: f box lrr repeat protein	0.0004785833931562575	4	0.0002735229759299781	23	True
+prot-scriber: f box only protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: orysj tubby f box protein	0.0007178750897343862	6	0.0006659689848729902	56	True
+prot-scriber: cullin 2 domain containing protein	0.0007178750897343862	6	0.00021406145942346114	18	True
+prot-scriber: btb poz domain containing protein	0.0010768126346015793	9	0.0009632765674055751	81	True
+prot-scriber: ddb and cul associated factor isoform	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: duf 2415 domain containing protein	0.00023929169657812874	2	0.0003210921891351917	27	False
+prot-scriber: p21 activated protein kinase interacting	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: dna damage binding protein cmr	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: duf 1421 domain containing protein	0.00023929169657812874	2	0.0002497383693273713	21	False
+prot-scriber: mouse ubiquitin carboxyl terminal hydrolase protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: ubiquitin carboxyl terminal hydrolase	0.00023929169657812874	2	0.0012962610598420703	109	False
+prot-scriber: otu domain containing protein 5	0.0010768126346015793	9	0.00020216915612215775	17	True
+prot-scriber: danre ubiquitin carboxyl terminal hydrolase	0.0003589375448671931	3	0.0002854152792312815	24	True
+prot-scriber: zinc finger containing ubiquitin peptidase	0.0003589375448671931	3	8.324612310912378e-05	7	True
+prot-scriber: pppde domain containing protein	0.00011964584828906437	1	0.0004994767386547426	42	False
+prot-scriber: ulp protease domain containing protein	0.0020339794209140944	17	0.0009038150508990582	76	True
+prot-scriber: cop signalosome complex subunit	0.0003589375448671931	3	0.0002616306726286747	22	True
+prot-scriber: cop signalosome and complex subunit	0.000957166786312515	8	9.513842641042717e-05	8	True
+prot-scriber: pci domain containing protein	0.0005982292414453219	5	0.0004281229188469223	36	True
+prot-scriber: cell division control protein homolog b	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: erad associated e3 ubiquitin protein ligase	0.0005982292414453219	5	0.00013081533631433735	11	True
+prot-scriber: sp ubc ubiquitin conjugating enzyme e2	0.0007178750897343862	6	0.00023784606602606794	20	True
+prot-scriber: mrh domain containing protein	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: plant ubx domain containing protein	0.0011964584828906438	10	0.0002735229759299781	23	True
+prot-scriber: ubiquitin receptor rad	0.0007178750897343862	6	0.00020216915612215775	17	True
+prot-scriber: ubiquitin domain containing protein dsk2b	0.000957166786312515	8	0.00017838454951955095	15	True
+prot-scriber: erlin	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: proteasome subunit alpha type	0.0005982292414453219	5	0.0006183997716677766	52	False
+prot-scriber: drome proteasome subunit alpha type	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: proteasome subunit beta type	0.001316104331179708	11	0.0004519075254495291	38	True
+prot-scriber: proteasome assembly chaperone protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: proteasome assembly chaperone isoform	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: proteasome assembly chaperone	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: 26s proteasome non atpase regulatory subunit protein	0.0007178750897343862	6	0.0003805537056417087	32	True
+prot-scriber: kdel tailed cysteine endopeptidase cep	0.0003589375448671931	3	0.00010703072971173057	9	True
+prot-scriber: vacuolar processing enzyme isozyme	0.0010768126346015793	9	0.0003210921891351917	27	True
+prot-scriber: sp sbt subtilisin protease	0.00023929169657812874	2	0.0003686614023404053	31	False
+prot-scriber: subtilisin protease sbt	0.0008375209380234506	7	0.000570830558462563	48	True
+prot-scriber: quality protein subtilisin protease sbt	0.0003589375448671931	3	0.0002735229759299781	23	True
+prot-scriber: serine carboxypeptidase	0.002632208662359416	22	0.0013081533631433737	110	True
+prot-scriber: of serine carboxypeptidase	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: serine carboxypeptidase s28 protein	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: peptidase s28 protein	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: lon protease homolog 2 peroxisomal	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: ranbp type domain containing protein	0.001316104331179708	11	0.0002735229759299781	23	True
+prot-scriber: uba domain containing protein	0.0005982292414453219	5	0.00013081533631433735	11	True
+prot-scriber: rhomboid domain containing protein	0.00011964584828906437	1	0.00022595376272476454	19	False
+prot-scriber: atp dependent clp protease binding subunit clpa homolog chloroplastic	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: atp dependent clp protease binding subunit chloroplastic	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: atp dependent clp protease proteolytic subunit 2	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: peptidase a1 domain containing protein	0.002512562814070352	21	0.0025211682998763202	212	False
+prot-scriber: neprosin domain containing protein	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: egf domain containing protein	0.0003589375448671931	3	0.00021406145942346114	18	True
+prot-scriber: peptidase m16 c domain containing protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: mitochondrial processing peptidase subunit alpha	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: insulin degrading enzyme 1	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: artbc methionine aminopeptidase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: atp dependent zinc metalloprotease ftsh 11 mitochondrial	0.0005982292414453219	5	0.0002854152792312815	24	True
+prot-scriber: serpin domain containing protein	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: alpha amylase subtilisin inhibitor	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: bowman birk domain containing protein	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: subtilisin chymotrypsin inhibitor ci 1b	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: arath serine threonine protein kinase wag	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: cystatin domain containing protein	0.00023929169657812874	2	0.00010703072971173057	9	True
+prot-scriber: high molecular weight glutenin subunit 20*y	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: glutelin type b	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: cupin type domain containing protein	0.0010768126346015793	9	0.00019027685282085435	16	True
+prot-scriber: vicilin protein antimicrobial peptides	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: conglutin beta	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: orysj tubulin alpha chain	0.0005982292414453219	5	0.00020216915612215775	17	True
+prot-scriber: tubulin beta chain	0.00011964584828906437	1	0.0005232613452573494	44	False
+prot-scriber: gamma tubulin complex component	0.0007178750897343862	6	0.0002854152792312815	24	True
+prot-scriber: haus augmin domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: kinesin protein kin 4a	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: kinesin motor domain containing protein	0.0004785833931562575	4	0.0006302920749690801	53	False
+prot-scriber: outer arm dynein light chain protein	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: tpx domain containing protein	0.00011964584828906437	1	0.0006659689848729902	56	False
+prot-scriber: actin	0.0005982292414453219	5	0.0007492151079821139	63	False
+prot-scriber: actin 4	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: actin protein 3	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: actin protein 2 3 complex subunit 1a	0.0003589375448671931	3	8.324612310912378e-05	7	True
+prot-scriber: actin protein 2 3 complex subunit	0.00011964584828906437	1	0.00020216915612215775	17	False
+prot-scriber: arath protein abil	0.0004785833931562575	4	9.513842641042717e-05	8	True
+prot-scriber: profilin	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: formin protein	0.00011964584828906437	1	0.0006778612881742935	57	False
+prot-scriber: lim domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: myosin protein	0.00011964584828906437	1	0.00011892303301303397	10	True
+prot-scriber: calmodulin	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: gtd binding domain containing protein	0.0004785833931562575	4	0.000570830558462563	48	False
+prot-scriber: pb domain containing protein	0.0005982292414453219	5	0.0003210921891351917	27	True
+prot-scriber: wpp domain interacting tail anchored protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: nuclear envelope associated protein isoform	0.00023929169657812874	2	0.00015459994291694415	13	True
+prot-scriber: extended synaptotagmin	0.0008375209380234506	7	0.00015459994291694415	13	True
+prot-scriber: synaptotagmin	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: msp domain containing protein	0.00011964584828906437	1	0.0002497383693273713	21	False
+prot-scriber: protein candidate g coupled receptor	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: lea 2 domain containing protein	0.001316104331179708	11	0.0012843687565407668	108	True
+prot-scriber: tpr 7 domain containing protein tpr 12	0.0003589375448671931	3	0.00013081533631433735	11	True
+prot-scriber: cobra protein	0.00023929169657812874	2	0.00019027685282085435	16	True
+prot-scriber: glyco hyd 65n 2 domain containing protein	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: glycosyltransferases	0.0004785833931562575	4	0.0009394919608029683	79	False
+prot-scriber: exostosin domain containing protein	0.0011964584828906438	10	0.001165445723527733	98	True
+prot-scriber: protein o linked mannose beta n acetylglucosaminyltransferase	0.00011964584828906437	1	0.00020216915612215775	17	False
+prot-scriber: gh domain containing protein	0.0016750418760469012	14	0.0007254305013795071	61	True
+prot-scriber: glucomannan 4 beta mannosyltransferase	0.00023929169657812874	2	0.0004519075254495291	38	False
+prot-scriber: o fucosyltransferase family protein	0.0010768126346015793	9	0.001771953191894206	149	False
+prot-scriber: xyloglucan 6 xylosyltransferase	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: beta glucuronosyltransferase glcat14b	0.0005982292414453219	5	0.00022595376272476454	19	True
+prot-scriber: pectinesterase protein	0.0003589375448671931	3	0.0005113690419560461	43	False
+prot-scriber: pectinesterase	0.00011964584828906437	1	0.0008562458376938446	72	False
+prot-scriber: non reducing end alpha l arabinofuranosidase	0.0008375209380234506	7	0.0002616306726286747	22	True
+prot-scriber: alpha galactosidase	0.0003589375448671931	3	0.0003924460089430121	33	False
+prot-scriber: arabinose 5 phosphate isomerase	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: 3 deoxy manno octulosonate cytidylyltransferase	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: cmp n acetylneuraminate beta galactosamide alpha 3 sialyltransferase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: polygalacturonase	0.0003589375448671931	3	0.0009989534773094852	84	False
+prot-scriber: protein trichome birefringence	0.0004785833931562575	4	0.0005113690419560461	43	False
+prot-scriber: fasciclin arabinogalactan protein	0.00023929169657812874	2	0.00020216915612215775	17	True
+prot-scriber: glycosyltransferase	0.0003589375448671931	3	0.0002854152792312815	24	True
+prot-scriber: expansin a4	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: quality protein expansin	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: caffeoyl coa o methyltransferase	0.0004785833931562575	4	0.0002973075825325849	25	True
+prot-scriber: aldehyde dehydrogenase family member	0.0005982292414453219	5	0.00017838454951955095	15	True
+prot-scriber: protein transport sec homolog b	0.0004785833931562575	4	0.0002735229759299781	23	True
+prot-scriber: gold domain containing protein	0.001316104331179708	11	0.0003210921891351917	27	True
+prot-scriber: transmembrane emp domain containing protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: quality protein ap complex subunit delta	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: ap complex subunit sigma	0.00023929169657812874	2	0.00017838454951955095	15	True
+prot-scriber: vacuole membrane protein kms	0.0008375209380234506	7	0.00013081533631433735	11	True
+prot-scriber: thenn xylose isomerase	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: coatomer subunit zeta	0.00011964584828906437	1	0.00016649224621824755	14	False
+prot-scriber: adp ribosylation factor 2	0.0003589375448671931	3	0.0004281229188469223	36	False
+prot-scriber: adp ribosylation factor protein	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: er protein rer	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein rer	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: bovin vacuolar protein sorting associated	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: sorting nexin 2	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: biogenesis of lysosome organelles complex subunit	0.0003589375448671931	3	9.513842641042717e-05	8	True
+prot-scriber: vps c terminal domain containing protein	0.0008375209380234506	7	0.00021406145942346114	18	True
+prot-scriber: vacuolar protein sorting associated homolog	0.0004785833931562575	4	0.0007848920178860242	66	False
+prot-scriber: charged multivesicular body protein 4b	0.0011964584828906438	10	0.00022595376272476454	19	True
+prot-scriber: charged multivesicular body protein 2a homolog	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: tom protein isoform	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: hepatocyte growth factor regulated tyrosine kinase substrate	0.0004785833931562575	4	0.00013081533631433735	11	True
+prot-scriber: bro domain containing protein	0.00011964584828906437	1	0.0002616306726286747	22	False
+prot-scriber: eh domain containing protein	0.0003589375448671931	3	7.135381980782038e-05	6	True
+prot-scriber: exocyst subunit exo family protein	0.0005982292414453219	5	0.0006540766815716869	55	False
+prot-scriber: exocyst complex component sec	0.0004785833931562575	4	0.0003448767957377985	29	True
+prot-scriber: exocyst complex component	0.0004785833931562575	4	0.00017838454951955095	15	True
+prot-scriber: dead box atp dependent rna helicase	0.0020339794209140944	17	0.0007848920178860242	66	True
+prot-scriber: enth domain containing protein	0.0005982292414453219	5	0.000689753591475597	58	False
+prot-scriber: eukaryotic translation initiation factor	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: mhd domain containing protein	0.00023929169657812874	2	0.00023784606602606794	20	True
+prot-scriber: ras protein rab 8a	0.001316104331179708	11	0.0002735229759299781	23	True
+prot-scriber: ras protein rab 7a	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: rab gap tbc domain containing protein	0.0016750418760469012	14	0.001082199600418609	91	True
+prot-scriber: guanosine nucleotide diphosphate dissociation inhibitor	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: pra family protein	0.0007178750897343862	6	0.0002735229759299781	23	True
+prot-scriber: v snare domain containing protein	0.00023929169657812874	2	0.00014270763961564075	12	True
+prot-scriber: membrin	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: vesicle trafficking protein sec22b	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: lgl c domain containing protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: alpha soluble nsf attachment protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: serine threonine protein kinase atg	0.0010768126346015793	9	0.00010703072971173057	9	True
+prot-scriber: atg domain containing protein	0.0005982292414453219	5	0.00022595376272476454	19	True
+prot-scriber: atg interacting protein isoform x1	0.0004785833931562575	4	9.513842641042717e-05	8	True
+prot-scriber: mouse ubx domain containing protein	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: arath plant ubx domain containing protein	0.0004785833931562575	4	0.00010703072971173057	9	True
+prot-scriber: fyve type domain containing protein	0.0005982292414453219	5	0.0006065074683664733	51	False
+prot-scriber: wd repeat domain phosphoinositide interacting protein	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: adp ribosylation factor protein 8b	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: mitochondrial import inner membrane translocase subunit tim protein	0.0005982292414453219	5	0.00016649224621824755	14	True
+prot-scriber: mitochondrial import receptor subunit tom protein	0.00011964584828906437	1	0.00014270763961564075	12	False
+prot-scriber: tim domain containing protein	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: caebr mitochondrial import inner membrane translocase subunit tim	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: dnl type domain containing protein	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: omp domain containing protein	0.0005982292414453219	5	0.00011892303301303397	10	True
+prot-scriber: mitochondrial import inner membrane translocase subunit tim	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: mitochondrial import inner membrane translocase subunit	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: signal recognition particle kda protein	0.001316104331179708	11	0.00019027685282085435	16	True
+prot-scriber: macfa signal recognition particle kda protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: signal recognition particle receptor subunit beta	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: sec domain containing protein	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: translocation protein sec	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: protein transport sec subunit alpha isoform	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: protein transport sec beta subunit	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: protein transport sec gamma subunit	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: protein get isoform	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: er membrane protein complex subunit	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: membrane magnesium transporter protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: membrane magnesium transporter	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: peroxin	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: peroxisome biogenesis factor	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: elys domain containing protein	0.0004785833931562575	4	9.513842641042717e-05	8	True
+prot-scriber: protein cpr	0.000957166786312515	8	0.00019027685282085435	16	True
+prot-scriber: ranbd domain containing protein	0.0004785833931562575	4	0.00015459994291694415	13	True
+prot-scriber: bovin importin subunit alpha	0.0005982292414453219	5	9.513842641042717e-05	8	True
+prot-scriber: importin subunit alpha protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: ntf domain containing protein	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: plasmodesmata located protein	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: mouse v type proton atpase kda subunit a	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: v type proton atpase subunit d	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: v type proton atpase subunit f	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: coiled coil protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: atpase 1 plasma membrane type	0.0003589375448671931	3	0.0003924460089430121	33	False
+prot-scriber: abc transporter b family member	0.000957166786312515	8	0.0009632765674055751	81	False
+prot-scriber: abc type xenobiotic transporter	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: k + pyrophosphate energized proton pump	0.0003589375448671931	3	0.0004519075254495291	38	False
+prot-scriber: triose phosphate translocator tpt chloroplastic	0.00011964584828906437	1	0.0002973075825325849	25	False
+prot-scriber: tpt domain containing protein	0.00023929169657812874	2	0.001165445723527733	98	False
+prot-scriber: cmp sialic acid transporter	0.00011964584828906437	1	0.0002854152792312815	24	False
+prot-scriber: of udp n acetylglucosamine transporter rock	0.000957166786312515	8	0.00014270763961564075	12	True
+prot-scriber: magnesium transporter nipa	0.001316104331179708	11	0.0003805537056417087	32	True
+prot-scriber: wat protein	0.0011964584828906438	10	0.0011297688136238226	95	True
+prot-scriber: purine permease	0.00023929169657812874	2	0.0002616306726286747	22	False
+prot-scriber: solute carrier family 35 member f1	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: mfs domain containing protein	0.0023929169657812875	20	0.002818475882408905	237	False
+prot-scriber: sugar transporter erd protein	0.0004785833931562575	4	0.00020216915612215775	17	True
+prot-scriber: organic cation carnitine transporter protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: folate biopterin transporter 1 chloroplastic	0.0004785833931562575	4	0.00010703072971173057	9	True
+prot-scriber: arath protein nrt ptr family	0.0003589375448671931	3	0.0003686614023404053	31	False
+prot-scriber: nodulin domain containing protein	0.0003589375448671931	3	0.0007729997145847207	65	False
+prot-scriber: low affinity inorganic phosphate transporter	0.0003589375448671931	3	0.0002497383693273713	21	True
+prot-scriber: sp mdtg multidrug resistance protein mdtg	0.0004785833931562575	4	9.513842641042717e-05	8	True
+prot-scriber: molybdate transporter protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: purine uracil permease ncs	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: nucleobase ascorbate transporter protein	0.0004785833931562575	4	0.0005827228617638665	49	False
+prot-scriber: aa trans domain containing protein	0.0003589375448671931	3	0.0010108457806107887	85	False
+prot-scriber: quality protein amino acid transporter	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: potassium transporter	0.001316104331179708	11	0.0007492151079821139	63	True
+prot-scriber: orysj potassium transporter	0.00023929169657812874	2	0.0003567690990391019	30	False
+prot-scriber: ldh 1 domain containing protein	0.0003589375448671931	3	8.324612310912378e-05	7	True
+prot-scriber: na+ bile acid cotransporter	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: bidirectional sugar transporter sweet	0.0015553960277578367	13	0.0003210921891351917	27	True
+prot-scriber: citmhs domain containing protein	0.00011964584828906437	1	0.0002497383693273713	21	False
+prot-scriber: sp arath phosphate transporter pho homolog	0.0004785833931562575	4	0.00016649224621824755	14	True
+prot-scriber: of sodium hydrogen exchanger	0.0004785833931562575	4	0.00019027685282085435	16	True
+prot-scriber: prevacuolar sodium hydrogen exchanger	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: na + h + antiporter	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: sodium calcium exchanger protein ef hand	0.0005982292414453219	5	0.00011892303301303397	10	True
+prot-scriber: ef hand domain containing protein	0.001316104331179708	11	0.0013438302730472839	113	False
+prot-scriber: carrier family zinc transporter member 5 7	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: zinc transporter	0.0007178750897343862	6	0.0003210921891351917	27	True
+prot-scriber: protein detoxification	0.0005982292414453219	5	0.0007729997145847207	65	False
+prot-scriber: protein detoxification 44	0.00011964584828906437	1	0.00021406145942346114	18	False
+prot-scriber: metal nicotianamine transporter ysl	0.0008375209380234506	7	0.0007611074112834174	64	True
+prot-scriber: bovin calcium binding mitochondrial carrier protein scamc	0.0007178750897343862	6	0.00011892303301303397	10	True
+prot-scriber: adenine nucleotide transporter bt chloroplastic mitochondrial	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: mitochondrial substrate carrier family protein	0.0004785833931562575	4	0.0004637998287508325	39	True
+prot-scriber: mitochondrial phosphate carrier protein 1	0.00011964584828906437	1	0.00020216915612215775	17	False
+prot-scriber: s adenosylmethionine carrier 1 chloroplastic mitochondrial	0.0004785833931562575	4	0.00016649224621824755	14	True
+prot-scriber: mitochondrial carrier family protein	0.0005982292414453219	5	0.00013081533631433735	11	True
+prot-scriber: mitochondrial carnitine acylcarnitine carrier protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: mitochondrial uncoupling protein	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: calcium binding mitochondrial carrier protein scamc b	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: dependent mitochondrial atp carrier protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: gdt family protein	0.0003589375448671931	3	0.0003686614023404053	31	False
+prot-scriber: chloride channel protein	0.0004785833931562575	4	0.0002735229759299781	23	True
+prot-scriber: cnnm transmembrane domain containing protein	0.0005982292414453219	5	0.00021406145942346114	18	True
+prot-scriber: aquaporin protein pip 1	0.0004785833931562575	4	8.324612310912378e-05	7	True
+prot-scriber: aquaporin tip	0.0010768126346015793	9	0.00021406145942346114	18	True
+prot-scriber: aquaporin sip	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: aquaporin sip protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: potassium channel kat protein	0.00011964584828906437	1	0.00023784606602606794	20	False
+prot-scriber: mechanosensitive ion channel protein 1 mitochondrial	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: arath mechanosensitive ion channel protein	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: arath csc protein erd	0.0008375209380234506	7	0.00019027685282085435	16	True
+prot-scriber: castor poll mid domain containing protein	0.0003589375448671931	3	0.00019027685282085435	16	True
+prot-scriber: cyclic nucleotide binding domain containing protein	0.0004785833931562575	4	0.0007729997145847207	65	False
+prot-scriber: cyclic nucleotide domain containing protein	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: glutamate receptor	0.001316104331179708	11	0.0004994767386547426	42	True
+prot-scriber: s type anion channel slah	0.0007178750897343862	6	0.0002735229759299781	23	True
+prot-scriber: aluminum activated malate transporter protein	0.00023929169657812874	2	0.00014270763961564075	12	True
+prot-scriber: copper protein	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: quality protein magnesium transporter mrs	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: mitochondrial outer membrane protein porin	0.00011964584828906437	1	0.00014270763961564075	12	False
+prot-scriber: outer envelope pore protein 21b chloroplastic	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: glutamine synthetase cytosolic isozyme	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: glutamine synthetase isozyme	0.0003589375448671931	3	0.0003329844924364951	28	True
+prot-scriber: aspartate aminotransferase mitochondrial	0.0021536252692031586	18	0.00021406145942346114	18	True
+prot-scriber: aspartate aminotransferase cytoplasmic	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: spx domain containing protein	0.0003589375448671931	3	9.513842641042717e-05	8	True
+prot-scriber: sec protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: cue domain containing protein	0.0007178750897343862	6	0.0002497383693273713	21	True
+prot-scriber: myb protein w isoform x1	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: cobw domain containing protein 05	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: methanethiol oxidase	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: phytochrome a 2	0.00023929169657812874	2	0.00022595376272476454	19	True
+prot-scriber: protein far red elongated hypocotyl	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: photolyase cryptochrome alpha beta domain containing protein	0.0003589375448671931	3	0.0002616306726286747	22	True
+prot-scriber: photolyase cryptochrome protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: rgs domain containing serine threonine protein kinase	0.0005982292414453219	5	0.0003448767957377985	29	True
+prot-scriber: motif sam domain containing protein	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: serine threonine protein kinase	0.0011964584828906438	10	0.0009394919608029683	79	True
+prot-scriber: phosphosulfolactate synthase biosynthesis protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: rhodanese domain containing protein 19	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: z1a alpha zein protein	0.0031107920555156735	26	0.0003091998858338883	26	True
+prot-scriber: s domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: calmodulin binding protein a	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: dao domain containing protein	0.00023929169657812874	2	0.0003091998858338883	26	False
+prot-scriber: knot domain containing protein	0.0004785833931562575	4	0.00021406145942346114	18	True
+prot-scriber: hva protein	0.0004785833931562575	4	0.0005470459518599562	46	False
+prot-scriber: aspcl atp dependent rna helicase dbp	0.000957166786312515	8	0.00016649224621824755	14	True
+prot-scriber: duf 1084 domain containing protein	0.0004785833931562575	4	0.0002497383693273713	21	True
+prot-scriber: tobamovirus multiplication protein 2a	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: isoform upf protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: isoform of upf protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: two component response regulator aprr	0.0003589375448671931	3	9.513842641042717e-05	8	True
+prot-scriber: lol lsd 1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: litaf domain containing protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: c3hc type domain containing protein	0.00011964584828906437	1	0.00020216915612215775	17	False
+prot-scriber: flz type domain containing protein	0.0005982292414453219	5	0.000689753591475597	58	False
+prot-scriber: protein oxidative stress	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: rac gtp binding protein arac	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: rho gtpase activating protein 21	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: rho gtpase activating protein	0.00023929169657812874	2	0.00015459994291694415	13	True
+prot-scriber: arath rop guanine nucleotide exchange factor	0.00011964584828906437	1	0.0004756921320521359	40	False
+prot-scriber: ph domain containing protein	0.0003589375448671931	3	0.0004400152221482257	37	False
+prot-scriber: glutamyl trna gln amidotransferase	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: pfkb domain containing protein	0.00023929169657812874	2	0.0004043383122443155	34	False
+prot-scriber: inositol tetrakisphosphate 1 kinase	0.000957166786312515	8	0.00022595376272476454	19	True
+prot-scriber: arath phosphoinositide phospholipase c	0.0005982292414453219	5	0.00017838454951955095	15	True
+prot-scriber: inositol pentakisphosphate 2 kinase	0.0007178750897343862	6	9.513842641042717e-05	8	True
+prot-scriber: of p loop ntpase domain containing protein lpa	0.0005982292414453219	5	9.513842641042717e-05	8	True
+prot-scriber: cdp diacylglycerol inositol 3 phosphatidyltransferase	0.0004785833931562575	4	0.00014270763961564075	12	True
+prot-scriber: phosphatidylinositol phosphatidylcholine transfer protein sfh	0.00011964584828906437	1	0.0002973075825325849	25	False
+prot-scriber: cral trio domain containing protein	0.0010768126346015793	9	0.001617353248977262	136	False
+prot-scriber: of phosphatidylinositol phosphatase myotubularin	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: protein npgr	0.0004785833931562575	4	0.00015459994291694415	13	True
+prot-scriber: 1 phosphatidylinositol 4 kinase	0.0004785833931562575	4	0.0002616306726286747	22	True
+prot-scriber: 1 phosphatidylinositol phosphate 5 kinase	0.0007178750897343862	6	0.0010108457806107887	85	False
+prot-scriber: 1 phosphatidylinositol 3 phosphate 5 kinase	0.0003589375448671931	3	0.0006065074683664733	51	False
+prot-scriber: arath phosphoinositide phosphatase sac	0.0005982292414453219	5	0.00017838454951955095	15	True
+prot-scriber: phosphoinositide phosphatase sac	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: ef hand calcium binding family protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: calcium binding ef hand	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: calcium binding mitochondrial carrier protein scamc	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: calcineurin b protein	0.00023929169657812874	2	0.0005946151650651698	50	False
+prot-scriber: ma domain containing translation regulatory factor	0.0003589375448671931	3	7.135381980782038e-05	6	True
+prot-scriber: sp tctp translationally controlled tumor protein homolog	0.0014357501794687725	12	0.00014270763961564075	12	True
+prot-scriber: inactive serine threonine protein kinase endoribonuclease ire	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: protein lifeguard	0.0004785833931562575	4	0.00015459994291694415	13	True
+prot-scriber: medsf mob kinase activator 1a	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: calcium binding protein	0.0007178750897343862	6	0.0002616306726286747	22	True
+prot-scriber: protein furry homolog	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: arath mitogen activated protein kinase	0.002512562814070352	21	0.0010940919037199124	92	True
+prot-scriber: serine threonine protein kinase sty	0.0007178750897343862	6	0.0005351536485586529	45	True
+prot-scriber: rasgef domain containing serine threonine protein kinase	0.0007178750897343862	6	0.00020216915612215775	17	True
+prot-scriber: tpd protein homolog	0.0004785833931562575	4	8.324612310912378e-05	7	True
+prot-scriber: trna guanine 26 n 2 dimethyltransferase	0.00011964584828906437	1	0.0005113690419560461	43	False
+prot-scriber: aai domain containing protein	0.0037090212969609956	31	0.0016887070687850822	142	True
+prot-scriber: str synth domain containing protein	0.00023929169657812874	2	0.0003805537056417087	32	False
+prot-scriber: pc domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: transferrin receptor protein	0.000957166786312515	8	0.00016649224621824755	14	True
+prot-scriber: dog domain containing protein	0.0007178750897343862	6	0.00013081533631433735	11	True
+prot-scriber: hth la type rna binding domain containing protein	0.0003589375448671931	3	0.00015459994291694415	13	True
+prot-scriber: la protein 6a	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: protein upstream of flc	0.0004785833931562575	4	0.00022595376272476454	19	True
+prot-scriber: btb poz domain containing protein npy	0.00023929169657812874	2	0.0003686614023404053	31	False
+prot-scriber: upf protein chloroplastic	0.00023929169657812874	2	0.00019027685282085435	16	True
+prot-scriber: arath zinc finger ccch domain containing protein	0.0008375209380234506	7	0.0004400152221482257	37	True
+prot-scriber: poly rc binding protein	0.0005982292414453219	5	0.00013081533631433735	11	True
+prot-scriber: flowering locus k homology domain	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: poly rc binding protein 2 3 4	0.0007178750897343862	6	8.324612310912378e-05	7	True
+prot-scriber: cid domain containing protein	0.0008375209380234506	7	0.0003686614023404053	31	True
+prot-scriber: flowering locus t protein	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: protein flc expressor	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein flc expressor isoform	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein flx	0.00011964584828906437	1	0.0003210921891351917	27	False
+prot-scriber: bifunctional nitrilase nitrile hydratase	0.0011964584828906438	10	0.00011892303301303397	10	True
+prot-scriber: bifunctional nitrilase nitrile hydratase nit	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: kda alpha zein	0.0011964584828906438	10	0.00011892303301303397	10	True
+prot-scriber: lipase 3 domain containing protein	0.0011964584828906438	10	0.000987061174008182	83	True
+prot-scriber: zinc finger and btb domain containing protein isoform x1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: heavy metal associated isoprenylated plant protein	0.0003589375448671931	3	0.0006659689848729902	56	False
+prot-scriber: ribosomal rna small subunit methyltransferase h	0.00023929169657812874	2	0.00019027685282085435	16	True
+prot-scriber: expressed protein	0.0008375209380234506	7	0.0006659689848729902	56	True
+prot-scriber: protein flx isoform	0.0008375209380234506	7	0.00013081533631433735	11	True
+prot-scriber: tsa wollemia nobilis ref wollemi transcript 15900 927 transcribed rna sequence	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: transmembrane protein	0.00011964584828906437	1	0.000570830558462563	48	False
+prot-scriber: nuclear pore complex interacting protein family member b13	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: adf h domain containing protein	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: cation protein	0.0003589375448671931	3	7.135381980782038e-05	6	True
+prot-scriber: gag 3 domain containing protein	0.0008375209380234506	7	0.00020216915612215775	17	True
+prot-scriber: usp domain containing protein	0.001316104331179708	11	0.0007373228046808106	62	True
+prot-scriber: myb dna bind 3 domain containing protein	0.002632208662359416	22	0.0036152602035962327	304	False
+prot-scriber: protein fam204a	0.0005982292414453219	5	0.00010703072971173057	9	True
+prot-scriber: sugary enhancer	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: gram domain containing protein	0.0010768126346015793	9	0.0003567690990391019	30	True
+prot-scriber: ponab ras protein rab 11a	0.00011964584828906437	1	0.0003686614023404053	31	False
+prot-scriber: antigenic heat stable protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein reveille isoform	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: aspartic proteinase a1	0.0020339794209140944	17	0.0008562458376938446	72	True
+prot-scriber: duf 641 domain containing protein	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: cw type domain containing protein	0.0005982292414453219	5	0.0002735229759299781	23	True
+prot-scriber: frigida protein	0.0015553960277578367	13	0.0003924460089430121	33	True
+prot-scriber: beta 4 n acetylglucosaminyltransferase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: glycine rich rna binding inducible protein	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: spou methylase domain containing protein	0.00023929169657812874	2	0.0002497383693273713	21	False
+prot-scriber: start domain containing protein	0.0005982292414453219	5	0.0005351536485586529	45	True
+prot-scriber: protein fam32a	0.00011964584828906437	1	0.0004162306155456189	35	False
+prot-scriber: c3hc4 domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: auxin responsive protein saur	0.0003589375448671931	3	0.0007135381980782038	60	False
+prot-scriber: basal layer antifungal peptide	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: cat domain containing protein	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: acanthoscurrin mrna	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: n terminal xaa pro lys methyltransferase 1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: alpha n terminal protein methyltransferase isoform	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: upstream activation factor subunit spp protein	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: alkaline phytoceramidase aphc	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: net domain containing protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: insulin growth factor mrna binding protein 3	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: dual specificity protein kinase spla	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: polyketide cyc domain containing protein	0.0003589375448671931	3	0.00020216915612215775	17	True
+prot-scriber: phospholipase a1	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: g domain containing protein	0.0004785833931562575	4	0.0003924460089430121	33	True
+prot-scriber: of protein maternally expressed gene	0.0008375209380234506	7	8.324612310912378e-05	7	True
+prot-scriber: tld domain containing protein	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: exonuclease domain containing protein	0.0010768126346015793	9	0.0005232613452573494	44	True
+prot-scriber: ae protein	0.000957166786312515	8	9.513842641042717e-05	8	True
+prot-scriber: zinc finger ccch domain containing protein isoform x1	0.0003589375448671931	3	0.00023784606602606794	20	True
+prot-scriber: nucleotide sugar transporter	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: protodermal factor	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: ubiquitinyl hydrolase	0.0008375209380234506	7	0.0002497383693273713	21	True
+prot-scriber: sep15 selm domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: pith domain containing protein	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: 14 3 3 domain containing protein	0.00011964584828906437	1	0.0002854152792312815	24	False
+prot-scriber: protein jagunal homolog	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: duf 3741 domain containing protein	0.0003589375448671931	3	0.0003448767957377985	29	True
+prot-scriber: gamma soluble nsf attachment protein	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: dna replication licensing factor mcm	0.00023929169657812874	2	0.0003805537056417087	32	False
+prot-scriber: d aminoacyl trna deacylase	0.0010768126346015793	9	0.00010703072971173057	9	True
+prot-scriber: ttf type domain containing protein	0.00011964584828906437	1	0.00021406145942346114	18	False
+prot-scriber: kiwellin	0.0003589375448671931	3	0.00023784606602606794	20	True
+prot-scriber: plac family protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: duf 295 domain containing protein	0.0005982292414453219	5	0.0009394919608029683	79	False
+prot-scriber: proline dehydrogenase 1 mitochondrial	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: protein mizu kussei	0.00023929169657812874	2	0.0002497383693273713	21	False
+prot-scriber: prkr interacting protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: ubp type domain containing protein	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: smp ltd domain containing protein	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: bag domain containing protein	0.0003589375448671931	3	0.0003210921891351917	27	True
+prot-scriber: nucleotid trans domain containing protein	0.00011964584828906437	1	0.0003805537056417087	32	False
+prot-scriber: sacchrp dh nadp domain containing protein	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: dolichyl diphosphooligosaccharide protein glycosyltransferase subunit ost	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: protein glutamine dumper	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: rrm 2 domain containing protein	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: wd repeat containing protein	0.0007178750897343862	6	0.0003329844924364951	28	True
+prot-scriber: fad binding pcmh type domain containing protein	0.00023929169657812874	2	0.0004281229188469223	36	False
+prot-scriber: dimer tnp hat domain containing protein	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: transposase 23 domain containing protein	0.001316104331179708	11	0.0008443535343925411	71	True
+prot-scriber: hand domain containing protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: nadh dehydrogenase [ubiquinone] iron sulfur protein 3	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: stress associated endoplasmic reticulum protein	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: 18kd delta zein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: tldc domain containing protein	0.0003589375448671931	3	0.00021406145942346114	18	True
+prot-scriber: duf 1618 domain containing protein	0.0007178750897343862	6	0.0006183997716677766	52	True
+prot-scriber: upf protein 12	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: box kelch repeat protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: b box type zinc finger protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: tetraspanin protein	0.00011964584828906437	1	0.00022595376272476454	19	False
+prot-scriber: duf 538 domain containing protein	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: trna cytosine methyltransferase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: seed maturation protein pm	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: arid domain containing protein	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: er lumen protein retaining receptor 1	0.00023929169657812874	2	0.00014270763961564075	12	True
+prot-scriber: zf met domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: regulator of rdna transcription protein	0.001316104331179708	11	0.00015459994291694415	13	True
+prot-scriber: bet protein	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: sp prey protein prey mitochondrial	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: atp dependent dna helicase	0.0020339794209140944	17	0.002342783750356769	197	False
+prot-scriber: aminoacyl trna hydrolase	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: srp40 c domain containing protein	0.00023929169657812874	2	0.00014270763961564075	12	True
+prot-scriber: armadillo repeat containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: rrna n glycosylase	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: paired amphipathic helix protein sin	0.00011964584828906437	1	0.0002735229759299781	23	False
+prot-scriber: hdac interact domain containing protein	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: protein bicaudal c 1 a	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: phototropic responsive nph family protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: egf ca domain containing protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: cyclin c1 1 protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: c2 domain containing protein	0.00023929169657812874	2	0.001082199600418609	91	False
+prot-scriber: orysj zinc finger ccch domain containing protein	0.00023929169657812874	2	0.0005113690419560461	43	False
+prot-scriber: protein sulfur deficiency induced	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: duf 1666 family protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: disease resistance rpp protein	0.00023929169657812874	2	0.00010703072971173057	9	True
+prot-scriber: disease resistance protein rpp	0.0003589375448671931	3	0.0003210921891351917	27	True
+prot-scriber: exocyst complex component protein	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: cct domain containing protein	0.0003589375448671931	3	0.000570830558462563	48	False
+prot-scriber: beta amylase 2	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: duf 547 domain containing protein	0.0005982292414453219	5	0.0006302920749690801	53	False
+prot-scriber: duf 630 domain containing protein	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: duf 632 domain containing protein	0.0004785833931562575	4	0.0003567690990391019	30	True
+prot-scriber: atp synthase subunit beta	0.0011964584828906438	10	0.0002616306726286747	22	True
+prot-scriber: lrp chaperone mesd	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: histidine rich calcium binding protein	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: casp protein	0.00011964584828906437	1	0.0003091998858338883	26	False
+prot-scriber: casp protein 2c1	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: upf protein c15orf40 homolog	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: tir domain containing protein	0.00023929169657812874	2	0.00014270763961564075	12	True
+prot-scriber: gip1 n domain containing protein	0.0007178750897343862	6	0.0005232613452573494	44	True
+prot-scriber: rpm interacting protein	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: duf 1639 family protein	0.0016750418760469012	14	0.0003329844924364951	28	True
+prot-scriber: adenylylsulfate kinase family protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: protein flx isoform x2	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: chalcone flavanone isomerase	0.0007178750897343862	6	0.00011892303301303397	10	True
+prot-scriber: polyol monosaccharide transporter	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: atpase 11 plasma membrane type	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: autophagy protein	0.00011964584828906437	1	0.0006302920749690801	53	False
+prot-scriber: condensin complex subunit h2	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: chloroplast	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: expansin b15	0.00023929169657812874	2	0.00017838454951955095	15	True
+prot-scriber: expansin eg domain containing protein	0.00023929169657812874	2	0.00014270763961564075	12	True
+prot-scriber: danre histone deacetylase	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: folb domain containing protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: zeaxanthin epoxidase chloroplastic	0.00011964584828906437	1	0.0003091998858338883	26	False
+prot-scriber: zinc binding ribosomal protein family	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: outer envelope pore protein 16 2 chloroplastic	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: germin protein member	0.00023929169657812874	2	0.0003924460089430121	33	False
+prot-scriber: duf 4005 domain containing protein	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: protein iq domain	0.0010768126346015793	9	0.0006183997716677766	52	True
+prot-scriber: hma domain containing protein	0.0003589375448671931	3	0.0017124916753876891	144	False
+prot-scriber: memo family protein 1336	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: alpha beta protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: elmo domain containing protein	0.0005982292414453219	5	0.00019027685282085435	16	True
+prot-scriber: senescence domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: t complex protein subunit epsilon	0.0003589375448671931	3	9.513842641042717e-05	8	True
+prot-scriber: calmodulin protein	0.00023929169657812874	2	0.00017838454951955095	15	True
+prot-scriber: dead box atp dependent rna helicase 3	0.0005982292414453219	5	0.0003448767957377985	29	True
+prot-scriber: replication protein a dna binding subunit	0.0004785833931562575	4	0.00014270763961564075	12	True
+prot-scriber: protein early flowering	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: gsdh domain containing protein	0.0003589375448671931	3	0.00013081533631433735	11	True
+prot-scriber: disease resistance protein	0.0005982292414453219	5	0.0004519075254495291	38	True
+prot-scriber: glycosyltransferase protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: replicase large subunit	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: n domain containing protein	0.0003589375448671931	3	0.0003686614023404053	31	False
+prot-scriber: rna binding rrm protein	0.0008375209380234506	7	0.0003329844924364951	28	True
+prot-scriber: late embryogenesis abundant protein 34	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: rna binding kh domain containing protein	0.0015553960277578367	13	0.0004281229188469223	36	True
+prot-scriber: proline rich protein prcc	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: quality protein alpha ketoglutarate dependent dioxygenase alkb	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: alpha ketoglutarate dependent dioxygenase alkb protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein o glcnac transferase	0.0004785833931562575	4	0.00013081533631433735	11	True
+prot-scriber: developmentally regulated gtp binding protein	0.0005982292414453219	5	7.135381980782038e-05	6	True
+prot-scriber: annexin a4	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: cchc type domain containing protein	0.0008375209380234506	7	0.0007967843211873275	67	True
+prot-scriber: 50s ribosomal protein l34	0.0003589375448671931	3	7.135381980782038e-05	6	True
+prot-scriber: ibr domain containing protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: tbcc domain containing protein	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: senescence associated protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: holocarboxylase synthetase	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: saposin b type domain containing protein	0.00011964584828906437	1	0.00020216915612215775	17	False
+prot-scriber: c domain containing protein	0.00023929169657812874	2	0.0003091998858338883	26	False
+prot-scriber: secretion regulating guanine nucleotide exchange factor	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: 3 oxoacyl [acyl carrier protein] reductase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: rt rnaseh 2 domain containing protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: pyrophosphate energized vacuolar membrane proton pump	0.00011964584828906437	1	0.00011892303301303397	10	True
+prot-scriber: protein domain containing	0.00023929169657812874	2	0.0002973075825325849	25	False
+prot-scriber: mitochondrial transcription termination factor family protein	0.0003589375448671931	3	0.00020216915612215775	17	True
+prot-scriber: ppiase cyclophilin type domain containing protein	0.00011964584828906437	1	0.00014270763961564075	12	False
+prot-scriber: polyadenylate binding protein rbp	0.0007178750897343862	6	0.0005946151650651698	50	True
+prot-scriber: ig domain containing protein	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: far upstream element binding protein	0.0003589375448671931	3	0.00019027685282085435	16	True
+prot-scriber: pyridoxamine 5 phosphate oxidase family protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: polyadenylate binding protein rbp47c	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: bah domain containing protein	0.0004785833931562575	4	0.00014270763961564075	12	True
+prot-scriber: adjacent bah domain containing protein	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: box domain containing protein	0.00011964584828906437	1	0.0003448767957377985	29	False
+prot-scriber: myosin heavy chain protein	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: thump domain containing protein	0.0008375209380234506	7	0.00010703072971173057	9	True
+prot-scriber: protein mother of ft and tfl homolog	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: dependent methyltransferase protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: altered inheritance of mitochondria 23	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: rna pol sigma70 domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: hit type domain containing protein	0.0005982292414453219	5	0.00014270763961564075	12	True
+prot-scriber: cl17080 1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: nascent polypeptide associated complex subunit alpha muscle specific form	0.0003589375448671931	3	0.00016649224621824755	14	True
+prot-scriber: dolichyl diphosphooligosaccharide protein glycosyltransferase subunit kcp	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: embryo defective protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: alpha xylosidase	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: late embryogenesis abundant protein b19 3	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: 50s ribosomal protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: 50s ribosomal protein l32	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: lysm domain containing protein	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: isoleucine trna ligase	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: duf 4220 domain containing protein	0.0003589375448671931	3	0.0009989534773094852	84	False
+prot-scriber: ent domain containing protein	0.0007178750897343862	6	0.0006540766815716869	55	True
+prot-scriber: agenet domain containing protein	0.00011964584828906437	1	0.0002735229759299781	23	False
+prot-scriber: soss complex subunit b homolog isoform	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: tubby f box protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: phosphopyruvate hydratase	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: pmr5n domain containing protein	0.0003589375448671931	3	0.0009989534773094852	84	False
+prot-scriber: duf 1664 domain containing protein	0.0004785833931562575	4	0.00016649224621824755	14	True
+prot-scriber: defensin	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: porr domain containing protein	0.0011964584828906438	10	0.0004875844353534393	41	True
+prot-scriber: protein fantastic four	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: hsp18f	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: diox n domain containing protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: malectin like domain containing protein	0.0005982292414453219	5	0.00022595376272476454	19	True
+prot-scriber: eama domain containing protein	0.00023929169657812874	2	0.00021406145942346114	18	True
+prot-scriber: x8 domain containing protein	0.0005982292414453219	5	0.0006065074683664733	51	False
+prot-scriber: why domain containing protein	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: embryonic protein dc	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: pmd domain containing protein	0.0008375209380234506	7	0.00021406145942346114	18	True
+prot-scriber: dirigent protein	0.001316104331179708	11	0.0006659689848729902	56	True
+prot-scriber: translation machinery associated protein	0.0005982292414453219	5	7.135381980782038e-05	6	True
+prot-scriber: zinc finger protein d4	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: duf 4283 domain containing protein	0.00011964584828906437	1	0.0011535534202264295	97	False
+prot-scriber: serine arginine rich splicing factor rs2z33 isoform x1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: serine carboxypeptidase protein	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: cyclin d1 binding protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: lysm and domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: disease resistance protein rga	0.00023929169657812874	2	0.0002616306726286747	22	False
+prot-scriber: ring type e3 ubiquitin	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: phytocyanin domain containing protein	0.0004785833931562575	4	0.0009038150508990582	76	False
+prot-scriber: glyco transf 64 domain containing protein	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: embryo sac development arrest	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: sant domain containing protein	0.00011964584828906437	1	0.0002973075825325849	25	False
+prot-scriber: eukaryotic translation initiation factor subunit b protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: stress response a b barrel domain containing protein	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: dipeptidyl peptidase family member	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: maspardin	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: lepic macro domain containing protein 13295	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: myb cc lheqle domain containing protein	0.0003589375448671931	3	0.00015459994291694415	13	True
+prot-scriber: homeobox protein	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: ccp	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: multiple c2 and transmembrane domain containing protein	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: elm domain containing protein	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: poly a specific ribonuclease parn	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: cytoplasmic dynein light intermediate chain	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: endo 4 beta glucanase	0.0004785833931562575	4	8.324612310912378e-05	7	True
+prot-scriber: translation machinery associated protein homolog	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: e3 ubiquitin protein ligase rfwd	0.00011964584828906437	1	0.00011892303301303397	10	True
+prot-scriber: dead atp dependent rna helicase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein unc homolog a isoform x1	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: structural maintenance of chromosomes protein	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: glyco hydro81c domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: pre mrna splicing atp dependent rna helicase prp protein	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: protein root uvb sensitive 1	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: t22k18 16 protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: heterogeneous nuclear ribonucleoprotein f	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: rrna biogenesis protein rrp	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: dcd domain containing protein	0.00023929169657812874	2	0.0005946151650651698	50	False
+prot-scriber: heptahelical transmembrane protein adipor	0.00023929169657812874	2	0.00015459994291694415	13	True
+prot-scriber: disease resistance protein rpm	0.0008375209380234506	7	0.0003686614023404053	31	True
+prot-scriber: act domain containing protein acr	0.000957166786312515	8	0.0004875844353534393	41	True
+prot-scriber: sh and px domain containing protein	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: swim type domain containing protein	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: rna exonuclease	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: quality protein rna exonuclease	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: voltage dependent calcium channel subunit alpha delta	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: zinc finger type protein isoform	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: poly a specific ribonuclease	0.0004785833931562575	4	0.0005232613452573494	44	False
+prot-scriber: beta	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: dof type domain containing protein	0.000957166786312515	8	0.00013081533631433735	11	True
+prot-scriber: clavata esr cle protein 2	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: wrky transcription factor	0.0007178750897343862	6	0.0006659689848729902	56	True
+prot-scriber: 16s rrna aminocarboxypropyltransferase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: rs norcoclaurine 6 o methyltransferase	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: endoplasmic reticulum transmembrane protein	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: quality protein pentatricopeptide repeat containing mitochondrial	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: zinc purple acid phosphatase protein	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: trna a64 2 o ribosylphosphate transferase	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: 18s pre ribosomal assembly protein gar	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: lysine specific demethylase se	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: 2 nonaprenyl methyl methoxy benzoquinol hydroxylase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: translocon associated protein subunit alpha	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: dna repair protein	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: arm repeat superfamily protein	0.00023929169657812874	2	0.0005113690419560461	43	False
+prot-scriber: stellacyanin	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: prli interacting factor a	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: rna polymerase ii subunit b1 ctd phosphatase rpap homolog	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: dead domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: pentatricopeptide repeat ppr superfamily protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: bub n terminal domain containing protein	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: rwp rk domain containing protein	0.00011964584828906437	1	0.00021406145942346114	18	False
+prot-scriber: centrosome associated protein cep	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: sporulation specific	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: antimicrobial	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: mitochondrial inner membrane protease subunit	0.0003589375448671931	3	0.00013081533631433735	11	True
+prot-scriber: protein rdm	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: selenocysteine methyltransferase isoform x1	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: prk domain containing protein	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: proton pump interactor	0.0004785833931562575	4	0.00017838454951955095	15	True
+prot-scriber: jasmonoyl l amino acid synthetase gh	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: monocopper oxidase protein sku	0.0003589375448671931	3	0.0003448767957377985	29	True
+prot-scriber: kh domain containing protein hen	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: bifunctional lysine specific demethylase and histidyl hydroxylase	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: vwfa domain containing protein	0.0011964584828906438	10	0.0004043383122443155	34	True
+prot-scriber: ell associated factor eaf	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: quality protein subunit	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: gata transcription factor protein	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: aaa domain containing protein	0.00023929169657812874	2	0.0012605841499381601	106	False
+prot-scriber: long chain fatty acid amp ligase fadd	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: late embryogenesis abundant protein	0.000957166786312515	8	0.0004400152221482257	37	True
+prot-scriber: pgg domain containing protein	0.00011964584828906437	1	0.000689753591475597	58	False
+prot-scriber: ammecr domain containing protein	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: binding domain containing protein	0.00023929169657812874	2	0.0004519075254495291	38	False
+prot-scriber: ankyrin repeat protein	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: hr lesion inducing protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: cactin domain protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: duf 668 domain containing protein 3475	0.0004785833931562575	4	0.00021406145942346114	18	True
+prot-scriber: zinc finger cchc domain containing protein	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: nucleic acid binding ob fold protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: heat shock protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: heterogeneous nuclear ribonucleoprotein homolog	0.0007178750897343862	6	8.324612310912378e-05	7	True
+prot-scriber: nb arc domain containing protein	0.00011964584828906437	1	0.0014032917895538007	118	False
+prot-scriber: zinc finger a20 and an domain containing stress associated protein	0.0003589375448671931	3	0.00011892303301303397	10	True
+prot-scriber: speckle type poz protein	0.0003589375448671931	3	0.00010703072971173057	9	True
+prot-scriber: isochorismatase domain containing protein	0.00023929169657812874	2	0.00022595376272476454	19	True
+prot-scriber: ad domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: duf 1929 domain containing protein	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: lectin domain containing receptor kinase	0.00011964584828906437	1	0.001165445723527733	98	False
+prot-scriber: nadph cytochrome p450 reductase	0.00011964584828906437	1	0.0003686614023404053	31	False
+prot-scriber: lactamase b domain containing protein	0.0005982292414453219	5	0.0006778612881742935	57	False
+prot-scriber: cx9c motif containing protein 4	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: epimerase domain containing protein	0.0003589375448671931	3	0.000927599657501665	78	False
+prot-scriber: translocon associated protein subunit beta	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: basic leucine zipper	0.0005982292414453219	5	9.513842641042717e-05	8	True
+prot-scriber: peptide chain release factor	0.00011964584828906437	1	0.0002616306726286747	22	False
+prot-scriber: core i branching	0.0003589375448671931	3	0.0002735229759299781	23	True
+prot-scriber: aquaporin pip	0.00023929169657812874	2	0.00020216915612215775	17	True
+prot-scriber: cyanidin 3 o rutinoside 5 glucosyltransferase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: voc domain containing protein	0.0004785833931562575	4	0.00013081533631433735	11	True
+prot-scriber: protein root uvb sensitive 2 chloroplastic	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: aaa type atpase family protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: macro domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: macro domain containing protein 0177	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: duf 4408 domain containing protein	0.0003589375448671931	3	0.00011892303301303397	10	True
+prot-scriber: b12d protein	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: low temperature induced kda protein	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: betl protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: uvr domain containing protein	0.0004785833931562575	4	7.135381980782038e-05	6	True
+prot-scriber: polyketide cyclase dehydrase and lipid transportsuperfamily protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein reveille	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: amp binding domain containing protein	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: osbp oxysterol binding protein 4b	0.0004785833931562575	4	9.513842641042717e-05	8	True
+prot-scriber: h15 domain containing protein	0.00011964584828906437	1	0.0003091998858338883	26	False
+prot-scriber: serine arginine rich splicing factor rsz	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: lish domain containing protein c1711 05 isoform x1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: quality protein carnosine n methyltransferase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: protein faf chloroplastic	0.0003589375448671931	3	7.135381980782038e-05	6	True
+prot-scriber: peptidylprolyl isomerase	0.00011964584828906437	1	0.0006778612881742935	57	False
+prot-scriber: kinesin domain containing protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: kda gamma zein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: glutelin	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein iojap mitochondrial	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: reactive oxygen species modulator	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: decapping protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: lsm domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: lrrnt 2 domain containing protein	0.0004785833931562575	4	0.001438968699457711	121	False
+prot-scriber: duf 4149 domain containing protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: pectate lyase 3 domain containing protein	0.0004785833931562575	4	0.0004162306155456189	35	True
+prot-scriber: sde2 n ubi domain containing protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: 3 5 exonuclease domain containing protein	0.0003589375448671931	3	0.0002854152792312815	24	True
+prot-scriber: mediator of rna polymerase ii transcription subunit 36a	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: senescence regulator	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: ribosomal l30 domain containing protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: mbd domain containing protein	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: plant mud protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: adenylate kinase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: activating signal cointegrator complex subunit	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: protein tplate	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: histone acetyltransferase	0.0003589375448671931	3	0.00023784606602606794	20	True
+prot-scriber: protein nrt ptr family isoform x1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: zinc finger domain containing protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: nab domain containing protein	0.0003589375448671931	3	0.0007729997145847207	65	False
+prot-scriber: protein dmp	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: bcnt c domain containing protein	0.0005982292414453219	5	0.00014270763961564075	12	True
+prot-scriber: protein exordium	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: cast family member isoform x1	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: coatomer beta subunit	0.0005982292414453219	5	0.00014270763961564075	12	True
+prot-scriber: adaptin n domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: 9 cis epoxycarotenoid dioxygenase 1 chloroplastic	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: casp protein 2d1	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: gras family protein rad	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: tog domain containing protein	0.00023929169657812874	2	0.0004162306155456189	35	False
+prot-scriber: dna double strand break repair rad atpase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: embryonic flower protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: glycerophosphocholine acyltransferase	0.00023929169657812874	2	0.00010703072971173057	9	True
+prot-scriber: nad dependent histone deacetylase hst	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: protein reticulata 2 chloroplastic	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: p loop containing nucleoside triphosphatehydrolases superfamily protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: valine trna ligase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: 60s ribosomal protein l21 1	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: b3 domain containing protein	0.00023929169657812874	2	0.0004875844353534393	41	False
+prot-scriber: abscisic stress ripening protein	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: cop interacting protein	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: upa	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: wound responsive family protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: serine threonine protein kinase nek	0.0003589375448671931	3	0.0004162306155456189	35	False
+prot-scriber: regulator of chromosome condensation protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: abfb domain containing protein	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: remorin protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: ste serine threonine protein kinase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein hgh homolog	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: protein yif1b b	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: aconitate hydratase cytoplasmic	0.00011964584828906437	1	0.00011892303301303397	10	True
+prot-scriber: arath iq domain containing protein iqm	0.00023929169657812874	2	0.00019027685282085435	16	True
+prot-scriber: peroxisomal membrane kda family protein isoform	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: ww domain binding protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: vir n domain containing protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: abc transporter g family member protein	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: plant intracellular ras group lrr protein	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: of plant intracellular ras group lrr protein	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: arath transmembrane superfamily member	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: ranbp type zinc finger protein	0.0016750418760469012	14	0.00016649224621824755	14	True
+prot-scriber: nucleic acid binding ob fold	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: glycine rich rna binding protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: protein n lysine methyltransferase mettl21a	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: wrc domain containing protein	0.0004785833931562575	4	0.00010703072971173057	9	True
+prot-scriber: helicase zinc finger	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: uvrd helicase binding domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: aspartate aminotransferase b	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: ubiquitin carboxyl terminal hydrolase 44	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: duf 761 domain protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: histone h4	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: duf 223 domain containing protein	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: p0482d04 7 protein	0.00023929169657812874	2	5.9461516506516985e-05	5	True
+prot-scriber: protein shoot gravitropism	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: heat shock kda protein cognate	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: prosaposin	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: saposin b domain containing protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: lung seven transmembrane receptor family protein	0.0003589375448671931	3	0.00016649224621824755	14	True
+prot-scriber: early nodulin	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: early nodulin protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: of protein trichome birefringence	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: fba 3 domain containing protein	0.00011964584828906437	1	0.0003091998858338883	26	False
+prot-scriber: carboxypeptidase	0.0004785833931562575	4	0.0003686614023404053	31	True
+prot-scriber: quality protein burp domain containing	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: calcium binding protein cml	0.00011964584828906437	1	0.00016649224621824755	14	False
+prot-scriber: regulation of nuclear pre mrna domain containing protein	0.0004785833931562575	4	0.00011892303301303397	10	True
+prot-scriber: abc transporter domain containing protein	0.00011964584828906437	1	0.0003091998858338883	26	False
+prot-scriber: protein fra10ac1 homolog isoform	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: phd and ring finger domain containing protein	0.0007178750897343862	6	9.513842641042717e-05	8	True
+prot-scriber: signal peptide peptidase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: alpha amylase trypsin inhibitor	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: nmra domain containing protein	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: histone domain containing protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: serine incorporator	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: trna n 3 methylcytidine methyltransferase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: methyltransferase domain protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: telomerase cajal body protein isoform	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: ankyrin repeat domain containing protein	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: zinc finger ccch type helicase family protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: kda protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: suppressor protein srp	0.0004785833931562575	4	0.00016649224621824755	14	True
+prot-scriber: guanine nucleotide binding protein subunit gamma	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: mitochondrial glycoprotein family protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: dna 2	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: zinc finger protein gis	0.0005982292414453219	5	0.00010703072971173057	9	True
+prot-scriber: ricin b lectin domain containing protein	0.0007178750897343862	6	0.00015459994291694415	13	True
+prot-scriber: serine threonine protein phosphatase long form homolog	0.0003589375448671931	3	7.135381980782038e-05	6	True
+prot-scriber: glycine trna ligase beta	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: chromo domain containing protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: kda late embryogenesis abundant protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: glycosyltransferase bc	0.00023929169657812874	2	0.00010703072971173057	9	True
+prot-scriber: zinc ribbon 15 domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: agmatine coumaroyltransferase	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: pmei domain containing protein	0.0003589375448671931	3	0.0008324612310912378	70	False
+prot-scriber: seed maturation protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: dynein light chain 1 cytoplasmic	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: arath casp protein	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: casp protein 4a3	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: metallophos domain containing protein	0.0003589375448671931	3	0.0005113690419560461	43	False
+prot-scriber: serine threonine protein kinase sik isoform x1	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: dependent methyltransferase	0.0004785833931562575	4	0.0002497383693273713	21	True
+prot-scriber: s1 domain containing protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: traf type domain containing protein	0.00011964584828906437	1	0.00023784606602606794	20	False
+prot-scriber: f8m12 18 protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: glucose and ribitol dehydrogenase homolog	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: 3beta hsd domain containing protein	0.0005982292414453219	5	0.0002735229759299781	23	True
+prot-scriber: dynamin type g domain containing protein	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: rwd domain containing protein	0.0004785833931562575	4	0.00010703072971173057	9	True
+prot-scriber: retrotrans gag domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: late embryogenesis abundant protein d 34	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: leucine carboxyl methyltransferase homolog	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: protein tar	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: tetraspanin	0.00011964584828906437	1	9.513842641042717e-05	8	True
+prot-scriber: r3h domain containing protein	0.0003589375448671931	3	0.00014270763961564075	12	True
+prot-scriber: protein nonresponding to oxylipins 2 mitochondrial	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: hydroxyproline o arabinosyltransferase plenty	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: c2 and gram domain containing protein	0.00023929169657812874	2	0.0002497383693273713	21	False
+prot-scriber: cell number regulator	0.0003589375448671931	3	4.756921320521359e-05	4	True
+prot-scriber: homologous domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: cyclic phosphodiesterase isoform x1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: ww domain containing protein	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: duf 2052 domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: phylloplanin	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: two component response regulator arr a family	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: rnase h type domain containing protein	0.00011964584828906437	1	0.00023784606602606794	20	False
+prot-scriber: calcium binding ef hand protein	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: caeel protein yippee 5	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: ctlh domain containing protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: ankyrin repeat and domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: myosin motor domain containing protein	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: protein kinase c and casein substrate in neurons	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: universal stress protein a	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: erf domain containing protein	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: short chain dehydrogenase reductase family member	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: dehydrogenase reductase sdr family member	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: alpha n acetylglucosaminidase protein	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: burp domain containing protein	0.00011964584828906437	1	0.0002497383693273713	21	False
+prot-scriber: peroxisomal biogenesis factor	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: of protein tyrosine phosphatase ibr	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: ssra binding	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: atp dependent rna helicase dhx	0.000957166786312515	8	0.0004162306155456189	35	True
+prot-scriber: mynd type domain containing protein	0.00023929169657812874	2	0.0002735229759299781	23	False
+prot-scriber: 2og feii oxy domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: pp domain containing protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: rimm domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: transcriptase domain containing protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: acetyltransferase domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: ankyrin repeat domain containing protein 13c	0.0003589375448671931	3	0.00011892303301303397	10	True
+prot-scriber: nuclear pore complex protein	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: clavata esr cle protein	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: b3 domain containing transcription repressor val	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: repa ob 2 domain containing protein	0.00023929169657812874	2	0.00013081533631433735	11	True
+prot-scriber: bar domain containing protein	0.00023929169657812874	2	0.00015459994291694415	13	True
+prot-scriber: dehydrin dhn	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: vq containing protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: serine threonine protein kinase afc	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: microsomal glutathione s transferase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: myosin protein domain containing	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: dil domain myosin protein	0.0007178750897343862	6	7.135381980782038e-05	6	True
+prot-scriber: duf 629 domain containing protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: tpr repeat containing protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: tpr repeat containing protein ddb g0285095	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: 50s ribosomal protein l35	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: udp glycosyltransferase	0.0011964584828906438	10	0.0016887070687850822	142	False
+prot-scriber: copiicoated erv domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: trna edit domain containing protein	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: 2 3 bisphosphoglycerate dependent phosphoglycerate mutase	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: cbl interacting protein kinase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: haloacid dehalogenase hydrolase protein	0.0004785833931562575	4	0.00016649224621824755	14	True
+prot-scriber: arath ethylene responsive transcription factor erf	0.00011964584828906437	1	0.0002854152792312815	24	False
+prot-scriber: duf 3511 domain protein	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: thap4 heme bd domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: arath lysine histidine transporter	0.0005982292414453219	5	0.0003567690990391019	30	True
+prot-scriber: translocon associated protein beta trapb family	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: glutamate rich wd repeat containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: altered inheritance of mitochondria 23 mitochondrial	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: desiccation protein pcc	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: quality protein storekeeper	0.0003589375448671931	3	5.9461516506516985e-05	5	True
+prot-scriber: reverse transcriptase domain containing protein	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: plasma membrane associated protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: somatic embryogenesis receptor kinase	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: histone lysine n methyltransferase h3 specific suvh protein	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: rrna processing protein fyv	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: transmembrane protein 41b	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: myeloid leukemia factor	0.00023929169657812874	2	0.00017838454951955095	15	True
+prot-scriber: suz domain containing protein	0.000957166786312515	8	0.00010703072971173057	9	True
+prot-scriber: shikimate o hydroxycinnamoyltransferase	0.0005982292414453219	5	0.0005113690419560461	43	True
+prot-scriber: c2c2 gata factor	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: quality protein potassium channel akt	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: beta galactosidase	0.00011964584828906437	1	0.0009632765674055751	81	False
+prot-scriber: ubr type domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: anaphase promoting complex subunit	0.00023929169657812874	2	0.0005232613452573494	44	False
+prot-scriber: ferredoxin	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: rx n domain containing protein	0.0003589375448671931	3	0.0002497383693273713	21	True
+prot-scriber: altered inheritance of mitochondria protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: defensin protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: dehydrogenase reductase sdr family member 2	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: 40s ribosomal protein s27	0.00023929169657812874	2	9.513842641042717e-05	8	True
+prot-scriber: hnh domain containing protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: cwf domain containing protein	0.00011964584828906437	1	0.00017838454951955095	15	False
+prot-scriber: bed type domain containing protein	0.00023929169657812874	2	0.0003924460089430121	33	False
+prot-scriber: protein prenyltransferase alpha subunit repeat containing 1	0.0004785833931562575	4	4.756921320521359e-05	4	True
+prot-scriber: lysm domain containing protein 03438	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: 5 methylthioadenosine s adenosylhomocysteine deaminase	0.0008375209380234506	7	8.324612310912378e-05	7	True
+prot-scriber: 5 3 exoribonuclease	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: arf gap domain containing protein	0.00011964584828906437	1	0.00016649224621824755	14	False
+prot-scriber: bifunctional cystathionine cysteine synthase	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: palp domain containing protein	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: l 3 synthase cysteine	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: alpha beta hydrolases superfamily protein isoform	0.00023929169657812874	2	7.135381980782038e-05	6	True
+prot-scriber: baculoviral iap repeat containing protein 1a	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: ring fyve phd zinc finger superfamily protein	0.0004785833931562575	4	9.513842641042717e-05	8	True
+prot-scriber: actin interacting protein	0.00011964584828906437	1	7.135381980782038e-05	6	True
+prot-scriber: ribonuclease iii domain	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: late embryogenesis abundant protein d 29	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: cysteine proteinase inhibitor	0.00011964584828906437	1	0.0002735229759299781	23	False
+prot-scriber: cytochrome b5 heme binding domain containing protein	0.0003589375448671931	3	0.0006302920749690801	53	False
+prot-scriber: beta taxilin isoform	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: beta taxilin isoform x1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: trna binding domain containing protein	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: bulb type lectin domain containing protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: protein phosphatase methylesterase	0.0010768126346015793	9	0.00010703072971173057	9	True
+prot-scriber: style cell cycle inhibitor 1 a isoform x1	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: tropinone reductase homolog	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: carbonyl reductase [nadph]	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: pks er domain containing protein	0.0007178750897343862	6	0.0010465226905146988	88	False
+prot-scriber: aldo keto reductase family member a1	0.00011964584828906437	1	0.00019027685282085435	16	False
+prot-scriber: nad dependent malic enzyme 1	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: nad p h dehydrogenase quinone	0.0008375209380234506	7	0.00019027685282085435	16	True
+prot-scriber: l ascorbate oxidase protein	0.00011964584828906437	1	5.9461516506516985e-05	5	True
+prot-scriber: peroxidase	0.00011964584828906437	1	0.0002497383693273713	21	False
+prot-scriber: peroxidase 4 protein	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: l ascorbate peroxidase 1	0.00011964584828906437	1	0.0006065074683664733	51	False
+prot-scriber: anionic peroxidase	0.00011964584828906437	1	0.0010227380839120922	86	False
+prot-scriber: linoleate 9s lipoxygenase	0.00011964584828906437	1	0.0003448767957377985	29	False
+prot-scriber: cytochrome p450	0.0004785833931562575	4	0.0008800304442964514	74	False
+prot-scriber: cytochrome p450 71a1	0.00023929169657812874	2	0.00022595376272476454	19	True
+prot-scriber: cytochrome p450 4v2	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: cytochrome p450 86	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: cytochrome p450 709b2 protein	0.0007178750897343862	6	0.0002973075825325849	25	True
+prot-scriber: cytochrome p450 93a3	0.00011964584828906437	1	8.324612310912378e-05	7	True
+prot-scriber: cytochrome p450 72a15	0.00011964584828906437	1	0.0003091998858338883	26	False
+prot-scriber: isoflavone 4 o methyltransferase	0.0003589375448671931	3	0.0003210921891351917	27	True
+prot-scriber: acetylserotonin o methyltransferase	0.0004785833931562575	4	0.00011892303301303397	10	True
+prot-scriber: 5 o methyltransferase	0.00011964584828906437	1	4.756921320521359e-05	4	True
+prot-scriber: putrescine hydroxycinnamoyltransferase	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: alcohol acyl transferase allele	0.00011964584828906437	1	0.0003091998858338883	26	False
+prot-scriber: chalcone synthase	0.00023929169657812874	2	0.0002497383693273713	21	False
+prot-scriber: udp glycosyltransferase 82a1	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: alpha trehalose phosphate synthase [udp forming]	0.0003589375448671931	3	0.000570830558462563	48	False
+prot-scriber: arath udp glycosyltransferase	0.00011964584828906437	1	0.0003448767957377985	29	False
+prot-scriber: udp glycosyltransferase 71k2	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: quality protein udp glycosyltransferase	0.00023929169657812874	2	0.00011892303301303397	10	True
+prot-scriber: udp glycosyltransferase 76c1	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: udp glycosyltransferase protein	0.00011964584828906437	1	0.00020216915612215775	17	False
+prot-scriber: glyco trans 2 domain containing protein	0.00011964584828906437	1	0.0006065074683664733	51	False
+prot-scriber: bifunctional l 3 synthase cysteine 1	0.00011964584828906437	1	0.00016649224621824755	14	False
+prot-scriber: l 3 synthase cysteine 1	0.00023929169657812874	2	0.00016649224621824755	14	True
+prot-scriber: g type lectin s receptor serine threonine protein kinase	0.0003589375448671931	3	0.002640091332889354	222	False
+prot-scriber: arath cysteine rich receptor protein kinase	0.0008375209380234506	7	0.0020335838645228806	171	False
+prot-scriber: casein kinase protein	0.00023929169657812874	2	8.324612310912378e-05	7	True
+prot-scriber: l type lectin domain containing receptor kinase 4	0.00011964584828906437	1	0.00013081533631433735	11	False
+prot-scriber: galp udp transf domain containing protein	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: udp glucose hexose phosphate uridylyltransferase	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: arath cyclin dependent kinase d 2	0.00011964584828906437	1	1.1892303301303397e-05	1	True
+prot-scriber: of serine threonine protein phosphatase pp2a 1 catalytic subunit	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: peptidyl trna hydrolase 2	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: inactive gdsl esterase lipase protein	0.00011964584828906437	1	2.3784606602606793e-05	2	True
+prot-scriber: sgnh hydro domain containing protein	0.0008375209380234506	7	0.00017838454951955095	15	True
+prot-scriber: alpha mannosidase	0.00011964584828906437	1	0.0002497383693273713	21	False
+prot-scriber: 4 hydroxy methoxy oxo dihydro 2h 1 benzoxazin yl beta d glucosidase	0.00023929169657812874	2	3.567690990391019e-05	3	True
+prot-scriber: o beta d glucosidase	0.00011964584828906437	1	0.00010703072971173057	9	True
+prot-scriber: 4 hydroxy methoxy oxo dihydro 2h 1 benzoxazin yl glucosidebeta d glucosidase	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: glucan endo beta glucosidase	0.00011964584828906437	1	0.0008324612310912378	70	False
+prot-scriber: cytosol ap domain containing protein	0.00011964584828906437	1	0.00015459994291694415	13	False
+prot-scriber: serine carboxypeptidase s28 family protein	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: leucine aminopeptidase 1 chloroplastic	0.0004785833931562575	4	5.9461516506516985e-05	5	True
+prot-scriber: n acyl l amino acid amidohydrolase	0.00023929169657812874	2	4.756921320521359e-05	4	True
+prot-scriber: dctp pyrophosphatase	0.00011964584828906437	1	3.567690990391019e-05	3	True
+prot-scriber: atp dependent rna helicase	0.00023929169657812874	2	0.00021406145942346114	18	True
+prot-scriber: burch ureidoglycolate lyase	0.0005982292414453219	5	5.9461516506516985e-05	5	True
+prot-scriber: pectate lyase	0.00011964584828906437	1	0.0005232613452573494	44	False
+prot-scriber: aldose 1 epimerase protein	0.0003589375448671931	3	3.567690990391019e-05	3	True
+prot-scriber: glucose phosphate 1 epimerase	0.0003589375448671931	3	0.00022595376272476454	19	True
+prot-scriber: aldose 1 epimerase	0.0007178750897343862	6	0.00022595376272476454	19	True
+prot-scriber: drome peptidyl prolyl cis trans isomerase	0.00023929169657812874	2	2.3784606602606793e-05	2	True
+prot-scriber: bactn xylose isomerase	0.0008375209380234506	7	0.00013081533631433735	11	True
+prot-scriber: isocitrate lyase	0.0004785833931562575	4	0.00016649224621824755	14	True
