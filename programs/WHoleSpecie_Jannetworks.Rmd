@@ -366,7 +366,7 @@ norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta[repl_sele
 grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2,  top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
 #dev.off()
 ```
-# Expression data analysis {.tabset}
+# Expression data analysis
 
 ## PCA
 
@@ -402,7 +402,7 @@ fviz_pca_ind(N_pca, geom.ind = "point",
                        title="Tissue-based classification")
 ```
 
-## Umap {.tabset}
+## Umap
 
 Create a function to streamline the plotting of UMAP
 ```{r funcDef}
@@ -444,8 +444,6 @@ FinalUmap<-umap(Nrepl_dvData_sc, n_neighbors=29, n_epochs=450, min_dist=0.1) #nn
 ggplotly(dataPlotter(FinalUmap, repl_meta)+ggtitle("Final UMAP with cleaned data"))
 ```
 
-## {-}
-
 ## Heatmap
 ```{r heatmapPrep}
 #Convert to matrix
@@ -460,12 +458,6 @@ heatmaply(sample_correlations, clustering_method = "complete",
           #grid_color = "black",
           grid_gap = 0.001)
 
-```
-
-# {-}
-
-```{r}
-knitr::opts_chunk$set(eval = FALSE)
 ```
 
 # Network construction
@@ -555,6 +547,11 @@ module_eigengenes<-ModNetwork$MEs
 table(ModNetwork$colors)
 
 dim(Nrepl_data) #get total number of genes from the dimensions
+
+
+MEg_data<-data.frame(ModNetwork$colors)
+colnames(MEg_data)<-"modules"
+#write.table(MEg_data, file="geneModule.txt")
 ```
 
 ```{r EigenColorsPlot}

@@ -104,49 +104,52 @@ def main():
     ## Module of each function is written in the row (or maybe a directory+infilename for each module)
     ## depth/annType level is written in file name
     
-    typePossiblities=["mercator", "prot-scriber", "swissprot", "original"]
+    typePossiblities=["mercator", "prot-scriber", "swissprot"] #original is always None(cut -f4 -d$'\t' b73.mercator.v4.7.txt|rev|cut -c 1-27|rev|sort|uniq), so we ignore it for now
     
-    for i in range(4):
-        anntype=typePossiblities[i]
-        depth=i #ignore when 0
-    #create dictionaries for the repetitions of functions and annotations belonging to a specific type
-    d_ann_tt=listmaker(genlist, 3)
-    d_annT_tt=extramaker(genlist, "prot-scriber")
-    
-    MEset=moduleset(modulefile) #get a list of all the possible modules, no repetitions
-    for m in MEset:
+    for i in range(3): #@TO accelerate, create ME:gene dict(get ME with .get) and make function in Gene that uses it, then feed dict into list/extramaker instead of genelist
+        anntype=typePossiblities[i] #calculate for all annotation types
+        depth=i+1 #get all depths as well
+        print(anntype)
+        print(depth)
         
-        #create dictionaries for the repetitions of functions and annotation types for a specific module
-        d_ann_me=listmaker(genlist, 3, module=m, MEfile=modulefile)
-        d_annT_me=extramaker(genlist, "prot-scriber", module=m, MEfile=modulefile)
+        #create dictionaries for the repetitions of functions and annotations belonging to a specific type
+        d_ann_tt=listmaker(genlist, depth)
+        d_annT_tt=extramaker(genlist, anntype)
         
+        MEset=moduleset(modulefile) #get a list of all the possible modules, no repetitions
+        for m in MEset:
+            
+            #create dictionaries for the repetitions of functions and annotation types for a specific module
+            d_ann_me=listmaker(genlist, depth, module=m, MEfile=modulefile)
+            d_annT_me=extramaker(genlist, anntype, module=m, MEfile=modulefile)
+            
+            
+            #Calculate ratio, representation and write to file for functions
+            with open(f"./annotations/d_{depth}_sheet.txt", "a") as file:
+                print(f"Function\tMEratio\tMEtotal\tTratio\tTtotal\tME_representation\tME", file=file) #set header
+                for function_i in list(d_ann_me.keys()): #calculate the representation of all functions in the module
+                    #print("Function is:", function_i)
+                    
+                    r_me=ratio(d_ann_me, function_i) #calculate the ratio of teh function in the module
+                    r_tt=ratio(d_ann_tt, function_i) #calculate the ratio of the function in total
+                    
+                    #write file
+                    print(f"{function_i}\t{r_me}\t{d_ann_me[function_i]}\t{r_tt}\t{d_ann_tt[function_i]}\t{r_me>=r_tt}\t{m}", file=file)
+            
+            
+            #Calculate ratio, representation and write to file for different annotation types
+            with open(f"./annotations/anT_{anntype}_sheet.txt", "a") as fileT:
+                print(f"Function\tMEratio\tMEtotal\tTratio\tTtotal\tME_representation\tME", file=fileT) #set header
+                for functionT_i in list(d_annT_me.keys()): #calculate the representation of all the extra annotations of 1 type in the module
+                    #print("Function is:", functionT_i)
+                    
+                    rT_me=ratio(d_annT_me, functionT_i)
+                    rT_tt=ratio(d_annT_tt, functionT_i)
+                    
+                    #Write file
+                    functionName=functionT_i.split(": ")[1] #Dont get the annotation source in the table
+                    print(f"{functionName}\t{rT_me}\t{d_annT_me[functionT_i]}\t{rT_tt}\t{d_annT_tt[functionT_i]}\t{rT_me>=rT_tt}\t{m}", file=fileT)
         
-        #Calculate ratio, representation and write to file for functions
-        with open(f"./annotations/{m}test.txt", "a") as file:
-            print(f"Function\tMEratio\tMEtotal\tTratio\tTtotal\tME_representation", file=file) #set header
-            for function_i in list(d_ann_me.keys()): #calculate the representation of all functions in the module
-                print("Function is:", function_i)
-                
-                r_me=ratio(d_ann_me, function_i) #calculate the ratio of teh function in the module
-                r_tt=ratio(d_ann_tt, function_i) #calculate the ratio of the function in total
-                
-                #write file
-                print(f"{function_i}\t{r_me}\t{d_ann_me[function_i]}\t{r_tt}\t{d_ann_tt[function_i]}\t{r_me>=r_tt}", file=file)
-        
-        
-        #Calculate ratio, representation and write to file for different annotation types
-        with open(f"./annotations/T{m}test.txt", "a") as fileT:
-            print(f"Function\tMEratio\tMEtotal\tTratio\tTtotal\tME_representation", file=fileT) #set header
-            for functionT_i in list(d_annT_me.keys()): #calculate the representation of all the extra annotations of 1 type in the module
-                print("Function is:", functionT_i)
-                
-                rT_me=ratio(d_annT_me, functionT_i)
-                rT_tt=ratio(d_annT_tt, functionT_i)
-                
-                #Write file
-                functionName=functionT_i.split(": ")[1] #Dont get the annotation source in the table
-                print(f"{functionName}\t{rT_me}\t{d_annT_me[functionT_i]}\t{rT_tt}\t{d_annT_tt[functionT_i]}\t{rT_me>=rT_tt}", file=fileT)
-    
     
     '''sorted_dict={}
     for key in sorted(d_annT_me, key=d_annT_me.get):
