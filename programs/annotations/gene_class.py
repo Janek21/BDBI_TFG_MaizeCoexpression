@@ -18,7 +18,6 @@ class Gene(object):
         
         if depth is None: #return the whole annotation unless otherwise specified
             depth=len(g)
-        ## only output annotations when a gene exists? (only Photosynthesis entry is not permitted)
         return g[:depth]
     
     def get_id(self): #get id of gene, and clean it up
@@ -31,7 +30,7 @@ class Gene(object):
         #find _ and remove suffix
         g=g.split("_")[0]
         return g
-    
+
     def get_types(self): #has to be split in mercator, prot-scriber, swissprot and original description by &, some lines are anomalous and present extra &
         g=self.gene[3]
         

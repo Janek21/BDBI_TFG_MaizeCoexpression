@@ -2,14 +2,19 @@
 
 from gene_class import Gene
 import subprocess
+import scipy.stats as sps
 
 #@ filter out cases where no gene is present, there is only a function
 #@ filter unassigned/unnanotated genes
 #@ remove enzyme classifications
+#@ fischer test -> p value > order functions in each module by pvalue, use top 3 significant
 
 def listmaker(genlist, depth, module=None, MEfile=None):
     dic_functions={}
     for g in genlist: #iterate through all genes
+        
+        if "not assigned" in g.get_annotation(): #skip genes with no function
+            continue
         
         ME=""
         if module!=None: #if module is not given, the function calculates global, so ME is not needed
@@ -27,41 +32,46 @@ def listmaker(genlist, depth, module=None, MEfile=None):
                 dic_functions[functs]+=1
             else:
                 dic_functions[functs]=1
-        
+    
     return dic_functions #return reps of all functions (all or all from one ME)
 
 def extramaker(genlist, types, module=None, MEfile=None):
     dic_functions={}
     for g in genlist: #iterate through all genes
         
+        ann_types=g.get_types()
+        
+        #get the annotation type of interest
+        if ann_types==None: #if its None it wont work for the following "if" results
+            continue #None cases are empty cases, where that description is not found, we skip them
+        elif types=="mercator":
+            ann_types=ann_types[0].strip()
+        elif types=="prot-scriber":
+            ann_types=ann_types[1].strip()
+        elif types=="swissprot":
+            ann_types=ann_types[2].strip()
+        elif types=="original":
+            ann_types=ann_types[3].strip()
+        else:
+            return "The possible annotation types are: mercator, prot-scriber, swissprot and original"
+        
+        if "no annotation" in ann_types or "not classified" in ann_types or "none" in ann_types: #"no annotation" > swissprot, prot-scriber | "not classified" > mercator | "none" > original description
+            continue #skip genes with no function
+        
         ME=""
         if module!=None: #if module is not given, the function calculates global, so ME is not needed
             ME=g.get_ME(MEfile) #get ME
-            
-        if module==None or module==ME:
-            ann_types=g.get_types()
-            
-            #get the annotation type of interest
-            if ann_types==None: #if its None it wont work for the following if results
-                ann_types="None" #None cases are empty cases, where that description is not found
-            elif types=="mercator":
-                ann_types=ann_types[0].strip()
-            elif types=="prot-scriber":
-                ann_types=ann_types[1].strip()
-            elif types=="swissprot":
-                ann_types=ann_types[2].strip()
-            elif types=="original":
-                ann_types=ann_types[3].strip()
-            else:
-                return "The possible annotation types are: mercator, prot-scriber, swissprot and original"
-            
+        
+        if module==None or module==ME: #if ME coresponds with target module, or the calculation is for global
             #Count the repetitions of all annotation types
             if ann_types in dic_functions.keys():
                 dic_functions[ann_types]+=1
             else:
                 dic_functions[ann_types]=1
-            
+        
     return dic_functions
+        
+        
 
 def moduleset(MEfile):
     modulecolumn=subprocess.run(["cut", "-d", " ", "-f2", MEfile], capture_output=True) #get the 2nd column of the file, where the mocules are listed
@@ -69,12 +79,25 @@ def moduleset(MEfile):
     MEset=set(MEset[1:]) #transform into a set to remove repeated elements and remove the first one as its the column title
     return MEset
 
+def fisher_calc(total_dic, module_dic, ann_func):
+    alpha=0.05 
+    funcME=module_dic[ann_func] #"blue"fA
+    nonfuncME=sum(module_dic.values())-funcME #"blue"nonfA=all blue-"blue"fA
+    
+    funcRest=total_dic[ann_func]-funcME #"nonblue"fA=all fA-"blue"fA
+    nonfuncRest=sum(total_dic.values())-sum(module_dic.values())-funcRest #"nonblue"nonfA=all-all blue-"nonblue"fA
+    
+    fishertable=[[funcME, funcRest], [nonfuncME, nonfuncRest]]
+    pval=sps.fisher_exact(fishertable).pvalue
+    
+    #H0=The annotated function is not relevant in this module
+    #H1=The annotated function is relevant
+    
+    if alpha>pval:#if pvalue is smaller than alpha, we reject the null (True that the function is relevant)
+        return [True, pval]
+    
+    return [False, pval]
 
-def nann_rm(d_func): #remove not assigned(not annotated and annotated) elements
-    for key in list(d_func.keys()):
-        if "not assigned" in key:
-            d_func.pop(key)
-    return d_func
 
 def main():
     
@@ -84,77 +107,36 @@ def main():
         for line in f:
             g=Gene(line)
             
-            if "NAME" in g.gene:
+            if "NAME" in g.gene: #filter out header, first check, if not following give errors
+                continue
+            if g.get_id()==None: #Filter entries with no gene (function headers for tree building), early, as it can give subsequent errors
+                continue
+            if any("enzyme" in x.lower() for x in g.get_annotation()): ##would a simple "Enzyme classification" in g.get_annotation() be enough? or eliminate enzyme in further depth as well #or go fo all in g.gene
+                #print(g.gene)
+                continue
+            if "not annotated" in g.get_annotation(): #dont include enzymes, or completely unnanotated genes
+                #print(g.get_annotation())
                 continue
             
-            if not g.get_id()==None: #Filter entries with no gene (function headers for tree building)
-                genlist.append(g) #make a list of gene objects
+            #print(g.get_annotation())
+            genlist.append(g) #if none of the earlier apply, make a list of gene objects
             
-            if "not assigned" in g.get_annotation() or "not assigned" in g.get_types(): ##types exclude by type later?
-                print(g.get_annotation())
+    depth=2
+    ME="brown"
+    tp="prot-scriber"
+    ann_function="Photosynthesis.photophosphorylation"
     
-    if "NAME" in genlist[0].gene: #if the first line is the header, remove it
-        genlist.pop(0)
-
-    ## For loop each block to analyze all functions in 1 module (blocks are normal functions and extra functions)
-    ## Add a top for loop to iterate trhough all modules as well and write it all to file
-    ## Another extra loop can be added for the depth and annType as well (a different file for each)
+    typesME_dic=extramaker(genlist, tp, ME, modulefile) #all plum
+    typesall_dic=extramaker(genlist, tp) #all total
     
-    ## Module of each function is written in the row (or maybe a directory+infilename for each module)
-    ## depth/annType level is written in file name
+    annME_dic=listmaker(genlist, depth, ME, modulefile)
+    annall_dic=listmaker(genlist, depth)
+    print(annME_dic)
     
-    typePossiblities=["mercator", "prot-scriber", "swissprot"] #original is always None(cut -f4 -d$'\t' b73.mercator.v4.7.txt|rev|cut -c 1-27|rev|sort|uniq), so we ignore it for now
+    res=fisher_calc(annall_dic, annME_dic, ann_function)
+    print(res)
     
-    for i in range(3): #@TO accelerate, create ME:gene dict(get ME with .get) and make function in Gene that uses it, then feed dict into list/extramaker instead of genelist
-        anntype=typePossiblities[i] #calculate for all annotation types
-        depth=i+1 #get all depths as well
-        print(anntype)
-        print(depth)
-        
-        #create dictionaries for the repetitions of functions and annotations belonging to a specific type
-        d_ann_tt=listmaker(genlist, depth)
-        d_annT_tt=extramaker(genlist, anntype)
-        
-        MEset=moduleset(modulefile) #get a list of all the possible modules, no repetitions
-        
-        #open files to write the calculated ratio and representation of functions
-        file=open(f"./annotations/Pres/d_{depth}_sheet.txt", "a") #a file for each depth type
-        fileT=open(f"./annotations/Pres/anT_{anntype}_sheet.txt", "a") #a file for each annotation type
-        
-        print(f"Function\tMEratio\tMEtotal\tTratio\tTtotal\tME_representation\tME", file=file) #set header
-        print(f"Function\tMEratio\tMEtotal\tTratio\tTtotal\tME_representation\tME", file=fileT) #set header
-        
-        for m in MEset:
-            
-            #create dictionaries for the repetitions of functions and annotation types for a specific module
-            d_ann_me=listmaker(genlist, depth, module=m, MEfile=modulefile)
-            d_annT_me=extramaker(genlist, anntype, module=m, MEfile=modulefile)
-            
-            
-            #depth types
-            for function_i in list(d_ann_me.keys()): #calculate the representation of all functions in the module
-                #print("Function is:", function_i)
-                
-                r_me=ratio(d_ann_me, function_i) #calculate the ratio of teh function in the module
-                r_tt=ratio(d_ann_tt, function_i) #calculate the ratio of the function in total
-                
-                #write file
-                print(f"{function_i}\t{r_me}\t{d_ann_me[function_i]}\t{r_tt}\t{d_ann_tt[function_i]}\t{r_me>=r_tt}\t{m}", file=file)
-            
-            
-            #annotation types
-            for functionT_i in list(d_annT_me.keys()): #calculate the representation of all the extra annotations of 1 type in the module
-                #print("Function is:", functionT_i)
-                
-                rT_me=ratio(d_annT_me, functionT_i)
-                rT_tt=ratio(d_annT_tt, functionT_i)
-                
-                #Write file
-                functionName=functionT_i.split(": ")[1] #Dont get the annotation source in the table
-                print(f"{functionName}\t{rT_me}\t{d_annT_me[functionT_i]}\t{rT_tt}\t{d_annT_tt[functionT_i]}\t{rT_me>=rT_tt}\t{m}", file=fileT)
-                
-        file.close()
-        fileT.close()
+    ##forloops 1.over depth 2. over MEs 3.Over functions
     
 if __name__ == "__main__":
     main()
