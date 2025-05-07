@@ -65,7 +65,7 @@ class Gene(object):
         ME=ME[1].replace('"', "") #Extract the module
         return ME
 
-  
+#Lipid metabolism.fatty acid metabolism.fatty acid degradation   105     2       0.30933139472186444     False   magenta  
 class annotated_function(object):
     def __init__(self, line):
         line=line.strip("\n").split('\t') #turn the line into a list for better parsability
@@ -74,23 +74,20 @@ class annotated_function(object):
     def get_function(self):
         an_f=self.entry[0]
         return an_f
-    def get_rep(self):
-        an_f=bool(self.entry[5])
+    def get_rel(self):
+        an_f=bool(self.entry[4])
         return an_f
     def get_ME(self):
-        an_f=self.entry[6]
+        an_f=self.entry[5]
         return an_f
-    
-    def get_MEratio(self):
-        an_f=self.entry[1]
-        return float(an_f)
-    def get_MEtotal(self):
-        an_f=self.entry[2]
-        return int(an_f)
-    def get_Tratio(self):
+    def get_pval(self):
         an_f=self.entry[3]
         return float(an_f)
-    def get_Ttotal(self):
-        an_f=self.entry[4]
+    
+    def get_MEfunction(self):
+        an_f=self.entry[2]
+        return int(an_f)
+    def get_Tfunction(self):
+        an_f=self.entry[1]
         return int(an_f)
     
