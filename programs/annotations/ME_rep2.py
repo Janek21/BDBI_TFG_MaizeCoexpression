@@ -135,22 +135,23 @@ def main():
         depth=i+1
         tp=typePossiblities[i]
         
-        file=open(f"./annotations/Pres/d_{depth}_sheet.txt", "a") #a file for each depth type
+        fileD=open(f"./annotations/Pres/d_{depth}_sheet.txt", "a") #a file for each depth type
         fileT=open(f"./annotations/Pres/anT_{tp}_sheet.txt", "a") #a file for each annotation type
         
-        print(f"Function\tTotalCounts\tModuleCounts\tPvalue\tRelevancy\tModule", file=file)
+        print(f"Function\tTotalCounts\tModuleCounts\tPvalue\tRelevancy\tModule", file=fileD)
         print(f"Function\tTotalCounts\tModuleCounts\tPvalue\tRelevancy\tModule", file=fileT)
         
         annall_dic=listmaker(genlist, depth) #dict of all function:reps of general annotation
         typesall_dic=extramaker(genlist, tp) #dict of all function:reps from a concrete annotation type
         for m in MElist:
             print(m, depth, tp)
+            print(list(annall_dic.keys())[0])
             
             annME_dic=listmaker(genlist, depth, m, modulefile) #get dict of all functions:reps from a module
             
             for ann_function in annME_dic.keys(): #check which out of all annotated functions are relevant
                 res=fisher_calc(annall_dic, annME_dic, ann_function)
-                print(f"{ann_function}\t{annall_dic[ann_function]}\t{annME_dic[ann_function]}\t{res[1]}\t{res[0]}\t{m}", file=file)
+                print(f"{ann_function}\t{annall_dic[ann_function]}\t{annME_dic[ann_function]}\t{res[1]}\t{res[0]}\t{m}", file=fileD)
             
             
             typeME_dic=extramaker(genlist, tp, m, modulefile) #get dict of all functions:reps from a module (from the concrete type of annotation))
@@ -160,7 +161,7 @@ def main():
                 type_function_name=type_function.split(": ")[1] #remove prot-scriber: and others
                 print(f"{type_function_name}\t{typesall_dic[type_function]}\t{typeME_dic[type_function]}\t{res[1]}\t{res[0]}\t{m}", file=fileT)
             
-        file.close()
+        fileD.close()
         fileT.close()
     
     ##forloops 1.over depth 2. over MEs 3.Over functions
