@@ -1,0 +1,235 @@
+Function_origin	Module	SFunction_1	SFunction_2	SFunction_3
+d1	lightgreen	Cell division	RNA homeostasis	Chromatin organisation
+d1	salmon	Vesicle trafficking	RNA biosynthesis	RNA processing
+d1	darkturquoise	Plant reproduction	Amino acid metabolism	Protein translocation
+d1	steelblue	Amino acid metabolism	Protein homeostasis	RNA biosynthesis
+d1	red	Chromatin organisation	Protein biosynthesis	RNA homeostasis
+d1	greenyellow	Protein biosynthesis	External stimuli response	Amino acid metabolism
+d1	cyan	RNA biosynthesis	Multi-process regulation	Protein biosynthesis
+d1	magenta	Cellular respiration	Protein homeostasis	Cell wall organisation
+d1	brown	RNA processing	Photosynthesis	Cell wall organisation
+d1	white	RNA processing	Multi-process regulation	Vesicle trafficking
+d1	royalblue	DNA damage response	RNA biosynthesis	Nucleotide metabolism
+d1	turquoise	Photosynthesis	Chromatin organisation	Cell division
+d1	darkred	Cell division	Protein modification	Protein biosynthesis
+d1	sienna3	RNA biosynthesis	Cell wall organisation	Phytohormone action
+d1	yellowgreen	Cellular respiration	Solute transport	RNA homeostasis
+d1	paleturquoise	Cellular respiration	Protein homeostasis	Lipid metabolism
+d1	purple	Amino acid metabolism	Redox homeostasis	RNA processing
+d1	yellow	Cell wall organisation	Protein biosynthesis	Cytoskeleton organisation
+d1	skyblue3	Cell wall organisation	RNA biosynthesis	Secondary metabolism
+d1	violet	Plant organogenesis	Multi-process regulation	Protein modification
+d1	orange	Redox homeostasis	Photosynthesis	Cellular respiration
+d1	green	Protein biosynthesis	Cell wall organisation	Photosynthesis
+d1	pink	Protein biosynthesis	RNA processing	Photosynthesis
+d1	skyblue	Cell division	Secondary metabolism	Protein modification
+d1	darkolivegreen	Lipid metabolism	Solute transport	Amino acid metabolism
+d1	plum1	Cell division	Multi-process regulation	RNA biosynthesis
+d1	darkmagenta	Cellular respiration	DNA damage response	Protein biosynthesis
+d1	midnightblue	DNA damage response	RNA biosynthesis	Vesicle trafficking
+d1	darkgrey	Redox homeostasis	Protein translocation	RNA biosynthesis
+d1	black	Solute transport	Multi-process regulation	Cell wall organisation
+d1	lightcyan	Cell division	DNA damage response	Chromatin organisation
+d1	tan	Protein biosynthesis	Solute transport	Phytohormone action
+d1	lightyellow	Cell wall organisation	Vesicle trafficking	RNA processing
+d1	grey	Protein biosynthesis	Photosynthesis	Chromatin organisation
+d1	blue	Protein biosynthesis	Cell division	Photosynthesis
+d1	darkorange	Cellular respiration	Vesicle trafficking	Cell division
+d1	grey60	DNA damage response	Protein homeostasis	RNA processing
+d1	saddlebrown	RNA homeostasis	Lipid metabolism	Multi-process regulation
+d1	darkgreen	Cell wall organisation	RNA biosynthesis	Plant organogenesis
+d2	lightgreen	Cell division.meiotic recombination	Protein modification.lipidation	Cell division.cell cycle organisation
+d2	salmon	Vesicle trafficking.retrograde trafficking	Vesicle trafficking.clathrin coated vesicle machinery	RNA biosynthesis.DNA-binding transcriptional regulation
+d2	darkturquoise	Amino acid metabolism.shikimate group amino acid biosynthesis	Plant reproduction.pollination and fertilization	Protein translocation.peroxisome
+d2	steelblue	Amino acid metabolism.amino acid degradation	Cell division.meiotic recombination	Chromatin organisation.DNA homeostasis
+d2	red	Chromatin organisation.nucleosome remodeling	RNA biosynthesis.RNA polymerase II-dependent transcription	Chromatin organisation.post-translational histone modification
+d2	greenyellow	RNA biosynthesis.DNA-binding transcriptional regulation	External stimuli response.salinity	Redox homeostasis.glutathione-based redox regulation
+d2	cyan	Cytoskeleton organisation.actin and tubulin folding	Multi-process regulation.phosphoinositide signalling	RNA biosynthesis.DNA-binding transcriptional regulation
+d2	magenta	RNA homeostasis.mRNA surveillance pathways	Cellular respiration.oxidative phosphorylation	Redox homeostasis.glutathione-based redox regulation
+d2	brown	Plant organogenesis.flower formation	RNA processing.spliceosome-mediated pre-mRNA splicing	Photosynthesis.photophosphorylation
+d2	white	RNA processing.tRNA modification	Protein translocation.chloroplast	Cell division.plastid division
+d2	royalblue	DNA damage response.DNA damage tolerance (DDT) pathways	Cytoskeleton organisation.actin and tubulin folding	RNA biosynthesis.DNA-binding transcriptional regulation
+d2	turquoise	Photosynthesis.photophosphorylation	Protein biosynthesis.organellar translation machinery	Photosynthesis.calvin cycle
+d2	darkred	Cell division.DNA replication	Multi-process regulation.ROP-GTPase regulatory system	Solute transport.channel-mediated transport
+d2	sienna3	RNA biosynthesis.DNA-binding transcriptional regulation	Cell wall organisation.cutin and suberin	Cell wall organisation.pectin
+d2	yellowgreen	Cellular respiration.oxidative phosphorylation	RNA homeostasis.mRNA silencing	Solute transport.channel-mediated transport
+d2	paleturquoise	Cellular respiration.oxidative phosphorylation	RNA biosynthesis.RNA polymerase III-dependent transcription	Cellular respiration.tricarboxylic acid cycle
+d2	purple	Protein homeostasis.protein repair	RNA biosynthesis.DNA-dependent RNA polymerase complexes	RNA processing.pre-tRNA splicing
+d2	yellow	Cell wall organisation.cellulose	Protein modification.phosphorylation	Cytoskeleton organisation.microtubular network
+d2	skyblue3	Cell wall organisation.pectin	RNA biosynthesis.DNA-binding transcriptional regulation	Secondary metabolism.terpenoid biosynthesis
+d2	violet	Plant organogenesis.flower formation	Plant organogenesis.leaf formation	Cytoskeleton organisation.microfilament network
+d2	orange	Carbohydrate metabolism.plastidial glycolysis	Redox homeostasis.reactive electrophilic lipid homeostasis	Amino acid metabolism.glutamate group amino acid biosynthesis
+d2	green	Cell wall organisation.hemicellulose	RNA biosynthesis.DNA-binding transcriptional regulation	Protein biosynthesis.ribosome biogenesis
+d2	pink	Vesicle trafficking.autophagosome formation	External stimuli response.pathogen	Redox homeostasis.glutathione-based redox regulation
+d2	skyblue	Cell wall organisation.cell surface reactive oxygen homeostasis	RNA homeostasis.RNA transport	Multi-process regulation.14-3-3 regulatory system
+d2	darkolivegreen	Protein modification.lipidation	Amino acid metabolism.shikimate group amino acid biosynthesis	Lipid metabolism.cytoplasmic lipid droplet-associated activities
+d2	plum1	Cell division.cell cycle organisation	Multi-process regulation.G-protein-dependent signalling	RNA biosynthesis.DNA-binding transcriptional regulation
+d2	darkmagenta	Cellular respiration.oxidative phosphorylation	DNA damage response.DNA damage tolerance (DDT) pathways	Protein biosynthesis.ribosome biogenesis
+d2	midnightblue	DNA damage response.homologous recombination repair (HR)	External stimuli response.temperature	RNA homeostasis.mRNA degradation
+d2	darkgrey	Redox homeostasis.glutathione-based redox regulation	External stimuli response.temperature	Protein translocation.endoplasmic reticulum
+d2	black	Cell wall organisation.pectin	Cytoskeleton organisation.microfilament network	Protein modification.phosphorylation
+d2	lightcyan	DNA damage response.DNA damage sensing and signalling	Cell division.DNA replication	Cell division.cell cycle organisation
+d2	tan	Solute transport.carrier-mediated transport	Multi-process regulation.Programmed Cell Death (PCD) system	Phytohormone action.jasmonic acid
+d2	lightyellow	Cell wall organisation.lignin	Cell wall organisation.hemicellulose	Cell wall organisation.cutin and suberin
+d2	grey	Protein biosynthesis.ribosome biogenesis	Photosynthesis.photophosphorylation	Protein biosynthesis.organellar translation machinery
+d2	blue	Protein biosynthesis.ribosome biogenesis	Cell division.cell cycle organisation	Photosynthesis.photophosphorylation
+d2	darkorange	Multi-process regulation.14-3-3 regulatory system	Vesicle trafficking.anterograde trafficking	RNA biosynthesis.RNA polymerase II-dependent transcription
+d2	grey60	RNA processing.tRNA modification	Multi-process regulation.nitric oxide signalling	DNA damage response.homologous recombination repair (HR)
+d2	saddlebrown	Lipid metabolism.glycerolipid metabolism	Vesicle trafficking.endocytic trafficking	RNA homeostasis.mRNA surveillance pathways
+d2	darkgreen	Cell wall organisation.cutin and suberin	Plant organogenesis.leaf formation	RNA biosynthesis.DNA-binding transcriptional regulation
+d3	lightgreen	Cell division.meiotic recombination.meiotic crossover	RNA homeostasis.post-transcriptional regulator activities.CID-type posttranscriptional regulator activity	Protein modification.lipidation.glycophosphatidylinositol (GPI) anchor addition
+d3	salmon	Vesicle trafficking.retrograde trafficking.Coat protein I (COPI) coatomer machinery	Vesicle trafficking.anterograde trafficking.Coat protein II (COPII) coatomer machinery	Vesicle trafficking.clathrin coated vesicle machinery.TPLATE cargo adaptor complex
+d3	darkturquoise	Amino acid metabolism.shikimate group amino acid biosynthesis.tryptophan biosynthesis	Plant reproduction.pollination and fertilization.pollen tube growth	Protein translocation.peroxisome.importomer translocation system
+d3	steelblue	Amino acid metabolism.amino acid degradation.branched-chain amino acids	Lipid metabolism.fatty acid metabolism.acetyl-CoA generation	Cell division.meiotic recombination.meiotic crossover
+d3	red	Chromatin organisation.nucleosome remodeling.SWI/SNF chromatin remodeling complexes	RNA homeostasis.mRNA surveillance pathways.Nonsense-Mediated Decay (NMD) pathway	Chromatin organisation.post-translational histone modification.histone acetylation
+d3	greenyellow	RNA biosynthesis.DNA-binding transcriptional regulation.beta-hairpin exposed by alpha/beta-scaffold structure	External stimuli response.salinity.SOS (Salt Overly Sensitive) signalling pathway	Amino acid metabolism.serine group amino acid biosynthesis.cysteine biosynthesis
+d3	cyan	Multi-process regulation.phosphoinositide signalling.phosphoinositide homeostasis	Cytoskeleton organisation.actin and tubulin folding.post-CCT Tubulin folding pathway	Vesicle trafficking.vesicle tethering.RAB-GTPase membrane association
+d3	magenta	Cell division.DNA replication.elongation	RNA homeostasis.mRNA surveillance pathways.mRNA adenine deamination-dependent decay	RNA biosynthesis.RNA polymerase III-dependent transcription.TFIIIb transcription factor complex
+d3	brown	Plant organogenesis.flower formation.floral meristem identity	RNA biosynthesis.DNA-binding transcriptional regulation.alpha-helix exposed by beta-structure	RNA processing.spliceosome-mediated pre-mRNA splicing.spliceosome-associated non-snRNP factor activities
+d3	white	Protein homeostasis.protein quality control.plastidial chaperonin system	Cell division.plastid division.contractile complex	Amino acid metabolism.polyamine metabolism.cadaverine biosynthesis
+d3	royalblue	DNA damage response.DNA damage tolerance (DDT) pathways.DNA polymerase eta *(POLH)	Cytoskeleton organisation.actin and tubulin folding.Prefoldin-Like (PFDL) co-chaperone complex	RNA biosynthesis.DNA-binding transcriptional regulation.alpha-helix exposed by beta-structure
+d3	turquoise	Photosynthesis.photophosphorylation.photosystem II	Protein biosynthesis.organellar translation machinery.plastidial ribosome biogenesis	Photosynthesis.photophosphorylation.chlororespiration
+d3	darkred	Cell division.DNA replication.endoreduplication	Protein modification.phosphorylation.AGC protein kinase activities	Protein homeostasis.ubiquitin-proteasome system.DAR protease system
+d3	sienna3	RNA biosynthesis.DNA-binding transcriptional regulation.alpha-helix exposed by beta-structure	Cell wall organisation.cutin and suberin.alkyl-hydrocinnamate biosynthesis	Cell wall organisation.pectin.homogalacturonan
+d3	yellowgreen	Cellular respiration.oxidative phosphorylation.NADH dehydrogenase complex	Solute transport.channel-mediated transport.cyclic nucleotide-gated cation channel *(CNGC1/2/++)	Solute transport.carrier-mediated transport.DMT-type transporter superfamily
+d3	paleturquoise	Cellular respiration.oxidative phosphorylation.NADH dehydrogenase complex	RNA biosynthesis.RNA polymerase III-dependent transcription.TFIIIf transcription factor heterodimer	Cellular respiration.oxidative phosphorylation.ATP synthase complex
+d3	purple	Protein homeostasis.protein repair.protein-L-isoaspartate methyltransferase *(PIMT1/2)	Cytoskeleton organisation.microfilament network.actin polymerisation	RNA processing.pre-tRNA splicing.tRNA 2-phosphotransferase
+d3	yellow	Protein modification.phosphorylation.TKL protein kinase activities	Cell wall organisation.cellulose.cellulose synthase complex (CSC)	Multi-process regulation.ROP-GTPase regulatory system.RopGEF guanine nucleotide exchange factor activities
+d3	skyblue3	Cell wall organisation.pectin.rhamnogalacturonan I	RNA biosynthesis.DNA-binding transcriptional regulation.zinc-coordinating DNA-binding domain	Secondary metabolism.terpenoid biosynthesis.terpene biosynthesis
+d3	violet	Plant organogenesis.flower formation.floral organ morphogenesis	Plant organogenesis.leaf formation.abaxial polarity	RNA biosynthesis.DNA-binding transcriptional regulation.beta-barrel DNA-binding domain
+d3	orange	Photosynthesis.calvin cycle.fructose-1,6-bisphosphate aldolase	Carbohydrate metabolism.plastidial glycolysis.fructose-1,6-bisphosphate aldolase *(FBA1)	Redox homeostasis.reactive electrophilic lipid homeostasis.oxylipin carbonyl degradation
+d3	green	Cell wall organisation.hemicellulose.xylan	Cell wall organisation.hemicellulose.xyloglucan	Cell wall organisation.cell wall proteins.expansin activities
+d3	pink	Vesicle trafficking.autophagosome formation.expansion	Chromatin organisation.chromatin structure.DNA bridging	Protein modification.phosphorylation.TKL protein kinase activities
+d3	skyblue	Cell wall organisation.cell surface reactive oxygen homeostasis.cell surface multi-copper oxidase *(SKU5)	Vesicle trafficking.anterograde trafficking.vesicle tethering	Lipid metabolism.glycerolipid metabolism.triacylglycerol biosynthesis
+d3	darkolivegreen	Protein modification.lipidation.protein S-acylation	Amino acid metabolism.shikimate group amino acid biosynthesis.shikimate pathway	Lipid metabolism.cytoplasmic lipid droplet-associated activities.Caleosin-type peroxygenase *(CLO/PXG)
+d3	plum1	Multi-process regulation.G-protein-dependent signalling.regulatory protein *(NDL1/2/3)	Cell division.cell cycle organisation.metaphase to anaphase transition	Cell division.cell cycle organisation.sister chromatid separation
+d3	darkmagenta	Cellular respiration.oxidative phosphorylation.ATP synthase complex	DNA damage response.DNA damage tolerance (DDT) pathways.DNA polymerase eta *(POLH)	Protein biosynthesis.ribosome biogenesis.small ribosomal subunit (SSU)
+d3	midnightblue	DNA damage response.homologous recombination repair (HR).Smc5-Smc6 complex	Vesicle trafficking.vesicle tethering.TRAPP-II complex-specific components	RNA processing.tRNA modification.tRNA editing
+d3	darkgrey	Redox homeostasis.glutathione-based redox regulation.glutathione degradation	External stimuli response.temperature.cold response	Protein modification.acetylation.protein acetylase *(GNAT9)
+d3	black	Cell wall organisation.pectin.homogalacturonan	Solute transport.primary active transport.P-type ATPase superfamily	Solute transport.carrier-mediated transport.OPT-type transporter activities
+d3	lightcyan	Cell division.cell cycle organisation.metaphase to anaphase transition	DNA damage response.DNA damage sensing and signalling.ATM pathway	Cell division.DNA replication.organelle machinery
+d3	tan	Redox homeostasis.reactive oxygen-induced signalling.hydrogen peroxide receptor kinase *(HPCAL1/2/++)	Photosynthesis.calvin cycle.transketolase	Multi-process regulation.Programmed Cell Death (PCD) system.vacuole-mediated cell death
+d3	lightyellow	Cell wall organisation.hemicellulose.xylan	Cell wall organisation.lignin.monolignol conjugation and polymerization	RNA homeostasis.post-transcriptional regulator activities.C3H-ZF-type post-transcriptional regulator activity
+d3	grey	Protein biosynthesis.ribosome biogenesis.large ribosomal subunit (LSU)	Multi-process regulation.SnRK1-kinase regulatory system.regulatory protein kinase *(GRIK) of SnRK1 complex	Protein biosynthesis.ribosome biogenesis.small ribosomal subunit (SSU)
+d3	blue	Protein biosynthesis.ribosome biogenesis.large ribosomal subunit (LSU)	Protein biosynthesis.ribosome biogenesis.small ribosomal subunit (SSU)	Protein biosynthesis.organellar translation machinery.mitochondrial ribosome biogenesis
+d3	darkorange	Vesicle trafficking.anterograde trafficking.Coat protein II (COPII) coatomer machinery	Multi-process regulation.14-3-3 regulatory system.14-3-3 phosphoprotein-binding protein *(GRF)	RNA biosynthesis.RNA polymerase II-dependent transcription.transcription co-activation
+d3	grey60	RNA processing.tRNA modification.N6-threonylcarbamoyladenosine modification	Cell division.meiotic recombination.meiotic initiation	Protein modification.lipidation.protein de-S-acylation
+d3	saddlebrown	Multi-process regulation.Programmed Cell Death (PCD) system.regulatory protein *(CYCLASE)	RNA homeostasis.mRNA surveillance pathways.No-Cap Decay (NCD) pathway	Vesicle trafficking.endocytic trafficking.ESCRT-mediated sorting
+d3	darkgreen	Cell wall organisation.cutin and suberin.export	Cell wall organisation.cutin and suberin.cuticular lipid formation	Plant organogenesis.leaf formation.stomata
+mercator	lightgreen	regulatory E3 ubiquitin ligase *(HEI10/ZIP3) of meiotic crossover	N-acetyltransferase cohesin cofactor *(CTF7)	non-catalytic component *(RMI1) of RTR Holliday junction dissolution complex
+mercator	salmon	subunit beta2 of coat protein complex	component *(EH1/EH2) of TPLATE AP-2 co-adaptor complex	substrate adaptor *(ARIA) of CUL3-based E3 ubiquitin ligase complex
+mercator	darkturquoise	subunit alpha of tryptophan synthase complex	alpha-type-2 component *(PAB) of 26S proteasome	regulatory protein *(GPDL6/7) involved in pollen tube growth
+mercator	steelblue	carboxypeptidase *(SOL1)	component *(MLH3) of MutLy endonuclease heterodimer	3-hydroxyisobutyrate dehydrogenase *(HDH)
+mercator	red	auxin signalling transcriptional co-repressor *(TPL/TPR)	transcriptional co-repressor *(TPL/TPR)	promotor-binding component *(TFC3) of TFIIIc transcription factor complex
+mercator	greenyellow	transcription factor *(WRKY)	pyridoxal kinase *(SOS4/SNO1)	cold-responsive protein kinase *(CRPK)
+mercator	cyan	iron/zinc cation transporter *(Fe/Zn-CDF)	core adaptor component *(DDB1) of CUL4-based E3 ubiquitin ligase complexes	component *(mL105) of large mitoribosomal-subunit proteome
+mercator	magenta	component *(POLD3) of DNA polymerase delta complex	E3 ubiquitin-fold protein ligase *(SP1)	E3 ubiquitin ligase *(SPL)
+mercator	brown	MADS/AGL transcription factor	transcriptional regulator *(AP1/CAL/FUL) of floral meristem identity	transcriptional regulator *(SEPALLATA) of floral meristem identity control
+mercator	white	histone demethylase *(PKDM7)	malonyl-CoA synthetase *(mtMCS))	molecular co-chaperone *(CJD1)
+mercator	royalblue	DNA polymerase eta *(POLH)	MYB class-R2R3 subgroup-7 transcription factor	component *(QCR6) of cytochrome c reductase complex
+mercator	turquoise	Sigma transcription initiation factor *(SIG1)	translation peptide chain release factor *(PrfB)	regulatory subunit *(AIP1/3) of acetolactate synthase complex
+mercator	darkred	AGC-OTHER protein kinase *(IRE)	ATP synthase complex assembly factor *(BFA1)	ubiquitin-regulated metallopeptidase *(DA1)
+mercator	sienna3	MADS/AGL transcription factor	hydroxycinnamoyl-CoA acyltransferase	PLATZ transcription factor
+mercator	yellowgreen	component *(ND5/NQO12) of NADH dehydrogenase proton translocation (module P)	regulatory RNA helicase *(RH27/RH51) of miRNA biogenesis pathway	solute transporter *(UmamiT1/2/++)
+mercator	paleturquoise	large subunit of TFIIIf transcription factor module	subunit B of V-type ATPase peripheral V1 subcomplex	non-core component *(NDUFS4/18kDa) of NADH dehydrogenase complex
+mercator	purple	component *(ArpC3) of Arp2/3 actin polymerization initiation complex	E3 ubiquitin ligase *(SR1)	substrate adaptor *(SKIP35) of SCF E3 ubiquitin ligase complex
+mercator	yellow	RLCK-V receptor-like protein kinase	LRR-III protein kinase	regulatory protein *(SHOU4) involved in cellulose synthase trafficking
+mercator	skyblue3	rhamnogalacturonan-I endolyase *(RGL)	AS2/LOB transcription factor	triterpenoid synthase
+mercator	violet	transcriptional regulator *(ETT) of  floral organ morphogenesis	transcriptional regulator *(ARF3/4)	chaperone involved in signal/tail anchor protein insertion *(AKR2)
+mercator	orange	regulatory E3 ubiquitin ligase *(FANCL)	component *(COX5b) of cytochrome c oxidase complex	ornithine carbamoyltransferase *(OTC)
+mercator	green	transcriptional regulator *(ATML1) involved in embryo axis formation	AHL clade-A transcription factor	alpha-class expansin
+mercator	pink	autophagosome ubiquitin-fold protein *(ATG8)	linker histone *(H1)	component *(Pex14) of cargo-receptor docking complex
+mercator	skyblue	component *(CSN8) of COP9 signalosome complex	cell surface multi-copper oxidase *(SKU5)	component *(TRS33) of TRAPP-I/II/III complex-shared components
+mercator	darkolivegreen	protein S-acyltransferase	methylation reader component *(MRG1/2) of NuA4 histone acetyltransferase complex	shikimate kinase *(SKL1)
+mercator	plum1	transcription factor *(DEL) involved in cell cycle control	cohesin cofactor *(WAPL)	regulatory protein *(NDL1/2/3) of G-protein signalling
+mercator	darkmagenta	component *(6kDa/ATP6) of ATP synthase membrane MF0 subcomplex	component *(uS12) of small ribosomal-subunit (SSU) proteome	assembly factor *(SURF1) of cytochrome c oxidase assembly
+mercator	midnightblue	nucleotide sugar transporter *(UTR7)	proteasome assembly chaperone PAC4	Kleisin-like bridging component *(NSE4) of homologous recombination repair Smc5-Smc6 complex
+mercator	darkgrey	component *(SF3B2) of RNA splicing factor 3B complex	gamma-glutamyl cyclotransferase *(GGCT1/2)	methylglutaconyl-CoA hydratase
+mercator	black	pectin methylesterase	RLCK-IXb receptor-like protein kinase	beta-galactosidase *(MUM2)
+mercator	lightcyan	siRNA-recruiting factor *(AGO4/6/8/9)	component *(HUS1) of 9-1-1 DNA damage sensor complex	membrane insertase *(OXA2)
+mercator	tan	transketolase	hydrogen peroxide receptor kinase *(HPCAL1/2/++)	LRR-VIII-1 protein kinase
+mercator	lightyellow	regulatory protein of RNA homeostasis	arabinogalactan protein *(Xylogen)	nucleotide sugar transporter *(URGT/UXT)
+mercator	grey	N6-methylated-AMP deaminase *(MAPDA/ADAL)	neoxanthin synthase *(ABA4)	phosphoserine phosphatase
+mercator	blue	aminoacyl-tRNA binding factor *(eEF1A))	microtubule plus-end-tracking protein *(EB1)	Kinesin-10-type motor protein
+mercator	darkorange	component *(TAF4) of TFIId basal transcription regulation complex	scaffold component *(Sec31) of coat protein complex	component *(PIG-H) of GPI N-acetylglucosamine transferase complex
+mercator	grey60	catalytic component *(KAE1) of tRNA N6-threonylcarbamoylation KEOPS/EKC complex	meiotic recombination chromosome axis protein *(ASY3)	E3 ubiquitin ligase *(AIRP2/4)
+mercator	saddlebrown	phospholipase-A1 *(PA-PLA1)	component *(MOS2) of MAC spliceosome-associated complex	component *(VPS32/SNF7) of ESCRT-III complex
+mercator	darkgreen	LRR-XIIIb protein kinase	EPF-peptide receptor kinase *(ERECTA) involved in stomatal patterning	aldehyde decarbonylase component *(CER1) of CER1-CER3 alkane-forming complex
+prot-scriber	lightgreen	exo84 c domain containing protein	replication protein a dna binding subunit b	protein chromosome transmission fidelity
+prot-scriber	salmon	coatomer subunit beta 1	serine threonine protein phosphatase 2a kda regulatory subunit a isoform	arath transmembrane superfamily member
+prot-scriber	darkturquoise	calcineurin subunit b isoform	pld phosphodiesterase domain containing protein	cral trio n domain containing protein
+prot-scriber	steelblue	transposase 23 domain containing protein	duf 588 domain containing protein	s adenosylmethionine decarboxylase proenzyme
+prot-scriber	red	isoform topless protein	serine threonine protein phosphatase	b block tfiiic domain containing protein
+prot-scriber	greenyellow	wrky domain containing protein	branched chain amino acid aminotransferase 1	psepk pyridoxal kinase
+prot-scriber	cyan	dna damage binding protein	multiple rna binding domain containing protein	tubulin folding cofactor b
+prot-scriber	magenta	dna polymerase delta subunit	cell division control protein homolog c	copper transporting atpase hma
+prot-scriber	brown	k box and mads transcription factor protein	mads box transcription factor	z1a alpha zein protein
+prot-scriber	white	co chaperonin groes	arath lysine specific demethylase jmj	skp domain containing protein
+prot-scriber	royalblue	myb dna bind 3 domain containing protein	transcription factor myb	dna polymerase eta
+prot-scriber	turquoise	peptidylprolyl isomerase	nad p bd dom domain containing protein	rna polymerase sigma factor siga
+prot-scriber	darkred	lim zinc binding domain containing protein	microtubule associated serine threonine protein kinase	40s ribosomal protein s4 1
+prot-scriber	sienna3	alanine transaminase	omega hydroxypalmitate o feruloyl transferase	expansin b15
+prot-scriber	yellowgreen	protein unc homolog a	wat protein	atp dependent rna helicase
+prot-scriber	paleturquoise	dna directed rna polymerase iii subunit rpc	v type proton atpase subunit b	wd repeat containing protein 82
+prot-scriber	purple	actin protein 2 3 complex subunit	dna directed rna polymerase ii subunit	ankyrin repeat protein skip
+prot-scriber	yellow	protein kinase domain containing	proline rich receptor protein kinase perk	ubiquitin specific protease family c19 protein
+prot-scriber	skyblue3	rhamnogalacturonan endolyase	duf 1618 domain containing protein	rrna n glycosylase
+prot-scriber	violet	arath auxin response factor	tyr phosphatase 2 domain containing protein	sti domain containing protein
+prot-scriber	orange	arath fructose bisphosphate aldolase 2	dna polymerase epsilon catalytic subunit	fam domain containing protein
+prot-scriber	green	homeobox leucine zipper protein roc	calcium and calmodulin dependent serine threonine protein kinase	germin protein member
+prot-scriber	pink	dicdi peroxisomal membrane protein pex	histone h1 1	autophagy protein
+prot-scriber	skyblue	trafficking protein particle complex subunit 6b	monocopper oxidase protein sku	of phosphomevalonate kinase
+prot-scriber	darkolivegreen	mrg domain containing protein	s acyltransferase	shikimate kinase 1
+prot-scriber	plum1	dna directed rna polymerases ii iv and v subunit 8b	mfs domain containing protein	thiolase n domain containing protein
+prot-scriber	darkmagenta	of topless protein	40s ribosomal protein s23 1	helicase protein mom
+prot-scriber	midnightblue	myb dna bind 3 domain containing protein	non structural maintenance of chromosomes element	5 amp activated protein kinase subunit gamma
+prot-scriber	darkgrey	gamma glutamylcyclotransferase	exportin t	amb all domain containing protein
+prot-scriber	black	pmei domain containing protein	arath calcium dependent protein kinase	pectinesterase
+prot-scriber	lightcyan	protein argonaute 4a	arath cyclin dependent kinase 2	anaphase promoting complex subunit
+prot-scriber	tan	transketolase 1 protein	proline rich receptor protein kinase perk	sam dependent mtase drm type domain containing protein
+prot-scriber	lightyellow	hydroxyproline rich glycoprotein family protein	glycerol phosphate 2 acyltransferase	laccase
+prot-scriber	grey	sulfate transporter 4 1	adenosine deaminase protein a	protein aba deficient 4 chloroplastic
+prot-scriber	blue	thiosulfate 3 sulfurtransferase 1	myb dna bind 3 domain containing protein	dna replication licensing factor mcm
+prot-scriber	darkorange	rst domain containing protein	sec16 c domain containing protein	fbd domain containing protein
+prot-scriber	grey60	meiosis specific protein pair	saposin b type domain containing protein	calcium uniporter protein 3
+prot-scriber	saddlebrown	ddhd domain containing protein	protein unc homolog b	g patch 2 domain containing protein
+prot-scriber	darkgreen	lrr receptor serine threonine protein kinase	gdsl esterase lipase	abc transporter g family member
+swissprot	lightgreen	E3 ubiquitin-protein ligase CCNB1IP1 homolog OS=Oryza sativa subsp. japonica	Uncharacterized protein At4g06744 OS=Arabidopsis thaliana	Protein CHROMOSOME TRANSMISSION FIDELITY 7 OS=Arabidopsis thaliana
+swissprot	salmon	Coatomer subunit beta-2 OS=Oryza sativa subsp. japonica	Ubiquitin C-terminal hydrolase 12 OS=Arabidopsis thaliana	Sucrose transport protein SUT4 OS=Oryza sativa subsp. japonica
+swissprot	darkturquoise	ERAD-associated E3 ubiquitin-protein ligase HRD1 OS=Oryza sativa subsp. japonica	Tryptophan synthase alpha chain, chloroplastic OS=Arabidopsis thaliana	Glycerophosphodiester phosphodiesterase GDPDL7 OS=Arabidopsis thaliana
+swissprot	steelblue	Probable 3-hydroxyisobutyrate dehydrogenase, mitochondrial OS=Arabidopsis thaliana	Lecithin-cholesterol acyltransferase-like 4 OS=Arabidopsis thaliana	Carboxypeptidase SOL1 OS=Arabidopsis thaliana
+swissprot	red	Phospholipid-transporting ATPase 2 OS=Arabidopsis thaliana	Serine/threonine-protein phosphatase BSL2 homolog OS=Oryza sativa subsp. japonica	Ubiquitin C-terminal hydrolase 13 OS=Arabidopsis thaliana
+swissprot	greenyellow	Branched-chain-amino-acid aminotransferase 3, chloroplastic OS=Arabidopsis thaliana	Brassinosteroid LRR receptor kinase BRL3 OS=Oryza sativa subsp. japonica	Probable inactive carboxylesterase Os04g0669700 OS=Oryza sativa subsp. japonica
+swissprot	cyan	DNA damage-binding protein 1 OS=Oryza sativa subsp. japonica	Metal tolerance protein 2 OS=Oryza sativa subsp. japonica	Tubulin-folding cofactor B OS=Arabidopsis thaliana
+swissprot	magenta	E3 ubiquitin-protein ligase SP1 OS=Arabidopsis thaliana	Nuclear pore complex protein NUP96 OS=Arabidopsis thaliana	Cell division control protein 48 homolog C OS=Arabidopsis thaliana
+swissprot	brown	MADS-box transcription factor 14 OS=Oryza sativa subsp. japonica	MADS-box transcription factor 1 OS=Oryza sativa subsp. indica	Malate dehydrogenase, cytoplasmic OS=Zea mays
+swissprot	white	Lysine-specific demethylase JMJ703 OS=Oryza sativa subsp. japonica	20 kDa chaperonin, chloroplastic OS=Arabidopsis thaliana	ATP-dependent Clp protease proteolytic subunit 5, chloroplastic OS=Arabidopsis thaliana
+swissprot	royalblue	Transcription factor MYB3R-2 OS=Oryza sativa subsp. japonica	DNA polymerase eta OS=Arabidopsis thaliana	MADS-box transcription factor 31 OS=Oryza sativa subsp. japonica
+swissprot	turquoise	ATP-dependent zinc metalloprotease FTSH 2, chloroplastic OS=Oryza sativa subsp. japonica	Protein NLP1 OS=Oryza sativa subsp. japonica	Photosystem II protein D1 OS=Zea mays
+swissprot	darkred	LIM domain-containing protein HDR3 OS=Oryza sativa subsp. japonica	DExH-box ATP-dependent RNA helicase DExH7, chloroplastic OS=Arabidopsis thaliana	Probable serine/threonine protein kinase IREH1 OS=Arabidopsis thaliana
+swissprot	sienna3	Putative expansin-B14 OS=Oryza sativa subsp. japonica	Omega-hydroxypalmitate O-feruloyl transferase OS=Arabidopsis thaliana	Protein RGF1 INDUCIBLE TRANSCRIPTION FACTOR 1 OS=Arabidopsis thaliana
+swissprot	yellowgreen	DEAD-box ATP-dependent RNA helicase 27 OS=Oryza sativa subsp. japonica	WAT1-related protein At5g64700 OS=Arabidopsis thaliana	Probable cyclic nucleotide-gated ion channel 20, chloroplastic OS=Arabidopsis thaliana
+swissprot	paleturquoise	V-type proton ATPase subunit B 1 OS=Hordeum vulgare	Protein ANTHESIS POMOTING FACTOR 1 OS=Arabidopsis thaliana	Outer envelope pore protein 16-3, chloroplastic/mitochondrial OS=Arabidopsis thaliana
+swissprot	purple	Actin-related protein 2/3 complex subunit 3 OS=Arabidopsis thaliana	DNA-directed RNA polymerases II, IV and V subunit 9A OS=Arabidopsis thaliana	Ankyrin repeat protein SKIP35 OS=Arabidopsis thaliana
+swissprot	yellow	Probable receptor-like protein kinase At2g42960 OS=Arabidopsis thaliana	Uncharacterized membrane protein At1g16860 OS=Arabidopsis thaliana	Pyrophosphate-energized vacuolar membrane proton pump OS=Hordeum vulgare
+swissprot	skyblue3	Probable protein phosphatase 2C 42 OS=Oryza sativa subsp. japonica	LOB domain-containing protein 2 OS=Arabidopsis thaliana	Cycloartenol synthase OS=Luffa aegyptiaca
+swissprot	violet	Auxin response factor 2 OS=Oryza sativa subsp. japonica	Calcium-dependent protein kinase 6 OS=Oryza sativa subsp. japonica	Probable trehalose-phosphate phosphatase 10 OS=Oryza sativa subsp. japonica
+swissprot	orange	Fructose-bisphosphate aldolase, chloroplastic OS=Oryza sativa subsp. japonica	Ornithine carbamoyltransferase, chloroplastic OS=Pisum sativum	Glycine cleavage system H protein 2, mitochondrial OS=Arabidopsis thaliana
+swissprot	green	Calcium and calcium/calmodulin-dependent serine/threonine-protein kinase OS=Oryza sativa subsp. japonica	Homeobox-leucine zipper protein ROC2 OS=Oryza sativa subsp. japonica	Homeobox-leucine zipper protein ROC1 OS=Oryza sativa subsp. japonica
+swissprot	pink	Histone H1 OS=Zea mays	Protein IN2-1 OS=Zea mays	Peroxisomal membrane protein PEX14 OS=Arabidopsis thaliana
+swissprot	skyblue	DNA repair protein recA homolog 2, mitochondrial OS=Arabidopsis thaliana	COP9 signalosome complex subunit 8 OS=Arabidopsis thaliana	Monocopper oxidase-like protein SKU5 OS=Arabidopsis thaliana
+swissprot	darkolivegreen	Protein MRG1 OS=Arabidopsis thaliana	Shikimate kinase 3, chloroplastic OS=Oryza sativa subsp. japonica	LOB domain-containing protein 18 OS=Arabidopsis thaliana
+swissprot	plum1	Microtubule-binding protein TANGLED1 OS=Zea mays	Glutathione synthetase, chloroplastic OS=Brassica juncea	Protein NDL1 OS=Arabidopsis thaliana
+swissprot	darkmagenta	Small ribosomal subunit protein uS12y OS=Arabidopsis thaliana	ATP-dependent DNA helicase Q-like SIM OS=Arabidopsis thaliana	Probably inactive leucine-rich repeat receptor-like protein kinase At5g48380 OS=Arabidopsis thaliana
+swissprot	midnightblue	UDP-galactose/UDP-glucose transporter 7 OS=Arabidopsis thaliana	Non-structural maintenance of chromosomes element 4 homolog A OS=Arabidopsis thaliana	Transcription factor ILR3 OS=Arabidopsis thaliana
+swissprot	darkgrey	Gamma-glutamylcyclotransferase 2-2 OS=Arabidopsis thaliana	Exportin-T OS=Oryza sativa subsp. japonica	Probable sphingolipid transporter spinster homolog 3 OS=Arabidopsis thaliana
+swissprot	black	Transcription factor TIP2 OS=Oryza sativa subsp. japonica	Transcription factor TDR OS=Oryza sativa subsp. japonica	Transcription factor MYB65 OS=Arabidopsis thaliana
+swissprot	lightcyan	DNA repair protein RAD50 OS=Arabidopsis thaliana	Cyclin-dependent kinase D-1 OS=Oryza sativa subsp. japonica	Histidine--tRNA ligase, cytoplasmic OS=Oryza sativa subsp. japonica
+swissprot	tan	Leucine-rich repeat receptor protein kinase HPCA1 OS=Arabidopsis thaliana	Transketolase, chloroplastic OS=Zea mays	Receptor protein-tyrosine kinase CEPR1 OS=Arabidopsis thaliana
+swissprot	lightyellow	Glycerol-3-phosphate acyltransferase 5 OS=Arabidopsis thaliana	UDP-xylose transporter 1 OS=Arabidopsis thaliana	THO complex subunit 4D OS=Arabidopsis thaliana
+swissprot	grey	CBL-interacting protein kinase 8 OS=Oryza sativa subsp. japonica	Serine/threonine-protein kinase GRIK2 OS=Arabidopsis thaliana	Sulfate transporter 1.3 OS=Arabidopsis thaliana
+swissprot	blue	DNA-directed RNA polymerases II, IV and V subunit 11 OS=Arabidopsis thaliana	tRNA (guanine(26)-N(2))-dimethyltransferase 1 OS=Arabidopsis thaliana	Thiosulfate/3-mercaptopyruvate sulfurtransferase 1, mitochondrial OS=Arabidopsis thaliana
+swissprot	darkorange	14-3-3-like protein GF14-D OS=Oryza sativa subsp. japonica	Protein transport protein SEC31 homolog B OS=Arabidopsis thaliana	Protein SHORTAGE IN CHIASMATA 1 homolog OS=Oryza sativa subsp. japonica
+swissprot	grey60	Zinc finger protein STAR3 OS=Oryza sativa subsp. japonica	Meiosis-specific protein PAIR3 OS=Oryza sativa subsp. japonica	Protein FEZ OS=Arabidopsis thaliana
+swissprot	saddlebrown	Phospholipase SGR2 OS=Arabidopsis thaliana	Protein MOS2 OS=Arabidopsis thaliana	Phosphatidylinositol-3-phosphatase SAC1 OS=Arabidopsis thaliana
+swissprot	darkgreen	LRR receptor-like serine/threonine-protein kinase ER2 OS=Oryza sativa subsp. japonica	ABC transporter G family member 11 OS=Arabidopsis thaliana	Fatty acid amide hydrolase OS=Arabidopsis thaliana
