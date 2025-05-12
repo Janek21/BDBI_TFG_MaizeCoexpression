@@ -1,8 +1,0 @@
-Function	MEratio	MEtotal	Tratio	Ttotal	ME_representation
-Cell division.cell cycle organisation.metaphase to anaphase transition	0.030303030303030304	1	0.0010227380839120922	86	True
-Cell division.cell cycle organisation.sister chromatid separation	0.030303030303030304	1	0.001355722576348587	114	True
-RNA biosynthesis.DNA-binding transcriptional regulation.basic DNA-binding domain	0.030303030303030304	1	0.009513842641042717	800	True
-Multi-process regulation.G-protein-dependent signalling.regulatory protein *(NDL1/2/3)	0.030303030303030304	1	0.0003329844924364951	28	True
-not assigned	0.8181818181818182	27	0.3738345542764723	31435	True
-Enzyme classification.EC_2 transferases.EC_2-4 glycosyltransferase	0.030303030303030304	1	0.007729997145847207	650	True
-Enzyme classification.EC_2 transferases.EC_2-5 transferase transferring alkyl or aryl group, other than methyl group	0.030303030303030304	1	0.002259537627247645	190	True
