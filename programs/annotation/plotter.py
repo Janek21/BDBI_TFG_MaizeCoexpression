@@ -45,8 +45,6 @@ def main():
             genlist.append(g) #if none of the earlier apply, add to list of gene objects
         
         notann_plotter(genlist, enzyme, nann)
-            
-    typePossiblities=["mercator", "prot-scriber", "swissprot"] #original is always None(cut -f4 -d$'\t' b73.mercator.v4.7.txt|rev|cut -c 1-27|rev|sort|uniq), so we ignore it for now
 
 
 if __name__ == "__main__":

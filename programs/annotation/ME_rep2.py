@@ -8,6 +8,7 @@ import scipy.stats as sps
 #@ filter unassigned/unnanotated genes
 #@ remove enzyme classifications
 #@ fischer test -> p value > order functions in each module by pvalue, use top 3 significant
+#@ gene concretion
 
 def listmaker(genlist, depth, module=None, MEfile=None): #gets reps of all functions (of chosen depth)
     dic_functions={}
