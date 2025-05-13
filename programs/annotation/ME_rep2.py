@@ -19,7 +19,7 @@ def listmaker(genlist, depth, module=None, MEfile=None): #gets reps of all funct
         
         ME=""
         if module!=None: #if module is not given, the function calculates global, so ME is not needed
-            ME=g.get_ME(MEfile) #get ME (brown or None)
+            ME=g.get_ME(MEfile) #get ME
         
         if module==None or module==ME: #module==None when no module is specified(calculate for all), module==ME when module is of interest and ME matches
             functs=g.get_annotation(depth) #get [depth] levels of annotation
