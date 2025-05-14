@@ -1,53 +1,29 @@
 library(ggplot2)
 library(stringr)
-library(dplyr)
+library(plotly)
 
 #read data
-database<-read.delim("~/Desktop/Intership/work/programs/annotation/Pres/database.txt")
 pvdata<-read.table("./Pres/d_1_sheet.txt", sep='\t', header=TRUE)
-genemodule<-read.table("../geneModule.txt", header=TRUE)
-gFile<-read.delim("~/Desktop/Intership/work/data/annotation/b73.mercator.v4.7.txt", fill=TRUE, na.strings=c("''", "NA", "#N/A"))
+#Choose relevant
+pvdata$Relevancy<-as.logical(pvdata$Relevancy)
+pvdata<-pvdata[pvdata$Relevancy,]
 
-#remove '
-gFile[] <- lapply(gFile, function(x) gsub("'", "", x))
+pvdata$significance<- -log10(pvdata$Pvalue)
 
-#Clean Unnanotated and empty rows
-gFile<-gFile[!is.na(gFile$IDENTIFIER),]
-geneFunction<-gFile[!grepl("not assigned", gFile$NAME),]  #["not assigned.not annotated"!=gFile$NAME,]
-geneFunction<-geneFunction[!grepl("Enzyme", geneFunction$NAME),]
-
-#Clean Gene IDs for later match with MEs
-geneFunction$IDENTIFIER<-gsub("_[^_]*$", "", geneFunction$IDENTIFIER)
-geneFunction$IDENTIFIER<-gsub("z", "Z", geneFunction$IDENTIFIER)
-
-#Get functions at depth1
-geneFunction[c('D1Function', 'Function')] <- str_split_fixed(geneFunction$NAME, '\\.', 2)
-
-#associate function to module (function>gene>module)
-genemodule$IDENTIFIER<-rownames(genemodule)
-temp<-left_join(geneFunction, genemodule, by="IDENTIFIER")
-geneFmodule<-data.frame("genes"=temp$IDENTIFIER, "D1Function"=temp$D1Function, "Function"=temp$Function, "Module"=temp$modules)
-
-#match gene and function to pvalue (only 1 function/module combination > find pvalue)
-genPval_table<-left_join(geneFmodule, pvdata, by = c("Module", "D1Function"="Function"))
-
-#Set data tyoes
-genPval_table$genes<-as.factor(genPval_table$genes)
-genPval_table$D1Function<-as.factor(genPval_table$D1Function)
-genPval_table$Function<-as.factor(genPval_table$Function)
-genPval_table$Module<-as.factor(genPval_table$Module)
-genPval_table$Relevancy<-as.logical(genPval_table$Relevancy)
-
-#Get relevant functions only, remove NA
-PvalTrue<-genPval_table[genPval_table$Relevancy,]
-PvalTrue<-PvalTrue[!is.na(PvalTrue$D1Function),]
-
-ggplot(PvalTrue, aes(x=genes, y=D1Function, alpha=Pvalue, color=Pvalue))+
+lgn<-c(min(pvdata$Pvalue)+0.0000000001, max(pvdata$Pvalue)/2, max(pvdata$Pvalue))
+                      
+rr<-ggplot(pvdata, aes(x=Function, y=Module, size=significance, color=significance))+
   geom_point()+
+  scale_size_continuous(name="P-value",
+                        breaks=-log10(lgn),
+                        labels=lgn)+
+  scale_color_gradient(name="P-value",
+                         breaks=-log10(lgn),
+                         labels=lgn,
+                       low = "blue", high = "red")+
   labs(x="Genes", y="Functions")+
-  facet_wrap(PvalTrue$Module)+
   theme_bw()+
-  theme(axis.text.x = element_blank(),
+  theme(axis.text.x = element_text(angle = 45, hjust =1, size=10, color = "black"),
         axis.text.y=element_text(size=10, color = "black"),
         legend.position="right",
         legend.key.width=unit(1, "cm"), 
@@ -58,10 +34,34 @@ ggplot(PvalTrue, aes(x=genes, y=D1Function, alpha=Pvalue, color=Pvalue))+
         panel.border = element_rect(fill = NA, colour = "black", size = 1),
         panel.grid.major = element_line(colour = "lightgrey", linetype = "solid", size = 0.5,),
         strip.background = element_rect(fill = "transparent", colour = "transparent"),
-        axis.ticks=element_blank())
+        axis.ticks=element_line(colour="black"),
+        axis.ticks.length = unit(8, "pt"))
+
+ggplotly(rr)
+
+##??
+ggplot(pvdata, aes(x=Function, y=Module, size=Pvalue, color=Pvalue))+
+  geom_point()+
+  scale_size(trans="reverse")+
+  scale_color_continuous(trans="reverse")+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 45, hjust =1, size=10, color = "black"),
+        axis.text.y=element_text(size=10, color = "black"),
+        legend.position="right",
+        legend.key.width=unit(1, "cm"), 
+        legend.text=element_text(size=14), 
+        legend.title=element_text(size=16),
+        plot.background = element_rect(fill = "transparent", colour = "transparent"),
+        panel.background = element_rect(fill = "transparent", colour = "grey"),
+        panel.border = element_rect(fill = NA, colour = "black", size = 1),
+        panel.grid.major = element_line(colour = "lightgrey", linetype = "solid", size = 0.5,),
+        strip.background = element_rect(fill = "transparent", colour = "transparent"),
+        axis.ticks=element_line(colour="black"),
+        axis.ticks.length = unit(8, "pt"))
+
 
 #Focus on a ME
-ME<-"skyblue3"
+ME<-"blue"
 PvalFocus<-PvalTrue[PvalTrue$Module==ME,]
 
 ggplot(PvalFocus, aes(x=genes, y=D1Function, color=Pvalue, size=Pvalue))+
@@ -81,5 +81,3 @@ ggplot(PvalFocus, aes(x=genes, y=D1Function, color=Pvalue, size=Pvalue))+
         panel.grid.major = element_line(colour = "lightgrey", linetype = "solid", size = 0.5,),
         strip.background = element_rect(fill = "transparent", colour = "transparent"),
         axis.ticks=element_blank())
-
-##Find smallest modules
