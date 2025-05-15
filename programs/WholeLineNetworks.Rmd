@@ -14,6 +14,10 @@ knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.width=16, fig.height=8)
 knitr::opts_chunk$set(purl = TRUE)
 ```
 
+```
+Warning: the term species may be used across the code and comments when meaning lines (or genotypes)
+```
+
 # Loading
 
 ## Load libraries
@@ -410,7 +414,7 @@ dataPlotter<-function(umap_data, metadata){
   plt<-ggplot(as.data.frame(umap_data$layout), aes(x=umap_data$layout[,1], y=umap_data$layout[,2], shape=metadata$species, color=metadata$org_location))+
     geom_point(size=6)+
     scale_shape_manual(values = c(19, 1, 2, 15, 8))+
-    labs(x="x", y="y", shape="Species", color="Tissue")+
+    labs(x="x", y="y", shape="Lines", color="Tissue")+
     theme_minimal()
   return(plt)
 }
@@ -433,7 +437,7 @@ ggplotly(ggplot(as.data.frame(sc_Numap_data$layout), aes(x=sc_Numap_data$layout[
 ggplot(as.data.frame(sc_Numap_data$layout), aes(x=sc_Numap_data$layout[,1], y=sc_Numap_data$layout[,2], color=repl_meta$species))+
   geom_point(size=5)+
   scale_shape_manual(values = c(19, 1, 2, 15, 8))+
-  theme_minimal()+ggtitle("Species-based")
+  theme_minimal()+ggtitle("Line-based")
 
 ```
 
@@ -743,7 +747,7 @@ colnames(module_eigengenes)<-gsub("ME", "", colnames(module_eigengenes))
 
 # Coexpression visualization
 
-The modules will present a good visualization of the effect by specie.
+The modules will present a good visualization of the effect by line.
 
 ```{r visCoexp}
 heatmap.data<-merge(module_eigengenes, bin_metadata, by='row.names')
@@ -758,7 +762,7 @@ write.table(heatmap.data, file="./CorPlots/Sp_table.txt")
 #colnames(bin_metadata)<-gsub("_[^_]*$", "", colnames(bin_metadata))#remove for normal plots
 #colnames(heatmap.data)<-gsub("_[^_]*$", "", colnames(heatmap.data))#remove for normal plots
 
-plotTitle<-paste0("Correlation plot by species using ", NormType)
+plotTitle<-paste0("Correlation plot by lines using ", NormType)
 svg(paste0("./sp_", NormType, "_corplot.svg"), width=1600/60, height=800/60) #sp_CPM_corplot
 CorLevelPlot(heatmap.data,
              x = colnames(bin_metadata),
