@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 #gets mercator annotation, removes unimportant genes, writes tables of functions+pvalue in each module (a table for each annotation type)
+#Step 1
 
-from gene_class import Gene
+from annotation.FileRead_class import Gene
 import subprocess
 import scipy.stats as sps
 

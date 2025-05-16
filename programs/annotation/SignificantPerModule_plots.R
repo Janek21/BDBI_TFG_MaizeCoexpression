@@ -1,3 +1,7 @@
+
+#Plots significance per function in each module, highlights most significant in total and writes them in a table
+#Step 3
+
 library(ggplot2)
 library(plotly)
 library(ggnewscale)
@@ -5,13 +9,13 @@ library(ggnewscale)
 #read data
 dChoice<-"anT_mercator"
 dChoice<-"d_1"
-pvdata<-read.table(paste0("./Pres/", dChoice, "_sheet.txt"), sep='\t', header=TRUE)
+pvdata<-read.table(paste0("./annotation/Pres/", dChoice, "_sheet.txt"), sep='\t', header=TRUE)
 #Choose relevant
 pvdata$Relevancy<-as.logical(pvdata$Relevancy)
 pvdata<-pvdata[pvdata$Relevancy,]
 
 #Get top x significant values
-highSig<-sort(pvdata$Pvalue)[0:20]
+highSig<-sort(pvdata$Pvalue)[1:10]
 pvdata$TopSig<-pvdata$Pvalue %in% highSig
 
 #plot all values
@@ -41,7 +45,7 @@ hplot<-bareplot+
   guides(fill=guide_legend(order=2))+
   theme(legend.text=element_text(size=14))
 
-svg(paste0("./SigPlots/sig_", dChoice, ".svg"), width=1600/60, height=800/60)
+svg(paste0("./annotation/SigPlots/sig_", dChoice, ".svg"), width=1600/60, height=800/60)
 hplot+ggtitle(dChoice)
 dev.off()
 
@@ -67,10 +71,10 @@ TopPlot<-ggplot(TopSig, aes(x=Function, y=Module, color=Pvalue))+
         axis.ticks=element_line(colour="black"),
         axis.ticks.length = unit(8, "pt"))
 
-svg(paste0("./SigPlots/top/top_", dChoice, ".svg"), width=1600/60, height=800/60)
+svg(paste0("./annotation/SigPlots/top/top_", dChoice, ".svg"), width=1600/60, height=800/60)
 TopPlot+ggtitle(dChoice)
 dev.off()
 
 #write top significant to table
-write.table(TopSig, paste0("./SigPlots/top/top_", dChoice, ".txt"), sep='\t', row.names=FALSE)
+write.table(TopSig, paste0("./annotation/SigPlots/top/top_", dChoice, ".txt"), sep='\t', row.names=FALSE)
 

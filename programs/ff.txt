@@ -1,0 +1,325 @@
+Gene	Name	Description
+Zm00001eb001140	dpr1	dihydrodipicolinate reductase1
+Zm00001eb001140	dpr1	dihydrodipicolinate reductase1
+Zm00001eb001140	dpr1	dihydrodipicolinate reductase1
+Zm00001eb001650	Zm00001d027422	
+Zm00001eb001950	pba1	PBA1 homolog1
+Zm00001eb002270	gpb1	glyceraldehyde phosphate dehydrogenase B1
+Zm00001eb002270	gpb1	glyceraldehyde phosphate dehydrogenase B1
+Zm00001eb002560	cl61826_1	
+Zm00001eb005330		rpe1
+Zm00001eb005330		rpe1
+Zm00001eb005330	rpe1	Ribulose-phosphate 3-epimerase1
+Zm00001eb005330		rpe1
+Zm00001eb005330	rpe1	Ribulose-phosphate 3-epimerase1
+Zm00001eb011940	fbp2	fructose bisphosphatase2
+Zm00001eb014950	LOC100280294	
+Zm00001eb014960	LOC118471883	
+Zm00001eb015950	C0P7G8	
+Zm00001eb017170	si945022d06a	
+Zm00001eb021390	pet2	photosynthetic electron transport2
+Zm00001eb021390	pet2	photosynthetic electron transport2
+Zm00001eb021390	pet2	photosynthetic electron transport2
+Zm00001eb021390	pet2	photosynthetic electron transport2
+Zm00001eb021830	Zm00001d029720	
+Zm00001eb022040	IDP1986	
+Zm00001eb024030	cl7048_1a	
+Zm00001eb025140	IDP6962	
+Zm00001eb028550	ppd1	photo-system b P domain-containing protein1
+Zm00001eb028550	ppd1	photo-system b P domain-containing protein1
+Zm00001eb029520	si603029f11	
+Zm00001eb029690	bsd2	bundle sheath defective2
+Zm00001eb029690	bsd2	bundle sheath defective2
+Zm00001eb029690	bsd2	bundle sheath defective2
+Zm00001eb034260	pco084394	
+Zm00001eb038530	pgr5	proton gradient regulation 5 homolog
+Zm00001eb038930	mdh6	malate dehydrogenase6
+Zm00001eb038930	mdh6	malate dehydrogenase6
+Zm00001eb039150	LOC118476108	
+Zm00001eb039850	hcf244	high chlorophyll fluorescence244
+Zm00001eb039850	hcf244	high chlorophyll fluorescence244
+Zm00001eb041460	Zm00001d032197	
+Zm00001eb042520	LOC100285487	
+Zm00001eb049630	lhcb12	light harvesting chlorophyll a/b binding protein12
+Zm00001eb049640	lhcb9	light harvesting chlorophyll binding protein9
+Zm00001eb049640	lhcb9	light harvesting chlorophyll binding protein9
+Zm00001eb049640	lhcb9	light harvesting chlorophyll binding protein9
+Zm00001eb049640	lhcb9	light harvesting chlorophyll binding protein9
+Zm00001eb049640	lhcb9	light harvesting chlorophyll binding protein9
+Zm00001eb049640	lhcb9	light harvesting chlorophyll binding protein9
+Zm00001eb052650	fdx7	ferredoxin7
+Zm00001eb053770	LOC103643842	
+Zm00001eb057170	Zm00001d034007	
+Zm00001eb058790	ccs1	C-type cytochrome synthesis protein1
+Zm00001eb061710	Zm00001d034541	
+Zm00001eb061720	Zm00001d034541	
+Zm00001eb063250	raf2	rubisco accumulation factor2
+Zm00001eb064870	pco102265b	
+Zm00001eb065010	Zm00001d034904	
+Zm00001eb065010	Zm00001d034904	
+Zm00001eb066000	raf1	Rubisco Assembly Factor 1
+Zm00001eb066480	Zm00001d001857	
+Zm00001eb066910	ptox2	plastid terminal oxidase2
+Zm00001eb068300	pet3	photosynthetic electron transport3
+Zm00001eb068300	pet3	photosynthetic electron transport3
+Zm00001eb072030	IDP445	
+Zm00001eb075370	TIDP3339	
+Zm00001eb081060	dnaJ21	DnaJ/Hsp40 21
+Zm00001eb081460	zep1	zeaxanthin epoxidase1
+Zm00001eb081460	zep1	zeaxanthin epoxidase1
+Zm00001eb081460	zep1	zeaxanthin epoxidase1
+Zm00001eb081460	zep1	zeaxanthin epoxidase1
+Zm00001eb083600	si606031e03a	
+Zm00001eb083680	pco139896	
+Zm00001eb083840	php10012	
+Zm00001eb083950	fdx4	ferredoxin4
+Zm00001eb085050	hcf106	high chlorophyll fluorescence106
+Zm00001eb085050	hcf106	high chlorophyll fluorescence106
+Zm00001eb085840	vde1	violaxanthin de-epoxidase1
+Zm00001eb085840	vde1	violaxanthin de-epoxidase1
+Zm00001eb092540	ssu2	ribulose bisphosphate carboxylase small subunit2
+Zm00001eb093260	IDP6936	
+Zm00001eb096870	pet9	photosynthetic electron transport9
+Zm00001eb099410	ndhl2	NDH complex L subunit2
+Zm00001eb100100	cl21464_1	
+Zm00001eb100140	Zm00001d005814	
+Zm00001eb100140	Zm00001d005814	
+Zm00001eb101660	B6U534	
+Zm00001eb106430	LOC103647735	
+Zm00001eb106810	Zm00001d006587	
+Zm00001eb112260	lhcb5	light harvesting chlorophyll a/b binding protein5
+Zm00001eb112260	lhcb5	light harvesting chlorophyll a/b binding protein5
+Zm00001eb112260	lhcb5	light harvesting chlorophyll a/b binding protein5
+Zm00001eb113090	cl26646_1	
+Zm00001eb116960	elip1	early light inducible protein1
+Zm00001eb117670	pspb1	photosystem II oxygen evolving polypeptide1
+Zm00001eb118240	alt8	alanine amino transferase8
+Zm00001eb118450	LOC100281300	
+Zm00001eb123430	prh137	protein phosphatase homolog137
+Zm00001eb123430	prh137	protein phosphatase homolog137
+Zm00001eb123430	prh137	protein phosphatase homolog137
+Zm00001eb126080	Zm00001d040084	
+Zm00001eb127000	IDP7406	
+Zm00001eb131600	Zm00001d040804	
+Zm00001eb138600	trm2	thioredoxin M2
+Zm00001eb138600	trm2	thioredoxin M2
+Zm00001eb138600	trm2	thioredoxin M2
+Zm00001eb138600	trm2	thioredoxin M2
+Zm00001eb138650	psan1	photosystem I N subunit1
+Zm00001eb138650	psan1	photosystem I N subunit1
+Zm00001eb138650	psan1	photosystem I N subunit1
+Zm00001eb138650	psan1	photosystem I N subunit1
+Zm00001eb138650	psan1	photosystem I N subunit1
+Zm00001eb138650	psan1	photosystem I N subunit1
+Zm00001eb138650	psan1	photosystem I N subunit1
+Zm00001eb138650	psan1	photosystem I N subunit1
+Zm00001eb140530	fnr4	ferredoxin NADP reductase4
+Zm00001eb141830	GRMZM2G455676	
+Zm00001eb145680	ndhn1	NADH dehydrogenase I subunit N1
+Zm00001eb146510	psbs1	photosystem II subunit PsbS1
+Zm00001eb146510	psbs1	photosystem II subunit PsbS1
+Zm00001eb147750	shbp1	sedoheptulose bisphosphatase1
+Zm00001eb150510	pco144630	
+Zm00001eb150810	hcf148	high chlorophyll fluorescence148
+Zm00001eb151750	pco070877	
+Zm00001eb158810	cah1	carbonic anhydrase1
+Zm00001eb160790	cl25234_-2a	
+Zm00001eb161410	Zm00001d044402	
+Zm00001eb162530	prh82	protein phosphatase homolog82
+Zm00001eb164380	rca3	RUBISCO activase3
+Zm00001eb164390	rca1	RUBISCO activase1
+Zm00001eb164390	rca1	RUBISCO activase1
+Zm00001eb168100	lhcb11	light harvesting chlorophyll a/b binding protein11
+Zm00001eb168470	dnaj131	DnaJ family protein131
+Zm00001eb171230	psb3	photosystem II3
+Zm00001eb171230	psb3	photosystem II3
+Zm00001eb172070	si707021b11	
+Zm00001eb173510	Zm00001d049650	
+Zm00001eb174420	GRMZM2G043162	
+Zm00001eb179680	gpm571	
+Zm00001eb185800	LOC100279286	
+Zm00001eb188120	IDP600	
+Zm00001eb189210	cl30530_1	
+Zm00001eb190110	pco149145	
+Zm00001eb194350	Zm00001d052242	
+Zm00001eb196880	npi270	
+Zm00001eb196880	php20071	
+Zm00001eb197410	ssu1	ribulose bisphosphate carboxylase small subunit1
+Zm00001eb198120	gpm525	
+Zm00001eb198120	gpm525	
+Zm00001eb204410	ris2	iron-sulfur protein2
+Zm00001eb212460	umc1679	
+Zm00001eb212520	psad1	photosystem I subunit d1
+Zm00001eb212520	psad1	photosystem I subunit d1
+Zm00001eb212520	psad1	photosystem I subunit d1
+Zm00001eb214510	wrky141	WRKY-transcription factor 141
+Zm00001eb215070	psa3	photosystemI3
+Zm00001eb215070	psa3	photosystemI3
+Zm00001eb215070	psa3	photosystemI3
+Zm00001eb217230	pas1	pale and small1
+Zm00001eb224490	Zm00001d014349	
+Zm00001eb226060	oec33b	oxygen-evolving complex 33 kda protein b
+Zm00001eb227320	hcf173	high chlorophyll fluorescence173
+Zm00001eb227320	hcf173	high chlorophyll fluorescence173
+Zm00001eb227340	IDP8427	
+Zm00001eb229250	LOC100193709	
+Zm00001eb233080	ppr300	pentatricopeptide repeat protein300
+Zm00001eb233090	gcsh2	glycine cleavage system protein H2
+Zm00001eb233170	Zm00001d015385	
+Zm00001eb238170	LOC100192599	
+Zm00001eb238370	ris1	iron-sulfur protein1
+Zm00001eb238370	ris1	iron-sulfur protein1
+Zm00001eb238370	ris1	iron-sulfur protein1
+Zm00001eb238370	ris1	iron-sulfur protein1
+Zm00001eb238670	pep2	phosphoenolpyruvate carboxylase2
+Zm00001eb238670	pep2	phosphoenolpyruvate carboxylase2
+Zm00001eb244980	LOC103627333	
+Zm00001eb246340	csu173	
+Zm00001eb248520	trx3	thioredoxin3
+Zm00001eb251520	prk1	phosphoribulokinase1
+Zm00001eb254450	ndf6	NDH subunit F6
+Zm00001eb255120	cl61634_1	
+Zm00001eb255850	lhcb4	light harvesting complex a/b protein4
+Zm00001eb260140	fdx1	ferredoxin1
+Zm00001eb260140	fdx1	ferredoxin1
+Zm00001eb260140	fdx1	ferredoxin1
+Zm00001eb260150	fdx5	ferredoxin5
+Zm00001eb260160	fdx2	ferredoxin2
+Zm00001eb260160	fdx2	ferredoxin2
+Zm00001eb260160	fdx2	ferredoxin2
+Zm00001eb265640	si707090d09a	
+Zm00001eb267390	pco079415b	
+Zm00001eb268360	ploc1	plastocyanin homolog1
+Zm00001eb268360	ploc1	plastocyanin homolog1
+Zm00001eb268360	ploc1	plastocyanin homolog1
+Zm00001eb271820	psb1	photosystem II1
+Zm00001eb271820	psb1	photosystem II1
+Zm00001eb271820	psb1	photosystem II1
+Zm00001eb271820	psb1	photosystem II1
+Zm00001eb272100	csu146a(cdc48)	
+Zm00001eb273000	tpj1	translation of psbJ1
+Zm00001eb273000	tpj1	translation of psbJ1
+Zm00001eb273380	oec33	oxygen evolving complex, 33kDa subunit
+Zm00001eb273380	oec33	oxygen evolving complex, 33kDa subunit
+Zm00001eb274190	ftsh2	filamentation temperature-sensitive H 2A homolog2
+Zm00001eb274190	ftsh2	filamentation temperature-sensitive H 2A homolog2
+Zm00001eb280560	pco136292	
+Zm00001eb286730	cps2	chloroplast protein synthesis2
+Zm00001eb290780	hagtf30	GNAT-transcription factor 30
+Zm00001eb290780	hagtf30	GNAT-transcription factor 30
+Zm00001eb291670	pgk1	phosphoglycerate kinase1
+Zm00001eb294720	IDP113a	
+Zm00001eb295610	psah1	photosystem I H subunit1
+Zm00001eb295610	psah1	photosystem I H subunit1
+Zm00001eb295610	psah1	photosystem I H subunit1
+Zm00001eb295610	psah1	photosystem I H subunit1
+Zm00001eb295610	psah1	photosystem I H subunit1
+Zm00001eb295610	psah1	photosystem I H subunit1
+Zm00001eb298270	Zm00001d018623	
+Zm00001eb298440	alt7	alanine aminotransferase7
+Zm00001eb298440	alt7	alanine aminotransferase7
+Zm00001eb299760	pspb2	photosystem II oxygen evolving polypeptide2
+Zm00001eb299760	pspb2	photosystem II oxygen evolving polypeptide2
+Zm00001eb299980	IDP80	
+Zm00001eb299980	IDP80	
+Zm00001eb299980	IDP80	
+Zm00001eb299990	psa6	photosystem I reaction center6
+Zm00001eb299990	psa6	photosystem I reaction center6
+Zm00001eb299990	psa6	photosystem I reaction center6
+Zm00001eb299990	psa6	photosystem I reaction center6
+Zm00001eb299990	psa6	photosystem I reaction center6
+Zm00001eb301210	pco087551	
+Zm00001eb301260	elip2	early light inducible protein2
+Zm00001eb305640	pco099333	
+Zm00001eb306070	pet8	photosynthetic electron transport8
+Zm00001eb306070	pet8	photosynthetic electron transport8
+Zm00001eb306070	pet8	photosynthetic electron transport8
+Zm00001eb306070	pet8	photosynthetic electron transport8
+Zm00001eb306070	pet8	photosynthetic electron transport8
+Zm00001eb306070	pet8	photosynthetic electron transport8
+Zm00001eb309200	si486069e02	
+Zm00001eb312390	ndhl1	NDH complex L subunit1
+Zm00001eb312420	Zm00001d020437	
+Zm00001eb319330	si946087b02	
+Zm00001eb319770	tpi1	triose phosphate isomerase1
+Zm00001eb319770	tpi1	triose phosphate isomerase1
+Zm00001eb320270	pyg7	pale yellowgreen7
+Zm00001eb320270	pyg7	pale yellowgreen7
+Zm00001eb320270	pyg7	pale yellowgreen7
+Zm00001eb320270	pyg7	pale yellowgreen7
+Zm00001eb320280	gpm472	
+Zm00001eb321670	ndf4	NDH subunit F4
+Zm00001eb321700	GRMZM2G488458	
+Zm00001eb322600	atpc2	ATP synthase chloroplast subunit2
+Zm00001eb323460	oec17	oxygen evolving complex, 17kDa homolog
+Zm00001eb323460	oec17	oxygen evolving complex, 17kDa homolog
+Zm00001eb324090	psb29	photosystem II subunit29
+Zm00001eb324090	psb29	photosystem II subunit29
+Zm00001eb324090	psb29	photosystem II subunit29
+Zm00001eb324240	umc1684	
+Zm00001eb325410	lhca2	light harvesting complex A2
+Zm00001eb327210	cl24572_1	
+Zm00001eb330460	csu27	
+Zm00001eb334740	cl13695_-2b	
+Zm00001eb336410	GRMZM2G380414	
+Zm00001eb336580	umc1974	
+Zm00001eb340590	umc2353	
+Zm00001eb343900	lhcb3	light harvesting chlorophyll a/b binding protein3
+Zm00001eb343900	lhcb3	light harvesting chlorophyll a/b binding protein3
+Zm00001eb343900	lhcb3	light harvesting chlorophyll a/b binding protein3
+Zm00001eb346800	pco076489	
+Zm00001eb352550	pgk2	phosphoglycerate kinase2
+Zm00001eb352880	cl5838_2	
+Zm00001eb355290	si707090d09b	
+Zm00001eb357520	ohp3	opaque2 heterodimerizing protein3
+Zm00001eb357740	lhcb10	light harvesting chlorophyll a/b binding protein10
+Zm00001eb360100	LOC100384340	
+Zm00001eb362560	ndho1	NADH-plastoquinone oxidoreductase1
+Zm00001eb362640	GRMZM2G059191	
+Zm00001eb370480	agrr21	
+Zm00001eb370480	agrr21	
+Zm00001eb370480	agrr21	
+Zm00001eb373150	IDP111	
+Zm00001eb373150	IDP111	
+Zm00001eb378930	Zm00001d045544	
+Zm00001eb379240	fnr3	ferredoxin NADP reductase3
+Zm00001eb379570	psr160c	
+Zm00001eb383680	pep1	phosphoenolpyruvate carboxylase1
+Zm00001eb383680	pep1	phosphoenolpyruvate carboxylase1
+Zm00001eb389930	ftsh1	filamentation temperature-sensitive H 2A homolog1
+Zm00001eb389930	ftsh1	filamentation temperature-sensitive H 2A homolog1
+Zm00001eb390720	LOC100381273	
+Zm00001eb394530	si945022d06b	
+Zm00001eb397520	pco080036b	
+Zm00001eb403240	Zm00001d048422	
+Zm00001eb403420	umc1942	
+Zm00001eb404240	nta1	N-terminal amidase1
+Zm00001eb404240	nta1	N-terminal amidase1
+Zm00001eb404240	nta1	N-terminal amidase1
+Zm00001eb408010	pzb01301	
+Zm00001eb409090	gcsh1	glycine cleavage system protein H1
+Zm00001eb409090	gcsh1	glycine cleavage system protein H1
+Zm00001eb409090	gcsh1	glycine cleavage system protein H1
+Zm00001eb409090	gcsh1	glycine cleavage system protein H1
+Zm00001eb409190	trm1	thioredoxin M1
+Zm00001eb409190	trm1	thioredoxin M1
+Zm00001eb409190	trm1	thioredoxin M1
+Zm00001eb409220	psan2	photosystem I N subunit2
+Zm00001eb409580	lim2	
+Zm00001eb421330	hcf106c	high chlorophyll fluorescence106c
+Zm00001eb421330	hcf106c	high chlorophyll fluorescence106c
+Zm00001eb423570	zep2	zeaxanthin epoxidase2
+Zm00001eb423570	zep2	zeaxanthin epoxidase2
+Zm00001eb423570	zep2	zeaxanthin epoxidase2
+Zm00001eb424110	gpa2	glyceraldehyde-3-phosphate dehydrogenase2
+Zm00001eb424150	gpa4	glyceraldehyde-3-phosphate dehydrogenase4
+Zm00001eb424190	gpa3	glyceraldehyde-3-phosphate dehydrogenase3
+Zm00001eb425540	umc2003	
+Zm00001eb427570	Zm00001d025952	
+Zm00001eb433540	lhcb6	light harvesting chlorophyll a/b binding protein6
+Zm00001eb433540	lhcb6	light harvesting chlorophyll a/b binding protein6
+Zm00001eb433540	lhcb6	light harvesting chlorophyll a/b binding protein6
+Zm00001eb433540	lhcb6	light harvesting chlorophyll a/b binding protein6
+Zm00001eb433540	lhcb6	light harvesting chlorophyll a/b binding protein6
+Zm00001eb435650	Zm00001d000279	
+Zm00001eb440790	rbcL (cp)	ribulose-1-5-bisphosphate carboxylase-large subunit
