@@ -70,3 +70,44 @@ ModNetwork<-blockwiseModules(Nrepl_data,
 
 
 cor<-temp_cor
+
+
+###################################################################
+
+# Load necessary libraries
+library(tidyverse)
+library(igraph)
+
+# Step 1: Load the count table
+counts <- geneInfo
+counts$Length<-NULL
+
+# Step 2: Log-normalize the data
+log_counts <- log1p(counts)
+
+# Step 3: Compute correlation matrix (genes x genes)
+cor_matrix <- cor(t(log_counts), method = "pearson")
+
+# Step 4: Threshold the correlation matrix to form edges
+threshold <- 0.4
+adjacency_matrix <- abs(cor_matrix) > threshold
+diag(adjacency_matrix) <- 0  # remove self-loops
+
+# Step 5: Build igraph network
+gene_network <- graph_from_adjacency_matrix(adjacency_matrix, mode = "undirected", diag = FALSE)
+
+# Step 6: Add absolute correlation as edge weights
+edge_list <- as.data.frame(as_edgelist(gene_network))
+weights <- mapply(function(g1, g2) abs(cor_matrix[g1, g2]), edge_list$V1, edge_list$V2)
+E(gene_network)$weight <- weights
+
+# Step 7: Plot the network (no error now)
+plot(
+  gene_network,
+  vertex.label = NA,
+  vertex.size = 3,
+  edge.color = "gray",
+  edge.width = E(gene_network)$weight * 2,  # optional: scale by weight
+  main = "Gene Co-Expression Network"
+)
+

@@ -1,0 +1,288 @@
+---
+title: "Gene Network"
+author: "Jan Izquierdo i Ramos"
+date: "2025-02-03"
+always_allow_html: true
+output: 
+  tint::tintHtml:
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.width=16, fig.height=8)
+knitr::opts_chunk$set(purl = TRUE)
+```
+
+```
+Warning: the term species may be used across the code and comments when meaning lines (or genotypes)
+```
+
+# Loading
+
+## Load libraries
+
+```{r loadLib, results='hide', message=FALSE}
+library(WGCNA)
+allowWGCNAThreads()
+library(randomcoloR)
+library(edgeR)
+library(tidyverse)
+library(dplyr)
+library(grid)
+library(gridExtra)
+#devtools::install_github("kevinblighe/CorLevelPlot")
+library(CorLevelPlot)
+library(ggpubr)
+library(plotly)
+library(factoextra)
+library(umap)
+library(heatmaply)
+```
+
+## Load the data
+
+Import the csv and metadata files
+
+```{r dtLoad}
+dataPath<-paste0("../data/wlen/data_wlen.csv")
+metadataPath<-paste0("../data/metadata.txt")
+moduledata<-"./geneModule.txt"
+
+dataNL<-read.delim(dataPath, row.names=1, stringsAsFactors=TRUE)
+metadata<-read.delim(metadataPath, header=T, row.names=1, stringsAsFactors=TRUE)
+genemodule<-read.table(moduledata)
+
+colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
+
+#Data selection
+ME<-"blue"
+genemodule$genes<-rownames(genemodule)
+MEgeneList<-rownames(genemodule[genemodule$modules==ME,])
+dataNL<-dataNL[MEgeneList,]
+```
+
+# Data preparation
+
+## Get lengths vector
+
+If the provided data contains the length of the genes, extract them to a vector
+
+```{r getLen}
+if ("Length" %in% colnames(dataNL)){
+  length_vec<-dataNL$Length
+}
+```
+
+## Fix the data
+
+Search for dimensional disparities
+
+```{r dataSearch}
+dim(dataNL)
+dim(metadata)
+```
+
+### Match metadata rows to data columns
+
+Match which samples appear in the data and metadata
+
+```{r dataMatch}
+dataMatcher<-function(data, metadata){
+  options(warn=-1)
+  
+  cat("Data begins with:" , dim(data))
+  cat("\nMetadata begins with:", dim(metadata))
+  #Match data to metadata
+  data <- data[, order(colnames(data))]
+  metadata <- metadata[order(rownames(metadata)), ]
+  
+  cat("\nColumns data = Rows of metatdata?", all(rownames(metadata) == colnames(data)))
+  #If TRUE, columns of data and rows of metadata are matched
+  
+  cat("\nRemove the excess from data")
+  data<-data[,colnames(data) %in% rownames(metadata)] #remove data not present in metadata
+  cat("\nData end with:" , dim(data))
+  
+  cat("\nRemove the excess from metadata")
+  metadata<-metadata[rownames(metadata) %in% colnames(data),] #remove metadata not present in data
+  cat("\nMetadata end with:" , dim(metadata), "\n")
+  
+  options(warn=0)
+  return(list(data, metadata))
+}
+
+jointData<-dataMatcher(dataNL, metadata)
+
+dataNL<-jointData[[1]]
+metadata<-jointData[[2]]
+```
+
+### Metadata levels
+
+```{r metadtaCheck}
+#Should be all 0 due to preprocessing filtering
+levels(as.factor(metadata$quality))
+
+#Mapped abbreviations
+levels(metadata$tissue_abv)
+
+#reps 1,2,3 and 4, is there an imbalance?
+table(metadata$rep)
+
+levels(metadata$location)
+#Different total amounts of each tissue replicate would indicate that one of the species does not present the same amount copies
+table(metadata$location) 
+#there are different total numbers of tissue replicates
+#Solve it by using 1 replicate per tissue (mean of existing replicates)
+
+```
+### Outlier check
+
+Check for outlier genes
+
+```{r OutlierGenes}
+outDetect<-goodSamplesGenes(t(dataNL))
+
+table(outDetect$goodGenes) #False genes are outliers
+table(outDetect$goodSamples) #All samples are True = no outliers
+```
+
+```{r OutlierGeRemove}
+dataNL<-dataNL[outDetect$goodGenes==TRUE,] #remove ouliers
+
+if (exists("length_vec")){ #only if it exists
+  length_vec<-length_vec[outDetect$goodGenes==TRUE] #if length_vec exists remove outliers from there as well
+}
+
+```
+
+## Replicate joining
+
+```{r replSpecieName}
+#add the name of the species to the replicate, to be able to differentiate it
+
+#save location
+metadata$org_location<-as.factor(metadata$location)
+#create specialized location
+metadata$location<-paste(metadata$specie, metadata$location, sep="_")
+metadata$location<-as.factor(metadata$location)
+
+```
+
+```{r replJoin}
+rsumer<-function(data, metadata, tissue_name){ #calculates the mean of all columns that belong to a location (ex: mean of all COB columns)
+  
+  loc_mdata<-metadata[metadata$location == tissue_name, ] #filter metadata tissue (get metadata of location only)
+  
+  data<-data[,colnames(data) %in% rownames(loc_mdata)] #get data of location only, based on metadata
+  
+  if (1<ncol(data.frame(data))){ #If there's only 1 replicate, don't try to do the mean (it gives error)
+    data<-rowMeans(data) #calculate mean for each gene out of the locations(replicates)
+  }
+  
+  return(as.data.frame(data))
+}
+
+tissue_data<-levels(metadata$location) #get list of tissue names
+
+d_joint<-sapply(tissue_data, function(tissue_name) rsumer(dataNL, metadata, tissue_name)) #returns an array where each entry is a column with the mean data of the replicates (rows are genes)
+
+repl_data<-as.data.frame(d_joint) #data joint by replicate
+
+colnames(repl_data) = gsub(pattern = "*.data", replacement = "", x = tolower(colnames(repl_data))) #get column names to be only location
+
+rownames(repl_data)<-rownames(dataNL) #rename rows to be genes again
+
+```
+
+Create replicate metadata
+```{r replMeta}
+#Create a column for the location+species
+repl_meta<-as.data.frame(colnames(repl_data))
+colnames(repl_meta)<-c("location")
+
+#Split the created column and add 2 columns to repl_meta, one for the species and one for the tissue
+temp_meta<-data.frame(t(data.frame(strsplit(as.character(repl_meta$location), "_"))))
+repl_meta<-data.frame(repl_meta$location, temp_meta$X1, temp_meta$X2)
+colnames(repl_meta)<-c("location", "species", "org_location")
+```
+
+### RPKM
+
+Only if we have the gene lengths
+```{r RPKMnorm}
+if (exists("length_vec")){ #if we have lengths
+ length_vec<-data.frame(Length=length_vec) #convert to dataframe
+
+  dge <- DGEList(repl_data,genes=length_vec) #use edgeR for normalization
+
+  dge <- calcNormFactors(dge)
+  Nrepl_data <- rpkm(dge, log=TRUE)
+
+  Nrepl_data<-as.data.frame(Nrepl_data)
+  
+  NormType<-"RPKM"
+}
+```
+
+#### Low expression removal
+
+```{r RPKMlExpRm}
+#Filter low expression genes
+keep<-apply(Nrepl_data, 1, max)>=0 #keep genes where the counts for at least one replicate are of at least 1 (0 because of log)
+Nrepl_data<-Nrepl_data[keep,]
+
+#Nrepl to data frame
+Nrepl_data<-as.data.frame(t(Nrepl_data)) #evetually transpose
+
+#More genes kept after normalization and filtering than cpm
+```
+
+# Gene expression frequency
+
+```{r gExpr}
+##do x axis is tissues, y axis is expression
+
+#Choose which genes to use
+geneNumber<-round(ncol(Nrepl_data)/100 *10) #1% of genes
+#get random genes
+chosenGenes<-sample(colnames(Nrepl_data), geneNumber)
+#obtain genes data
+dataSection<-Nrepl_data[, chosenGenes]
+
+#transform the data
+long_data<-stack(dataSection)
+
+ggplot(long_data, aes(x=values, color=ind))+
+  geom_density()+
+  labs(x="Expression", y="Frequency", title=paste0("Module: ", ME, " at genes: ", geneNumber))+
+  theme_classic()+
+  theme(axis.text.x=element_text(size=12),
+        axis.text.y=element_text(size=12),
+        legend.position="none",
+        axis.ticks=element_line(colour="black"),
+        axis.ticks.length = unit(8, "pt"))
+
+```
+
+# Correlation
+
+```{r}
+#correaltion table
+geneCor<-cor(Nrepl_data)
+
+#Threshold choosing
+ths<-seq(0,1, by=0.05)
+
+ths_effect<- data.frame(ths, count=sapply(ths, function(t) sum(abs(geneCor)>t))) #count amount of correlations (all positive, as they all contribute)
+
+ggplot(ths_effect, aes(x=ths, y=count))+
+  geom_line(color="red", size=2)+
+  geom_point(size=4)+
+  theme_bw()
+```
+
+# Clustering
+
+# Saving the network
