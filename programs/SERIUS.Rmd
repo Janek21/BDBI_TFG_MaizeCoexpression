@@ -51,12 +51,14 @@ moduledata<-"./geneModule.txt"
 
 dataNL<-read.delim(dataPath, row.names=1, stringsAsFactors=TRUE)
 metadata<-read.delim(metadataPath, header=T, row.names=1, stringsAsFactors=TRUE)
-genemodule<-read.table(moduledata)
+genemodule<-read.table(moduledata, stringsAsFactors=TRUE)
 
 colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
 
+moduleList<-levels(genemodule$modules)
+table(genemodule$modules)
 #Data selection
-ME<-"blue"
+ME<-"lightyellow" #green
 genemodule$genes<-rownames(genemodule)
 MEgeneList<-rownames(genemodule[genemodule$modules==ME,])
 dataNL<-dataNL[MEgeneList,]
@@ -118,25 +120,6 @@ dataNL<-jointData[[1]]
 metadata<-jointData[[2]]
 ```
 
-### Metadata levels
-
-```{r metadtaCheck}
-#Should be all 0 due to preprocessing filtering
-levels(as.factor(metadata$quality))
-
-#Mapped abbreviations
-levels(metadata$tissue_abv)
-
-#reps 1,2,3 and 4, is there an imbalance?
-table(metadata$rep)
-
-levels(metadata$location)
-#Different total amounts of each tissue replicate would indicate that one of the species does not present the same amount copies
-table(metadata$location) 
-#there are different total numbers of tissue replicates
-#Solve it by using 1 replicate per tissue (mean of existing replicates)
-
-```
 ### Outlier check
 
 Check for outlier genes
@@ -210,12 +193,19 @@ colnames(repl_meta)<-c("location", "species", "org_location")
 
 ### RPKM
 
+Filter out empty columns (sum==0)
+```{r RPKMfilter}
+keep<-colSums(repl_data)!=0
+repl_data<-repl_data[,keep]
+```
+
+
 Only if we have the gene lengths
 ```{r RPKMnorm}
 if (exists("length_vec")){ #if we have lengths
  length_vec<-data.frame(Length=length_vec) #convert to dataframe
 
-  dge <- DGEList(repl_data,genes=length_vec) #use edgeR for normalization
+  dge <- DGEList(repl_data, genes=length_vec) #use edgeR for normalization
 
   dge <- calcNormFactors(dge)
   Nrepl_data <- rpkm(dge, log=TRUE)
@@ -234,7 +224,7 @@ keep<-apply(Nrepl_data, 1, max)>=0 #keep genes where the counts for at least one
 Nrepl_data<-Nrepl_data[keep,]
 
 #Nrepl to data frame
-Nrepl_data<-as.data.frame(t(Nrepl_data)) #evetually transpose
+Nrepl_data<-as.data.frame(Nrepl_data) #evetually transpose
 
 #More genes kept after normalization and filtering than cpm
 ```
@@ -242,35 +232,57 @@ Nrepl_data<-as.data.frame(t(Nrepl_data)) #evetually transpose
 # Gene expression frequency
 
 ```{r gExpr}
-##do x axis is tissues, y axis is expression
+set.seed(42)
 
 #Choose which genes to use
-geneNumber<-round(ncol(Nrepl_data)/100 *10) #1% of genes
+geneNumber<-round(nrow(Nrepl_data)/100 *10) #1% of genes
 #get random genes
-chosenGenes<-sample(colnames(Nrepl_data), geneNumber)
+chosenGenes<-sample(rownames(Nrepl_data), geneNumber)
 #obtain genes data
-dataSection<-Nrepl_data[, chosenGenes]
+dataSection<-Nrepl_data[chosenGenes,]
 
-#transform the data
-long_data<-stack(dataSection)
+#Save tissues
+tissues<-colnames(dataSection)
+#create genes column
+dataSection$Gene<-rownames(dataSection)
 
-ggplot(long_data, aes(x=values, color=ind))+
-  geom_density()+
-  labs(x="Expression", y="Frequency", title=paste0("Module: ", ME, " at genes: ", geneNumber))+
+#reshape data
+long_data<-reshape(dataSection, direction="long",
+                   v.names="Expression",
+                   timevar="Tissue",
+                   varying=tissues,
+                   times=names(dataSection)[1:(ncol(dataSection)-1)]) #names(dataSection)[1:(ncol(dataSection)-1)]
+
+ggplot(long_data, aes(x=Tissue, y=Expression, group=Gene)) +
+  geom_line(size=1, alpha=0.2) +
+  labs(x="Tissues", y="Expression", title=paste0("Module: ", ME, " at genes: ", geneNumber))+
   theme_classic()+
-  theme(axis.text.x=element_text(size=12),
+  theme(axis.text.x=element_text(angle=45, hjust=1, size=10),
         axis.text.y=element_text(size=12),
         legend.position="none",
         axis.ticks=element_line(colour="black"),
-        axis.ticks.length = unit(8, "pt"))
+        axis.ticks.length=unit(8, "pt"),
+        panel.grid.major=element_line(color="red",
+                                        size=0.5))
+
+ggplot(long_data, aes(x=Tissue, y=Expression, group=Gene)) +
+  geom_line(size=1, alpha=0.1) +
+  labs(x="Tissues", y="Expression", title=paste0("Module: ", ME, " at genes: ", geneNumber))+
+  theme_classic()+
+  theme(axis.text.x=element_text(angle=45, hjust=1, size=10),
+        axis.text.y=element_text(size=12),
+        legend.position="none",
+        axis.ticks=element_line(colour="black"),
+        axis.ticks.length=unit(8, "pt"))
 
 ```
 
 # Correlation
 
-```{r}
+```{r corPlot}
+Nrepl_dataT<-as.data.frame(t(Nrepl_data))
 #correaltion table
-geneCor<-cor(Nrepl_data)
+geneCor<-cor(Nrepl_dataT, method="pearson")
 
 #Threshold choosing
 ths<-seq(0,1, by=0.05)
@@ -278,11 +290,119 @@ ths<-seq(0,1, by=0.05)
 ths_effect<- data.frame(ths, count=sapply(ths, function(t) sum(abs(geneCor)>t))) #count amount of correlations (all positive, as they all contribute)
 
 ggplot(ths_effect, aes(x=ths, y=count))+
-  geom_line(color="red", size=2)+
+  geom_line(color=ME, size=2)+
+  labs(x="Threshold", y="Correlaton count")+
   geom_point(size=4)+
   theme_bw()
+
+```
+
+## Correlation distribution
+
+```{r}
+cor_vals<-cor_matrix[upper.tri(geneCor)]
+
+#convert to data frame
+cor_df<-data.frame(Correlation=cor_vals)
+
+ggplot(cor_df, aes(x=Correlation))+
+  geom_histogram(binwidth=0.05, fill=ME, color="black")+
+  labs(title="Distribution of correlation values",
+       x="Correlation Coefficient",
+       y="Frequency")+
+  theme_minimal()
+
+
+
 ```
 
 # Clustering
+```{r}
+kmeans_res<-kmeans(scale(Nrepl_data), 3)
+plot(scale(Nrepl_data), col=kmeans_res$cluster)
+dt_umap<-umap(scale(Nrepl_data))
+plot(dt_umap$layout, col=kmeans_res$cluster)
+```
+
+Choosing the right clustering method:
+K-means is quick and efficient, but needs a definition on the number of clusters, which is not practical in our case, as that is also to be discovered.
+K-neighbors is good
+Dbscan is
+
+```{r}
+set.seed(42)
+
+dt_umap<-umap(geneCor,min_dist=0.1)
+
+ggplot(as.data.frame(dt_umap$layout), aes(x=dt_umap$layout[,1], y=dt_umap$layout[,2]))+
+  geom_point()+
+  theme_minimal()
+```
+
+```{r}
+set.seed(42)
+total_means<-c()
+
+for (k in 1:15){
+  kmeans_res<-kmeans(geneCor, k)
+  mean_res<-mean(kmeans_res$withinss)
+  total_means<-c(total_means, mean_res)
+}
+
+#Elbow method
+plot(1:15, total_means, xlab="Distance between clusters", type="b")
+#distance betweeen clusters is reduced as nº of clusetrs increases
+
+kmeans_res<-kmeans(geneCor, 3)
+plot(geneCor, col=kmeans_res$cluster)
+
+plot(dt_umap$layout, col=kmeans_res$cluster)
+```
+
+```{r}
+library(dbscan)
+
+total_means<-c()
+
+for (k in 1:15){
+  dbscan_res<-dbscan(geneCor, eps=k, minPts=3) #eps=neighborhood size
+  mean_res<-length(unique(dbscan_res$cluster))
+  total_means<-c(total_means, mean_res)
+}
+plot(1:15, total_means, xlab="Distance between clusters", type="b")
+
+dbscan_res<-dbscan(geneCor, eps=3, minPts=5)
+
+plot(geneCor, col=dbscan_res$cluster)
+
+plot(dt_umap$layout, col=dbscan_res$cluster)
+```
+
+
+#auto
+```{r}
+library(NbClust)
+set.seed(42)
+scaled_data <- scale(geneCor)  # Samples in rows, features=genes
+
+# Find optimal k (2-12 clusters)
+cluster_result <- NbClust(scaled_data, 
+                         distance = "euclidean",
+                         min.nc=2, max.nc=15, 
+                         method="kmeans", 
+                         index="silhouette")
+optimal_k <- cluster_result$Best.nc[1]
+
+# Perform k-means clustering
+kmeans_clusters <- kmeans(scaled_data, centers=optimal_k)$cluster
+plot(geneCor, col=kmeans_clusters)
+plot(dt_umap$layout, col=kmeans_clusters)
+```
+
+```{r}
+hc <- hclust(as.dist(1-geneCor), method="ward.D2")
+plot(hc, labels=FALSE)
+```
+
 
 # Saving the network
