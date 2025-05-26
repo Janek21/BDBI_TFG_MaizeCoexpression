@@ -58,7 +58,7 @@ colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
 moduleList<-levels(genemodule$modules)
 table(genemodule$modules)
 #Data selection
-ME<-"lightyellow" #green
+ME<-"grey" #green
 genemodule$genes<-rownames(genemodule)
 MEgeneList<-rownames(genemodule[genemodule$modules==ME,])
 dataNL<-dataNL[MEgeneList,]
@@ -295,12 +295,14 @@ ggplot(ths_effect, aes(x=ths, y=count))+
   geom_point(size=4)+
   theme_bw()
 
+threshold<-0.7
+
 ```
 
 ## Correlation distribution
 
 ```{r}
-cor_vals<-cor_matrix[upper.tri(geneCor)]
+cor_vals<-geneCor[upper.tri(geneCor)]
 
 #convert to data frame
 cor_df<-data.frame(Correlation=cor_vals)
@@ -318,10 +320,10 @@ ggplot(cor_df, aes(x=Correlation))+
 
 # Clustering
 ```{r}
-kmeans_res<-kmeans(scale(Nrepl_data), 3)
-plot(scale(Nrepl_data), col=kmeans_res$cluster)
-dt_umap<-umap(scale(Nrepl_data))
-plot(dt_umap$layout, col=kmeans_res$cluster)
+kmeans_res<-kmeans(Nrepl_data, 3)
+plot(scale(Nrepl_data), col=kmeans_res$cluster) #only scaled because if not plot margins too large
+Ndt_umap<-umap(Nrepl_data)
+plot(Ndt_umap$layout, col=kmeans_res$cluster)
 ```
 
 Choosing the right clustering method:
@@ -383,7 +385,8 @@ plot(dt_umap$layout, col=dbscan_res$cluster)
 ```{r}
 library(NbClust)
 set.seed(42)
-scaled_data <- scale(geneCor)  # Samples in rows, features=genes
+scaled_data <- geneCor  # Samples in rows, features=genes
+#scaled_data<-Nrepl_data
 
 # Find optimal k (2-12 clusters)
 cluster_result <- NbClust(scaled_data, 
@@ -395,13 +398,29 @@ optimal_k <- cluster_result$Best.nc[1]
 
 # Perform k-means clustering
 kmeans_clusters <- kmeans(scaled_data, centers=optimal_k)$cluster
-plot(geneCor, col=kmeans_clusters)
-plot(dt_umap$layout, col=kmeans_clusters)
+plot(scale(Nrepl_data), col=kmeans_clusters)
+
+plot(Ndt_umap$layout, col=kmeans_clusters)
 ```
 
 ```{r}
 hc <- hclust(as.dist(1-geneCor), method="ward.D2")
 plot(hc, labels=FALSE)
+```
+
+## Clustrer3
+
+```{r}
+library(ggraph)
+library(igraph)
+adjacency_matrix <- abs(geneCor) > 0.3
+graph <- graph_from_adjacency_matrix(adjacency_matrix, mode = "undirected", diag = FALSE)
+p <- ggraph(graph, layout = "fr") +
+    geom_edge_link(edge_width = 0.5, edge_colour = "gray") +
+    geom_node_point(size = 2, fill = "darkred", color = "black", shape = 21) +
+    theme_void() +
+    ggtitle(paste("Threshold:", round(threshold, 2)))
+p
 ```
 
 
