@@ -1,0 +1,25 @@
+Cob	Central structure of the maize ear; supports kernel development.
+Coleoptile	Protective sheath for emerging shoot during germination.
+Crown root	Adventitious root for structural support and nutrient uptake.
+First elongated internode	Stem segment that supports vertical growth and leaf separation.
+Flag leaf	Final, uppermost leaf; key for photosynthesis during grain filling.
+Immature cob	Young cob; contains undeveloped ovules.
+Immature tassel	Developing male flower structure before pollen formation.
+Leaf 1	First seedling leaf; initiates early growth.
+Leaf 3 blade	Flat, photosynthetic part of the third leaf.
+Leaf 3 sheath	Wraps around stem; supports and protects leaf base.
+Leaf 5	Fifth leaf; contributes to photosynthesis during vegetative growth.
+Leaf 5 elongation zone	Area of Leaf 5 where cells expand for growth.
+Leaf 5 mature	Fully grown Leaf 5; actively photosynthesizing.
+Leaf 5 meristem		Region producing cells for Leaf 5 development.
+Leaf 8	Later-forming leaf; part of the plant’s mature canopy.
+Seed	Contains embryo and nutrients; initiates plant life.
+Meiotic tassel	Male flower undergoing meiosis to form pollen.
+Mesophyll	Leaf tissue where photosynthesis occurs (contains chloroplasts).
+Prepollinated cob	Cob formed before receiving pollen; ovules unfertilized.
+Primary root	First root; anchors seedling and absorbs nutrients.
+Primary root elongation zone	Root area where cells elongate to extend the root.
+Primary root meristematic zone	Tip of root where active cell division occurs.
+Root hair zone	Region where root hairs form; increases absorption surface area.
+Seminal root	Roots from the seed that support early plant development.
+Silk	Female flower structure; captures pollen for fertilization.
