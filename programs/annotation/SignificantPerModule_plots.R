@@ -45,6 +45,7 @@ hplot<-bareplot+
   guides(fill=guide_legend(order=2))+
   theme(legend.text=element_text(size=14))
 
+#png(paste0("./annotation/SigPlots/sig_", dChoice, ".png"), width=1600, height=800)
 svg(paste0("./annotation/SigPlots/sig_", dChoice, ".svg"), width=1600/60, height=800/60)
 hplot+ggtitle(dChoice)
 dev.off()

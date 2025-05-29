@@ -355,7 +355,7 @@ for (k in 1:15){
 plot(1:15, total_means, xlab="Distance between clusters", type="b")
 #distance betweeen clusters is reduced as nº of clusetrs increases
 
-kmeans_res<-kmeans(geneCor, 3)
+kmeans_res<-kmeans(geneCor, 5)
 plot(geneCor, col=kmeans_res$cluster)
 
 plot(dt_umap$layout, col=kmeans_res$cluster)
