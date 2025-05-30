@@ -58,7 +58,7 @@ colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
 moduleList<-levels(genemodule$modules)
 table(genemodule$modules)
 #Data selection
-ME<-"grey" #green
+ME<-"lightcyan" #green
 genemodule$genes<-rownames(genemodule)
 MEgeneList<-rownames(genemodule[genemodule$modules==ME,])
 dataNL<-dataNL[MEgeneList,]
@@ -302,64 +302,172 @@ threshold<-0.7
 ## Correlation distribution
 
 ```{r}
+#select above the diagonal
 cor_vals<-geneCor[upper.tri(geneCor)]
 
 #convert to data frame
 cor_df<-data.frame(Correlation=cor_vals)
 
+#PLot distribution
 ggplot(cor_df, aes(x=Correlation))+
   geom_histogram(binwidth=0.05, fill=ME, color="black")+
   labs(title="Distribution of correlation values",
        x="Correlation Coefficient",
        y="Frequency")+
   theme_minimal()
+```
+KMEANS WITH EXPRESSION
+zsore
+pca
+variance analysis with different pcas
+clustering
+@@ Otherwise:
+save corTable and load it to networkX
+
+# Preclustering
+```{r pca-prep}
+set.seed(42)
+#Z-score scaling
+sc_data<-scale(Nrepl_data)
+#pca
+sc_pca<-prcomp(sc_data, scale=TRUE)
+
+#pca plot
+ggplot(sc_pca$x, aes(x=PC1, y=PC2))+
+  geom_point(size=3)+
+  scale_shape_manual(values = c(19, 1, 2, 15, 8))+
+  #scale_size_manual(values = c(2, 6))+
+  #scale_color_brewer(palette="Dark2")+
+  labs(title="Normalized PCA")+
+  theme_minimal()
+```
+
+## PC Component cutoff
+```{r pca_components}
+#pca PC effect
+pca_sum<-summary(sc_pca)
+pca_data<-as.data.frame(t(z$importance))
+
+plot(pca_data$`Cumulative Proportion`, xlab="PC component number", ylab="Cumulative variance")
+abline(v=18, col="red")
+```
+
+Calculate pc component cutoff
+```{r pc_cutoff}
+find_elbow <- function(x, y) {
+  #Endpoints of the line
+  x1<-x[1]
+  y1<-y[1]
+  x2<-x[length(x)]
+  y2<-y[length(y)]
+
+  #Calculate line from first to last point
+  dx<-x2-x1
+  dy<-y2-y1
+  normL<-sqrt(dx^2 + dy^2)
+
+  #Compute distances to line for each point
+  distances<- abs((y1-y)*dx - (x1-x)*dy)/normL
+
+  #Get index of max distance
+  elbow_idx<- which.max(distances)
+
+  list(index=elbow_idx,
+    x_value=x[elbow_idx],
+    distance=distances[elbow_idx],
+    all_distances=distances)
+}
+
+c_var<-pca_data$`Cumulative Proportion` #y
+PC_c<-1:length(c_var) #x
+res<-find_elbow(PC_c, c_var)
+pc_cutoff<-res$x_value
+```
+## tup
+```{r}
+#buscar cutoff
+plot(pca_data$`Cumulative Proportion`, xlab="PC component number", ylab="Cumulative variance")
+abline(v=PC_c[1], col="red")
+abline(h=c_var[length(c_var)], col="red")
+```
 
 
+```{r}
+##rethink
+minPunkt<-c(PC_c[1], c_var[length(c_var)])
+minCurrent<-c(Inf, Inf)
+emptyL<-data.frame()
+
+for (i in 1:(length(c_var))){
+  current<-minPunkt-c(PC_c[i], c_var[i])
+  print(current)
+  emptyL<-rbind(emptyL, current)
+}
+
+min1 <- min(emptyL$X0)
+min2 <- min(emptyL$X0.21705)
+
+result <- df[emptyL$X0 == min1 & emptyL$X0.21705 == min2, ]
+which(emptyL$X0 == min1 & emptyL$X0.21705 == min2)
 
 ```
 
+
+```{r}
+d<-as.data.frame(scale(emptyL))
+plot(d$X0)
+lines(d$X0.21705)
+
+```
+
+
+## Clustering
+
+```{r cutoff}
+#keep components up to the cutoff
+ctf_pca<-as.data.frame(sc_pca$x[,1:pc_cutoff])
+##aquests son valors transformats?? scikit =fit_transform es el mateix en prcomp q $x? o he d efer .predict?
+```
+
+
+### Kmeans clustering
+```{r}
+d_pca<-prcomp(ctf_pca)
+kres<-kmeans(d_pca$x, 6)
+
+plot(d_pca$x, col=kres$cluster, lwd=3)
+```
+
+Elbow for kmeans
+```{r}
+
+```
+
+### dbscan
+```{r}
+#minPts=4 (d+1 or d*2)
+mp<-ncol(sc_pca$x)+1
+#eps: elbow plot, choose shaprest point in bend
+kNNdistplot(sc_pca$x, k=mp)
+e<-350
+
+dbres<-dbscan(d_pca$x, eps=e, minPts=mp)
+plot(d_pca$x, col=dbres$cluster+1, lwd=3)
+```
+
+
+
 # Clustering
 ```{r}
-kmeans_res<-kmeans(Nrepl_data, 3)
-plot(scale(Nrepl_data), col=kmeans_res$cluster) #only scaled because if not plot margins too large
+kmeans_res<-kmeans(Nrepl_data, 7)
+#plot(scale(Nrepl_data), col=kmeans_res$cluster) #only scaled because if not plot margins too large
 Ndt_umap<-umap(Nrepl_data)
 plot(Ndt_umap$layout, col=kmeans_res$cluster)
 ```
 
 Choosing the right clustering method:
-K-means is quick and efficient, but needs a definition on the number of clusters, which is not practical in our case, as that is also to be discovered.
-K-neighbors is good
-Dbscan is
+K-means and dbscan are less efficient when in high dimensionality
 
-```{r}
-set.seed(42)
-
-dt_umap<-umap(geneCor,min_dist=0.1)
-
-ggplot(as.data.frame(dt_umap$layout), aes(x=dt_umap$layout[,1], y=dt_umap$layout[,2]))+
-  geom_point()+
-  theme_minimal()
-```
-
-```{r}
-set.seed(42)
-total_means<-c()
-
-for (k in 1:15){
-  kmeans_res<-kmeans(geneCor, k)
-  mean_res<-mean(kmeans_res$withinss)
-  total_means<-c(total_means, mean_res)
-}
-
-#Elbow method
-plot(1:15, total_means, xlab="Distance between clusters", type="b")
-#distance betweeen clusters is reduced as nº of clusetrs increases
-
-kmeans_res<-kmeans(geneCor, 5)
-plot(geneCor, col=kmeans_res$cluster)
-
-plot(dt_umap$layout, col=kmeans_res$cluster)
-```
 
 ```{r}
 library(dbscan)
@@ -367,61 +475,17 @@ library(dbscan)
 total_means<-c()
 
 for (k in 1:15){
-  dbscan_res<-dbscan(geneCor, eps=k, minPts=3) #eps=neighborhood size
+  dbscan_res<-dbscan(Nrepl_data, eps=k, minPts=3) #eps=neighborhood size
   mean_res<-length(unique(dbscan_res$cluster))
   total_means<-c(total_means, mean_res)
 }
 plot(1:15, total_means, xlab="Distance between clusters", type="b")
 
-dbscan_res<-dbscan(geneCor, eps=3, minPts=5)
+dbscan_res<-dbscan(Nrepl_data, eps=3, minPts=5)
 
-plot(geneCor, col=dbscan_res$cluster)
+plot(scale(Nrepl_data), col=dbscan_res$cluster)
 
 plot(dt_umap$layout, col=dbscan_res$cluster)
 ```
-
-
-#auto
-```{r}
-library(NbClust)
-set.seed(42)
-scaled_data <- geneCor  # Samples in rows, features=genes
-#scaled_data<-Nrepl_data
-
-# Find optimal k (2-12 clusters)
-cluster_result <- NbClust(scaled_data, 
-                         distance = "euclidean",
-                         min.nc=2, max.nc=15, 
-                         method="kmeans", 
-                         index="silhouette")
-optimal_k <- cluster_result$Best.nc[1]
-
-# Perform k-means clustering
-kmeans_clusters <- kmeans(scaled_data, centers=optimal_k)$cluster
-plot(scale(Nrepl_data), col=kmeans_clusters)
-
-plot(Ndt_umap$layout, col=kmeans_clusters)
-```
-
-```{r}
-hc <- hclust(as.dist(1-geneCor), method="ward.D2")
-plot(hc, labels=FALSE)
-```
-
-## Clustrer3
-
-```{r}
-library(ggraph)
-library(igraph)
-adjacency_matrix <- abs(geneCor) > 0.3
-graph <- graph_from_adjacency_matrix(adjacency_matrix, mode = "undirected", diag = FALSE)
-p <- ggraph(graph, layout = "fr") +
-    geom_edge_link(edge_width = 0.5, edge_colour = "gray") +
-    geom_node_point(size = 2, fill = "darkred", color = "black", shape = 21) +
-    theme_void() +
-    ggtitle(paste("Threshold:", round(threshold, 2)))
-p
-```
-
 
 # Saving the network
