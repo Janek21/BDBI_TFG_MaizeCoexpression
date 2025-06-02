@@ -4,7 +4,7 @@
 #Step 4
 #@get genes only from function??
 
-from FileRead_class import Gene
+from modules.FileRead_class import Gene
 import pandas as pd
 
 def MEfu(genlist, ME, annFu, MEfile, depth=1): #list of genes with ME and Function

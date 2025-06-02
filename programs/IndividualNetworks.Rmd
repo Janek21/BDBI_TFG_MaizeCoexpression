@@ -34,7 +34,7 @@ Import the csv and metadata files
 
 ```{r dtLoad}
 #"B73"   "DK105" "EP1"   "F7"    "PE75" 
-specie<-"DK105"
+specie<-"PE75"
 dataPath<-paste0("../data/wlen/", specie, ".csv")
 metadataPath<-paste0("../data/wlen/", specie, "_m.txt")
 
@@ -773,23 +773,3 @@ CorLevelPlot(heatmap.data,
 dev.off()
 
 ```
-
-```{r corTable, eval=FALSE, purl=FALSE}
-textMatrix = paste(signif(MT_cor, 2), "\n(",
-signif(module.trait.corr.pvals, 1), ")", sep = "");
-dim(textMatrix) = dim(MT_cor)
-par(mar = c(6, 8.5, 3, 3));
-
-labeledHeatmap(Matrix = MT_cor,
-xLabels = names(bin_metadata),
-yLabels = names(module_eigengenes),
-ySymbols = names(module_eigengenes),
-colorLabels = FALSE,
-colors = greenWhiteRed(50),
-textMatrix = textMatrix,
-setStdMargins = FALSE,
-cex.text = 0.5,
-zlim = c(-1,1),
-main = paste("Module-trait relationships"))
-```
-

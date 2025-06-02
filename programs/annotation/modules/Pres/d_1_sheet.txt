@@ -1,0 +1,272 @@
+Function	TotalCounts	ModuleCounts	Pvalue	Relevancy	Module
+Photosynthesis	774	5	0.062486847807368	False	darkred
+Carbohydrate metabolism	771	1	0.7274531443905105	False	darkred
+Lipid metabolism	1450	2	0.4440455190620042	False	darkred
+Redox homeostasis	602	4	0.08446183662013465	False	darkred
+Phytohormone action	1356	2	0.5925173797120118	False	darkred
+Chromatin organisation	1655	8	0.14090940792488232	False	darkred
+Cell division	1729	13	0.000935766204809452	True	darkred
+RNA biosynthesis	5305	13	0.7787305098649306	False	darkred
+RNA processing	1619	1	0.13783705148059475	False	darkred
+Protein biosynthesis	2017	1	0.046163857315910856	True	darkred
+Protein modification	3415	17	0.015375343540287427	True	darkred
+Protein homeostasis	3834	14	0.25516598326550166	False	darkred
+Cytoskeleton organisation	1133	5	0.24358137938613544	False	darkred
+Cell wall organisation	1345	1	0.2778702374375962	False	darkred
+Vesicle trafficking	1902	1	0.06728715689536377	False	darkred
+Protein translocation	697	2	0.7173240927947868	False	darkred
+Solute transport	3163	11	0.37656497022792823	False	darkred
+Nutrient uptake	547	1	1.0	False	darkred
+External stimuli response	958	4	0.33894564531733984	False	darkred
+Multi-process regulation	2009	7	0.5067485516268523	False	darkred
+Photosynthesis	774	1	0.04853498767112332	True	cyan
+Cellular respiration	713	8	0.1686894329279728	False	cyan
+Carbohydrate metabolism	771	2	0.1863878414059704	False	cyan
+Amino acid metabolism	882	15	0.0015304759392362052	True	cyan
+Lipid metabolism	1450	13	0.3343749253352857	False	cyan
+Nucleotide metabolism	354	5	0.10407946324981279	False	cyan
+Secondary metabolism	350	1	0.5262049604689225	False	cyan
+Redox homeostasis	602	7	0.20666583770873936	False	cyan
+Phytohormone action	1356	2	0.007197734001211863	True	cyan
+Chromatin organisation	1655	15	0.2902227204634125	False	cyan
+Cell division	1729	11	0.88281108526863	False	cyan
+DNA damage response	384	5	0.20007644240699757	False	cyan
+RNA biosynthesis	5305	12	8.61761060436953e-07	True	cyan
+RNA processing	1619	6	0.12598007072498546	False	cyan
+RNA homeostasis	1170	10	0.47465824096099196	False	cyan
+Protein biosynthesis	2017	29	0.0002752850775741506	True	cyan
+Protein modification	3415	12	0.009552559674200977	True	cyan
+Protein homeostasis	3834	19	0.1262205675222354	False	cyan
+Cytoskeleton organisation	1133	14	0.042996252310245425	True	cyan
+Cell wall organisation	1345	6	0.31827844409552364	False	cyan
+Vesicle trafficking	1902	23	0.010538177102161383	True	cyan
+Protein translocation	697	4	1.0	False	cyan
+Solute transport	3163	29	0.14720729026105744	False	cyan
+Nutrient uptake	547	5	0.4396675523456417	False	cyan
+External stimuli response	958	2	0.07365863474310884	False	cyan
+Multi-process regulation	2009	30	9.344639836462545e-05	True	cyan
+Plant reproduction	329	2	1.0	False	cyan
+Amino acid metabolism	882	4	0.05077925397838517	False	darkolivegreen
+Lipid metabolism	1450	10	8.733265602240277e-05	True	darkolivegreen
+Phytohormone action	1356	2	1.0	False	darkolivegreen
+Chromatin organisation	1655	5	0.18945505474279284	False	darkolivegreen
+RNA biosynthesis	5305	4	0.13563053771519243	False	darkolivegreen
+RNA processing	1619	1	0.5219805868566383	False	darkolivegreen
+RNA homeostasis	1170	2	0.7080744471531937	False	darkolivegreen
+Protein modification	3415	6	0.6571757551674047	False	darkolivegreen
+Protein homeostasis	3834	9	0.19926695634026148	False	darkolivegreen
+Cytoskeleton organisation	1133	1	1.0	False	darkolivegreen
+Cell wall organisation	1345	5	0.06114951992442643	False	darkolivegreen
+Solute transport	3163	10	0.03142654363160977	True	darkolivegreen
+External stimuli response	958	1	1.0	False	darkolivegreen
+Multi-process regulation	2009	3	1.0	False	darkolivegreen
+Plant organogenesis	683	2	0.2932427235310742	False	darkolivegreen
+Photosynthesis	774	2	1.0	False	saddlebrown
+Cellular respiration	713	4	0.11832745493646724	False	saddlebrown
+Carbohydrate metabolism	771	1	0.726471427671629	False	saddlebrown
+Amino acid metabolism	882	2	1.0	False	saddlebrown
+Lipid metabolism	1450	10	0.004865057603941912	True	saddlebrown
+Chromatin organisation	1655	1	0.13523895591022772	False	saddlebrown
+Cell division	1729	1	0.09374521261846425	False	saddlebrown
+DNA damage response	384	1	1.0	False	saddlebrown
+RNA biosynthesis	5305	6	0.020463036179477194	True	saddlebrown
+RNA processing	1619	9	0.03975672764745459	True	saddlebrown
+RNA homeostasis	1170	10	0.0010352690213722563	True	saddlebrown
+Protein biosynthesis	2017	8	0.2563062280508496	False	saddlebrown
+Protein modification	3415	9	1.0	False	saddlebrown
+Protein homeostasis	3834	6	0.24295523587863477	False	saddlebrown
+Cytoskeleton organisation	1133	2	0.7725149758244628	False	saddlebrown
+Cell wall organisation	1345	2	0.5889079665489618	False	saddlebrown
+Vesicle trafficking	1902	8	0.16447123440604394	False	saddlebrown
+Protein translocation	697	4	0.11138669900551956	False	saddlebrown
+Solute transport	3163	4	0.14612995454283223	False	saddlebrown
+Nutrient uptake	547	2	0.6567404833679671	False	saddlebrown
+Multi-process regulation	2009	12	0.006475809494451313	True	saddlebrown
+Plant reproduction	329	3	0.055946075476252695	False	saddlebrown
+Plant organogenesis	683	1	1.0	False	saddlebrown
+Photosynthesis	774	2	0.593708675680588	False	grey60
+Cellular respiration	713	3	1.0	False	grey60
+Carbohydrate metabolism	771	3	1.0	False	grey60
+Amino acid metabolism	882	3	0.8031273289748246	False	grey60
+Lipid metabolism	1450	2	0.051612362904960865	False	grey60
+Nucleotide metabolism	354	1	1.0	False	grey60
+Redox homeostasis	602	6	0.06907922374061251	False	grey60
+Phytohormone action	1356	5	0.6906384747752708	False	grey60
+Chromatin organisation	1655	3	0.09652751569669776	False	grey60
+Cell division	1729	9	0.7202537666715714	False	grey60
+DNA damage response	384	6	0.010520066093799352	True	grey60
+RNA biosynthesis	5305	26	0.8310722402681398	False	grey60
+RNA processing	1619	15	0.014421739351596859	True	grey60
+RNA homeostasis	1170	4	0.666502602287455	False	grey60
+Protein biosynthesis	2017	6	0.3165797403242544	False	grey60
+Protein modification	3415	14	0.6961335548305851	False	grey60
+Protein homeostasis	3834	29	0.01297888538209337	True	grey60
+Cytoskeleton organisation	1133	1	0.04776596916626344	True	grey60
+Cell wall organisation	1345	7	0.6887652842432334	False	grey60
+Vesicle trafficking	1902	6	0.39203916109524584	False	grey60
+Protein translocation	697	1	0.2704494457381103	False	grey60
+Solute transport	3163	13	0.6868232400454464	False	grey60
+Nutrient uptake	547	5	0.19357278346503706	False	grey60
+External stimuli response	958	8	0.14447813333406478	False	grey60
+Multi-process regulation	2009	9	1.0	False	grey60
+Plant reproduction	329	5	0.02105378540189906	True	grey60
+Plant organogenesis	683	4	0.5710601461922633	False	grey60
+Photosynthesis	774	5	2.200983912325432e-18	True	yellow
+Cellular respiration	713	20	9.061951364765819e-07	True	yellow
+Carbohydrate metabolism	771	77	0.00223452302703856	True	yellow
+Amino acid metabolism	882	33	3.484079019511389e-05	True	yellow
+Lipid metabolism	1450	106	0.7149391415363088	False	yellow
+Nucleotide metabolism	354	16	0.06055782914959806	False	yellow
+Secondary metabolism	350	25	0.9165971533700564	False	yellow
+Redox homeostasis	602	50	0.22942719341292578	False	yellow
+Phytohormone action	1356	138	1.553120762177477e-05	True	yellow
+Chromatin organisation	1655	46	8.703923699430241e-15	True	yellow
+Cell division	1729	83	9.938143329780325e-05	True	yellow
+DNA damage response	384	10	0.00018622729875043077	True	yellow
+RNA biosynthesis	5305	363	0.5092658733773845	False	yellow
+RNA processing	1619	77	0.0001111594592839725	True	yellow
+RNA homeostasis	1170	29	2.2910389702013323e-12	True	yellow
+Protein biosynthesis	2017	19	1.8421932645775757e-41	True	yellow
+Protein modification	3415	378	5.05284689992288e-19	True	yellow
+Protein homeostasis	3834	239	0.034189228040889565	True	yellow
+Cytoskeleton organisation	1133	182	1.3312163729478714e-25	True	yellow
+Cell wall organisation	1345	255	1.0467046913890846e-48	True	yellow
+Vesicle trafficking	1902	145	0.3360179825340415	False	yellow
+Protein translocation	697	20	1.5344771005389266e-06	True	yellow
+Solute transport	3163	237	0.32977885518878414	False	yellow
+Nutrient uptake	547	51	0.04350408072560394	True	yellow
+External stimuli response	958	68	0.9491556713971526	False	yellow
+Multi-process regulation	2009	144	0.858302865625254	False	yellow
+Plant reproduction	329	23	1.0	False	yellow
+Plant organogenesis	683	69	0.003198156712384258	True	yellow
+Clade-specific metabolism	28	3	0.44571607609982755	False	yellow
+Photosynthesis	774	1	0.0244077457397942	True	darkgreen
+Cellular respiration	713	3	0.2965479858237439	False	darkgreen
+Carbohydrate metabolism	771	1	0.02431311748813994	True	darkgreen
+Amino acid metabolism	882	4	0.3400365428835195	False	darkgreen
+Lipid metabolism	1450	14	0.5509278253606228	False	darkgreen
+Phytohormone action	1356	25	0.00017612519014464483	True	darkgreen
+Chromatin organisation	1655	2	0.00022380285806677003	True	darkgreen
+Cell division	1729	1	1.4846148590968228e-05	True	darkgreen
+DNA damage response	384	1	0.3845966851677711	False	darkgreen
+RNA biosynthesis	5305	94	3.0285723773629194e-13	True	darkgreen
+RNA homeostasis	1170	2	0.0074521665472410265	True	darkgreen
+Protein biosynthesis	2017	2	1.1636032273140235e-05	True	darkgreen
+Protein modification	3415	14	0.0038534007199778485	True	darkgreen
+Protein homeostasis	3834	8	4.40442021973635e-07	True	darkgreen
+Cytoskeleton organisation	1133	11	0.504499113290428	False	darkgreen
+Cell wall organisation	1345	59	5.283587771225703e-26	True	darkgreen
+Vesicle trafficking	1902	1	3.1315398994221278e-06	True	darkgreen
+Solute transport	3163	37	0.03051600420569097	True	darkgreen
+Nutrient uptake	547	7	0.22531882666229175	False	darkgreen
+External stimuli response	958	7	1.0	False	darkgreen
+Multi-process regulation	2009	14	0.6126238685812533	False	darkgreen
+Plant reproduction	329	8	0.006155539517068121	True	darkgreen
+Plant organogenesis	683	22	7.08626989872217e-08	True	darkgreen
+Photosynthesis	774	33	2.094468279759286e-27	True	blue
+Cellular respiration	713	65	3.721345015286481e-09	True	blue
+Carbohydrate metabolism	771	89	4.2745508701474294e-05	True	blue
+Amino acid metabolism	882	149	0.9636987941573131	False	blue
+Lipid metabolism	1450	163	1.7038218618827748e-09	True	blue
+Nucleotide metabolism	354	75	0.03199255245203534	True	blue
+Secondary metabolism	350	19	1.4781247555680008e-10	True	blue
+Redox homeostasis	602	46	4.387262476443301e-11	True	blue
+Phytohormone action	1356	134	2.0219395469775043e-13	True	blue
+Chromatin organisation	1655	311	0.02925363617668736	True	blue
+Cell division	1729	562	5.978644960917286e-60	True	blue
+DNA damage response	384	95	6.624679370430518e-05	True	blue
+RNA biosynthesis	5305	684	4.0821851689518373e-17	True	blue
+RNA processing	1619	315	0.004386257095349132	True	blue
+RNA homeostasis	1170	211	0.26678434841747417	False	blue
+Protein biosynthesis	2017	974	1.2367125243288123e-249	True	blue
+Protein modification	3415	511	0.002406187527625046	True	blue
+Protein homeostasis	3834	590	0.012635272183865062	True	blue
+Cytoskeleton organisation	1133	297	6.722097702890122e-16	True	blue
+Cell wall organisation	1345	187	0.0033878178957269015	True	blue
+Vesicle trafficking	1902	229	3.3638881648539307e-09	True	blue
+Protein translocation	697	171	1.6607749880692776e-07	True	blue
+Solute transport	3163	355	5.3216641821971814e-20	True	blue
+Nutrient uptake	547	55	8.511727314967957e-06	True	blue
+External stimuli response	958	148	0.2744374003039748	False	blue
+Multi-process regulation	2009	303	0.03231808353454813	True	blue
+Plant reproduction	329	46	0.18278968482878424	False	blue
+Plant organogenesis	683	106	0.38072436641394897	False	blue
+Clade-specific metabolism	28	1	0.0733549146259357	False	blue
+Photosynthesis	774	1	1.0	False	steelblue
+Cellular respiration	713	4	0.04482205700040736	True	steelblue
+Carbohydrate metabolism	771	1	1.0	False	steelblue
+Amino acid metabolism	882	8	0.00024548633109142354	True	steelblue
+Lipid metabolism	1450	7	0.018769136143292786	True	steelblue
+Nucleotide metabolism	354	2	0.14210243499637656	False	steelblue
+Secondary metabolism	350	1	0.48208654099459497	False	steelblue
+Phytohormone action	1356	3	0.7423370332158135	False	steelblue
+Chromatin organisation	1655	2	0.7716158508126272	False	steelblue
+Cell division	1729	5	0.2588599686762615	False	steelblue
+RNA biosynthesis	5305	3	0.015688165819319855	True	steelblue
+RNA homeostasis	1170	1	0.7278599129865682	False	steelblue
+Protein biosynthesis	2017	3	1.0	False	steelblue
+Protein modification	3415	6	1.0	False	steelblue
+Protein homeostasis	3834	15	0.005066465457368444	True	steelblue
+Vesicle trafficking	1902	2	0.5867485877931999	False	steelblue
+Solute transport	3163	7	0.665194219107083	False	steelblue
+External stimuli response	958	3	0.26638906881431706	False	steelblue
+Multi-process regulation	2009	3	1.0	False	steelblue
+Cellular respiration	713	7	1.906707263766264e-08	True	yellowgreen
+Secondary metabolism	350	1	0.14975920381829919	False	yellowgreen
+Phytohormone action	1356	1	0.47081220794718176	False	yellowgreen
+Chromatin organisation	1655	1	0.5414367122310629	False	yellowgreen
+RNA biosynthesis	5305	1	0.49971975554913883	False	yellowgreen
+RNA homeostasis	1170	2	0.10036122378334997	False	yellowgreen
+Protein modification	3415	1	1.0	False	yellowgreen
+Solute transport	3163	5	0.012458784944670918	True	yellowgreen
+Cellular respiration	713	3	0.0007691171561681187	True	darkmagenta
+Chromatin organisation	1655	1	0.3632228794510118	False	darkmagenta
+DNA damage response	384	1	0.0979478745550767	False	darkmagenta
+RNA biosynthesis	5305	1	1.0	False	darkmagenta
+Protein biosynthesis	2017	2	0.09838158164078184	False	darkmagenta
+Protein modification	3415	1	0.6142382306253412	False	darkmagenta
+Cell wall organisation	1345	1	0.3060627954059196	False	darkmagenta
+Vesicle trafficking	1902	1	0.4056648079990273	False	darkmagenta
+Cellular respiration	713	1	0.7314317549092226	False	darkgrey
+Amino acid metabolism	882	5	0.2093068035945413	False	darkgrey
+Lipid metabolism	1450	3	0.6336232434638716	False	darkgrey
+Redox homeostasis	602	11	3.8866305110481034e-06	True	darkgrey
+Phytohormone action	1356	7	0.20981214695926337	False	darkgrey
+Chromatin organisation	1655	5	1.0	False	darkgrey
+Cell division	1729	8	0.2697260030850564	False	darkgrey
+RNA biosynthesis	5305	8	0.01802118722987335	True	darkgrey
+RNA processing	1619	8	0.17817016129538377	False	darkgrey
+RNA homeostasis	1170	7	0.10330981685211071	False	darkgrey
+Protein biosynthesis	2017	8	0.5384960830088984	False	darkgrey
+Protein modification	3415	7	0.2668954193138128	False	darkgrey
+Protein homeostasis	3834	5	0.03304939251265315	True	darkgrey
+Cytoskeleton organisation	1133	6	0.17922044438956075	False	darkgrey
+Vesicle trafficking	1902	8	0.399773842607538	False	darkgrey
+Protein translocation	697	11	1.5296045622848612e-05	True	darkgrey
+Solute transport	3163	6	0.24704621963019163	False	darkgrey
+Nutrient uptake	547	2	0.6939898447624018	False	darkgrey
+External stimuli response	958	7	0.03392001761830915	True	darkgrey
+Multi-process regulation	2009	6	1.0	False	darkgrey
+Plant organogenesis	683	2	1.0	False	darkgrey
+Photosynthesis	774	3	0.19557759554275475	False	darkturquoise
+Cellular respiration	713	4	0.052267419810651645	False	darkturquoise
+Amino acid metabolism	882	5	0.03013081716797844	True	darkturquoise
+Lipid metabolism	1450	6	0.06609537893962084	False	darkturquoise
+Nucleotide metabolism	354	1	0.5034666818069677	False	darkturquoise
+Secondary metabolism	350	1	0.49950616977450635	False	darkturquoise
+Phytohormone action	1356	2	1.0	False	darkturquoise
+Chromatin organisation	1655	3	1.0	False	darkturquoise
+Cell division	1729	4	0.5845436964262328	False	darkturquoise
+RNA biosynthesis	5305	5	0.09393604392163446	False	darkturquoise
+RNA processing	1619	2	0.7727882518522244	False	darkturquoise
+RNA homeostasis	1170	5	0.08087410082409877	False	darkturquoise
+Protein biosynthesis	2017	4	1.0	False	darkturquoise
+Protein modification	3415	3	0.15863631398806943	False	darkturquoise
+Protein homeostasis	3834	13	0.05194997069930448	False	darkturquoise
+Cytoskeleton organisation	1133	4	0.288139446894046	False	darkturquoise
+Cell wall organisation	1345	2	1.0	False	darkturquoise
+Vesicle trafficking	1902	3	1.0	False	darkturquoise
+Protein translocation	697	4	0.04883673989246327	True	darkturquoise
+Solute transport	3163	2	0.0916700722492841	False	darkturquoise
+Plant reproduction	329	4	0.004108558390406307	True	darkturquoise
+Plant organogenesis	683	1	1.0	False	darkturquoise
