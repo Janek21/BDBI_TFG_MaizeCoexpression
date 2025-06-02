@@ -1,0 +1,73 @@
+---
+title: "Preliminary Data Analysis"
+author: "Jan Izquierdo"
+date: "2025-02-01"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load data
+
+```{r}
+library(ggplot2)
+```
+
+
+```{r}
+data<-read.delim("../data/original_data/all5gt.nolen.csv", stringsAsFactors=TRUE, row.names=1)
+metadata<-read.delim("../data/original_data/sample.tissue.correct.cluadj.txt", header=FALSE, stringsAsFactors=TRUE, row.names=1)
+colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "tissue")
+```
+
+
+# Analysis
+
+## Quality
+```{r}
+ggplot(metadata, aes(x=quality, fill=specie))+
+  geom_bar()+
+  scale_fill_brewer(palette="Dark2")+
+  labs(x="Line", y="Repetitions", fill="Species")+#, title="Quality count")+
+  theme_bw()
+```
+
+
+```{r}
+metaLQ<-metadata[metadata$quality!=0,]
+metaLQ$quality<-as.factor(metaLQ$quality)
+
+ggplot(metaLQ, aes(x=specie, fill=tissue, color=quality))+
+  geom_bar(size=1)+
+  scale_fill_brewer(palette="Spectral")+
+  scale_color_brewer(palette="Set1")+
+  labs(x="Line", y="Repetitions", fill="Tissue", color="Quality")+#, title="Low quality per tissue and line")+
+  theme_bw()
+```
+
+Keep only the ones with quality==0 (highest quality) to have coherence in the followup analysis
+```{r}
+#For metadata
+metadata<-metadata[metadata$quality==0,]
+#For data
+data<-data[colnames(data) %in% rownames(metadata)]
+```
+
+## Dimensions
+
+Check if data and metadata present the same number of samples (they should)
+```{r}
+ncol(data)
+nrow(metadata)
+```
+
+Which samples are in metadata but not in data
+```{r}
+metadata[!rownames(metadata) %in% colnames(data),]
+#Pollen samples, are those all the pollen samples?
+
+metadata[metadata$tissue=="pollen",]
+```
+The samples that are missing from data belong to pollen
