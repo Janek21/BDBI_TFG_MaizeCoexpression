@@ -12,6 +12,7 @@ def ME_group(annlist):
         if relevance: #if relevant, they are valid as module functions
             ME=af.get_ME() #get ME, function and pval
             funct=af.get_function()
+            print(af.entry)
             pval=af.get_pval()
             
             if ME in overrepME_dic.keys(): #set up a dict for the representative functions of all modules
@@ -28,9 +29,9 @@ def diKeyer(representationD, ME, toplevel=3): #orders dictionary values by signi
     
 
 def main():
-    filepath="./annotation/modules/Pres/anT_swissprot_sheet.txt"
-    #filepath="./annotation/Pres/d_3_sheet.txt"
-    functiontype="swissprot" #d1,d2,d3, mercator, prot-scriber, swissprot
+    #filepath="./annotation/modules/Pres/anT_swissprot_sheet.txt"
+    filepath="./annotation/modules/Pres/d_1_sheet.txt"
+    functiontype="d1" #d1,d2,d3, mercator, prot-scriber, swissprot
     annlist=[]
     siglevel=3 #how many levels of significant functions (top 3, etc)
     with open(filepath) as fp:
@@ -38,6 +39,8 @@ def main():
             l=annotated_function(line)
             annlist.append(l)
     
+    print(annlist[0].entry)
+    print("toodlelooo")
     if "TotalCounts" in annlist[0].entry: #remove header
         annlist.pop(0)
     

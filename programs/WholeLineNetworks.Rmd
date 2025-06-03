@@ -209,7 +209,7 @@ Create the plot functions and plot information
 multiColHist<-function(data, location, color_var){ #gets the data table, the concrete column(tissue) and the color for the tissue
   loc_var<-data[[location]] #get the tissue data
   p<-ggplot(data, aes(x=loc_var))+
-    geom_histogram(bins = 30, fill=color_var, color="black")+
+    geom_histogram(bins= 30, fill=color_var, color="black")+
     xlab("")+ylab("")+theme_minimal() #plot a colored histogram for all genes of X tissue
   return(p)
 }
@@ -307,9 +307,9 @@ plotTitle<-paste0("Normalized data distribution using ", NormType)
 
 norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta[repl_selection,])/6)) #creates a table that organizes the plots
 
-png(paste0("./DistrPlots/norm", NormType, "_distPlot.png"), width=1600, height=800) #normCPM_distPlot
+#png(paste0("./DistrPlots/norm", NormType, "_distPlot.png"), width=1600, height=800) #normCPM_distPlot
 grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2, top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
-dev.off()
+#dev.off()
 ```
 
 
@@ -366,9 +366,9 @@ plotTitle<-paste0("Normalized data distribution using ", NormType)
 
 norm_Ptab<-arrangeGrob(grobs=NormHistList, ncol=ceiling(nrow(repl_meta[repl_selection,])/6)) #creates a table that organizes the plots
 
-png(paste0("./DistrPlots/norm", NormType, "_distPlot.png"), width=1600, height=800) #normRPKM_distPlot
+#png(paste0("./DistrPlots/norm", NormType, "_distPlot.png"), width=1600, height=800) #normRPKM_distPlot
 grid.arrange(norm_Ptab, legend_var, widths = c(10, 2.3), ncol=2,  top=textGrob(plotTitle, gp=gpar(fontsize=20))) #plots the plot list and legend together
-dev.off()
+#dev.off()
 ```
 # Expression data analysis
 
@@ -493,9 +493,6 @@ heatmaply(sample_correlations, clustering_method = "complete",
 
 Get list of powers and do the calculations
 ```{r nwPowerList}
-#@@ modify all powers choose chapter
-#https://github.com/kpatel427/YouTubeTutorials/blob/main/WGCNA.R
-
 Nrepl_data<-t(Nrepl_data)
 
 power <- c(c(1:15), seq(from = 17, to = 50, by = 2)) #more detailed in lower values
@@ -589,6 +586,20 @@ plotDendroAndColors(ModNetwork$dendrograms[[1]], cbind(ModNetwork$unmergedColors
                     addGuide = TRUE,
                     hang= 0.03, #@@ review params
                     guideHang = 0.05)
+```
+
+```{r}
+color<-data.frame(module=ModNetwork$colors, stringsAsFactors=TRUE)
+color$gene<-rownames(color)
+
+ggplot(color, aes(x=module, fill=module))+
+  geom_bar()+
+  scale_fill_identity()+
+  labs(x="Modules", y="Gene number", fill="Module")+
+  theme_bw()+
+  theme(axis.text.x=element_text(color="black", size=10, angle=45, hjust=1),
+        axis.text.y=element_text(color="black", size=10),
+        panel.border=element_rect(linewidth=1))
 ```
 
 ## Relate modules to traits
@@ -787,7 +798,7 @@ write.table(heatmap.data, file="./CorPlots/Sp_table.txt")
 
 plotTitle<-paste0("Correlation plot by lines using ", NormType)
 
-png(paste0("./CorPlots/sp_", NormType, "_corplot.png"), width=1600, height=800)
+#png(paste0("./CorPlots/sp_", NormType, "_corplot.png"), width=1600, height=800)
 #svg(paste0("./sp_", NormType, "_corplot.svg"), width=1600/60, height=800/60) #sp_CPM_corplot
 CorLevelPlot(heatmap.data,
              x = colnames(bin_metadata),
@@ -796,7 +807,7 @@ CorLevelPlot(heatmap.data,
              rotLabX = 45, rotTitleY = 90,
              cexCorval = 0, cexLabY = 0.7, cexLabX = 0.7
             )
-dev.off()
+#dev.off()
 ```
 
 ```{r, eval=FALSE}

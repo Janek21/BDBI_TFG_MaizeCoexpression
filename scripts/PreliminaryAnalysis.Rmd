@@ -27,17 +27,35 @@ colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "tissue")
 
 ## Quality
 ```{r}
+#count each score
+q_count<-as.data.frame(table(metadata$quality))
+colnames(q_count)<-c("score", "value")
+
+#transform to factor
+q_count$score<-as.factor(q_count$score)
+metadata$quality<-as.factor(metadata$quality)
+
+#plot with text
+png("../report/presentation/images/quality_counts.png", width=1600, height=800)
 ggplot(metadata, aes(x=quality, fill=specie))+
   geom_bar()+
+  coord_cartesian(ylim = c(0, 50))+
   scale_fill_brewer(palette="Dark2")+
-  labs(x="Line", y="Repetitions", fill="Species")+#, title="Quality count")+
-  theme_bw()
+  labs(x="Quality score", y="Repetitions", fill="Species")+
+  geom_text(data=q_count, aes(x=score, y=value, label=value), inherit.aes=FALSE, vjust= -0.5, size=9)+
+  theme_bw()+
+  theme(legend.key.width=unit(3, "cm"),
+        legend.text=element_text(size=16),
+        legend.title=element_text(size=20),
+        panel.border=element_rect(linewidth=1))
+
+dev.off()
+
 ```
 
 
 ```{r}
 metaLQ<-metadata[metadata$quality!=0,]
-metaLQ$quality<-as.factor(metaLQ$quality)
 
 ggplot(metaLQ, aes(x=specie, fill=tissue, color=quality))+
   geom_bar(size=1)+
@@ -50,24 +68,40 @@ ggplot(metaLQ, aes(x=specie, fill=tissue, color=quality))+
 Keep only the ones with quality==0 (highest quality) to have coherence in the followup analysis
 ```{r}
 #For metadata
-metadata<-metadata[metadata$quality==0,]
+metadata_q0<-metadata[metadata$quality==0,]
 #For data
-data<-data[colnames(data) %in% rownames(metadata)]
+data_q0<-data[colnames(data) %in% rownames(metadata_q0)]
 ```
 
 ## Dimensions
 
 Check if data and metadata present the same number of samples (they should)
 ```{r}
-ncol(data)
-nrow(metadata)
+ncol(data_q0)
+nrow(metadata_q0)
+
+dataCounts<-data.frame(origin=c("data", "metadata"), value=c(ncol(data_q0), nrow(metadata_q0)))
+
+png("../report/presentation/images/sample_counts.png", width=1600, height=800)
+ggplot(dataCounts, aes(x=origin, y=value, fill=origin))+
+  geom_bar(stat="identity", width=0.5)+
+  geom_text(aes(label=value), vjust= -0.2, size=5)+
+  labs(x="Data origin", y="Sample number", fill="Data origin")+
+  theme_linedraw()+
+  theme(axis.text.x=element_text(color="black", size=10),
+        axis.text.y=element_text(color="black", size=10),
+        panel.border=element_rect(linewidth=0),
+        legend.key.width=unit(1, "cm"),
+        legend.text=element_text(size=12),
+        legend.title=element_text(size=16))
+dev.off()
 ```
 
 Which samples are in metadata but not in data
 ```{r}
-metadata[!rownames(metadata) %in% colnames(data),]
+metadata_q0[!rownames(metadata_q0) %in% colnames(data_q0),]
 #Pollen samples, are those all the pollen samples?
 
-metadata[metadata$tissue=="pollen",]
+metadata_q0[metadata_q0$tissue=="pollen",]
 ```
 The samples that are missing from data belong to pollen

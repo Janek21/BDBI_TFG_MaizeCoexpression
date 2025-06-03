@@ -38,6 +38,7 @@ library(plotly)
 library(factoextra)
 library(umap)
 library(heatmaply)
+library(dbscan)
 library(reticulate)
 reticulate::use_python("/usr/bin/python3", required=TRUE)
 ```
@@ -60,7 +61,7 @@ colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
 moduleList<-levels(genemodule$modules)
 table(genemodule$modules)
 #Data selection
-ME<-"lightcyan" #green
+ME<-"turquoise" #green #lightcyan
 genemodule$genes<-rownames(genemodule)
 MEgeneList<-rownames(genemodule[genemodule$modules==ME,])
 dataNL<-dataNL[MEgeneList,]
@@ -320,13 +321,6 @@ ggplot(cor_df, aes(x=Correlation))+
        y="Frequency")+
   theme_minimal()
 ```
-KMEANS WITH EXPRESSION
-zsore
-pca
-variance analysis with different pcas
-clustering
-@@ Otherwise:
-save corTable and load it to networkX
 
 # Preclustering
 K-means and dbscan are less efficient when in high dimensionality, so we will reduce it through PCA and Principal Component selection (cutoff)
@@ -357,9 +351,9 @@ PC_c<-1:length(c_var)
 Calculate PC cutoff
 ```{r pc_cornerPlot}
 #search cutoff
-plot(pca_data$`Cumulative Proportion`, xlab="PC component number", ylab="Cumulative variance")
-abline(v=PC_c[1], col="red")
-abline(h=c_var[length(c_var)], col="red")
+plot(pca_data$`Cumulative Proportion`, xlab="PC component number", ylab="Cumulative variance", main="Elbow plot for PC component cutoff", lwd=2)
+abline(v=PC_c[1], col="red", lwd=2)
+abline(h=c_var[length(c_var)], col="red", lwd=2)
 ```
 
 Use the intersection point (corner of a triangle, so point which would be plotted a perfect elbow plot) as a point of reference and calulate all distances to it. Take the minium distance, the closes point to the reference.
@@ -396,8 +390,8 @@ plot(distance_vector, xlab="Position", ylab="Distance", main="Distances to corne
 #So the objective is min distance
 pc_cutoff<-which.min(distance_vector)
 
-plot(pca_data$`Cumulative Proportion`, xlab="PC component number", ylab="Cumulative variance", main="Elbow plot for PC component cutoff")
-abline(v=pc_cutoff, col="red", lwd=2)
+plot(pca_data$`Cumulative Proportion`, xlab="PC component number", ylab="Cumulative variance", main="Elbow plot for PC component cutoff", lwd=2)
+abline(v=pc_cutoff, col="blue", lwd=2)
 ```
 
 Having obtained the cutoff point, take all PC before it into a new data frame
@@ -430,9 +424,13 @@ for (k in 1:20){
   total_means<-c(total_means, mean_res)
 }
 
-plot(1:20, total_means, xlab="Distance between clusters", type="b")
-abline(v=1, col="red")
-abline(h=total_means[length(total_means)], col="red")
+#png("../report/presentation/images/Elbow_kmeans2.png", width=1600, height=800)
+plot(1:20, total_means, xlab="Nº of clusters", ylab="Total means", main="Cluster elbow for Kmeans", type="b", lwd=2)
+abline(v=1, col="red", lwd=2)
+abline(h=total_means[length(total_means)], col="red", lwd=2)
+#abline(v=km_num, col="blue", lwd=2)
+
+#dev.off()
 ```
 
 Follow the same methods for computing distances and choosing the best point as before.
@@ -458,7 +456,9 @@ kres<-kmeans(ctf_data, km_num)
 
 plot(shortened_umap$layout, col=kres$cluster, lwd=3)
 
-plot(shortened_pca$x, col=kres$cluster, lwd=3)
+#("../report/presentation/images/Kmean_pcaColor.png", width=1600, height=800)
+plot(shortened_pca$x, col=kres$cluster, lwd=3, main=paste0("PCA colored according to kmeans centroids=", km_num))
+#dev.off()
 ```
 
 
@@ -472,29 +472,88 @@ kNNdistplot(ctf_data, k=mp)
 dbres<-dbscan(ctf_data, eps=3, minPts=mp)
 plot(shortened_umap$layout, col=dbres$cluster+1, lwd=3)
 ```
-
-
-Community(louvain) clustering delivered better, finer grain clusters, more biologically relevant than KMeans and DBscan
+Clusters by KMeans and DBscan present very rough grain, too little detail, so community clustering is tested.
 
 # Saving the network
 
 ```{r}
-#write.table(geneCor, paste0("./annotation/ME_correlation/", ME, "_geneCorrelation.txt"), sep="\t")
-## write table of umap cluster, how? what do i get frm it?
+write.table(geneCor, paste0("./annotation/ME_correlation/", ME, "_geneCorrelation.txt"), sep="\t")
 ```
 
 ## Louvain community detection (python)
-```{python}
+Execute the python code together with the R code for correlation data parity (and process efficiency) and for better correlation threshold visibility
+```{python def_functions}
 import networkx as nx
 import pandas as pd
+import matplotlib.pyplot as plt
 
-arrayCor=r.geneCor
-gNames=list(r.geneList)
-tbCor=pd.DataFrame(arrayCor, columns=gNames, index=gNames)
+#function to set the correaltion table as a list of edges, which can be turned into a network
+def corrCleaner(table, ths=0.7):
+    #Join the table as gene to gene relations: rows are [gene1 gene2 correlationCoeff]
+    corList=table.stack().reset_index()
+    corList.columns=["G1", "G2", "coefficient"]
+    
+    #Take out the self-loops
+    corList_noSL=corList[corList["G1"]!=corList["G2"]]
+    #filter by threshold (observed in genCor_clustering script(plot))
+    correlations=corList_noSL[corList_noSL["coefficient"].abs()>=ths]
+    
+    return correlations
 
-print(tbCor)
-corList=tbCor.stack().reset_index()
+#transform an edgelist into a network
+def nwLoad(edgelist):
+    nw=nx.from_pandas_edgelist(edgelist, "G1", "G2", edge_attr="coefficient")
+    return nw
 
-print(corList)
+#draw and show/save a network
+def nwShow(nw, gr_title="No module", filename=None):
+    plt.figure()  
+    plt.title(gr_title)
+    nx.draw(nw,node_size=50)
+    #Show or save
+    if filename!=None:
+        plt.savefig(filename)
+    else:
+        plt.show()
+    plt.close()
+    
 ```
 
+
+```{python def_vars}
+module=r.ME #get current module
+arrayCor=r.geneCor #gene correlation table, read as array
+gNames=list(r.geneList) #list of gene names
+#transform the array into a table, give rownames and colnames as genes
+tbCor=pd.DataFrame(arrayCor, columns=gNames, index=gNames)
+```
+
+Louvain community detection
+```{python comm_clustering}
+#get an edgelist(filterd by threshold) from the correaltion table
+cor_edgelist=corrCleaner(tbCor, 0.6) #0.6
+#create and draw the network
+nw=nwLoad(cor_edgelist)
+nwShow(nw, gr_title=module)
+
+#Find communities in the network
+louvain_comms = nx.community.louvain_communities(nw, weight="correlation", seed=42)
+ print(f"Number of communities: {len(louvain_comms)}")
+
+#Draw each community
+for i, comm in enumerate(louvain_comms):
+    if len(comm)>2: #ensure no single nodes
+        subgraph=nw.subgraph(comm)
+        
+        nx.draw(subgraph, with_labels=True, node_color=f"C{i}", node_size=100, font_size=6, edge_color="gray")
+        plt.show()
+        plt.savefig(f"./graphFigs/{i}_{module}.png")
+        plt.close()
+        
+#red 0.6
+#turquoise 0.6
+```
+
+Community clustering presents finer grain clusters,whcih are more biologically relevant than the ones calculated by KMeans and DBscan
+
+"Community(louvain) clustering delivered better, finer grain clusters, more biologically relevant than KMeans and DBscan"
