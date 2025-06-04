@@ -134,8 +134,8 @@ def main():
         tp=typePossiblities[i]
         print(tp, depth)
         
-        fileD=open(f"./annotation/modules/Pres/d_{depth}_sheet.txt", "a") #a file for each depth type
-        fileT=open(f"./annotation/modules/Pres/anT_{tp}_sheet.txt", "a") #a file for each annotation type
+        fileD=open(f"./annotation/modules/Pres/d_{depth}_sheet.txt", "w") #a file for each depth type
+        fileT=open(f"./annotation/modules/Pres/anT_{tp}_sheet.txt", "w") #a file for each annotation type
         
         print(f"Function\tTotalCounts\tModuleCounts\tPvalue\tRelevancy\tModule", file=fileD)
         print(f"Function\tTotalCounts\tModuleCounts\tPvalue\tRelevancy\tModule", file=fileT)

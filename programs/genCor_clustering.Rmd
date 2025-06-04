@@ -477,7 +477,7 @@ Clusters by KMeans and DBscan present very rough grain, too little detail, so co
 # Saving the network
 
 ```{r}
-write.table(geneCor, paste0("./annotation/ME_correlation/", ME, "_geneCorrelation.txt"), sep="\t")
+write.table(geneCor, paste0("./annotation/correlation_tables/", ME, "_geneCorrelation.txt"), sep="\t")
 ```
 
 ## Louvain community detection (python)
@@ -508,7 +508,7 @@ def nwLoad(edgelist):
 #draw and show/save a network
 def nwShow(nw, gr_title="No module", filename=None):
     plt.figure()  
-    plt.title(gr_title)
+    #plt.title(gr_title)
     nx.draw(nw,node_size=50)
     #Show or save
     if filename!=None:
@@ -538,14 +538,14 @@ nwShow(nw, gr_title=module)
 
 #Find communities in the network
 louvain_comms = nx.community.louvain_communities(nw, weight="correlation", seed=42)
- print(f"Number of communities: {len(louvain_comms)}")
+print(f"Number of communities: {len(louvain_comms)}")
 
 #Draw each community
 for i, comm in enumerate(louvain_comms):
     if len(comm)>2: #ensure no single nodes
         subgraph=nw.subgraph(comm)
         
-        nx.draw(subgraph, with_labels=True, node_color=f"C{i}", node_size=100, font_size=6, edge_color="gray")
+        nx.draw(subgraph, with_labels=False, node_color=f"C{i}", node_size=100, font_size=6, edge_color="gray", linewidths=1, edgecolors='black')
         plt.show()
         plt.savefig(f"./graphFigs/{i}_{module}.png")
         plt.close()

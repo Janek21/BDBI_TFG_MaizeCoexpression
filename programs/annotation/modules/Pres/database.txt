@@ -1,1 +1,40 @@
 Function_origin	Module	SFunction_1	SFunction_2	SFunction_3
+d1	tan	Protein biosynthesis	Solute transport	Phytohormone action
+d1	lightgreen	Cell division	RNA homeostasis	Chromatin organisation
+d1	lightcyan	Cell division	DNA damage response	Chromatin organisation
+d1	green	Protein biosynthesis	Cell wall organisation	Photosynthesis
+d1	red	Chromatin organisation	Protein biosynthesis	RNA homeostasis
+d1	sienna3	RNA biosynthesis	Cell wall organisation	Phytohormone action
+d1	violet	Plant organogenesis	Multi-process regulation	Protein modification
+d1	orange	Redox homeostasis	Photosynthesis	Cellular respiration
+d1	purple	Amino acid metabolism	Redox homeostasis	RNA processing
+d1	steelblue	Amino acid metabolism	Protein homeostasis	RNA biosynthesis
+d1	darkgreen	Cell wall organisation	RNA biosynthesis	Plant organogenesis
+d1	plum1	Cell division	Multi-process regulation	RNA biosynthesis
+d1	yellow	Cell wall organisation	Protein biosynthesis	Cytoskeleton organisation
+d1	lightyellow	Cell wall organisation	Vesicle trafficking	RNA processing
+d1	saddlebrown	RNA homeostasis	Lipid metabolism	Multi-process regulation
+d1	blue	Protein biosynthesis	Cell division	Photosynthesis
+d1	salmon	Vesicle trafficking	RNA biosynthesis	RNA processing
+d1	greenyellow	Protein biosynthesis	External stimuli response	Amino acid metabolism
+d1	yellowgreen	Cellular respiration	Solute transport	RNA homeostasis
+d1	skyblue	Cell division	Secondary metabolism	Protein modification
+d1	magenta	Cellular respiration	Protein homeostasis	Cell wall organisation
+d1	darkolivegreen	Lipid metabolism	Solute transport	Amino acid metabolism
+d1	darkred	Cell division	Protein modification	Protein biosynthesis
+d1	darkturquoise	Plant reproduction	Amino acid metabolism	Protein translocation
+d1	pink	Protein biosynthesis	RNA processing	Photosynthesis
+d1	cyan	RNA biosynthesis	Multi-process regulation	Protein biosynthesis
+d1	midnightblue	DNA damage response	RNA biosynthesis	Vesicle trafficking
+d1	darkorange	Cellular respiration	Vesicle trafficking	Cell division
+d1	turquoise	Photosynthesis	Chromatin organisation	Cell division
+d1	paleturquoise	Cellular respiration	Protein homeostasis	Lipid metabolism
+d1	skyblue3	Cell wall organisation	RNA biosynthesis	Secondary metabolism
+d1	black	Solute transport	Multi-process regulation	Cell wall organisation
+d1	white	RNA processing	Multi-process regulation	Vesicle trafficking
+d1	darkmagenta	Cellular respiration	DNA damage response	Protein biosynthesis
+d1	grey	Protein biosynthesis	Photosynthesis	Chromatin organisation
+d1	grey60	DNA damage response	Protein homeostasis	RNA processing
+d1	brown	RNA processing	Photosynthesis	Cell wall organisation
+d1	royalblue	DNA damage response	RNA biosynthesis	Nucleotide metabolism
+d1	darkgrey	Redox homeostasis	Protein translocation	RNA biosynthesis

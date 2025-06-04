@@ -7,7 +7,7 @@ library(plotly)
 library(ggnewscale)
 
 #read data
-dChoice<-"anT_mercator"
+dChoice<-"anT_mercator" #anT_mercator, anT_prot-scriber, anT_swissprot
 dChoice<-"d_1"
 pvdata<-read.table(paste0("./annotation/modules/Pres/", dChoice, "_sheet.txt"), sep='\t', header=TRUE)
 #Choose relevant
@@ -38,6 +38,7 @@ bareplot<-ggplot(pvdata, aes(x=Function, y=Module))+
   guides(color=guide_legend(order=1),
          size=guide_legend(order=1))
 
+
 #highlight significant values(all equal)
 hplot<-bareplot+
   geom_point(data=subset(pvdata, TopSig), aes(fill=TopSig), color="darkorange", size=7)+
@@ -45,9 +46,11 @@ hplot<-bareplot+
   guides(fill=guide_legend(order=2))+
   theme(legend.text=element_text(size=14))
 
-#png(paste0("./annotation/modules/SigPlots/sig_", dChoice, ".png"), width=1600, height=800)
+png(paste0("./annotation/modules/SigPlots/sig_", dChoice, ".png"), width=1600, height=800)
+hplot
+dev.off()
 svg(paste0("./annotation/modules/SigPlots/sig_", dChoice, ".svg"), width=1600/60, height=800/60)
-hplot+ggtitle(dChoice)
+hplot#+ggtitle(dChoice)
 dev.off()
 
 #ggplotly(hplot)
@@ -72,8 +75,11 @@ TopPlot<-ggplot(TopSig, aes(x=Function, y=Module, color=Pvalue))+
         axis.ticks=element_line(colour="black"),
         axis.ticks.length = unit(8, "pt"))
 
+png(paste0("./annotation/modules/SigPlots/top/top_", dChoice, ".png"), width=1600, height=800)
+TopPlot
+dev.off()
 svg(paste0("./annotation/modules/SigPlots/top/top_", dChoice, ".svg"), width=1600/60, height=800/60)
-TopPlot+ggtitle(dChoice)
+TopPlot#+ggtitle(dChoice)
 dev.off()
 
 #write top significant to table

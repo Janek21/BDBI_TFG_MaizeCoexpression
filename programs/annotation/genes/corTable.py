@@ -37,8 +37,8 @@ def nwShow(nw, gr_title="No module", filename=None):
 
 
 def main():
-    #filepath="./annotation/ME_correlation/lightcyan_geneCorrelation.txt"
-    filepath="./annotation/ME_correlation/red_geneCorrelation.txt"
+    #filepath="./annotation/correlation_tables/lightcyan_geneCorrelation.txt"
+    filepath="./annotation/correlation_tables/red_geneCorrelation.txt"
     corTable=pd.read_table(filepath, sep="\t")
     cor_edgelist=corrCleaner(corTable, 0.6)
     nw=nwLoad(cor_edgelist)

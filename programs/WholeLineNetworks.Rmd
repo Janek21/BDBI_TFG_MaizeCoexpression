@@ -526,12 +526,13 @@ grid.arrange(p1, p2, nrow=2)
 ```
 
 ```{r nwPowerChoose}
-print(sft$powerEstimate)
 #Use automatic calculation
+print(sft$powerEstimate)
+#If the automatic calculation is not valid or above the maximum for network clustering(30), use an alternative
 if (is.na(sft$powerEstimate)){
   softPw<-30 #if the soft power is NA, set to 30, else take smallest possible
 }else{
-  softPw <- min(sft$powerEstimate, 30)
+  softPw <- min(sft$powerEstimate, 30) 
   }
 
 ```
@@ -587,8 +588,8 @@ plotDendroAndColors(ModNetwork$dendrograms[[1]], cbind(ModNetwork$unmergedColors
                     hang= 0.03, #@@ review params
                     guideHang = 0.05)
 ```
-
-```{r}
+Plot the amount of genes in each cluster
+```{r ME_geneAmount}
 color<-data.frame(module=ModNetwork$colors, stringsAsFactors=TRUE)
 color$gene<-rownames(color)
 
@@ -772,7 +773,7 @@ bin_metadata <- data.frame(
 rownames(bin_metadata)<-rownames(Nrepl_data)
 
 bin_metadata<-bin_metadata[,colSums(bin_metadata)>=1]
-#if any tissue is not present in sample, it will be introduced in binarization, as a full 0 column, this line removes it
+#if any tissue is not present in sample, it would be introduced in binarization, as a full 0 column, this line removes it
 
 #remove ME from names
 colnames(module_eigengenes)<-gsub("ME", "", colnames(module_eigengenes))
@@ -799,7 +800,7 @@ write.table(heatmap.data, file="./CorPlots/Sp_table.txt")
 plotTitle<-paste0("Correlation plot by lines using ", NormType)
 
 #png(paste0("./CorPlots/sp_", NormType, "_corplot.png"), width=1600, height=800)
-#svg(paste0("./sp_", NormType, "_corplot.svg"), width=1600/60, height=800/60) #sp_CPM_corplot
+svg(paste0("./CorPlots/sp_", NormType, "_corplot.svg"), width=1600/60, height=800/60) #sp_CPM_corplot
 CorLevelPlot(heatmap.data,
              x = colnames(bin_metadata),
              y = colnames(module_eigengenes),
@@ -807,7 +808,7 @@ CorLevelPlot(heatmap.data,
              rotLabX = 45, rotTitleY = 90,
              cexCorval = 0, cexLabY = 0.7, cexLabX = 0.7
             )
-#dev.off()
+dev.off()
 ```
 
 ```{r, eval=FALSE}
@@ -822,13 +823,20 @@ long_data <- melt(as.matrix(modules_data))
 colnames(long_data) <- c("Trait", "Module", "Correlation")
 
 # Create the plot
-ggplot(long_data, aes(x = Trait, y = Module, fill = Correlation)) +
-  geom_tile(aes(fill=long_data$Correlation)) +
-  scale_fill_gradient2(low = "blue", high = "red",
-                       midpoint = 0, limit = c(-1,1), space = "Lab",
-                       name="Correlation") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +
+ggplot(long_data, aes(x=Trait, y=Module, fill=Correlation)) +
+  geom_tile(color="darkgray")+
+  scale_fill_gradientn(
+    colours=c("blue", "white", "red"),
+    values=scales::rescale(c(-1, -0.1, 0, 0.1, 1)),
+    limits=c(-1, 1),
+    name="Correlation"
+  )+
+  theme_bw()+
+  theme(axis.text.x=element_text(angle=45, hjust=1, size=10, color="black"),
+        axis.text.y=element_text(size=10, color="black"),
+        panel.border=element_rect(linewidth=1),
+        panel.grid.major=element_line(color="black", linewidth=3),
+        panel.grid.minor=element_line(color="black", linewidth=3))+
   coord_fixed()
 ```
 
@@ -851,8 +859,8 @@ heatmap.data$Row.names<-NULL
 write.table(heatmap.data, file="./CorPlots/Ti_table.txt")
 
 plotTitle<-paste0("Correlation plot by tissue using ", NormType)
-png(paste0("./CorPlots/ti_", NormType, "_corplot.png"), width=1600, height=800)
-#svg(paste0("./ti_", NormType, "_corplot.svg"), width=1600/60, height=800/60) #ti_CPM_corplot
+#png(paste0("./CorPlots/ti_", NormType, "_corplot.png"), width=1600, height=800)
+svg(paste0("./CorPlots/ti_", NormType, "_corplot.svg"), width=1600/60, height=800/60) #ti_CPM_corplot
 CorLevelPlot(heatmap.data,
              x = colnames(s_bin_metadata),
              y = colnames(module_eigengenes),

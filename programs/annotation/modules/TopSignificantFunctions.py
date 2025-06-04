@@ -12,7 +12,6 @@ def ME_group(annlist):
         if relevance: #if relevant, they are valid as module functions
             ME=af.get_ME() #get ME, function and pval
             funct=af.get_function()
-            print(af.entry)
             pval=af.get_pval()
             
             if ME in overrepME_dic.keys(): #set up a dict for the representative functions of all modules
@@ -39,12 +38,10 @@ def main():
             l=annotated_function(line)
             annlist.append(l)
     
-    print(annlist[0].entry)
-    print("toodlelooo")
     if "TotalCounts" in annlist[0].entry: #remove header
         annlist.pop(0)
     
-    with open("./annotation/modules/Pres/database.txt", "a") as datafile: #create file to write results
+    with open("./annotation/modules/Pres/database.txt", "w") as datafile: #create file to write results
         readfile=open("./annotation/modules/Pres/database.txt", "r") #read file to check if there is header
         fullfile=readfile.read(1)
         if not fullfile: #if the file is empty(first time writing into it)
