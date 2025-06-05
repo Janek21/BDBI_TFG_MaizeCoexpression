@@ -61,7 +61,7 @@ colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
 moduleList<-levels(genemodule$modules)
 table(genemodule$modules)
 #Data selection
-ME<-"turquoise" #green #lightcyan
+ME<-"darkred" #green #lightcyan #turquoise
 genemodule$genes<-rownames(genemodule)
 MEgeneList<-rownames(genemodule[genemodule$modules==ME,])
 dataNL<-dataNL[MEgeneList,]

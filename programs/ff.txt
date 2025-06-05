@@ -1,0 +1,97 @@
+Zm00001eb000220	si486065g06		Gene Model - MaizeGDB
+Zm00001eb007250	pco148373a		Gene Model - MaizeGDB
+Zm00001eb010730	LOC100277079		Gene Model - MaizeGDB
+Zm00001eb012010	dgd4	digalactosyldiacylglycerol synthase4	Gene Model - MaizeGDB
+Zm00001eb035860	cl4586_1a		Gene Model - MaizeGDB
+Zm00001eb040250	si687076d05		Gene Model - MaizeGDB
+Zm00001eb042240	dbf1	DRE-binding protein 1	GenBank
+Zm00001eb042240	dbf1	DRE-binding protein 1	GenBank
+Zm00001eb042240	dbf1	DRE-binding protein 1	Gene Model - MaizeGDB
+Zm00001eb057630	pco110965		Gene Model - MaizeGDB
+Zm00001eb059960	pco138129		Gene Model - MaizeGDB
+Zm00001eb060380	TIDP3172		Gene Model - MaizeGDB
+Zm00001eb061530	aprl8	adenosine 5'-phosphosulfate reductase-like8	GenBank
+Zm00001eb061530	aprl8	adenosine 5'-phosphosulfate reductase-like8	GenBank
+Zm00001eb061530	aprl8	adenosine 5'-phosphosulfate reductase-like8	GenBank
+Zm00001eb061530	aprl8	adenosine 5'-phosphosulfate reductase-like8	GenBank
+Zm00001eb061530	aprl8	adenosine 5'-phosphosulfate reductase-like8	Gene Model - MaizeGDB
+Zm00001eb065460	gbp1	GTP-binding protein homolog1	GenBank
+Zm00001eb065460	gbp1	GTP-binding protein homolog1	Gene Model - MaizeGDB
+Zm00001eb101420	dof2	DNA binding with one finger2	Classical Genes
+Zm00001eb106060	IDP4268		Gene Model - MaizeGDB
+Zm00001eb116810	cl55281_1		Gene Model - MaizeGDB
+Zm00001eb121880	npi249a		Gene Model - MaizeGDB
+Zm00001eb123690	cnr8	Cell Number Regulator8	Gene Model - MaizeGDB
+Zm00001eb129710	cef1	Zea CEFD homolog1	GenBank
+Zm00001eb129710	cef1	Zea CEFD homolog1	GenBank
+Zm00001eb129710	cef1	Zea CEFD homolog1	Gene Model - MaizeGDB
+Zm00001eb131420	gata27	C2C2-GATA-transcription factor 27	Gene Model - MaizeGDB
+Zm00001eb134790	umc1750		Gene Model - MaizeGDB
+Zm00001eb135920	lsd4	lesion simulating disease4	Gene Model - MaizeGDB
+Zm00001eb144680	LOC100192701		GenBank
+Zm00001eb144680	LOC100192701		Gene Model - MaizeGDB
+Zm00001eb153360	umc1399		Gene Model - MaizeGDB
+Zm00001eb154050	IDP783		Gene Model - MaizeGDB
+Zm00001eb157160	fb2	fiber protein2	GenBank
+Zm00001eb157160	fb2	fiber protein2	Gene Model - MaizeGDB
+Zm00001eb157340	grx9	glutaredoxin9	Gene Model - MaizeGDB
+Zm00001eb160510	TIDP3322		Gene Model - MaizeGDB
+Zm00001eb178010	pco104634		Gene Model - MaizeGDB
+Zm00001eb187140	si946009f02a		Gene Model - MaizeGDB
+Zm00001eb192110	pco110662		Gene Model - MaizeGDB
+Zm00001eb194120	aprl3	adenosine 5'-phosphosulfate reductase-like3	GenBank
+Zm00001eb194120	aprl3	adenosine 5'-phosphosulfate reductase-like3	Gene Model - MaizeGDB
+Zm00001eb204890	arm13	armadillo domain protein13	Gene Model - MaizeGDB
+Zm00001eb205780	ebf4	EIN3-binding F-box protein4	Gene Model - MaizeGDB
+Zm00001eb208580	asg41		Gene Model - MaizeGDB
+Zm00001eb212160	LOC103625778		Gene Model - MaizeGDB
+Zm00001eb214130	cl35669_1		Gene Model - MaizeGDB
+Zm00001eb220920	LOC100193515		Gene Model - MaizeGDB
+Zm00001eb222420	uce8	ubiquitin conjugating enzyme8	GenBank
+Zm00001eb222420	uce8	ubiquitin conjugating enzyme8	GenBank
+Zm00001eb222420	uce8	ubiquitin conjugating enzyme8	GenBank
+Zm00001eb222420	uce8	ubiquitin conjugating enzyme8	Gene Model - MaizeGDB
+Zm00001eb225540	smc5	structural maintenance of chromosomes5	Gene Model - MaizeGDB
+Zm00001eb225570	arftf19	ARF-transcription factor 19	Gene Model - MaizeGDB
+Zm00001eb225570	arftf19	ARF-transcription factor 19	Gene Model - MaizeGDB
+Zm00001eb227970	saur51	small auxin up RNA51	Gene Model - MaizeGDB
+Zm00001eb229520	cl4689_1		Gene Model - MaizeGDB
+Zm00001eb235620	umc1860		Gene Model - MaizeGDB
+Zm00001eb241300	hsftf29	HSF-transcription factor 29	Gene Model - MaizeGDB
+Zm00001eb252620	pco116717		Gene Model - MaizeGDB
+Zm00001eb255750	cki5	cyclin-dependent kinase inhibitor5	Gene Model - MaizeGDB
+Zm00001eb265650	gpm453		GenBank
+Zm00001eb265650	gpm453		Gene Model - MaizeGDB
+Zm00001eb274090	cl16188_1		Gene Model - MaizeGDB
+Zm00001eb279650	si606067f10b		Gene Model - MaizeGDB
+Zm00001eb281920	trh4	thioredoxin h homolog4	Gene Model - MaizeGDB
+Zm00001eb290580	reas1	ribosome export associated1	Arabidopsis Ortholog
+Zm00001eb290580	reas1	ribosome export associated1	Gene Model - MaizeGDB
+Zm00001eb291410	Zm00001d038552		Gene Model - MaizeGDB
+Zm00001eb292930	Zm00001d038709		Gene Model - MaizeGDB
+Zm00001eb296200	Zm00001eb296200		Gene Model - MaizeGDB
+Zm00001eb311900	cel29	cellulase29	Gene Model - MaizeGDB
+Zm00001eb316450	IDP96		GenBank
+Zm00001eb316450	IDP96		GenBank
+Zm00001eb316450	IDP96		Gene Model - MaizeGDB
+Zm00001eb326850	umc1708		Gene Model - MaizeGDB
+Zm00001eb326850	umc1708		Gene Model - MaizeGDB
+Zm00001eb327720	rpot1	RNA polymerase T phage-like 1	Classical Genes
+Zm00001eb340790	gata2	C2C2-GATA-transcription factor 2	Gene Model - MaizeGDB
+Zm00001eb347640	si606062a03(608)		Gene Model - MaizeGDB
+Zm00001eb374360	si946031d03b		Gene Model - MaizeGDB
+Zm00001eb375210	bsdtf9	BSD-transcription factor 9	Gene Model - MaizeGDB
+Zm00001eb393150	ncp3	nine complex protein3	Gene Model - MaizeGDB
+Zm00001eb403140	e2f6	E2F-DP-transcription factor 26	Gene Model - MaizeGDB
+Zm00001eb403980	umc2763		Gene Model - MaizeGDB
+Zm00001eb411820	LOC100284728		Gene Model - MaizeGDB
+Zm00001eb412500	bio1	biotin1	Gene Model - MaizeGDB
+Zm00001eb416230	cl22533_2		Gene Model - MaizeGDB
+Zm00001eb427100	LOC100282451		Gene Model - MaizeGDB
+Zm00001eb428470	hyd3	hydroxylase3	GenBank
+Zm00001eb428470	hyd3	hydroxylase3	GenBank
+Zm00001eb428470	hyd3	hydroxylase3	GenBank
+Zm00001eb428470	hyd3	hydroxylase3	GenBank
+Zm00001eb428470	hyd3	hydroxylase3	GenBank
+Zm00001eb428470	hyd3	hydroxylase3	GenBank
+Zm00001eb428470	hyd3	hydroxylase3	Gene Model - MaizeGDB
