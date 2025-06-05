@@ -2,9 +2,9 @@
 
 _From the earth I rise and to the earth I shall return, alas while I still draw breath I will be eating corn_
 ---
-⚠️Repository in developement⚠️
 
-Very few scripts are complete
+⚠️Repository in developement⚠️
+Not all scripts are complete
 ---
 This repository contains the files and data for executing a network co-expression analysis on maize lines B73, DK105, EP1, F7 and PE75.
 It has programs for both of the the analysis done in my [internship](./programs/IndividualNetworks.Rmd) and in my bachelor thesis().
