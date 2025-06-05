@@ -15,9 +15,9 @@ The original [expression data](./data/original_data) has been kept, but there is
 
 [`Bash execution file`](./scripts/Preprocessing.sh): Executes all the steps for the initial data cleaning
 
-- [`MetaFixer.R`](./scripts/MetaFixer.R): Matches the amount of samples to the lowest one among data and metadata
-- [`tissue_abv.py`](./scripts/tissue_abv.py): Assigns to each metadata tissue code a tissue abreviation for a better comprehension.
-- [`speciator.R`](./scripts/speciator.R): Splits the data and metadata tables by lines, necessary only for the internship project.
+* [`MetaFixer.R`](./scripts/MetaFixer.R): Matches the amount of samples to the lowest one among data and metadata
+* [`tissue_abv.py`](./scripts/tissue_abv.py): Assigns to each metadata tissue code a tissue abreviation for a better comprehension.
+* [`speciator.R`](./scripts/speciator.R): Splits the data and metadata tables by lines, necessary only for the internship project.
 
 ## [`Programs`](./programs) directory
 
