@@ -40,9 +40,9 @@ python3 ../scripts/tissue_abv.py $m2 $m3 #create m3
 
 echo ""
 
-#Last: Split table by species(follow metadata species guideline)
+#Last: Split table by lines(follow metadata lines guideline)
 
-Rscript ../scripts/speciator.R $data_new $m3 ./ ./ #destinations of data and metadata tables are in /home/janek/Desktop/Intership/work/data/
+Rscript ../scripts/speciator.R $data_new $m3 ./ ./
 
 echo ""
 
