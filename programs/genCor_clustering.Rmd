@@ -519,7 +519,6 @@ def nwShow(nw, gr_title="No module", filename=None):
     
 ```
 
-
 ```{python def_vars}
 module=r.ME #get current module
 arrayCor=r.geneCor #gene correlation table, read as array
@@ -540,15 +539,20 @@ nwShow(nw, gr_title=module)
 louvain_comms = nx.community.louvain_communities(nw, weight="correlation", seed=42)
 print(f"Number of communities: {len(louvain_comms)}")
 
+#prepare for subplots
+fig, axes=plt.subplots()
+
 #Draw each community
 for i, comm in enumerate(louvain_comms):
-    if len(comm)>2: #ensure no single nodes
-        subgraph=nw.subgraph(comm)
-        
-        nx.draw(subgraph, with_labels=False, node_color=f"C{i}", node_size=100, font_size=6, edge_color="gray", linewidths=1, edgecolors='black')
-        plt.show()
-        plt.savefig(f"./graphFigs/{i}_{module}.png")
-        plt.close()
+  if len(comm)>4: #ensure no single nodes
+    subgraph=nw.subgraph(comm)
+    ax=axes[i]
+    ax.set_title(f"Community {i}")
+    nx.draw(subgraph, with_labels=False, node_color=f"C{i}", node_size=100, font_size=6, edge_color="gray", linewidths=1, edgecolors='black', ax=ax)
+
+plt.tight_layout()
+plt.show()
+#plt.savefig(f"./graphFigs/{i}_{module}.png")
         
 #red 0.6
 #turquoise 0.6
