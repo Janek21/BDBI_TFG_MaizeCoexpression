@@ -11,6 +11,8 @@ The original [expression data](./data/original_data) has been kept, but there is
 ---
 ## [`Scripts`](./scripts) directory
 
+Contains programs for the initial data analysis and pre-processing
+
 [`Preliminary analysis`](./scripts/PreliminaryAnalysis.Rmd): R markdown for initial viewing of the data
 
 [`Bash execution file`](./scripts/Preprocessing.sh): Executes all the steps for the initial data cleaning
@@ -19,8 +21,19 @@ The original [expression data](./data/original_data) has been kept, but there is
 * [`tissue_abv.py`](./scripts/tissue_abv.py): Assigns to each metadata tissue code a tissue abreviation for a better comprehension.
 * [`speciator.R`](./scripts/speciator.R): Splits the data and metadata tables by lines, necessary only for the internship project.
 
-## [`Programs`](./programs) directory
+## [`Programs`](./programs) directory (TO BE RENAMED COEXPRESSION_prgrams)
 
-## Annotation
+Contains programs and results belonging to the co-expression network creation and analysis
 
-etc
+[`IndividualNetworks.Rmd`](./programs/IndividualNetworks.Rmd): Co-expression network creation and correaltion analysis for individual lines.
+
+[`WholeLineNetworks.Rmd`](./programs/WholeLineNetworks.Rmd): Co-expression network creation and correaltion analysis simultaneous for all lines.
+
+[`WholeLineNetworks.Rmd`](./programs): 
+
+## [`Annotation`](./annotation) directory
+
+Contains programs and results which belong to functional annotation of both, modules and genes.
+
+[`WholeLineNetworks.Rmd`](./programs):
+
