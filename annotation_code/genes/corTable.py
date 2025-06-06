@@ -37,15 +37,15 @@ def nwShow(nw, gr_title="No module", filename=None):
 
 
 def main():
-    filepath="./annotation/correlation_tables/brown_geneCorrelation.txt"
-    #filepath="./annotation/correlation_tables/turquoise_geneCorrelation.txt"
+    filepath="./annotation_code/correlation_tables/brown_geneCorrelation.txt"
+    #filepath="./annotation_code/correlation_tables/turquoise_geneCorrelation.txt"
     #Zm00001eb068950 #black
     #Zm00001eb255730 #brown
     #Zm00001eb000110 #darkred
     
     gint="Zm00001eb255730"
     corTable=pd.read_table(filepath, sep="\t")
-    cor_edgelist=corrCleaner(corTable, 0.8)
+    cor_edgelist=corrCleaner(corTable, 0.6)
     nw=nwLoad(cor_edgelist)
     nwShow(nw)#, "./graphFigs/fig1.png")
 

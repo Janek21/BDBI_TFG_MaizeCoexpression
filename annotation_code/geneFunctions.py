@@ -2,8 +2,31 @@
 
 #Given a list of genes from an ME, find the biological functions
 
-from modules.FileRead_class import Gene
 import pandas as pd
+
+def get_func(line):
+    return line[3:5]
+
+def get_gene(line):
+    return line[0]
+
+def genFunc(g_reference, target_genes):
+    collapsedGenes=[]
+    #iterate through the lines in the file
+    for line in g_reference:
+        line=line.strip().split("\t") #fix line
+        id=get_gene(line) #get the id form each one
+        
+        if id in target_genes: #ad if the id is one of the genes of interest
+            gNames=get_func(line) #get symbol and full name (names correspond to function)
+            shortLine=[id]+gNames  #join them in a list with ID
+
+            collapsedGenes.append(shortLine) #append to large list
+            
+    return collapsedGenes
+            
+            
+        
 
 #Zm00001eb068950
 #Zm00001eb255730
@@ -14,16 +37,8 @@ def main():
 
     with open("../data/annotation/genes_all.txt") as file:
         totGen=file.readlines()
-    
-    ff=open("./ff.txt", "w")
-    matchGen=[]
-    for line in totGen:
-        line=line.strip().split("\t")
-        if line[0] in genlist:
-            relevant=[line[0]]+line[3:5]
-            matchGen.append(relevant)
-            print("\t".join(relevant), file=ff)
-    ff.close()
+        
+    matchGen=genFunc(totGen, genlist)
     print(matchGen)
     
     

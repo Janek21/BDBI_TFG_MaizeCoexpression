@@ -106,7 +106,7 @@ def fisher_calc(total_dic, module_dic, ann_func):
 
 def main():
     
-    modulefile="geneModule.txt"
+    modulefile="../coexpression_code/geneModule.txt"
     genlist=[]
     with open("../data/annotation/b73.mercator.v4.7.txt") as f: #open file
         for line in f:
@@ -134,8 +134,8 @@ def main():
         tp=typePossiblities[i]
         print(tp, depth)
         
-        fileD=open(f"./annotation/modules/Pres/d_{depth}_sheet.txt", "w") #a file for each depth type
-        fileT=open(f"./annotation/modules/Pres/anT_{tp}_sheet.txt", "w") #a file for each annotation type
+        fileD=open(f"./annotation_code/modules/Pres/d_{depth}_sheet.txt", "w") #a file for each depth type
+        fileT=open(f"./annotation_code/modules/Pres/anT_{tp}_sheet.txt", "w") #a file for each annotation type
         
         print(f"Function\tTotalCounts\tModuleCounts\tPvalue\tRelevancy\tModule", file=fileD)
         print(f"Function\tTotalCounts\tModuleCounts\tPvalue\tRelevancy\tModule", file=fileT)

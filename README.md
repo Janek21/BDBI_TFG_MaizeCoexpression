@@ -21,19 +21,33 @@ Contains programs for the initial data analysis and pre-processing
 * [`tissue_abv.py`](./scripts/tissue_abv.py): Assigns to each metadata tissue code a tissue abreviation for a better comprehension.
 * [`speciator.R`](./scripts/speciator.R): Splits the data and metadata tables by lines, necessary only for the internship project.
 
-## [`Programs`](./programs) directory (TO BE RENAMED COEXPRESSION_prgrams)
+## [`Co-expression`](./coexpression_code) directory
 
 Contains programs and results belonging to the co-expression network creation and analysis
 
-[`IndividualNetworks.Rmd`](./programs/IndividualNetworks.Rmd): Co-expression network creation and correaltion analysis for individual lines.
+[`IndividualNetworks.Rmd`](./coexpression_code/IndividualNetworks.Rmd): Co-expression network creation and correaltion analysis for individual lines.
 
-[`WholeLineNetworks.Rmd`](./programs/WholeLineNetworks.Rmd): Co-expression network creation and correaltion analysis simultaneous for all lines.
+[`WholeLineNetworks.Rmd`](./coexpression_code/WholeLineNetworks.Rmd): Co-expression network creation and correaltion analysis simultaneous for all lines.
 
-[`WholeLineNetworks.Rmd`](./programs): 
+[`geneModule.txt`](./coexpression_code/geneModule.txt): Table containing each gene and the module to which it belongs
 
-## [`Annotation`](./annotation) directory
+[`Distribution plots`](./coexpression_code/DistrPlots): Contains the data distributions for the raw, normalized(through CPM and RPKM), filtered and unfiltered data.
+
+[`Expression plots`](./coexpression_code/ExprPlots): Where PCA and UMAP data visualizations are saved
+
+[`Correlation plots`](./coexpression_code/CorPlots): Contains the plots and tables where the module co-expression across tissues (and lines) is reflected.
+
+
+## [`Annotation`](./annotation_code) directory
 
 Contains programs and results which belong to functional annotation of both, modules and genes.
 
-[`WholeLineNetworks.Rmd`](./programs):
+[`Module functions`](./annotation_code/modules): Contains the code and results for obtaining the main functions of modules
+
+* [`FileRead_class.py`](./annotation_code/modules/FileRead_class.py): Classes for parsing files (mercator annotation [file](./data/annotationb73.mercator.v4.7.txt) and P-value [tables](./annotation_code/modules/Pres)).
+* [`FunctionPval_tables.py`](./annotation_code/modules/FunctionPval_tables.py): Calculates the significance for functions in each module, saves them in [tables](./annotation_code/modules/Pres).
+* [`SignificantPerModule_plots.R`](./annotation_code/modules/SignificantPerModule_plots.R): Plots the significance per function in each module and the top significant functions, saves them in a [directory](./annotation_code/modules/SigPlots).
+* [`TopSignificantFunctions.py`](./annotation_code/modules/TopSignificantFunctions.py): Writes a [table](./annotation_code/modules/database.txt) of most significant functions in each module for each annotation type.
+* [`Pres`](./annotation_code/modules/Pres): Tables containing function, significance and module for each annotation type, created with [FileRead_class.py](./annotation_code/modules/FileRead_class.py).
+* [`SigPlots`](./annotation_code/modules/SigPlots): Contains plots and tables of significance per function in each module and of the top significant functions per annotation type, which are created using [SignificantPerModule_plots.R](./annotation_code/modules/SignificantPerModule_plots.R).
 

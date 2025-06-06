@@ -28,8 +28,8 @@ def diKeyer(representationD, ME, toplevel=3): #orders dictionary values by signi
     
 
 def main():
-    #filepath="./annotation/modules/Pres/anT_swissprot_sheet.txt"
-    filepath="./annotation/modules/Pres/d_1_sheet.txt"
+    #filepath="./annotation_code/modules/Pres/anT_swissprot_sheet.txt"
+    filepath="./annotation_code/modules/Pres/d_1_sheet.txt"
     functiontype="d1" #d1,d2,d3, mercator, prot-scriber, swissprot
     annlist=[]
     siglevel=3 #how many levels of significant functions (top 3, etc)
@@ -41,8 +41,8 @@ def main():
     if "TotalCounts" in annlist[0].entry: #remove header
         annlist.pop(0)
     
-    with open("./annotation/modules/Pres/database.txt", "w") as datafile: #create file to write results
-        readfile=open("./annotation/modules/Pres/database.txt", "r") #read file to check if there is header
+    with open("./annotation_code/modules/Pres/database.txt", "a") as datafile: #create file to write results
+        readfile=open("./annotation_code/modules/Pres/database.txt", "r") #read file to check if there is header
         fullfile=readfile.read(1)
         if not fullfile: #if the file is empty(first time writing into it)
             sigFunc=[f"SFunction_{x+1}" for x in range(siglevel)]#create as many function names as significant functions

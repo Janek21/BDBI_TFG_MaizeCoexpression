@@ -11,7 +11,10 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.width=16, fig.height=8)
-knitr::opts_chunk$set(purl = TRUE)
+knitr::opts_chunk$set(root.dir = "..") #does not work
+knitr::opts_chunk$set
+
+getwd()
 ```
 
 ```
@@ -48,9 +51,11 @@ reticulate::use_python("/usr/bin/python3", required=TRUE)
 Import the csv and metadata files
 
 ```{r dtLoad}
+setwd("..") #set path to general annotation_code directory
+
 dataPath<-paste0("../data/wlen/data_wlen.csv")
 metadataPath<-paste0("../data/metadata.txt")
-moduledata<-"./geneModule.txt"
+moduledata<-"../coexpression_code/geneModule.txt"
 
 dataNL<-read.delim(dataPath, row.names=1, stringsAsFactors=TRUE)
 metadata<-read.delim(metadataPath, header=T, row.names=1, stringsAsFactors=TRUE)
@@ -282,7 +287,7 @@ ggplot(long_data, aes(x=Tissue, y=Expression, group=Gene)) +
 
 # Correlation
 
-```{r corPlot}
+```{r corThs}
 Nrepl_dataT<-as.data.frame(t(Nrepl_data))
 #correaltion table
 geneCor<-cor(Nrepl_dataT, method="pearson")
@@ -306,7 +311,7 @@ ggplot(ths_effect, aes(x=ths, y=count))+
 
 ## Correlation distribution
 
-```{r}
+```{r corDistr}
 #select above the diagonal
 cor_vals<-geneCor[upper.tri(geneCor)]
 
@@ -320,6 +325,8 @@ ggplot(cor_df, aes(x=Correlation))+
        x="Correlation Coefficient",
        y="Frequency")+
   theme_minimal()
+
+#Tends to appear bimodal
 ```
 
 # Preclustering
@@ -476,8 +483,9 @@ Clusters by KMeans and DBscan present very rough grain, too little detail, so co
 
 # Saving the network
 
-```{r}
-write.table(geneCor, paste0("./annotation/correlation_tables/", ME, "_geneCorrelation.txt"), sep="\t")
+```{r saveNW}
+setwd("..") #set path to general annotation_code directory
+write.table(geneCor, paste0("./correlation_tables/", ME, "_geneCorrelation.txt"), sep="\t")
 ```
 
 ## Louvain community detection (python)
@@ -558,6 +566,4 @@ plt.show()
 #turquoise 0.6
 ```
 
-Community clustering presents finer grain clusters,whcih are more biologically relevant than the ones calculated by KMeans and DBscan
-
-"Community(louvain) clustering delivered better, finer grain clusters, more biologically relevant than KMeans and DBscan"
+Community clustering presents finer grain clusters, which are more biologically relevant than the ones calculated by KMeans and DBscan

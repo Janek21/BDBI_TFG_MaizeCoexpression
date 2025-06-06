@@ -9,7 +9,7 @@ library(ggnewscale)
 #read data
 dChoice<-"anT_mercator" #anT_mercator, anT_prot-scriber, anT_swissprot
 dChoice<-"d_1"
-pvdata<-read.table(paste0("./annotation/modules/Pres/", dChoice, "_sheet.txt"), sep='\t', header=TRUE)
+pvdata<-read.table(paste0("./annotation_code/modules/Pres/", dChoice, "_sheet.txt"), sep='\t', header=TRUE)
 #Choose relevant
 pvdata$Relevancy<-as.logical(pvdata$Relevancy)
 pvdata<-pvdata[pvdata$Relevancy,]
@@ -46,10 +46,10 @@ hplot<-bareplot+
   guides(fill=guide_legend(order=2))+
   theme(legend.text=element_text(size=14))
 
-png(paste0("./annotation/modules/SigPlots/sig_", dChoice, ".png"), width=1600, height=800)
-hplot
+png(paste0("./annotation_code/modules/SigPlots/sig_", dChoice, ".png"), width=1600, height=800)
+hplot#+ggtitle(dChoice)
 dev.off()
-svg(paste0("./annotation/modules/SigPlots/sig_", dChoice, ".svg"), width=1600/60, height=800/60)
+svg(paste0("./annotation_code/modules/SigPlots/sig_", dChoice, ".svg"), width=1600/60, height=800/60)
 hplot#+ggtitle(dChoice)
 dev.off()
 
@@ -75,13 +75,13 @@ TopPlot<-ggplot(TopSig, aes(x=Function, y=Module, color=Pvalue))+
         axis.ticks=element_line(colour="black"),
         axis.ticks.length = unit(8, "pt"))
 
-png(paste0("./annotation/modules/SigPlots/top/top_", dChoice, ".png"), width=1600, height=800)
-TopPlot
+png(paste0("./annotation_code/modules/SigPlots/top/top_", dChoice, ".png"), width=1600, height=800)
+TopPlot#+ggtitle(dChoice)
 dev.off()
-svg(paste0("./annotation/modules/SigPlots/top/top_", dChoice, ".svg"), width=1600/60, height=800/60)
+svg(paste0("./annotation_code/modules/SigPlots/top/top_", dChoice, ".svg"), width=1600/60, height=800/60)
 TopPlot#+ggtitle(dChoice)
 dev.off()
 
 #write top significant to table
-write.table(TopSig, paste0("./annotation/modules/SigPlots/top/top_", dChoice, ".txt"), sep='\t', row.names=FALSE)
+write.table(TopSig, paste0("./annotation_code/modules/SigPlots/top/top_", dChoice, ".txt"), sep='\t', row.names=FALSE)
 
