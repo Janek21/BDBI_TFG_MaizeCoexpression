@@ -2,6 +2,7 @@
 
 #Given a list of genes from an ME, find the biological functions
 
+from modules.FileRead_class import Gene
 import pandas as pd
 
 def get_func(line):

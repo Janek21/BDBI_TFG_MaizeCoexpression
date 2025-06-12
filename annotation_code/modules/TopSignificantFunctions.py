@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #writes a table of most significant functions+module in all annotation types
-#Step 2 (optional)
+#optional process
 
 from FileRead_class import annotated_function
 
