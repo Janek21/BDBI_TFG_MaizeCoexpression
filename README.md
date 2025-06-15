@@ -51,3 +51,11 @@ Contains programs and results which belong to functional annotation of both, mod
 * [`Pres`](./annotation_code/modules/Pres): Tables containing function, significance and module for each annotation type, created with [FileRead_class.py](./annotation_code/modules/FileRead_class.py).
 * [`SigPlots`](./annotation_code/modules/SigPlots): Contains plots and tables of significance per function in each module and of the top significant functions per annotation type, which are created using [SignificantPerModule_plots.R](./annotation_code/modules/SignificantPerModule_plots.R).
 
+
+[`Gene functions`](./annotation_code/genes): Contains the code and results for obtaining the gene communities and annotations.
+
+* [`maize.B73.AGPv4.aggregate.gaf`](./annotation_code/genes/maize.B73.AGPv4.aggregate.gaf): File containing GO term, taxon, evidence code and more data belonging to _Zea Mays_ genes.
+* [`geneClustering.Rmd`](./annotation_code/genes/geneClustering.Rmd): Calculates and saves the correlation table and performs a K-means and DBscan clustering for a give module.
+* [`GOparser_class.py`](./annotation_code/genes/GOparser_class.py): 
+
+
