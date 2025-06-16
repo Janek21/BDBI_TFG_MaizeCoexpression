@@ -2,6 +2,7 @@
 
 #Load gene Correlation table ino networkX, genes are nodes, correlations above x value are edges
 
+import matplotlib.patches
 import networkx as nx
 import pandas as pd
 import matplotlib
@@ -38,14 +39,21 @@ def nwShow(nw, dimlist, gr_title, filename=None):
     plt.close()
     
 def tableWriter(i, functions_dic, openfile):
-    ukg_list=functions_dic.keys()
+    gene_list=functions_dic.keys() #all genes
+    known_G=[] #known gene list
+    unk_G=[] #unknown gene list
     
-    for unknownGene in ukg_list: #1 row per unknown gene in the comm
-        kg=functions_dic[unknownGene][0] #list of known genes
-        funct=functions_dic[unknownGene][1] #list of functions
-        print(f"C{i}\t{unknownGene}\t{'.'.join(kg)}\t{'.'.join(funct)}", file=openfile)
-        
-    return
+    for g in gene_list: #1 row per unknown gene in the comm
+        kg=functions_dic[g][0] #list of correlated(known) genes (or "Known" when gene is known)
+        funct=functions_dic[g][1] #list of functions
+        print(f"C{i}\t{g}\t{'.'.join(kg)}\t{'.'.join(funct)}", file=openfile)
+
+        if "Known" in kg: #known gene list
+            known_G.append(g)
+        else: #unknown gene list
+            unk_G.append(g)
+
+    return [unk_G, known_G] #Unknown, known genes
 
 
 def main():
@@ -69,63 +77,81 @@ def main():
     #save gene information
     commTablepath=f"./genes/community_tables/{module}_commF.txt"
     comT=open(commTablepath, "w")
-    print(f"Community\tUnknown\Annotated\tFunctions", file=comT) #header
-    
+    print(f"Community\tUnknown\tAnnotated\tFunctions", file=comT) #header
     
     #Communities
     louvain_comms=nx.community.louvain_communities(nw, weight="correlation", seed=42)
-    print(f"Number of communities: {len(louvain_comms)}")
-    
-    #
-    color_map={}
-    colors=plt.cm.get_cmap('viridis', len(louvain_comms))
+    num_communities=len(louvain_comms)
+    print(f"Number of communities: {num_communities}")
     
     #Draw each community
     for i, comm in enumerate(louvain_comms):
         if len(comm)>2:
             #if i==5: #look into a particular community
                 fd=gan.main(module, comm, 10, 10) #functions dictionary
+
+                #save info to table for easy parsing, also get known and unknown genes
+                [uk_G, k_G]=tableWriter(i, fd, comT)
+
                 subgraph=nw.subgraph(comm)
                 s_pos=nx.spring_layout(subgraph, seed=42)
                 
                 plt.figure(figsize=(width_in, height_in), dpi=dpi)
-                plt.title(f"Community {i}: {len(comm)} genes\n Known: {len(comm)-len(fd.keys())} Unknown:{len(fd.keys())}")
+                plt.title(f"Community {i}: {len(comm)} genes")
                 nx.draw(subgraph, pos=s_pos, with_labels=False, node_size=100, edge_color="gray", node_color=module)
                 nx.draw_networkx_nodes(subgraph, pos=s_pos, node_size=100, linewidths=1, edgecolors="black")
                 
-                #terms for the nodes and labels
-                nestList_cg=[val[0] for val in fd.values()] #get only corr genes
-                corrGen=sum(nestList_cg, []) #unnest the list
-                
-                unknown_genes={node: node for node in subgraph.nodes if node in fd.keys()}
-                #k_genes={node: node for node in subgraph.nodes if node in corrGen} #find out closely correlated genes (find out if a gene in a community has no close correls)
+                #color unknown genes black
+                unknown_genes={node: node for node in subgraph.nodes if node in uk_G}
                 nx.draw_networkx_nodes(subgraph, pos=s_pos, nodelist=unknown_genes, node_color="black", node_size=100)
+                
+                #select and color closely related genes
+                #nestList_cg=[val[0] for val in fd.values()] #get only corr genes
+                #corrGen=sum(nestList_cg, []) #unnest the corr genes list
+                #k_genes={node: node for node in subgraph.nodes if node in corrGen} #find out closely correlated genes for a gene(find out if a gene in a community has no close correls)
                 #nx.draw_networkx_nodes(subgraph, pos=s_pos, nodelist=k_genes, node_color=f"red", node_size=100) #view closerly correlated genes
                 
+                known_patch=matplotlib.patches.Patch(label=f'Known genes: {len(k_G)}')
+                unknown_patch=matplotlib.patches.Patch(color='black', label=f'Unknown genes: {len(uk_G)}')
+                plt.legend(handles=[known_patch, unknown_patch])
+
                 plt.savefig(f"./graphFigs/{module}_{i}.png", dpi=dpi, bbox_inches="tight") #save plot
                 #plt.show()
                 plt.close()
                 
-                #save info to table for easy parsing
-                tableWriter(i, fd, comT)
-                
                 #grep C1 turquoise_commF.txt |cut -f4 -d$'\t'|cut -d'.' -f1|sort|uniq -c|sort -n
-                
-                
-                #classify nodes by community
-        for node in comm:
-            print(node)
-            color_map[node]=colors(i)
-                
+
     comT.close()
     
-    node_col=[color_map[node] for node in nw.nodes()]
+
+    #Draw the commmunity separated network
+    #Create color mapping
+    patchList=[]
+    cmap=matplotlib.cm.hsv if num_communities > 10 else matplotlib.cm.tab10
+    #assign colors to nodes based on community
+    node_colors=[]
+    patchList=[]
+    for node in nw.nodes():
+        for i, community in enumerate(louvain_comms):
+            if node in community:
+                node_colors.append(cmap(i/max(num_communities-1, 1)))
+    
+    for i, comm in enumerate(louvain_comms):
+        c_patch=matplotlib.patches.Patch(label=f'Community {i}: {len(comm)}', color=cmap(i/max(num_communities-1, 1)))
+        patchList.append(c_patch)
+
+
+    #draw
     plt.figure(figsize=(dimlist[0], dimlist[1]), dpi=dimlist[2])
     nw_pos=nx.spring_layout(nw, seed=42)
-    nx.draw(nw,node_size=10)
-    nx.draw_networkx_nodes(nw, pos=nw_pos, node_colors=node_col, node_size=100, linewidths=1, edgecolors="black")
-    plt.show()
+    nx.draw_networkx_edges(nw, pos=nw_pos, edge_color="gray", alpha=0.5)
+    nx.draw_networkx_nodes(nw, pos=nw_pos, node_color=node_colors, node_size=40, linewidths=1, edgecolors="black")
     
+    plt.axis('off')
+    plt.title(f"{module.title()} module: {num_communities} communities")
+    plt.legend(handles=patchList)
+    plt.savefig(f"./graphFigs/{module}_communities.png", dpi=dpi, bbox_inches="tight") #save plot
+    plt.show()
 
 
 if __name__ == "__main__":

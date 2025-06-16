@@ -588,6 +588,40 @@ plotDendroAndColors(ModNetwork$dendrograms[[1]], cbind(ModNetwork$unmergedColors
                     hang= 0.03, #@@ review params
                     guideHang = 0.05)
 ```
+
+Test
+```{r}
+# Calculate counts per module
+module_counts <- table(color$module)
+
+# Calculate percentages
+module_percent <- round(100 * module_counts / sum(module_counts), 1)
+
+# Create labels with percentages
+labels_with_pct <- paste0(names(module_counts), " (", module_percent, "%)")
+
+# Create a named vector for labels
+names(labels_with_pct) <- names(module_counts)
+
+# Convert module to factor with levels in the order of counts
+color$module <- factor(color$module, levels = names(module_counts))
+
+# Create a named vector for colors (assuming ModNetwork$colors are actual colors)
+# Here, assuming the colors are stored in the levels of module or similar
+# For example, if your modules are colors themselves:
+module_colors <- names(module_counts)  # or assign actual colors if different
+
+ggplot(color, aes(x=module, fill=module)) +
+  geom_bar() +
+  scale_fill_manual(values = module_colors, labels = labels_with_pct) +
+  labs(x = "Modules", y = "Gene number", fill = "Module") +
+  theme_bw() +
+  theme(axis.text.x = element_text(color = "black", size = 10, angle = 45, hjust = 1),
+        axis.text.y = element_text(color = "black", size = 10),
+        panel.border = element_rect(linewidth = 1))
+
+```
+
 Plot the amount of genes in each cluster
 ```{r ME_geneAmount}
 color<-data.frame(module=ModNetwork$colors, stringsAsFactors=TRUE)

@@ -92,9 +92,10 @@ def main(module, genelist, n_corrGenes=10, n_sigGO=10): #main function,executes 
     obo_GOlist=GODag(obo_file)
     geneGov5=geneV5_GOterm(genelist, golist, translation)
     geneFunction=term_function(geneGov5, obo_GOlist)
+    knG=list(geneFunction.keys()) #list  of known genes
     
     #Find unknown genes   
-    ukw_genes=unknownGene(genelist, list(geneFunction.keys())) #input is all of the comunity and all of the GO annotated genes
+    ukw_genes=unknownGene(genelist, knG) #input is all of the comunity and all of the GO annotated genes
     print(f">Initial genes({len(genelist)})-GO term genes({len(geneGov5)})=unknown genes({len(ukw_genes)})\n") #missing genes appear in the counts tables but not in any reference
     print("Unknown gene analysis:\n")
     
@@ -103,34 +104,41 @@ def main(module, genelist, n_corrGenes=10, n_sigGO=10): #main function,executes 
     cor_df=pd.read_table(corpath, index_col=0)
     
     all_kcg={} #dictionary unknown gene:[known correlated genes, functions, GOterms]
-    for ug in ukw_genes:
-        top_corGenes=closeToGene(ug, cor_df, n=n_corrGenes) #closely corr genes
-    
-        ug_kcg=[g for g in top_corGenes if g in geneFunction] #extract known genes from the closely correlated genes list
+    for g in genelist:
+
+        if g in ukw_genes:#gene is unknown
+            ug=g
+            top_corGenes=closeToGene(ug, cor_df, n=n_corrGenes) #closely corr genes
+            
+            ug_kcg=[g for g in top_corGenes if g in knG] #extract known genes from the closely correlated genes list
+            
+            print(f"From {len(top_corGenes)} closely correlated genes to {ug}, {len(ug_kcg)} are known and belong to the community")
+            
+            if len(ug_kcg)==0: #If none of the correlated genes are known (or belong to the community)
+                all_kcg[ug]=[ug_kcg, [], []] #determine empty dictionary
+                continue
+            
+            #gene enrichment
+            goEnrv5=GOEnrichmentStudy(moduleGenes, geneGov5, obo_GOlist, methods=['bonferroni', 'fdr_bh'], log=None) #v5 ID works as wll as V4 ID #remove log=None for detailed results
+            
+            results=goEnrv5.run_study(ug_kcg) #Run analysis on population(module) vs samples(known genes correlated to unknown)
+            
+            #get only significant go terms
+            significant=[r for r in results if r.p_fdr_bh < 0.05] #use fdr_bh because better detail than provided by bonferroni
+            #sort them by significance, get top n results
+            sorted_sigGo=sorted(significant, key=lambda x: x.p_fdr_bh)[:n_sigGO]
+            
+            #view significant functions with the p-value
+            '''for r in sorted_sigGo:
+                print(f"{r.name}\t{r.p_fdr_bh:.2e}")'''
+            
+            
+            #get correlated genes with signficant functions and GOterms for each unknown gene (genes woth no GO term or function presnet 2 empty lists as 1,2)
+            all_kcg[ug]=[ug_kcg, [goTerm.name for goTerm in sorted_sigGo], [rec.GO for rec in sorted_sigGo]] #gene:[corr, function, goterm]
         
-        print(f"From {len(top_corGenes)} closely correlated genes to {ug}, {len(ug_kcg)} are known and belong to the community")
-        
-        if len(ug_kcg)==0: #If none of the correlated genes are known (or belong to the community)
-            all_kcg[ug]=[ug_kcg, [], []] #determine empty dictionary
-            continue
-        
-        #gene enrichment
-        goEnrv5=GOEnrichmentStudy(moduleGenes, geneGov5, obo_GOlist, methods=['bonferroni', 'fdr_bh'], log=None) #v5 ID works as wll as V4 ID #remove log=None for detailed results
-        
-        results=goEnrv5.run_study(ug_kcg) #Run analysis on population(module) vs samples(known genes correlated to unknown)
-        
-        #get only significant go terms
-        significant=[r for r in results if r.p_fdr_bh < 0.05] #use fdr_bh because better detail than provided by bonferroni
-        #sort them by significance, get top n results
-        sorted_sigGo=sorted(significant, key=lambda x: x.p_fdr_bh)[:n_sigGO]
-        
-        #view significant functions with the p-value
-        '''for r in sorted_sigGo:
-            print(f"{r.name}\t{r.p_fdr_bh:.2e}")'''
-        
-        
-        #get correlated genes with signficant functions and GOterms for each unknown gene (genes woth no GO term or function presnet 2 empty lists as 1,2)
-        all_kcg[ug]=[ug_kcg, [goTerm.name for goTerm in sorted_sigGo], [rec.GO for rec in sorted_sigGo]]
+        elif g in knG: #gene is known
+
+            all_kcg[g]=[["Known"], list(geneFunction[g]), list(geneGov5[g])] #gene:[[], function, goterm]
         
         print("#########################################################################################")
     

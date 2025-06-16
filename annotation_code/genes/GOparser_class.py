@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from goatools.obo_parser import GODag
-import subprocess
+#class for parsing a .gaf file
+#also includes a function for translating v4 maize IDs to v5
 
 class GOfile(object):
     def __init__(self, line):
