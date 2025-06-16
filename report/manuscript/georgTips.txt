@@ -16,7 +16,7 @@ Sometimes you drift in a description of method/protocol, eg
 		Try to put such things into methods/scripts part. 
 		Here it would be only relevant
 			Determination of (with statistical significance) enriched functions in various modules
-			That enriched functions can differ between modules (with examples).
+			That enriched functions can differ between modules (with examples). 
 	Eg. "Modules were enriched at different significance levels for distinct biological functions. A summary table (table xy) lists the most significant functions for each module. (Then discuss a few modules for their functions, and whether this is coherent with the WGCNA tissue correlation!)
 
 

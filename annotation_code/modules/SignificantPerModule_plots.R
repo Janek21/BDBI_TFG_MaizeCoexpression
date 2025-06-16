@@ -58,11 +58,13 @@ dev.off()
 #Set up table for significant functions in each module, remove unneeded data
 TopSig<-as.data.frame(subset(pvdata, TopSig))
 TopSig$TotalCounts<-TopSig$ModuleCounts<-TopSig$Relevancy<-TopSig$TopSig<-NULL
+TopSig$Pvalue<-as.numeric(formatC(TopSig$Pvalue, digits=2))
 
-TopPlot<-ggplot(TopSig, aes(x=Function, y=Module, color=Pvalue))+
-  geom_point(size=10)+
-  scale_color_continuous(trans="reverse", breaks=c(min(TopSig$Pvalue)))+
-  labs(color="P-value")+
+TopPlot<-ggplot(TopSig, aes(x=Function, y=Module, color=Pvalue, size=Pvalue))+
+  geom_point()+
+  scale_color_continuous(trans="reverse")+#, breaks=c(min(TopSig$Pvalue)))+
+  scale_size(range = c(0, 7), trans="reverse")+
+  labs(size="P-value", color="P-value")+
   theme_bw()+
   theme(axis.text.x=element_text(angle=45, hjust=1, size=10),
         axis.text.y=element_text(size=10),
@@ -73,7 +75,9 @@ TopPlot<-ggplot(TopSig, aes(x=Function, y=Module, color=Pvalue))+
         panel.border=element_rect(linewidth=1),
         panel.grid.major=element_line(color="grey"),
         axis.ticks=element_line(colour="black"),
-        axis.ticks.length = unit(8, "pt"))
+        axis.ticks.length = unit(8, "pt"))+
+  guides(color=guide_legend(order=1),
+         size=guide_legend(order=1))
 
 png(paste0("../modules/SigPlots/top/top_", dChoice, ".png"), width=1600, height=800)
 TopPlot#+ggtitle(dChoice)

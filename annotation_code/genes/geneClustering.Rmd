@@ -66,7 +66,7 @@ colnames(metadata)<-c("specie", "quality", "tissue_abv", "rep", "location")
 moduleList<-levels(genemodule$modules)
 table(genemodule$modules)
 #Data selection
-ME<-"turquoise" #green #lightcyan #turquoise
+ME<-"violet" #green #lightcyan #turquoise
 genemodule$genes<-rownames(genemodule)
 MEgeneList<-rownames(genemodule[genemodule$modules==ME,])
 dataNL<-dataNL[MEgeneList,]
@@ -416,7 +416,11 @@ Define plot landscape
 set.seed(42)
 
 shortened_pca<-prcomp(ctf_data)
-shortened_umap<-umap(ctf_data, n_epochs=1500, min_dist=0.9, n_neighbors=35)
+if (nrow(ctf_data)>35){
+  shortened_umap<-umap(ctf_data, n_epochs=1500, min_dist=0.9, n_neighbors=35)
+}else{
+  shortened_umap<-umap(ctf_data, n_epochs=1500, min_dist=0.9)
+}
 ```
 
 ### Kmeans number of clusters selection
@@ -489,82 +493,19 @@ setwd("..") #set path to general annotation_code directory
 write.table(geneCor, paste0("./correlation_tables/", ME, "_geneCorrelation.txt"), sep="\t")
 ```
 
-## Louvain community detection (python)
-Execute the python code together with the R code for correlation data parity (and process efficiency) and for better correlation threshold visibility
+# Louvain community detection and gene annotation (python)
+Execute the python code together with the R code for process streamlining (producing the correlation table and using it in the same script) and for better correlation threshold visibility. Executing the 
+
+For clearer execution it can also be exectued as separate runs, beggining with the previous R section, which produces and saves the saved correlation table, and then using the python programs for community detection and gene annotation
 ```{python def_functions}
-import networkx as nx
-import pandas as pd
-import matplotlib.pyplot as plt
+import os
+import comm_annotation as m_ca
 
-#function to set the correaltion table as a list of edges, which can be turned into a network
-def corrCleaner(table, ths=0.7):
-    #Join the table as gene to gene relations: rows are [gene1 gene2 correlationCoeff]
-    corList=table.stack().reset_index()
-    corList.columns=["G1", "G2", "coefficient"]
-    
-    #Take out the self-loops
-    corList_noSL=corList[corList["G1"]!=corList["G2"]]
-    #filter by threshold (observed in genCor_clustering script(plot))
-    correlations=corList_noSL[corList_noSL["coefficient"].abs()>=ths]
-    
-    return correlations
+module=r.ME
 
-#transform an edgelist into a network
-def nwLoad(edgelist):
-    nw=nx.from_pandas_edgelist(edgelist, "G1", "G2", edge_attr="coefficient")
-    return nw
+os.chdir('../')
+m_ca.main(module, 0.6)
 
-#draw and show/save a network
-def nwShow(nw, gr_title="No module", filename=None):
-    plt.figure()  
-    #plt.title(gr_title)
-    nx.draw(nw,node_size=50)
-    #Show or save
-    if filename!=None:
-        plt.savefig(filename)
-    else:
-        plt.show()
-    plt.close()
-    
-```
-
-```{python def_vars}
-module=r.ME #get current module
-arrayCor=r.geneCor #gene correlation table, read as array
-gNames=list(r.geneList) #list of gene names
-#transform the array into a table, give rownames and colnames as genes
-tbCor=pd.DataFrame(arrayCor, columns=gNames, index=gNames)
-```
-
-Louvain community detection
-```{python comm_clustering}
-#get an edgelist(filterd by threshold) from the correaltion table
-cor_edgelist=corrCleaner(tbCor, 0.6) #0.6
-#create and draw the network
-nw=nwLoad(cor_edgelist)
-nwShow(nw, gr_title=module)
-
-#Find communities in the network
-louvain_comms = nx.community.louvain_communities(nw, weight="correlation", seed=42)
-print(f"Number of communities: {len(louvain_comms)}")
-
-#prepare for subplots
-fig, axes=plt.subplots()
-
-#Draw each community
-for i, comm in enumerate(louvain_comms):
-  if len(comm)>4: #ensure no single nodes
-    subgraph=nw.subgraph(comm)
-    ax=axes[i]
-    ax.set_title(f"Community {i}")
-    nx.draw(subgraph, with_labels=False, node_color=f"C{i}", node_size=100, font_size=6, edge_color="gray", linewidths=1, edgecolors='black', ax=ax)
-
-plt.tight_layout()
-plt.show()
-#plt.savefig(f"./graphFigs/{i}_{module}.png")
-        
-#red 0.6
-#turquoise 0.6
 ```
 
 Community clustering presents finer grain clusters, which are more biologically relevant than the ones calculated by KMeans and DBscan

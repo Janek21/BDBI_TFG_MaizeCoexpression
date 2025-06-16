@@ -1,0 +1,532 @@
+Community	Unknown	Annotated	Functions
+C0	Zm00001eb023380	Known	fatty acid biosynthetic process.chloroplast.thiolester hydrolase activity
+C0	Zm00001eb129940	Known	chloroplast.peroxisome.cytosol.Unknown.leucoplast.Unknown.small molecule metabolic process.primary metabolic process.aldehyde dehydrogenase (NAD+) activity
+C0	Zm00001eb333710		
+C0	Zm00001eb411840		
+C0	Zm00001eb165960	Zm00001eb419560	peptidyl-amino acid modification.peptidyl-proline modification.regulation of biological process.protein peptidyl-prolyl isomerization.organelle membrane.endoplasmic reticulum membrane.peptidyl-prolyl cis-trans isomerase activity.isomerase activity.macrolide binding.cis-trans isomerase activity
+C0	Zm00001eb013280	Known	mitochondrion.acetyl-CoA catabolic process.isocitrate dehydrogenase (NAD+) activity.amine metabolic process.response to cytokinin.anatomical structure formation involved in morphogenesis.response to sucrose.chloroplast.ketone metabolic process.animal organ development.epidermal cell differentiation.response to misfolded protein.proteasome assembly.isocitrate metabolic process.magnesium ion binding.biosynthetic process.response to glucose.NAD binding.root hair elongation.tricarboxylic acid cycle.proteasome-mediated ubiquitin-dependent protein catabolic process.response to fructose
+C0	Zm00001eb151290		
+C0	Zm00001eb100940	Known	protein serine/threonine kinase activity.response to stimulus.ATP binding.multicellular organism development.protein phosphorylation.membrane
+C0	Zm00001eb251840		
+C0	Zm00001eb089210		
+C0	Zm00001eb075980	Known	hydrolase activity.nucleoplasm.RNA biosynthetic process.nuclear envelope.localization.biological regulation.multicellular organismal process.cellular component organization.membrane
+C0	Zm00001eb257830		
+C0	Zm00001eb333720		
+C0	Zm00001eb077560	Zm00001eb419560	peptidyl-amino acid modification.peptidyl-proline modification.regulation of biological process.protein peptidyl-prolyl isomerization.organelle membrane.endoplasmic reticulum membrane.peptidyl-prolyl cis-trans isomerase activity.isomerase activity.macrolide binding.cis-trans isomerase activity
+C0	Zm00001eb271730		
+C0	Zm00001eb240690		
+C0	Zm00001eb241670	Known	metabolic process.endo-1,4-beta-xylanase activity.cell wall polysaccharide metabolic process.polysaccharide catabolic process.membrane
+C0	Zm00001eb378560		
+C0	Zm00001eb025930	Zm00001eb075980	macromolecule biosynthetic process.nucleic acid biosynthetic process.localization.RNA biosynthetic process.nucleobase-containing compound biosynthetic process.organelle envelope.nuclear envelope.nucleoplasm
+C0	Zm00001eb138170	Zm00001eb023380.Zm00001eb013280	oxoacid metabolic process.carboxylic acid metabolic process.organic acid metabolic process.small molecule metabolic process.biosynthetic process.intracellular membrane-bounded organelle.chloroplast.plastid.membrane-bounded organelle.intracellular organelle
+C0	Zm00001eb048410		
+C0	Zm00001eb066730		
+C0	Zm00001eb187710	Zm00001eb013280	tricarboxylic acid metabolic process.alcohol metabolic process.epidermal cell differentiation.developmental growth.acyl-CoA metabolic process.organophosphate catabolic process.tricarboxylic acid cycle.cell growth.growth.thioester metabolic process
+C0	Zm00001eb072070		
+C0	Zm00001eb191880		
+C0	Zm00001eb126660		
+C0	Zm00001eb219050	Zm00001eb013280.Zm00001eb023380	oxoacid metabolic process.carboxylic acid metabolic process.organic acid metabolic process.small molecule metabolic process.biosynthetic process.intracellular membrane-bounded organelle.chloroplast.plastid.membrane-bounded organelle.intracellular organelle
+C0	Zm00001eb424170		
+C0	Zm00001eb380360		
+C0	Zm00001eb324120	Zm00001eb013280.Zm00001eb023380	oxoacid metabolic process.carboxylic acid metabolic process.organic acid metabolic process.small molecule metabolic process.biosynthetic process.intracellular membrane-bounded organelle.chloroplast.plastid.membrane-bounded organelle.intracellular organelle
+C0	Zm00001eb363070		
+C0	Zm00001eb425280		
+C0	Zm00001eb161890	Known	mitochondrion.RNA modification.chloroplast.Unknown.RNA 5'-end processing.RNA binding.endonuclease activity.membrane
+C0	Zm00001eb328940		
+C0	Zm00001eb103860		
+C0	Zm00001eb419560	Known	endoplasmic reticulum membrane.protein peptidyl-prolyl isomerization.response to stimulus.peptidyl-prolyl cis-trans isomerase activity.regulation of biological process.Unknown.FK506 binding.membrane
+C0	Zm00001eb191320	Zm00001eb075980	macromolecule biosynthetic process.nucleic acid biosynthetic process.localization.RNA biosynthetic process.nucleobase-containing compound biosynthetic process.organelle envelope.nuclear envelope.nucleoplasm
+C0	Zm00001eb271740		
+C0	Zm00001eb204830		
+C0	Zm00001eb346000		
+C0	Zm00001eb091650	Zm00001eb023380	fatty acid metabolic process.organic acid biosynthetic process.monocarboxylic acid metabolic process.monocarboxylic acid biosynthetic process.lipid metabolic process.carboxylic acid biosynthetic process.small molecule biosynthetic process.fatty acid biosynthetic process.lipid biosynthetic process.thiolester hydrolase activity
+C0	Zm00001eb006100		
+C0	Zm00001eb424130		
+C0	Zm00001eb300430		
+C0	Zm00001eb404910		
+C0	Zm00001eb349890		
+C0	Zm00001eb205650		
+C0	Zm00001eb372740		
+C0	Zm00001eb233430		
+C1	Zm00001eb071240	Known	systemic acquired resistance.response to molecule of bacterial origin.protein serine/threonine phosphatase activity.Unknown.L-tryptophan catabolic process.red light signaling pathway.post-translational protein modification.plasmodesma.binding.nucleus.protein dephosphorylation.indoleacetic acid biosynthetic process.membrane.negative regulation of defense response.plasma membrane
+C1	Zm00001eb417420	Zm00001eb112710	
+C1	Zm00001eb223570	Zm00001eb341430	
+C1	Zm00001eb340490	Known	COPII vesicle coat.endoplasmic reticulum membrane.cytosol.viral capsid.Golgi membrane.zinc ion binding.endoplasmic reticulum to Golgi vesicle-mediated transport.intracellular protein transport.multicellular organismal process.cellular component organization
+C1	Zm00001eb155100	Zm00001eb045900	
+C1	Zm00001eb192230	Known	metabolic process.cation binding.protein serine/threonine phosphatase activity.response to abscisic acid.cytoplasm.protein dephosphorylation.Unknown.response to cold.response to water deprivation.post-translational protein modification.Unknown.response to chitin.nucleus.negative regulation of protein kinase activity.response to carbohydrate.signal transduction.regulation of defense response to virus
+C1	Zm00001eb155870	Zm00001eb211620	
+C1	Zm00001eb347390	Zm00001eb341430	
+C1	Zm00001eb301980		
+C1	Zm00001eb184700		
+C1	Zm00001eb221710	Zm00001eb211410.Zm00001eb188070.Zm00001eb073410	catabolic process.primary metabolic process.metabolic process.lipid metabolic process.cellular process.biological_process.cellular anatomical structure.cellular_component.molecular_function.cellular component organization
+C1	Zm00001eb168320	Zm00001eb112710	
+C1	Zm00001eb337670		
+C1	Zm00001eb237300		
+C1	Zm00001eb027330	Zm00001eb112710	
+C1	Zm00001eb343700		
+C1	Zm00001eb394110	Known	gene expression.ribosomal small subunit biogenesis.regulation of biological process.polysaccharide binding.protein metabolic process.membrane protein complex.hydrolase activity, hydrolyzing O-glycosyl compounds.RNA metabolic process.nucleus.preribosome, small subunit precursor.late endosome membrane.vacuolar membrane.ribosomal small subunit export from nucleus
+C1	Zm00001eb351650	Zm00001eb223130.Zm00001eb026180	
+C1	Zm00001eb351710		
+C1	Zm00001eb028950	Zm00001eb045900	
+C1	Zm00001eb363790	Zm00001eb045900	
+C1	Zm00001eb182120		
+C1	Zm00001eb006730		
+C1	Zm00001eb105320		
+C1	Zm00001eb030970	Zm00001eb188070.Zm00001eb026180	
+C1	Zm00001eb095670	Known	proline biosynthetic process.ketone metabolic process.glutamate-5-semialdehyde dehydrogenase activity.amine metabolic process.Unknown.glutamate 5-kinase activity.membrane.cytoplasm.phosphorylation.amine biosynthetic process
+C1	Zm00001eb231600	Zm00001eb140460	
+C1	Zm00001eb176180	Zm00001eb045900	
+C1	Zm00001eb109680	Known	nucleotide binding.cytosol.regulation of biological process.nuclear speck.RNA processing.RNA binding.membrane.metal ion transport
+C1	Zm00001eb317150	Known	Unknown.alternative oxidase activity.metal ion binding.Unknown.response to stimulus.Unknown.signaling.membrane.Unknown.microtubule-based movement.primary metabolic process
+C1	Zm00001eb199460	Known	primary metabolic process.lipid transporter activity.transport.Unknown.binding.cellular component organization.membrane.macromolecule localization.plasma membrane.intracellular anatomical structure
+C1	Zm00001eb044300	Known	phosphatidylinositol phosphate biosynthetic process.cytosol.ATP binding.protein metabolic process.Unknown.lipid kinase activity.endosome membrane
+C1	Zm00001eb178920		
+C1	Zm00001eb213220	Zm00001eb045900.Zm00001eb095670	
+C1	Zm00001eb299330	Zm00001eb044300	
+C1	Zm00001eb212920		
+C1	Zm00001eb003060		
+C1	Zm00001eb047230	Zm00001eb412940.Zm00001eb188070.Zm00001eb174340.Zm00001eb211410.Zm00001eb192230	macromolecule metabolic process.regulation of biological process.biological regulation.protein modification process.signal transduction.macromolecule modification.primary metabolic process.metabolic process.regulation of cellular process.cellular process
+C1	Zm00001eb002900		
+C1	Zm00001eb304870	Zm00001eb026180.Zm00001eb211410	
+C1	Zm00001eb225640	Zm00001eb112710	
+C1	Zm00001eb310680	Known	cellular process.response to stimulus.membrane.transporter activity.metabolic process.oligopeptide transport
+C1	Zm00001eb093580	Known	response to symbiotic fungus.xenobiotic transmembrane transport.antiporter activity.xenobiotic transmembrane transporter activity.monoatomic cation transmembrane transporter activity.membrane.cysteine biosynthetic process.plasma membrane
+C1	Zm00001eb428640		
+C1	Zm00001eb118460	Zm00001eb045900	
+C1	Zm00001eb223130	Known	protein metabolic process.catalytic activity.zinc ion binding
+C1	Zm00001eb268550	Known	protein targeting to mitochondrion.chloroplast.transferase activity.mitochondrial respiratory chain complex I assembly.monoatomic ion transport.response to heat.response to hydrogen peroxide.biosynthetic process.nucleus.protein folding.membrane.mitochondrial inner membrane.response to high light intensity
+C1	Zm00001eb257070	Known	sucrose biosynthetic process.cell communication.macromolecule biosynthetic process.dephosphorylation.response to stimulus.Unknown.signaling.sucrose-phosphate phosphatase activity.Unknown.binding.multicellular organism development.acyltransferase activity, transferring groups other than amino-acyl groups.membrane.Unknown
+C1	Zm00001eb349180	Zm00001eb341430	
+C1	Zm00001eb040930	Zm00001eb119630.Zm00001eb112710.Zm00001eb340490	transport.establishment of localization.localization.protein transport.Golgi apparatus.cellular macromolecule localization.establishment of protein localization.protein localization.nitrogen compound transport.membrane protein complex
+C1	Zm00001eb132140	Zm00001eb310380.Zm00001eb405420	regulation of cellular process.regulation of biological process.biological regulation.regulation of organelle organization.metaphase/anaphase transition of cell cycle.negative regulation of mitotic cell cycle phase transition.mitotic cell cycle phase transition.meiotic sister chromatid cohesion.regulation of chromosome organization.regulation of mitotic cell cycle
+C1	Zm00001eb123900	Known	protein polyubiquitination.Unknown.ATP binding.proteasome-mediated ubiquitin-dependent protein catabolic process.nucleus.cytoplasm
+C1	Zm00001eb201060	Zm00001eb044300.Zm00001eb317150	
+C1	Zm00001eb267850		
+C1	Zm00001eb073410	Known	4-hydroxy-tetrahydrodipicolinate synthase activity.chloroplast.ubiquinone biosynthetic process.Unknown.diaminopimelate biosynthetic process.lysine biosynthetic process via diaminopimelate.small molecule catabolic process
+C1	Zm00001eb176830		
+C1	Zm00001eb188070	Known	macroautophagy.GTP binding.endoplasmic reticulum to Golgi vesicle-mediated transport.small GTPase-mediated signal transduction.Golgi to plasma membrane transport.cellular response to starvation.multicellular organismal process.cellular component organization.intracellular anatomical structure.N-terminal protein myristoylation
+C1	Zm00001eb418900	Zm00001eb340490	
+C1	Zm00001eb405420	Known	kinetochore.homoserine dehydrogenase activity.metaphase/anaphase transition of mitotic cell cycle.mitotic M phase.mitotic spindle assembly checkpoint signaling.regulation of primary metabolic process.meiotic sister chromatid cohesion, centromeric.protein kinase activity.Unknown.Unknown.phosphorylation.primary metabolic process
+C1	Zm00001eb166070	Zm00001eb044300	
+C1	Zm00001eb288240	Zm00001eb319230.Zm00001eb192230	
+C1	Zm00001eb355160	Zm00001eb045900	
+C1	Zm00001eb095910		
+C1	Zm00001eb089940	Zm00001eb412940	ER-nucleus signaling pathway.membrane organization.translation.regulation of immune system process.protein localization to membrane.basic amino acid transport.acidic amino acid transport.amino acid transport.regulation of cellular response to stress.inorganic anion transport
+C1	Zm00001eb015360		
+C1	Zm00001eb350680	Zm00001eb340490.Zm00001eb119630.Zm00001eb112710	transport.establishment of localization.localization.protein transport.Golgi apparatus.cellular macromolecule localization.establishment of protein localization.protein localization.nitrogen compound transport.membrane protein complex
+C1	Zm00001eb121710	Zm00001eb044300	
+C1	Zm00001eb340130	Zm00001eb045900	
+C1	Zm00001eb022720	Zm00001eb075910.Zm00001eb119630.Zm00001eb157510.Zm00001eb268550.Zm00001eb340490.Zm00001eb405420	cellular process.biological_process.cellular anatomical structure.cellular_component.molecular_function.intracellular organelle.organelle.cellular component organization.cellular component organization or biogenesis.transferase activity
+C1	Zm00001eb343710	Zm00001eb073410.Zm00001eb109680	
+C1	Zm00001eb160150		
+C1	Zm00001eb336170		
+C1	Zm00001eb174340	Known	carbohydrate metabolic process.ATP binding.protein kinase activity.hydrolase activity, hydrolyzing O-glycosyl compounds.multicellular organism development.protein phosphorylation.membrane.signal transduction
+C1	Zm00001eb275180		
+C1	Zm00001eb411870		
+C1	Zm00001eb380570		
+C1	Zm00001eb290880	Zm00001eb211410.Zm00001eb026180	
+C1	Zm00001eb155110	Zm00001eb045900	
+C1	Zm00001eb185490		
+C1	Zm00001eb085710	Zm00001eb026180	
+C1	Zm00001eb371080		
+C1	Zm00001eb319230	Known	sequence-specific DNA binding.cytosolic small ribosomal subunit.defense response.response to chemical.Unknown.DNA-templated transcription.response to other organism
+C1	Zm00001eb045900	Known	chloroplast.Unknown.ligase activity.RNA splicing.hydrolase activity, acting on ester bonds.glycosyltransferase activity.membrane
+C1	Zm00001eb318860	Zm00001eb026180	
+C1	Zm00001eb207340	Zm00001eb026180	
+C1	Zm00001eb119630	Known	purine ribonucleoside catabolic process.proton-transporting two-sector ATPase complex, catalytic domain.Golgi apparatus.response to cadmium ion.plant-type vacuole membrane.purine ribonucleoside triphosphate catabolic process.binding.Unknown.plasma membrane.purine ribonucleotide catabolic process.hyperosmotic response.response to cold.response to salt stress.plant-type cell wall biogenesis.proton transmembrane transport.proton-transporting ATPase activity, rotational mechanism.defense response to bacterium.glucose catabolic process.cytosolic ribosome.glycolytic process.embryo development ending in seed dormancy.vacuole organization.calcium ion transport.Golgi organization.water transport
+C1	Zm00001eb308960		
+C1	Zm00001eb163330	Zm00001eb026180	
+C1	Zm00001eb304860	Zm00001eb026180.Zm00001eb211410	
+C1	Zm00001eb274140	Zm00001eb341430	
+C1	Zm00001eb146990		
+C1	Zm00001eb299000	Zm00001eb026180	
+C1	Zm00001eb382130	Zm00001eb026180.Zm00001eb223130.Zm00001eb044300	macromolecule metabolic process.binding.primary metabolic process.metabolic process.cellular process.biological_process.molecular_function
+C1	Zm00001eb290810	Zm00001eb211410	
+C1	Zm00001eb077810		
+C1	Zm00001eb233480	Zm00001eb211620	
+C1	Zm00001eb310380	Known	Unknown.regulation of cellular process.binding.membrane.plasma membrane
+C1	Zm00001eb128270		
+C1	Zm00001eb292550	Zm00001eb044300	
+C1	Zm00001eb225560	Zm00001eb045900.Zm00001eb095670	
+C1	Zm00001eb337660		
+C1	Zm00001eb211410	Known	extracellular region.plasmodesma.vacuole.acid phosphatase activity.nucleobase-containing compound metabolic process.macromolecule metabolic process.regulation of biological process.Unknown.phosphatidylcholine phospholipase C activity.cellular component organization.membrane.plasma membrane.phospholipid catabolic process
+C1	Zm00001eb088030	Zm00001eb112710.Zm00001eb119630	Golgi apparatus.transport.establishment of localization.localization.ADP metabolic process.regulation of signal transduction.monoatomic ion transmembrane transport.purine ribonucleoside triphosphate metabolic process.purine ribonucleoside diphosphate catabolic process.positive regulation of catalytic activity
+C1	Zm00001eb225310		
+C1	Zm00001eb170640		
+C1	Zm00001eb242180		
+C1	Zm00001eb341430	Known	carbohydrate metabolic process.methyltransferase activity.methylation.biosynthetic process.system development.membrane.Unknown
+C1	Zm00001eb135310	Zm00001eb095670	
+C1	Zm00001eb079550		
+C1	Zm00001eb182600	Zm00001eb045900	
+C1	Zm00001eb318840	Zm00001eb026180	
+C1	Zm00001eb442310	Zm00001eb211410.Zm00001eb026180	
+C1	Zm00001eb329930	Zm00001eb112710	
+C1	Zm00001eb193610	Zm00001eb095670	
+C1	Zm00001eb354740	Zm00001eb112710	
+C1	Zm00001eb318830	Zm00001eb026180	
+C1	Zm00001eb080240	Zm00001eb095670	
+C1	Zm00001eb309570	Zm00001eb341430	
+C1	Zm00001eb139200		
+C1	Zm00001eb223120	Zm00001eb223130.Zm00001eb044300	
+C1	Zm00001eb031890	Zm00001eb317150	
+C1	Zm00001eb290800	Zm00001eb211410	
+C1	Zm00001eb211620	Known	response to heat.enzyme inhibitor activity.nucleus.protein folding.response to high light intensity.response to salt stress.response to hydrogen peroxide.protein metabolic process.membrane.Hsp70 protein binding.transferase activity.cytosol.catabolic process.endoplasmic reticulum.gene expression.regulation of catalytic activity.regulation of translation.Unknown.RNA binding.Unknown
+C1	Zm00001eb329660	Zm00001eb192230	response to alcohol.response to lipid.response to water deprivation.response to hormone.negative regulation of phosphate metabolic process.negative regulation of protein modification process.negative regulation of macromolecule metabolic process.negative regulation of protein phosphorylation.response to acid chemical.negative regulation of molecular function
+C1	Zm00001eb352380		
+C1	Zm00001eb418780	Zm00001eb112710	
+C1	Zm00001eb075910	Known	cell differentiation.regulation of biosynthetic process.anatomical structure morphogenesis.nucleus.protein lipoylation.4 iron, 4 sulfur cluster binding.DNA-templated transcription.signal transduction.chloroplast.lipoate synthase activity.animal organ development.Unknown.regulation of gene expression.negative regulation of biological process.lipoate biosynthetic process.tissue development.ferredoxin-[NAD(P)H] reductase activity.Unknown.photosynthesis.positive regulation of biological process
+C1	Zm00001eb054640	Zm00001eb045900	
+C1	Zm00001eb157510	Known	mitochondrion.ketone metabolic process.3-deoxy-7-phosphoheptulonate synthase activity.Unknown.pyridoxal phosphate binding.aromatic amino acid family biosynthetic process.transaminase activity.catabolic process.amine metabolic process
+C1	Zm00001eb350940	Zm00001eb026180	
+C1	Zm00001eb059590	Zm00001eb026180.Zm00001eb211410	
+C1	Zm00001eb294210	Known	glucuronoxylan metabolic process.beta-galactosidase activity.response to stimulus.xylan biosynthetic process.extracellular region.signaling.vacuole.regulation of cellular process.protein desumoylation.vegetative to reproductive phase transition of meristem.hydrogen peroxide biosynthetic process.localization.membrane
+C1	Zm00001eb334460	Known	carbohydrate metabolic process.beta-D-fucosidase activity.Unknown.chloroplast.beta-mannosidase activity.plant-type cell wall.biological regulation.apoplast.4-methylumbelliferyl-beta-D-glucopyranoside beta-glucosidase activity.Unknown.cytosolic ribosome.beta-gentiobiose beta-glucosidase activity.glycosyl compound metabolic process.membrane.esculin beta-glucosidase activity.beta-galactosidase activity.beta-L-arabinosidase activity.amygdalin beta-glucosidase activity.glucan exo-1,3-beta-glucosidase activity.response to stress.cellobiose glucosidase activity
+C1	Zm00001eb246320	Zm00001eb045900.Zm00001eb095670	
+C1	Zm00001eb087530		
+C1	Zm00001eb318850	Zm00001eb026180	
+C1	Zm00001eb099120	Known	cellular process.establishment of localization.regulation of biological process.calcium-dependent phospholipid binding.response to stress.multicellular organismal process.calcium ion binding
+C1	Zm00001eb185710	Zm00001eb026180	
+C1	Zm00001eb336140	Zm00001eb045900	
+C1	Zm00001eb381480	Zm00001eb045900	
+C1	Zm00001eb275660	Zm00001eb044300.Zm00001eb211620.Zm00001eb109680	cytosol.RNA binding.primary metabolic process.metabolic process.cellular process.biological_process.membrane.cellular anatomical structure.cellular_component.binding
+C1	Zm00001eb004510	Zm00001eb341430.Zm00001eb405420	primary metabolic process.metabolic process.regulation of organelle organization.metaphase/anaphase transition of cell cycle.negative regulation of mitotic cell cycle phase transition.mitotic cell cycle phase transition.meiotic sister chromatid cohesion.regulation of chromosome organization.regulation of mitotic cell cycle.negative regulation of cell cycle process
+C1	Zm00001eb108740	Zm00001eb045900	
+C1	Zm00001eb235300	Zm00001eb112710	
+C1	Zm00001eb026180	Known	DNA-binding transcription factor activity.response to stimulus.regulation of DNA-templated transcription.multicellular organism development.DNA-templated transcription.membrane.plasma membrane.DNA binding
+C1	Zm00001eb332480	Zm00001eb073410.Zm00001eb211410.Zm00001eb319230	primary metabolic process.metabolic process.lipid metabolic process.cellular process.biological_process.cellular_component.molecular_function.nucleobase-containing compound metabolic process
+C1	Zm00001eb112710	Known	protein transport.regulation of Rab protein signal transduction.Golgi apparatus.regulation of nucleoside metabolic process.Unknown.regulation of purine nucleotide catabolic process.small GTPase-mediated signal transduction.Rab GDP-dissociation inhibitor activity.oxidoreductase activity.positive regulation of GTPase activity.GTPase activator activity
+C1	Zm00001eb140460	Known	phospholipase A2 activity.carboxylic acid metabolic process.cytoplasm.Unknown.membrane.galactolipase activity.lipid catabolic process
+C1	Zm00001eb147000		
+C1	Zm00001eb284920		
+C1	Zm00001eb412940	Known	amino acid import.amine transmembrane transporter activity.neutral L-amino acid transmembrane transporter activity.endoplasmic reticulum to Golgi vesicle-mediated transport.acidic amino acid transport.plasma membrane.plastid.response to karrikin.regulation of monoatomic ion transport.negative regulation of programmed cell death.N-terminal protein myristoylation.translation.neutral amino acid transport.endoplasmic reticulum unfolded protein response.ER-nucleus signaling pathway.regulation of plant-type hypersensitive response.ammonium transmembrane transport.inorganic anion transport.acidic amino acid transmembrane transporter activity.basic amino acid transport.active transmembrane transporter activity.nucleotide transport.protein targeting to membrane.inorganic cation transmembrane transport.membrane.amine transport.amino acid transmembrane transport.membrane fusion
+C1	Zm00001eb039470	Zm00001eb109680.Zm00001eb073410	
+C1	Zm00001eb394100	Known	gene expression.ribosomal small subunit biogenesis.regulation of biological process.polysaccharide binding.protein metabolic process.membrane protein complex.hydrolase activity, hydrolyzing O-glycosyl compounds.RNA metabolic process.nucleus.preribosome, small subunit precursor.late endosome membrane.vacuolar membrane.ribosomal small subunit export from nucleus
+C1	Zm00001eb239910	Zm00001eb026180	
+C1	Zm00001eb237670	Zm00001eb026180	
+C2	Zm00001eb052320	Zm00001eb139220	
+C2	Zm00001eb079960	Zm00001eb181460	
+C2	Zm00001eb084000	Known	cellular process.defense response to bacterium.killing of cells of another organism.vacuole.extraorganismal space.binding.defense response to fungus.aleurone grain.membrane.nutrient reservoir activity
+C2	Zm00001eb340910	Zm00001eb139220	
+C2	Zm00001eb412080	Zm00001eb181460	
+C2	Zm00001eb152440	Zm00001eb084000.Zm00001eb422530	vacuole
+C2	Zm00001eb265180	Zm00001eb181460	
+C2	Zm00001eb331620	Known	regulation of cellular process.developmental process.protein metabolic process.binding.RNA metabolic process.Unknown.membrane
+C2	Zm00001eb228850	Zm00001eb228810.Zm00001eb153420	positive regulation of metabolic process.positive regulation of macromolecule metabolic process.ribosome.positive regulation of cellular process.positive regulation of biological process.membraneless organelle.intracellular membraneless organelle.regulation of macromolecule metabolic process.regulation of metabolic process.nucleic acid binding
+C2	Zm00001eb223650		
+C2	Zm00001eb284950	Known	multicellular organismal process.developmental process.regulation of DNA-templated transcription.auxin-activated signaling pathway.binding.nucleus.DNA-templated transcription
+C2	Zm00001eb415000	Zm00001eb116740.Zm00001eb346680.Zm00001eb047040.Zm00001eb211270	biological_process.cellular process.transport.cellular anatomical structure.cellular_component.molecular_function.establishment of localization.localization.homeostatic process.response to stimulus
+C2	Zm00001eb258640	Known	endoplasmic reticulum membrane.proteasome core complex.protein N-linked glycosylation.nucleus.protein folding.threonine-type endopeptidase activity.biological regulation.multicellular organismal process.cytoplasm.cytosol.sexual reproduction.Unknown.Unknown.hexosyltransferase activity.prefoldin complex.proteolysis involved in protein catabolic process.biosynthetic process.Unknown.membrane.unfolded protein binding.metal ion binding.cortical microtubule organization.Unknown.primary metabolic process
+C2	Zm00001eb263920	Zm00001eb139220	
+C2	Zm00001eb307040	Zm00001eb211270.Zm00001eb116740.Zm00001eb346680	transport.establishment of localization.localization.homeostatic process.response to stimulus.primary metabolic process.metabolic process.biological_process.cellular process.cellular anatomical structure
+C2	Zm00001eb224540		
+C2	Zm00001eb009820	Zm00001eb139220	
+C2	Zm00001eb120000	Zm00001eb119990.Zm00001eb057880	
+C2	Zm00001eb339770		
+C2	Zm00001eb075930	Zm00001eb139220	
+C2	Zm00001eb299160	Known	ubiquitin-protein transferase activity.multicellular organismal process.oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor.protein ubiquitination.cell surface receptor signaling pathway.membrane.SCF-dependent proteasomal ubiquitin-dependent protein catabolic process.SCF ubiquitin ligase complex
+C2	Zm00001eb022610	Zm00001eb139220	
+C2	Zm00001eb206920		
+C2	Zm00001eb128700	Zm00001eb422530.Zm00001eb252290	
+C2	Zm00001eb089490	Zm00001eb107320.Zm00001eb119990	
+C2	Zm00001eb327590	Zm00001eb181460	
+C2	Zm00001eb047050	Zm00001eb047040.Zm00001eb284950	
+C2	Zm00001eb363800		
+C2	Zm00001eb262560	Zm00001eb107320.Zm00001eb057880	cellular response to stimulus.cellular response to stress.cellular component organization or biogenesis.cellular component organization.response to stress.response to stimulus.metabolic process.developmental growth.ER-nucleus signaling pathway.growth
+C2	Zm00001eb041440		
+C2	Zm00001eb392900	Zm00001eb346680	
+C2	Zm00001eb269880	Zm00001eb331620.Zm00001eb153420	
+C2	Zm00001eb157890	Zm00001eb228810.Zm00001eb076570.Zm00001eb172680	catalytic activity.primary metabolic process.metabolic process.biological_process.cellular process.cellular anatomical structure.cellular_component.binding.molecular_function.catabolic process
+C2	Zm00001eb227190	Zm00001eb181460.Zm00001eb139220	
+C2	Zm00001eb228810	Known	metabolic process.TRAMP-dependent tRNA surveillance pathway.nuclear mRNA surveillance.nucleolus.cytoplasmic exosome (RNase complex).Unknown.U1 snRNA 3'-end processing.nuclear polyadenylation-dependent rRNA catabolic process.RNA methylation.ribosome.protein-containing complex.cytosol.exonucleolytic trimming to generate mature 3'-end of 5.8S rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA).nuclear exosome (RNase complex).mRNA 3'-UTR AU-rich region binding.U4 snRNA 3'-end processing.3'-5'-RNA exonuclease activity.Unknown.U5 snRNA 3'-end processing.Unknown.nuclear polyadenylation-dependent mRNA catabolic process.protein targeting to mitochondrion
+C2	Zm00001eb406610	Known	DNA-binding transcription factor activity.sequence-specific DNA binding.primary root development.cellular response to phosphate starvation.animal organ development.response to abscisic acid.negative regulation of DNA-templated transcription.cellular response to endogenous stimulus.response to nitrate.chromatin binding.transition metal ion transport.nucleus.nitrate transmembrane transport.DNA-templated transcription
+C2	Zm00001eb264000	Zm00001eb139220	
+C2	Zm00001eb341190		
+C2	Zm00001eb093240		
+C2	Zm00001eb347290	Zm00001eb228810.Zm00001eb172680.Zm00001eb346680	nucleobase-containing compound metabolic process.catalytic activity.primary metabolic process.metabolic process.biological_process.cellular process.cellular anatomical structure.cellular_component.binding.molecular_function
+C2	Zm00001eb237380	Zm00001eb284950	
+C2	Zm00001eb181460	Known	defense response to bacterium.Hsp90 protein binding.plant-type hypersensitive response.regulation of biological process.protein stabilization.zinc ion binding.small GTPase binding.defense response to fungus.nucleus.cytoplasm.membrane.respiratory burst involved in defense response.primary metabolic process
+C2	Zm00001eb391440	Zm00001eb346680.Zm00001eb153420	
+C2	Zm00001eb334690		
+C2	Zm00001eb345710		
+C2	Zm00001eb234800	Zm00001eb181460	
+C2	Zm00001eb081760	Known	metabolic process.DNA-binding transcription factor activity.sequence-specific DNA binding.response to stimulus.regulation of DNA-templated transcription.nucleus.DNA-templated transcription
+C2	Zm00001eb386340	Zm00001eb258640.Zm00001eb310800.Zm00001eb252290	sexual reproduction.cytoplasmic microtubule organization.microtubule cytoskeleton organization.cortical microtubule organization.cytoskeleton organization.supramolecular fiber organization.cortical cytoskeleton organization.microtubule-based process.prefoldin complex.unfolded protein binding
+C2	Zm00001eb195340	Zm00001eb284950	
+C2	Zm00001eb288030		
+C2	Zm00001eb207940	Known	metabolic process.transcription by RNA polymerase II.positive regulation of DNA-templated transcription.developmental process.mediator complex.transcription coregulator activity.cellular component organization.regulation of transcription by RNA polymerase II
+C2	Zm00001eb407970		
+C2	Zm00001eb267730	Known	metabolic process.transcription by RNA polymerase II.chromatin.negative regulation of DNA-templated transcription.Unknown.developmental process.chromosome organization.membrane.multicellular organismal process.histone deacetylase complex.transcription corepressor activity.histone deacetylase activity
+C2	Zm00001eb041580	Zm00001eb284950.Zm00001eb053940	
+C2	Zm00001eb219860	Zm00001eb346680.Zm00001eb153420	
+C2	Zm00001eb425480	Zm00001eb139220	
+C2	Zm00001eb263930	Zm00001eb139220	
+C2	Zm00001eb340120	Zm00001eb181460	
+C2	Zm00001eb107320	Known	pollen tube growth.jasmonic acid mediated signaling pathway.plant-type cell wall modification.ethylene biosynthetic process.anatomical structure formation involved in morphogenesis.plasma membrane.quaternary ammonium group transport.carbohydrate transport.tube development.amino acid transport.transmembrane transport.transmembrane transporter activity.endoplasmic reticulum unfolded protein response.ER-nucleus signaling pathway.regulation of plant-type hypersensitive response.salicylic acid mediated signaling pathway.organic cation transport.protein targeting to membrane.membrane.monocarboxylic acid transport.nitrate transmembrane transport
+C2	Zm00001eb334700	Zm00001eb422530	
+C2	Zm00001eb235600	Zm00001eb181460	
+C2	Zm00001eb429800	Known	metabolic process.DNA-binding transcription factor activity.regulation of DNA-templated transcription.response to stress.nucleus.ethylene-activated signaling pathway.DNA-templated transcription.DNA binding
+C2	Zm00001eb230970		
+C2	Zm00001eb372850	Zm00001eb139220	
+C2	Zm00001eb030670	Zm00001eb181460.Zm00001eb139220	
+C2	Zm00001eb053920	Zm00001eb284950.Zm00001eb053940	
+C2	Zm00001eb042700	Known	ribosome.intracellular transport.ATP binding.phosphorelay signal transduction system.signal transduction.membrane
+C2	Zm00001eb228830	Zm00001eb228810.Zm00001eb153420	positive regulation of metabolic process.positive regulation of macromolecule metabolic process.ribosome.positive regulation of cellular process.positive regulation of biological process.membraneless organelle.intracellular membraneless organelle.regulation of macromolecule metabolic process.regulation of metabolic process.nucleic acid binding
+C2	Zm00001eb065270		
+C2	Zm00001eb124080	Known	metabolic process.establishment of localization in cell.detection of bacterium.protein ubiquitination.Unknown.plasma membrane.chloroplast.ATP binding.defense response to bacterium.regulation of anion channel activity.immune response-regulating signaling pathway.innate immune response-activating signaling pathway.detection of external stimulus.multicellular organism development.cytoplasmic vesicle.protein phosphorylation.membrane.protein serine/threonine kinase activity.secretion by cell.plant-type hypersensitive response
+C2	Zm00001eb011570		
+C2	Zm00001eb057880	Known	Unknown.telomere maintenance.DNA repair.proteasome core complex.cysteine-type peptidase activity.binding.Unknown.DNA helicase activity.proteolysis
+C2	Zm00001eb395690		
+C2	Zm00001eb233240	Zm00001eb042700	
+C2	Zm00001eb099730	Zm00001eb134750	response to water deprivation.response to acid chemical.phyllome development.hormone transport.tyrosine biosynthetic process.aromatic amino acid metabolic process.erythrose 4-phosphate/phosphoenolpyruvate family amino acid metabolic process.response to osmotic stress.aromatic amino acid family biosynthetic process, prephenate pathway.aromatic amino acid family biosynthetic process
+C2	Zm00001eb409110	Zm00001eb181460	
+C2	Zm00001eb429380	Zm00001eb237850	purine ribonucleoside triphosphate metabolic process.ribonucleotide metabolic process.nucleoside metabolic process.purine ribonucleotide catabolic process.nucleoside triphosphate metabolic process.DNA recombination.glycosyl compound metabolic process.purine ribonucleoside catabolic process.cell cycle phase.purine ribonucleotide metabolic process
+C2	Zm00001eb133510	Zm00001eb181460	
+C2	Zm00001eb414250	Zm00001eb310800.Zm00001eb252290.Zm00001eb258640.Zm00001eb422530.Zm00001eb134750	sexual reproduction.cytoplasmic microtubule organization.microtubule cytoskeleton organization.cortical microtubule organization.cytoskeleton organization.supramolecular fiber organization.cortical cytoskeleton organization.microtubule-based process.prefoldin complex.unfolded protein binding
+C2	Zm00001eb324380		
+C2	Zm00001eb053940	Known	nucleoplasm.maturation of 5.8S rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA).response to stimulus.ribonucleoprotein complex binding.nucleolus.maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA).preribosome, large subunit precursor
+C2	Zm00001eb141300	Zm00001eb057880.Zm00001eb153420	
+C2	Zm00001eb025450	Zm00001eb237850	purine ribonucleoside triphosphate metabolic process.ribonucleotide metabolic process.nucleoside metabolic process.purine ribonucleotide catabolic process.nucleoside triphosphate metabolic process.DNA recombination.glycosyl compound metabolic process.purine ribonucleoside catabolic process.cell cycle phase.purine ribonucleotide metabolic process
+C2	Zm00001eb395700		
+C2	Zm00001eb293030	Known	cellular developmental process.signaling.regulation of cellular process.nervous system development.cellular component organization
+C2	Zm00001eb346680	Known	monoatomic ion homeostasis.transport.nucleotide binding.response to stimulus.DNA integration.catalytic activity.nucleic acid binding.membrane
+C2	Zm00001eb071380	Zm00001eb139220.Zm00001eb252290	
+C2	Zm00001eb376410	Zm00001eb299160	
+C2	Zm00001eb391830	Zm00001eb139220.Zm00001eb252290	
+C2	Zm00001eb209330	Zm00001eb346680	
+C2	Zm00001eb287510	Zm00001eb237850	purine ribonucleoside triphosphate metabolic process.ribonucleotide metabolic process.nucleoside metabolic process.purine ribonucleotide catabolic process.nucleoside triphosphate metabolic process.DNA recombination.glycosyl compound metabolic process.purine ribonucleoside catabolic process.cell cycle phase.purine ribonucleotide metabolic process
+C2	Zm00001eb204400	Zm00001eb310800.Zm00001eb252290.Zm00001eb134750	sexual reproduction.cytoplasmic microtubule organization.microtubule cytoskeleton organization.cortical microtubule organization.cytoskeleton organization.supramolecular fiber organization.cortical cytoskeleton organization.microtubule-based process.prefoldin complex.unfolded protein binding
+C2	Zm00001eb134750	Known	mitochondrion.Golgi apparatus.plant-type vacuole membrane.leaf development.chloroplast envelope.auxin polar transport.animal organ development.plasma membrane.establishment or maintenance of transmembrane electrochemical gradient.response to salt stress.endosome membrane.inorganic diphosphate phosphatase activity.diphosphate hydrolysis-driven proton transmembrane transporter activity.Unknown.sodium ion transport.proton transmembrane transport.response to water deprivation.2-alkenal reductase [NAD(P)H] activity.tyrosine biosynthetic process
+C2	Zm00001eb397440	Zm00001eb346680.Zm00001eb228810.Zm00001eb153420	nucleic acid binding.positive regulation of metabolic process.positive regulation of macromolecule metabolic process.ribosome.catalytic activity.binding.positive regulation of cellular process.metabolic process.positive regulation of biological process.biological_process
+C2	Zm00001eb316110	Zm00001eb181460	
+C2	Zm00001eb045000		
+C2	Zm00001eb333020	Zm00001eb228810.Zm00001eb153420	positive regulation of metabolic process.positive regulation of macromolecule metabolic process.ribosome.positive regulation of cellular process.positive regulation of biological process.membraneless organelle.intracellular membraneless organelle.regulation of macromolecule metabolic process.regulation of metabolic process.nucleic acid binding
+C2	Zm00001eb279590		
+C2	Zm00001eb313170		
+C2	Zm00001eb309820	Zm00001eb139220	
+C2	Zm00001eb400960	Known	DNA-binding transcription factor activity.cell differentiation.regulation of DNA-templated transcription.positive regulation of cellular process.transcription cis-regulatory region binding.nucleus.DNA-templated transcription.animal organ morphogenesis
+C2	Zm00001eb179370	Zm00001eb181460	
+C2	Zm00001eb009230	Zm00001eb057880.Zm00001eb284950.Zm00001eb346680	nucleic acid metabolic process.nucleobase-containing compound metabolic process.macromolecule metabolic process.DNA metabolic process.binding.primary metabolic process.metabolic process.biological_process.cellular process.cellular_component
+C2	Zm00001eb098820	Zm00001eb422530.Zm00001eb252290	
+C2	Zm00001eb053930	Zm00001eb284950.Zm00001eb053940	
+C2	Zm00001eb168500	Zm00001eb331620.Zm00001eb153420	
+C2	Zm00001eb133520	Zm00001eb181460	
+C2	Zm00001eb422530	Known	magnesium ion transmembrane transport.cellular process.endoplasmic reticulum membrane.intracellular transport.vacuole.response to hydrogen peroxide.magnesium ion transport.organelle membrane.monoatomic ion transmembrane transport.magnesium ion transmembrane transporter activity.membrane.plasma membrane.response to high light intensity
+C2	Zm00001eb180320		
+C2	Zm00001eb123930		
+C2	Zm00001eb116740	Known	cell redox homeostasis.protein-disulfide reductase [NAD(P)H] activity.enzyme inhibitor activity.plasmodesmata-mediated intercellular transport.positive regulation of catalytic activity.Unknown.response to cold.cellular response to oxidative stress.glycerol ether metabolic process.thioredoxin-disulfide reductase (NADPH) activity.negative regulation of catalytic activity.apoplast.cytosol.Unknown.macromolecule metabolic process.protein-disulfide reductase activity.oxidoreductase activity, acting on a sulfur group of donors, disulfide as acceptor.electron transfer activity.primary metabolic process
+C2	Zm00001eb314760	Zm00001eb139220	
+C2	Zm00001eb234890	Zm00001eb237850.Zm00001eb139220	nucleic acid metabolic process.nucleobase-containing compound metabolic process.response to stimulus.macromolecule metabolic process.biological regulation.primary metabolic process.metabolic process.purine ribonucleoside triphosphate metabolic process.ribonucleotide metabolic process.nucleoside metabolic process
+C2	Zm00001eb151040		
+C2	Zm00001eb172680	Known	pentose metabolic process.pentose-phosphate shunt.transaldolase activity.glucose catabolic process.alcohol catabolic process.Unknown.binding.cytoplasm
+C2	Zm00001eb153420	Known	ribosome.cell differentiation.Unknown.glutathione metabolic process.chromatin binding.embryo development.glutathione transferase activity.DNA binding.positive regulation of macromolecule metabolic process
+C2	Zm00001eb421390	Zm00001eb181460.Zm00001eb139220	
+C2	Zm00001eb327600	Zm00001eb181460	
+C2	Zm00001eb139240	Zm00001eb422530.Zm00001eb252290	
+C2	Zm00001eb152470	Zm00001eb153420.Zm00001eb346680	
+C2	Zm00001eb412460	Zm00001eb057880.Zm00001eb172680.Zm00001eb047040	
+C2	Zm00001eb195370	Zm00001eb284950.Zm00001eb346680	
+C2	Zm00001eb284240	Known	macromolecule modification.threonine synthase activity.protein metabolic process.cytosol.chloroplast stroma.biological regulation.pyridoxal phosphate binding.threonine biosynthetic process.Unknown
+C2	Zm00001eb068220	Zm00001eb139220	
+C2	Zm00001eb313140	Zm00001eb139220	
+C2	Zm00001eb171190	Known	mitochondrion.Golgi apparatus.response to cadmium ion.shoot system development.adenosylmethionine-8-amino-7-oxononanoate transaminase activity.gamma-aminobutyrate shunt.pollen tube guidance.plasma membrane.chloroplast.ketone metabolic process.tube development.gamma-aminobutyric acid catabolic process.short-chain fatty acid catabolic process.4-aminobutyrate:pyruvate transaminase activity.amine catabolic process.response to oxidative stress.Unknown.pollen tube adhesion.Unknown.reproductive process.membrane.beta-alanine catabolic process.pyridoxal phosphate binding.cell-cell adhesion.vacuolar membrane.fruit development
+C2	Zm00001eb310800	Known	primary metabolic process.metal ion binding.lipid transporter activity.cortical microtubule organization.vesicle-mediated transport.cytosol.sexual reproduction.Unknown.membrane.prefoldin complex.binding.multicellular organismal process.cellular component organization.protein folding.intracellular anatomical structure.macromolecule localization.unfolded protein binding
+C2	Zm00001eb252290	Known	primary metabolic process.metal ion binding.cortical microtubule organization.cytosol.sexual reproduction.Unknown.prefoldin complex.multicellular organismal process.protein folding.unfolded protein binding
+C2	Zm00001eb236580		
+C2	Zm00001eb405090	Known	DNA-binding transcription factor activity.sequence-specific DNA binding.chloroplast.response to stimulus.Unknown.regulation of DNA-templated transcription.stearoyl-[ACP] desaturase activity.fatty acid metabolic process.nucleus.DNA-templated transcription
+C2	Zm00001eb237850	Known	condensed nuclear chromosome.nucleoplasm.purine ribonucleoside catabolic process.ATP-dependent activity, acting on DNA.purine ribonucleotide catabolic process.reciprocal meiotic recombination.ATP binding.double-strand break repair.purine ribonucleoside triphosphate catabolic process.biological regulation.ATP metabolic process.meiotic M phase.damaged DNA binding
+C2	Zm00001eb098810	Zm00001eb422530.Zm00001eb252290	
+C2	Zm00001eb179380	Zm00001eb181460	
+C2	Zm00001eb087460	Zm00001eb053940.Zm00001eb284950	
+C2	Zm00001eb139220	Known	animal organ development.regulation of DNA-templated transcription.response to chemical.nucleus.DNA-templated transcription.DNA binding
+C2	Zm00001eb403320		
+C2	Zm00001eb414290	Zm00001eb047040.Zm00001eb053940.Zm00001eb076570.Zm00001eb153420	multicellular organism development.intracellular organelle.organelle.biological_process.cellular process.anatomical structure development.cellular anatomical structure.cellular_component.molecular_function.multicellular organismal process
+C2	Zm00001eb369380	Zm00001eb139220.Zm00001eb429800	RNA biosynthetic process.nucleobase-containing compound biosynthetic process.DNA-templated transcription.regulation of DNA-templated transcription.regulation of RNA biosynthetic process.macromolecule biosynthetic process.nucleic acid biosynthetic process.regulation of macromolecule biosynthetic process.regulation of primary metabolic process.regulation of RNA metabolic process
+C2	Zm00001eb076570	Known	primary metabolic process.protein-containing complex.cell differentiation.'de novo' post-translational protein folding.post-chaperonin tubulin folding pathway.cytosol.Unknown.ATP binding.nervous system development.microtubule.protein kinase activity.tubulin complex assembly.embryo development ending in seed dormancy.nucleus.cell division.phragmoplast.organelle organization
+C2	Zm00001eb420980	Zm00001eb139220	
+C2	Zm00001eb119990	Known	ketone metabolic process.carboxylic acid metabolic process.cytosol.hydrolase activity, acting on ester bonds.lipid catabolic process
+C2	Zm00001eb032100		
+C2	Zm00001eb391420	Zm00001eb346680.Zm00001eb284950	
+C2	Zm00001eb211270	Known	primary metabolic process.protein transmembrane transport.protein-containing complex.Unknown.response to stimulus.ATP binding.ATPase-coupled transmembrane transporter activity.protein secretion.multicellular organismal process.membrane.Unknown
+C2	Zm00001eb047040	Known	structural constituent of cytoskeleton.chromatin organization.multicellular organism development.nucleus
+C2	Zm00001eb265990	Zm00001eb284950.Zm00001eb153420	
+C2	Zm00001eb093520	Zm00001eb252290.Zm00001eb310800.Zm00001eb422530	sexual reproduction.cytoplasmic microtubule organization.microtubule cytoskeleton organization.cortical microtubule organization.cytoskeleton organization.supramolecular fiber organization.cortical cytoskeleton organization.microtubule-based process.prefoldin complex.unfolded protein binding
+C2	Zm00001eb371600		
+C2	Zm00001eb429810	Zm00001eb429800.Zm00001eb139220.Zm00001eb181460	response to stimulus.regulation of biological process.nucleus.intracellular membrane-bounded organelle.membrane-bounded organelle.intracellular organelle.organelle.biological regulation.binding.primary metabolic process
+C2	Zm00001eb167890	Zm00001eb181460	
+C2	Zm00001eb270200	Zm00001eb181460	
+C3	Zm00001eb266780	Zm00001eb270360	
+C3	Zm00001eb367750		
+C3	Zm00001eb304680	Known	nuclear envelope.Unknown.cytosol.protein metabolic process.Unknown.signal transduction.Unknown.small GTPase binding
+C3	Zm00001eb072320	Zm00001eb204840	
+C3	Zm00001eb116750	Zm00001eb036020.Zm00001eb162930	
+C3	Zm00001eb285620	Zm00001eb342820	
+C3	Zm00001eb260780	Zm00001eb307890	
+C3	Zm00001eb284930	Zm00001eb280710	
+C3	Zm00001eb394810		
+C3	Zm00001eb251140		
+C3	Zm00001eb396210	Zm00001eb071910.Zm00001eb036020	
+C3	Zm00001eb206640	Zm00001eb204840	
+C3	Zm00001eb204840	Known	phosphoprotein phosphatase activity.metal ion binding.regulation of cellular process.post-translational protein modification.protein dephosphorylation
+C3	Zm00001eb057520	Zm00001eb381860	
+C3	Zm00001eb392350	Known	metabolic process.heat shock protein binding.chloroplast envelope.chloroplast thylakoid membrane.ATP binding.zinc ion binding.regulation of cellular process.response to heat.protein metabolic process.DNA replication.multicellular organismal process.cellular component organization.protein folding.unfolded protein binding
+C3	Zm00001eb208290		
+C3	Zm00001eb270360	Known	ribosome.structural constituent of ribosome.translation.rRNA binding
+C3	Zm00001eb366510	Zm00001eb085720.Zm00001eb071910	
+C3	Zm00001eb050600	Zm00001eb085720.Zm00001eb000320.Zm00001eb162930.Zm00001eb036020	response to chemical.primary metabolic process.metabolic process.biological_process.cellular process.cellular_component.cellular anatomical structure.molecular_function.response to oxidative stress.cellular response to oxidative stress
+C3	Zm00001eb331910	Zm00001eb162930	
+C3	Zm00001eb109990	Zm00001eb229140	glycerolipid metabolic process.phospholipid biosynthetic process.phosphatidylinositol phosphate biosynthetic process.shoot system development.glycerolipid biosynthetic process.tube development.establishment of tissue polarity.glycerophospholipid biosynthetic process.stomatal movement.pollen tube growth
+C3	Zm00001eb102320		
+C3	Zm00001eb134440		
+C3	Zm00001eb228840	Zm00001eb036020	
+C3	Zm00001eb255550	Zm00001eb085720	
+C3	Zm00001eb399170		
+C3	Zm00001eb180120	Zm00001eb162930.Zm00001eb036020	
+C3	Zm00001eb391300		
+C3	Zm00001eb353420		
+C3	Zm00001eb206290		
+C3	Zm00001eb424300	Zm00001eb280710.Zm00001eb204840	
+C3	Zm00001eb169810	Zm00001eb367710.Zm00001eb307890.Zm00001eb392350.Zm00001eb234580	adenyl ribonucleotide binding.adenyl nucleotide binding.ATP binding.purine nucleotide binding.carbohydrate derivative binding.purine ribonucleoside triphosphate binding.ribonucleotide binding.purine ribonucleotide binding.anion binding.nucleotide binding
+C3	Zm00001eb357480		
+C3	Zm00001eb144210	Zm00001eb204840	
+C3	Zm00001eb381860	Known	cellular process.transmembrane transporter activity.membrane.oligopeptide transport
+C3	Zm00001eb088790	Known	purine ribonucleoside catabolic process.vernalization response.cell wall organization.purine ribonucleoside triphosphate catabolic process.cell adhesion.Unknown.anatomical structure formation involved in morphogenesis.Unknown.plasma membrane.purine ribonucleotide catabolic process.epidermal cell differentiation.transmembrane transport.anthocyanin accumulation in tissues in response to UV light.ATP binding.acropetal auxin transport.pattern specification process.ATP metabolic process.photomorphogenesis.carpel development.polysaccharide biosynthetic process.multidimensional cell growth.response to blue light.embryo development ending in seed dormancy.regulation of cell size.trichome morphogenesis.vegetative to reproductive phase transition of meristem.response to far red light.response to nematode.cell tip growth.membrane.actin nucleation.stamen development.auxin export across the plasma membrane.root hair elongation.plasmodesma.lateral root development.auxin-activated signaling pathway.positive gravitropism.auxin efflux transmembrane transporter activity.ATPase-coupled transmembrane transporter activity.basipetal auxin transport
+C3	Zm00001eb003270	Zm00001eb280710	
+C3	Zm00001eb241050		
+C3	Zm00001eb290230		
+C3	Zm00001eb223370	Zm00001eb280710	
+C3	Zm00001eb012400	Zm00001eb204840	
+C3	Zm00001eb128280	Zm00001eb204840	
+C3	Zm00001eb334150		
+C3	Zm00001eb280710	Known	hydrolase activity.Unknown.response to stimulus.regulation of DNA-templated transcription.binding.Unknown.membrane.primary metabolic process
+C3	Zm00001eb268740	Zm00001eb036020	
+C3	Zm00001eb350690	Known	cellular process.response to hormone.cell wall.signaling.lipid metabolic process.vacuole.response to stress.hydrolase activity, acting on ester bonds.Unknown.membrane.response to other organism
+C3	Zm00001eb165190	Zm00001eb389910.Zm00001eb036020	
+C3	Zm00001eb071620	Zm00001eb280710	
+C3	Zm00001eb139490		
+C3	Zm00001eb043280	Zm00001eb280710	
+C3	Zm00001eb093370		
+C3	Zm00001eb081180		
+C3	Zm00001eb078300	Zm00001eb392350.Zm00001eb204840	cation binding.metal ion binding
+C3	Zm00001eb408340		
+C3	Zm00001eb176010	Zm00001eb280710	
+C3	Zm00001eb112450		
+C3	Zm00001eb246380		
+C3	Zm00001eb126290	Zm00001eb000320.Zm00001eb162930	chloroplast.plastid
+C3	Zm00001eb339310	Known	modification-dependent macromolecule catabolic process.protein catabolic process.cytosol.Unknown.regulation of biological process.membrane.ubiquitin protein ligase activity.protein ubiquitination.ubiquitin protein ligase binding.proteolysis
+C3	Zm00001eb174830	Known	cytosol.nuclear-transcribed mRNA catabolic process.cellular response to water deprivation.regulation of cellular process.proteasome-mediated ubiquitin-dependent protein catabolic process.nucleus.regulation of proteolysis.ubiquitin-dependent protein catabolic process.ubiquitin protein ligase binding.cellular response to salt stress.system development.identical protein binding.SCF ubiquitin ligase complex
+C3	Zm00001eb094490	Zm00001eb307890	
+C3	Zm00001eb234580	Known	protein serine/threonine kinase activity.ATP binding.recognition of pollen.response to chemical.biological regulation.response to stress.protein phosphorylation.membrane
+C3	Zm00001eb312750		
+C3	Zm00001eb123030	Zm00001eb392350.Zm00001eb188290.Zm00001eb204840	primary metabolic process.metabolic process.biological_process.cellular process.cation binding.metal ion binding.molecular_function
+C3	Zm00001eb302550	Zm00001eb307890	
+C3	Zm00001eb029110	Zm00001eb188290	
+C3	Zm00001eb140770		
+C3	Zm00001eb359890	Known	Unknown.telomere maintenance.nucleotide binding.DNA repair.membrane.intracellular anatomical structure.DNA helicase activity
+C3	Zm00001eb229140	Known	pollen tube growth.carbohydrate metabolic process.plant-type cell wall modification.Unknown.apical plasma membrane.nucleus.anatomical structure formation involved in morphogenesis.pollen germination.phosphatidylinositol phosphate biosynthetic process.tube development.actin monomer binding.ATP binding.biological regulation.establishment of tissue polarity.pollen tube.actin filament binding.flower development.lipid kinase activity.stomatal movement.endocytosis.1-phosphatidylinositol-4-phosphate 5-kinase activity.response to stress.amino acid metabolic process
+C3	Zm00001eb212690	Known	chloroplast.animal organ formation.mitotic M phase.cell plate.plasma membrane.protein localization to plasma membrane.plasmodesma.Unknown.SNARE binding.vacuolar membrane.petal formation.SNAP receptor activity.cell plate formation involved in plant-type cell wall biogenesis.membrane.sepal formation.endosome.SNARE complex
+C3	Zm00001eb154290	Known	ligase activity.regulation of DNA-templated transcription.hydrolase activity, acting on ester bonds.monocarboxylic acid metabolic process.glycosyltransferase activity.DNA-templated transcription.membrane
+C3	Zm00001eb414910	Known	response to wounding.jasmonic acid mediated signaling pathway.transcription corepressor activity.Unknown.Unknown.defense response.nucleus.regulation of defense response.metabolic process.regulation of jasmonic acid mediated signaling pathway
+C3	Zm00001eb389170	Zm00001eb280710	
+C3	Zm00001eb077800	Zm00001eb280710	
+C3	Zm00001eb218210		
+C3	Zm00001eb009830		
+C3	Zm00001eb254270	Zm00001eb297320.Zm00001eb245760.Zm00001eb036020.Zm00001eb154290	biosynthetic process.macromolecule metabolic process.protein-containing complex.macromolecule biosynthetic process.primary metabolic process.metabolic process.nucleic acid metabolic process.cellular anatomical structure.cellular_component.biological_process
+C3	Zm00001eb135600	Zm00001eb307890.Zm00001eb174830	
+C3	Zm00001eb154900		
+C3	Zm00001eb016640	Known	Golgi apparatus.efflux transmembrane transporter activity.response to zinc ion.intracellular monoatomic cation homeostasis.transition metal ion transport.vacuolar membrane.zinc ion transmembrane transporter activity.monoatomic cation transmembrane transport.membrane.Unknown
+C3	Zm00001eb326980	Known	secondary active transmembrane transporter activity.carboxylic acid transport.cellular process.transmembrane transport.transmembrane transporter activity.membrane.primary metabolic process
+C3	Zm00001eb342820	Known	mitochondrion.developmental pigmentation.fat cell differentiation.nucleolus.morphogenesis of a branching structure.negative regulation of gene expression.positive regulation of immune effector process.negative regulation of macromolecule biosynthetic process.transcription by RNA polymerase II.regulation of Wnt signaling pathway.embryo development.protein lipidation.establishment of protein localization.camera-type eye development.hydrolase activity, acting on ester bonds.protein modification by small protein conjugation.tissue development.chromatin organization.positive regulation of response to external stimulus.Unknown.macromolecule catabolic process.negative regulation of RNA metabolic process.nucleoplasm.regulation of body fluid levels.positive regulation of DNA-templated transcription.vesicle-mediated transport.Unknown.membrane organization.response to stress.cellular localization.cell development
+C3	Zm00001eb123010	Zm00001eb392350	
+C3	Zm00001eb146400	Known	L-aspartate:2-oxoglutarate aminotransferase activity.ketone metabolic process.L-phenylalanine biosynthetic process.amine metabolic process.chloroplast stroma.embryo development ending in seed dormancy.pyridoxal phosphate binding.L-phenylalanine-2-oxoglutarate transaminase activity.aspartate-prephenate aminotransferase activity.glutamate-prephenate aminotransferase activity
+C3	Zm00001eb308110	Zm00001eb392350.Zm00001eb204840	cation binding.metal ion binding
+C3	Zm00001eb162930	Known	chloroplast.sterol metabolic process.cytosol.response to zinc ion.localization.carboxymethylenebutenolidase activity.developmental process.biological regulation.multicellular organismal process.cellular component organization
+C3	Zm00001eb310650	Zm00001eb280710	
+C3	Zm00001eb277970	Zm00001eb392350.Zm00001eb204840	cation binding.metal ion binding
+C3	Zm00001eb071680		
+C3	Zm00001eb067090	Zm00001eb000320.Zm00001eb339310.Zm00001eb211640	catalytic activity.primary metabolic process.metabolic process.biological_process.cellular process.cellular_component.cellular anatomical structure.binding.catalytic activity, acting on a protein.molecular_function
+C3	Zm00001eb234540	Zm00001eb392350.Zm00001eb381860	
+C3	Zm00001eb197350	Zm00001eb359890.Zm00001eb304680.Zm00001eb204840	macromolecule metabolic process.primary metabolic process.metabolic process.biological_process.cellular process.binding.molecular_function
+C3	Zm00001eb359330	Known	Golgi apparatus.purine ribonucleotide catabolic process.GTP binding.cytosol.plasmodesma.GTP metabolic process.GTPase activity.purine ribonucleoside triphosphate catabolic process.small GTPase-mediated signal transduction.nucleus.cellular component organization.protein import into nucleus.mRNA export from nucleus.ribosomal subunit export from nucleus.guanosine-containing compound catabolic process
+C3	Zm00001eb358830		
+C3	Zm00001eb097820	Zm00001eb280710	
+C3	Zm00001eb211640	Known	animal organ development.aspartic-type endopeptidase activity.anatomical structure morphogenesis.membrane.protein kinase inhibitor activity.binding.cell division.RNA methylation.positive regulation of biological process.intracellular signal transduction.rRNA (uridine-2'-O-)-methyltransferase activity
+C3	Zm00001eb426270	Zm00001eb370600.Zm00001eb389910.Zm00001eb036020	macromolecule metabolic process.intracellular organelle.organelle.primary metabolic process.metabolic process.biological_process.cellular process.macromolecule biosynthetic process.RNA metabolic process.cellular_component
+C3	Zm00001eb420810	Zm00001eb392350.Zm00001eb188290.Zm00001eb307890	primary metabolic process.metabolic process.biological_process.cellular process.cation binding.metal ion binding.molecular_function.adenyl ribonucleotide binding.adenyl nucleotide binding.ATP binding
+C3	Zm00001eb046060	Zm00001eb307890	
+C3	Zm00001eb364130	Zm00001eb204840.Zm00001eb392350	cation binding.metal ion binding
+C3	Zm00001eb065030	Zm00001eb036020	
+C3	Zm00001eb063630		
+C3	Zm00001eb128550		
+C3	Zm00001eb050560	Zm00001eb307890	
+C3	Zm00001eb221040		
+C3	Zm00001eb379880		
+C3	Zm00001eb172760		
+C3	Zm00001eb043290	Zm00001eb280710	
+C3	Zm00001eb035520		
+C3	Zm00001eb424220	Zm00001eb162930.Zm00001eb036020	
+C3	Zm00001eb272210	Zm00001eb367710.Zm00001eb307890.Zm00001eb392350.Zm00001eb138400.Zm00001eb234580	adenyl ribonucleotide binding.adenyl nucleotide binding.ATP binding.purine nucleotide binding.carbohydrate derivative binding.purine ribonucleoside triphosphate binding.ribonucleotide binding.purine ribonucleotide binding.anion binding.nucleotide binding
+C3	Zm00001eb023370	Zm00001eb188290.Zm00001eb138400	oxidoreductase activity
+C3	Zm00001eb085720	Known	chloroplast envelope.membrane lipid biosynthetic process.developmental process.cellular response to oxidative stress.nucleobase-containing compound metabolic process.biological regulation.kinase activity.membrane.Unknown
+C3	Zm00001eb370600	Known	zinc ion binding.regulation of DNA-templated transcription.nucleus.DNA-templated transcription.DNA binding
+C3	Zm00001eb188290	Known	3-beta-hydroxy-Delta5-steroid dehydrogenase (NAD+) activity.Unknown.steroid biosynthetic process.Unknown.Unknown.Unknown.small molecule biosynthetic process.amino acid metabolic process.phenylpropanoid metabolic process
+C3	Zm00001eb023980	Zm00001eb036020.Zm00001eb119590.Zm00001eb162930.Zm00001eb389910	primary metabolic process.metabolic process.biological_process.cellular process.cellular_component.cellular anatomical structure.molecular_function.protein metabolic process.developmental process.macromolecule metabolic process
+C3	Zm00001eb162170	Zm00001eb280710	
+C3	Zm00001eb165200		
+C3	Zm00001eb350220		
+C3	Zm00001eb016900	Zm00001eb270360.Zm00001eb304680	
+C3	Zm00001eb363050	Zm00001eb162930.Zm00001eb036020	
+C3	Zm00001eb389910	Known	cytosol.regulation of protein ubiquitination.cellular response to water deprivation.nuclear-transcribed mRNA catabolic process.nucleus.protein ubiquitination.cellular response to salt stress.system development.identical protein binding
+C3	Zm00001eb109980	Known	protein targeting to vacuole.retrograde transport, endosome to Golgi.cell plate.cytokinesis.Golgi apparatus.intra-Golgi vesicle-mediated transport.endoplasmic reticulum membrane.plasma membrane.late endosome membrane.plasmodesma.SNARE binding.endoplasmic reticulum to Golgi vesicle-mediated transport.SNAP receptor activity.ER to Golgi transport vesicle membrane.membrane.vesicle fusion with Golgi apparatus.Golgi to vacuole transport.SNARE complex
+C3	Zm00001eb071910	Known	immune response.cell differentiation.protein catabolic process.ribosome biogenesis.establishment of localization.cellular response to stress.Unknown.post-translational protein modification.regulation of protein kinase activity.regulation of translation.Unknown.negative regulation of biological process.multicellular organism development.protein kinase binding.positive regulation of kinase activity.ribosome binding.protein kinase regulator activity.membrane
+C3	Zm00001eb245760	Known	ribosomal large subunit assembly.protein metabolic process.5S rRNA binding.cytosol.regulation of flower development.rRNA primary transcript binding.nucleolus.karyogamy.rRNA processing.embryo sac egg cell differentiation.pyrimidine ribonucleotide biosynthetic process.RNA methylation.preribosome, large subunit precursor
+C3	Zm00001eb039330	Zm00001eb280710	
+C3	Zm00001eb274810		
+C3	Zm00001eb003280	Zm00001eb280710	
+C3	Zm00001eb174840		
+C3	Zm00001eb001420		
+C3	Zm00001eb367710	Known	ATP binding.regulation of cellular process.cellular response to UV-C.Unknown.primary metabolic process.DNA damage response
+C3	Zm00001eb111950	Zm00001eb304680.Zm00001eb270360.Zm00001eb367710	
+C3	Zm00001eb116770	Zm00001eb036020.Zm00001eb162930.Zm00001eb389910	intracellular organelle.organelle.primary metabolic process.metabolic process.biological_process.cellular process.cellular_component.cellular anatomical structure.molecular_function.response to chemical
+C3	Zm00001eb180140		
+C3	Zm00001eb274080	Known	mitochondrion.calmodulin binding.establishment of localization.anatomical structure morphogenesis.auxin-activated signaling pathway.cellular localization.microtubule-based process.multicellular organism development.organelle organization
+C3	Zm00001eb034250	Zm00001eb204840	
+C3	Zm00001eb002890	Zm00001eb280710	
+C3	Zm00001eb294320	Zm00001eb392350.Zm00001eb204840	cation binding.metal ion binding
+C3	Zm00001eb025970	Zm00001eb204840	
+C3	Zm00001eb160140		
+C3	Zm00001eb407700	Zm00001eb174830.Zm00001eb359890	
+C3	Zm00001eb223660	Zm00001eb280710	
+C3	Zm00001eb288810		
+C3	Zm00001eb116090	Zm00001eb188290.Zm00001eb204840	
+C3	Zm00001eb376700		
+C3	Zm00001eb424500	Known	isomerase activity.transferase activity.Unknown.ligase activity.lipid metabolic process.regulation of DNA-templated transcription.hydrolase activity, acting on ester bonds.biosynthetic process.plasma membrane.DNA binding
+C3	Zm00001eb216830	Zm00001eb245760.Zm00001eb297320.Zm00001eb389910.Zm00001eb036020.Zm00001eb119590	protein metabolic process.macromolecule metabolic process.macromolecule modification.primary metabolic process.metabolic process.cellular anatomical structure.cellular_component.biological_process.cellular process.molecular_function
+C3	Zm00001eb307890	Known	proton transmembrane transport.metal ion binding.response to stimulus.ATP binding.P-type proton-exporting transporter activity.ATP biosynthetic process.membrane
+C3	Zm00001eb104450	Zm00001eb392350.Zm00001eb204840	cation binding.metal ion binding
+C3	Zm00001eb414200	Zm00001eb280710	
+C3	Zm00001eb116100		
+C3	Zm00001eb119590	Known	protein serine/threonine kinase activity.ATP binding.recognition of pollen.multicellular organism development.protein phosphorylation.membrane.signal transduction
+C3	Zm00001eb022190	Zm00001eb304680.Zm00001eb204840	
+C3	Zm00001eb377220		
+C3	Zm00001eb090220	Zm00001eb307890	
+C3	Zm00001eb329340	Zm00001eb234580	
+C3	Zm00001eb309330	Zm00001eb392350.Zm00001eb204840	cation binding.metal ion binding
+C3	Zm00001eb336510		
+C3	Zm00001eb272220	Zm00001eb280710	
+C3	Zm00001eb077150	Zm00001eb307890	
+C3	Zm00001eb036020	Known	metabolic process.nucleolus.translation.structural constituent of ribosome.cytosolic large ribosomal subunit
+C3	Zm00001eb297320	Known	animal organ formation.negative regulation of DNA-templated transcription.cotyledon development.primary shoot apical meristem specification.cell adhesion.nucleotide-excision repair.regulation of cell differentiation.nucleic acid binding.positive regulation of cell population proliferation.protein ubiquitination.floral organ formation.nucleus.seed dormancy process.carbohydrate metabolic process.Unknown.sister chromatid cohesion.epidermal cell differentiation.regionalization.translation.cytokinesis by cell plate formation.red, far-red light phototransduction.gravitropism.protein-containing complex.Cul4-RING E3 ubiquitin ligase complex.cytosol.Unknown.trichome morphogenesis.negative regulation of photomorphogenesis.embryonic pattern specification.actin nucleation.regulation of cell cycle process.proteasome-mediated ubiquitin-dependent protein catabolic process.protein glycosylation
+C3	Zm00001eb272990	Zm00001eb392350	
+C3	Zm00001eb262720	Zm00001eb174830	
+C3	Zm00001eb118520	Zm00001eb381860	
+C3	Zm00001eb204760	Zm00001eb307890	
+C3	Zm00001eb385400	Zm00001eb280710.Zm00001eb204840	
+C3	Zm00001eb108450		
+C3	Zm00001eb143120	Zm00001eb280710	
+C3	Zm00001eb363040	Known	cell wall biogenesis.chloroplast.nucleotide binding.monoatomic ion transport.reproductive process.developmental process.cellular component organization.membrane.gibberellic acid mediated signaling pathway.plasma membrane.gibberellin biosynthetic process
+C3	Zm00001eb062590	Zm00001eb000320.Zm00001eb146400.Zm00001eb162930	developmental process.catalytic activity.chloroplast.plastid.primary metabolic process.metabolic process.biological_process.cellular process.cellular_component.cellular anatomical structure
+C3	Zm00001eb162730	Zm00001eb280710	
+C3	Zm00001eb329810	Zm00001eb326980	
+C3	Zm00001eb071610	Zm00001eb204840	
+C3	Zm00001eb138400	Known	small molecule metabolic process.peroxisome.Unknown.Unknown.macromolecule metabolic process.biological regulation.biosynthetic process.oxidoreductase activity.amine metabolic process.primary metabolic process
+C3	Zm00001eb000320	Known	chloroplast.cell differentiation.cytosol.NADPH:quinone reductase activity.Unknown.Unknown.zinc ion binding.cellular response to oxidative stress.mRNA 3'-UTR AU-rich region binding.small molecule metabolic process.primary metabolic process.response to high light intensity
