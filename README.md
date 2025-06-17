@@ -9,6 +9,10 @@ It has programs for both of the the analysis done in my [internship](./programs/
 The original [expression data](./data/original_data) has been kept, but there is also the processed and split data (containing the gene [length](./data/wlen/) and without the gene [length](./data/nolen)), the mercator annotation data can also be found, as well as the data belonging to _Zea Mays_ genes and the [protein](./data/annotation/Zm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.protein.fa) and [canonical](./data/annotation/Zm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.canonical.cds.fa) sequences of this same species.
 
 ---
+## [`Data`](./data) directory
+
+[`original_data`](./data/original_data): R markdown for initial viewing of the data
+
 ## [`Scripts`](./scripts) directory
 
 Contains programs for the initial data analysis and pre-processing

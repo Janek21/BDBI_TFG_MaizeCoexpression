@@ -11,8 +11,6 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning=FALSE, fig.width=16, fig.height=8)
-knitr::opts_chunk$set(root.dir = "..") #does not work
-knitr::opts_chunk$set
 
 getwd()
 ```
@@ -26,21 +24,8 @@ Warning: the term species may be used across the code and comments when meaning 
 ## Load libraries
 
 ```{r loadLib, results='hide', message=FALSE}
-library(WGCNA)
-allowWGCNAThreads()
-library(randomcoloR)
 library(edgeR)
-library(tidyverse)
-library(dplyr)
-library(grid)
-library(gridExtra)
-#devtools::install_github("kevinblighe/CorLevelPlot")
-library(CorLevelPlot)
-library(ggpubr)
-library(plotly)
-library(factoextra)
 library(umap)
-library(heatmaply)
 library(dbscan)
 library(reticulate)
 reticulate::use_python("/usr/bin/python3", required=TRUE)

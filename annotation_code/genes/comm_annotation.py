@@ -20,7 +20,7 @@ def corrCleaner(table, ths=0.7):
     
     #Take out the self-loops
     corList_noSL=corList[corList["G1"]!=corList["G2"]]
-    #filter by threshold (observed in geneClustering.Rmd)
+    #filter by threshold (observed in genCor_clustering script(plot))
     correlations=corList_noSL[corList_noSL["coefficient"].abs()>=ths]
     
     return correlations
@@ -111,12 +111,6 @@ def main(module, thrs=0.6, community_limit=2):
                 unknown_genes={node: node for node in subgraph.nodes if node in uk_G}
                 nx.draw_networkx_nodes(subgraph, pos=s_pos, nodelist=unknown_genes, node_color="black", node_size=100)
                 
-                #select and color closely related genes
-                #nestList_cg=[val[0] for val in fd.values()] #get only corr genes
-                #corrGen=sum(nestList_cg, []) #unnest the corr genes list
-                #k_genes={node: node for node in subgraph.nodes if node in corrGen} #find out closely correlated genes for a gene(find out if a gene in a community has no close correls)
-                #nx.draw_networkx_nodes(subgraph, pos=s_pos, nodelist=k_genes, node_color=f"red", node_size=100) #view closerly correlated genes
-                
                 known_patch=matplotlib.patches.Patch(label=f'Known genes: {len(k_G)}')
                 unknown_patch=matplotlib.patches.Patch(color='black', label=f'Unknown genes: {len(uk_G)}')
                 plt.legend(handles=[known_patch, unknown_patch], loc="upper right")
@@ -160,5 +154,5 @@ def main(module, thrs=0.6, community_limit=2):
     plt.show()
 
 if __name__ == "__main__":
-    module="violet" #black, brown
+    module="turquoise" #black, brown
     main(module, 0.6)
