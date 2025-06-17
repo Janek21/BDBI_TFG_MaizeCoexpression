@@ -19,7 +19,7 @@ Contains programs for the initial data analysis and pre-processing
 
 * [`MetaFixer.R`](./scripts/MetaFixer.R): Matches the amount of samples to the lowest one among data and metadata
 * [`tissue_abv.py`](./scripts/tissue_abv.py): Assigns to each metadata tissue code a tissue abreviation for a better comprehension.
-* [`speciator.R`](./scripts/speciator.R): Splits the data and metadata tables by lines, necessary only for the internship project.
+* [`speciator.R`](./scripts/speciator.R): Splits the data and metadata tables by lines, necessary only for separate analysis of the lines.
 
 ## [`Co-expression`](./coexpression_code) directory
 
