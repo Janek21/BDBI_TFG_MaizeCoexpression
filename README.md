@@ -55,7 +55,12 @@ Contains programs and results which belong to functional annotation of both, mod
 [`Gene functions`](./annotation_code/genes): Contains the code and results for obtaining the gene communities and annotations.
 
 * [`maize.B73.AGPv4.aggregate.gaf`](./annotation_code/genes/maize.B73.AGPv4.aggregate.gaf): File containing GO term, taxon, evidence code and more data belonging to _Zea Mays_ genes.
-* [`geneClustering.Rmd`](./annotation_code/genes/geneClustering.Rmd): Calculates and saves the correlation table and performs a K-means and DBscan clustering for a give module.
-* [`GOparser_class.py`](./annotation_code/genes/GOparser_class.py): 
+* [`go-basic.obo`](./annotation_code/genes/go-basic.obo): Contains GO term information.
+* [`geneClustering.Rmd`](./annotation_code/genes/geneClustering.Rmd): Performs a K-means and DBscan clustering for a given module, also calculates and saves the [correlation table](./annotation_code/correlation_tables) belonging to this module.
+* [`GOparser_class.py`](./annotation_code/genes/GOparser_class.py): Class for parsing the maize [GAF file](./annotation_code/genes/maize.B73.AGPv4.aggregate.gaf), also contains a function to translate from v4 IDs to v5 IDs based on a [translation file](./data/annotation/genes_all.txt)
+* [`GOannotation.py`](./annotation_code/genes/GOannotation.py): Finds unknown genes and n closely related genes, the GO terms and functions of the known genes and extrapolates the functions of the unknown genes from these ones.
+* [`comm_annotation.py`](./annotation_code/genes/comm_annotation.py): Finds Louvain communities from a given [correlation table](./annotation_code/correlation_tables) and annotates known and unknown genes in this communities using [GOannotation.py](./annotation_code/genes/GOannotation.py). Then creates a [table](./annotation_code/genes/community_tables) which contains the annotations.
 
+  [`Annotation tables`](./annotation_code/genes/community_tables): Tables containing gene annotations for most of the genes in each module.
 
+  [`Graph representations`](./annotation_code/genes/graphFigs): Image representations of module correlations and of communities within modules.

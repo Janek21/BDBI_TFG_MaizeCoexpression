@@ -20,7 +20,7 @@ def corrCleaner(table, ths=0.7):
     
     #Take out the self-loops
     corList_noSL=corList[corList["G1"]!=corList["G2"]]
-    #filter by threshold (observed in genCor_clustering script(plot))
+    #filter by threshold (observed in geneClustering.Rmd)
     correlations=corList_noSL[corList_noSL["coefficient"].abs()>=ths]
     
     return correlations
