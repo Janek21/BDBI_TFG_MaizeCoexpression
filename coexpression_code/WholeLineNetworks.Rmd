@@ -28,7 +28,6 @@ allowWGCNAThreads()
 library(randomcoloR)
 library(edgeR)
 library(tidyverse)
-library(dplyr)
 library(grid)
 library(gridExtra)
 #devtools::install_github("kevinblighe/CorLevelPlot")
@@ -823,35 +822,6 @@ CorLevelPlot(heatmap.data,
              cexCorval = 0, cexLabY = 0.7, cexLabX = 0.7
             )
 dev.off()
-```
-
-```{r, eval=FALSE}
-
-colnames(heatmap.data)<-gsub("ME", "", colnames(heatmap.data))
-
-library(reshape2)
-modules_data<-heatmap.data[colnames(module_eigengenes)]
-long_data <- melt(as.matrix(modules_data))
-
-# Rename columns
-colnames(long_data) <- c("Trait", "Module", "Correlation")
-
-# Create the plot
-ggplot(long_data, aes(x=Trait, y=Module, fill=Correlation)) +
-  geom_tile(color="darkgray")+
-  scale_fill_gradientn(
-    colours=c("blue", "white", "red"),
-    values=scales::rescale(c(-1, -0.1, 0, 0.1, 1)),
-    limits=c(-1, 1),
-    name="Correlation"
-  )+
-  theme_bw()+
-  theme(axis.text.x=element_text(angle=45, hjust=1, size=10, color="black"),
-        axis.text.y=element_text(size=10, color="black"),
-        panel.border=element_rect(linewidth=1),
-        panel.grid.major=element_line(color="black", linewidth=3),
-        panel.grid.minor=element_line(color="black", linewidth=3))+
-  coord_fixed()
 ```
 
 # Resorted Coexpression Visualization
