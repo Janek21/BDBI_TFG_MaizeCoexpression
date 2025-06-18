@@ -1,22 +1,20 @@
-⚠️Repository in developement⚠️
+
 # PGSB_CoexpressionNW
 
 ---
 This repository contains the files and data for executing a network co-expression analysis on maize lines B73, DK105, EP1, F7 and PE75.
-It has programs for both of the the analysis done in my [internship](./programs/IndividualNetworks.Rmd) and in my bachelor thesis().
-
-The original [expression data](./data/original_data) has been kept, but there is also the processed and split data (containing the gene [length](./data/wlen/) and without the gene [length](./data/nolen)), the mercator annotation data can also be found, as well as the data belonging to _Zea Mays_ genes and the [protein](./data/annotation/Zm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.protein.fa) and [canonical](./data/annotation/Zm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.canonical.cds.fa) sequences of this same species.
+It has programs for both: the the analysis for [individual lines](./coexpression_code/IndividualNetworks.Rmd) and for [multiple lines](./coexpression_code/WholeLineNetworks.Rmd) simultaneously.
 
 ---
 ## [`Data`](./data) directory:
 
 [`original_data`](./data/original_data): Original expression data
 
-[`Length data`](./data/original_data/wlen): Data tables that contain the length(used for RPKM), one table with joint data for all the lines and many of data split by the lines ([scripts](#Scripts-directory))
+[`Length data`](./data/wlen): Data tables that contain the length(used for RPKM), one table with joint data for all the lines and many of data split by the lines ([scripts](#Scripts-directory))
 
-[`Regular data`](./data/original_data/nolen): Contains a table with the data for all lines and tables where the data is split([scripts](#Scripts-directory)), one table per line.
+[`Regular data`](./data/nolen): Contains a table with the data for all lines and tables where the data is split([scripts](#Scripts-directory)), one table per line.
 
-[`Annotation`](./data/original_data/annotation): Contains files with gene annotation for _Zea Mays_.
+[`Annotation`](./data/annotation): Contains files with gene annotation for _Zea Mays_.
 
 ## [`Scripts`](./scripts) directory
 
@@ -51,7 +49,7 @@ Contains programs and results belonging to the co-expression network creation an
 
 Contains programs and results which belong to functional annotation of both, modules and genes.
 
-[`Module functions`](./annotation_code/modules): Contains the code and results for obtaining the main functions of modules
+### [`Module functions`](./annotation_code/modules): Contains the code and results for obtaining the main functions of modules
 
 * [`FileRead_class.py`](./annotation_code/modules/FileRead_class.py): Classes for parsing files (mercator annotation [file](./data/annotationb73.mercator.v4.7.txt) and P-value [tables](./annotation_code/modules/Pres)).
 * [`FunctionPval_tables.py`](./annotation_code/modules/FunctionPval_tables.py): Calculates the significance for functions in each module, saves them in [tables](./annotation_code/modules/Pres).
@@ -61,7 +59,11 @@ Contains programs and results which belong to functional annotation of both, mod
 * [`SigPlots`](./annotation_code/modules/SigPlots): Contains plots and tables of significance per function in each module and of the top significant functions per annotation type, which are created using [SignificantPerModule_plots.R](./annotation_code/modules/SignificantPerModule_plots.R).
 
 
-[`Gene functions`](./annotation_code/genes): Contains the code and results for obtaining the gene communities and annotations.
+### [`Gene functions`](./annotation_code/genes): Contains the code and results for obtaining the gene communities and annotations.
+
+  [`Annotation tables`](./annotation_code/genes/community_tables): Tables containing gene annotations for most of the genes in each module, as well as a [script](./annotation_code/genes/community_tables/ComRatio.sh) that counts known and unknown genes for each community in a module.
+
+  [`Graph representations`](./annotation_code/genes/graphFigs): Image representations of module correlations and of communities within modules.
 
 * [`maize.B73.AGPv4.aggregate.gaf`](./annotation_code/genes/maize.B73.AGPv4.aggregate.gaf): File containing GO term, taxon, evidence code and more data belonging to _Zea Mays_ genes.
 * [`go-basic.obo`](./annotation_code/genes/go-basic.obo): Contains GO term information.
@@ -70,6 +72,6 @@ Contains programs and results which belong to functional annotation of both, mod
 * [`GOannotation.py`](./annotation_code/genes/GOannotation.py): Finds unknown genes and n closely related genes, the GO terms and functions of the known genes and extrapolates the functions of the unknown genes from these ones.
 * [`comm_annotation.py`](./annotation_code/genes/comm_annotation.py): Finds Louvain communities from a given [correlation table](./annotation_code/correlation_tables) and annotates known and unknown genes in this communities using [GOannotation.py](./annotation_code/genes/GOannotation.py). Then creates a [table](./annotation_code/genes/community_tables) which contains the annotations.
 
-  [`Annotation tables`](./annotation_code/genes/community_tables): Tables containing gene annotations for most of the genes in each module, as well as a [script](./annotation_code/genes/community_tables/ComRatio.sh) that counts known and unknown genes for each community in a module.
+## [`Figures`](./all_figure) directory
 
-  [`Graph representations`](./annotation_code/genes/graphFigs): Image representations of module correlations and of communities within modules.
+Contains all the folders that hold figures or tables produced as a result by a program
