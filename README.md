@@ -75,3 +75,6 @@ Contains programs and results which belong to functional annotation of both, mod
 ## [`Figures`](./all_figure) directory
 
 Contains all the folders that hold figures or tables produced as a result by a program
+
+## Contact
+For any questions or further information, contact me at: jan.izquierdo@alum.esci.upf.edu
