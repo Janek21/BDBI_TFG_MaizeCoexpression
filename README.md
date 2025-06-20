@@ -1,5 +1,5 @@
 
-# PGSB_CoexpressionNW
+# Maize Co-Expression Network Analysis
 
 ---
 This repository contains the files and data for executing a network co-expression analysis on maize lines B73, DK105, EP1, F7 and PE75.
